@@ -1,0 +1,521 @@
+!This program cannot be run in DOS mode.
+Rich
+.text
+`.rdata
+@.data
+.rsrc
+@.reloc
+SVWP
+Y_^[
+SVWP
+Y_^[
+_^[]
+_^[]
+PQVW
+QPjSP
+yh
+Q Sj
+]VP
+jph 
+tLj|
+y3hP
+tOj|
+y6hP
+FQR
+L$Q
+D$0d
+T$RP
+L$j
+T$j
+GQR
+;~tu
+RhQP
+F QR
+D$ PQ
+L$(QP
+L$0d
+_^Y]
+h@m6
+SVWP
+Y_^[
+SVWP
+Y_^[
+MSQ
+Y_^[
+gfff
+9Et
+PQVW
+D1 @
+9Et
+D1 @
+PQVW
+D2Dx
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+9Et
+PQVW
+D1Dx
+D$hd
+D$X 
+D$d
+D$<p
+DPx
+D$hd
+D$X 
+PQSVW
+Y_^[
+PQSVW
+D1 @
+Y_^[
+PQSVW
+D2Dx
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+D$pd
+L$@Q
+D$L`
+D$P|
+T$DR
+D$h 
+L$pd
+D$pd
+L$@Q
+D$H8
+D$L`
+D$P|
+T$DR
+D$@$
+D$T,
+D$h 
+L$pd
+D1 8
+PQVW
+PQVW
+PQSVW
+Y_^[
+PQSVW
+D1 @
+Y_^[
+PSVW
+Y_^[
+PQSVW
+D2Dx
+Y_^[
+PSVW
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+D9 8
+Y_^[
+D2 8
+PQSVW
+Y_^[
+PQSVW
+D9 8
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+_^[]
+8\$t
+D$ d
+V$RP
+L$ d
+L$ d
+};N
+;Nu+
+P;V
+W;V 
+G+V
+N t'
+F +F
+F+F
+F +F
+D$(d
+F+F
+F+F
+F +F
+QRSP
+WPQ
+;~tu
+F +F
+WPQ
+F +F
+L$(d
+Y_^[
+L$(d
+Y_^[
+D$HSVW
+D$`d
+D$(t
+D$(t
+L$`d
+Y_^[
+L$H3
+D$hSVW
+Y_^[
+L$h3
+ SVW
+Y_^[
+PQVW
+Y_^[
+9A(u1
+9Q,u)RPhH
+D$ d
+L$Q
+D$P
+L$ d
+9xs
+;yr
+;FttP
+D$PR
+L$Q
+D$ d
+L$Q
+D$P
+L$ d
+9xs
+;yr
+D$PR
+L$Q
+D$ d
+L$Q
+D$P
+L$ d
+9xs
+;yr
+D$PR
+L$Q
+_^[]
+;Mu
+VP;Ps
+8Et
+tMHt%h
+t%VW
+8csm
+t%Vh
+6jW
+QQS3
+VW9Eu29
+Y9]u
+;]rN
+@_^[
+u WPS
+uCWVS
+t%WVS
+Y__^[
+_^[]
+Y_^[
+Y_^[
+;D$v
+L$u
+WVS3
+bad allocation
+could not convert calendar time to UTC time
+Day of month value is out of range 1..31
+Year is out of valid range: 1400..10000
+Day of month is not valid for year
+boost::lock_error
+boost::thread_resource_error
+boost shared_lock has no mutex
+boost shared_lock owns already the mutex
+string too long
+invalid string position
+E:\job\yfcam-core\dll\public\boost/exception/detail/exception_ptr.hpp
+class boost::exception_ptr __cdecl boost::exception_detail::get_static_exception_object<struct boost::exception_detail::bad_alloc_>(void)
+class boost::exception_ptr __cdecl boost::exception_detail::get_static_exception_object<struct boost::exception_detail::bad_exception_>(void)
+bad exception
+boost unique_lock has no mutex
+boost unique_lock owns already the mutex
+invalid map/set<T> iterator
+map/set<T> too long
+ReleaseSemaphore
+CloseHandle
+WaitForSingleObject
+GetSystemTimeAsFileTime
+WaitForMultipleObjects
+CreateSemaphoreA
+KERNEL32.dll
+GetClientRect
+ClientToScreen
+ReleaseDC
+GetDC
+USER32.dll
+SetStretchBltMode
+SetBkMode
+CreateCompatibleDC
+SelectObject
+DeleteObject
+StretchBlt
+CreateDIBSection
+DeleteDC
+BitBlt
+GDI32.dll
+?_Xout_of_range@std@@YAXPBD@Z
+?_Xlength_error@std@@YAXPBD@Z
+MSVCP100.dll
+yf_log_err_w
+yf_log_msg_w
+YFLog.dll
+??0greg_month@gregorian@boost@@QAE@G@Z
+boost_date_time-vc100-mt-1_52.dll
+?system_category@system@boost@@YAABVerror_category@12@XZ
+?generic_category@system@boost@@YAABVerror_category@12@XZ
+boost_system-vc100-mt-1_52.dll
+DirectDrawCreateEx
+DDRAW.dll
+?what@exception@std@@UBEPBDXZ
+??1exception@std@@UAE@XZ
+??0exception@std@@QAE@ABQBD@Z
+??0exception@std@@QAE@ABQBDH@Z
+??0exception@std@@QAE@ABV01@@Z
+_gmtime64
+memmove
+_purecall
+??3@YAXPAX@Z
+??2@YAPAXI@Z
+MSVCR100.dll
+?terminate@@YAXXZ
+_unlock
+__dllonexit
+_lock
+_onexit
+_malloc_crt
+free
+_encoded_null
+_initterm
+_initterm_e
+_amsg_exit
+__CppXcptFilter
+_crt_debugger_hook
+_except_handler4_common
+?_type_info_dtor_internal_method@type_info@@QAEXXZ
+__clean_type_info_names_internal
+EncodePointer
+DecodePointer
+InterlockedExchange
+Sleep
+InterlockedCompareExchange
+TerminateProcess
+GetCurrentProcess
+UnhandledExceptionFilter
+SetUnhandledExceptionFilter
+IsDebuggerPresent
+DisableThreadLibraryCalls
+QueryPerformanceCounter
+GetTickCount
+GetCurrentThreadId
+GetCurrentProcessId
+memset
+__CxxFrameHandler3
+memcpy
+_CxxThrowException
+YFDrawBMP.dll
+yf_draw_bmp_draw
+yf_draw_bmp_get_bit_count
+yf_draw_bmp_get_bits_ptr
+yf_draw_bmp_get_bmpinfo
+yf_draw_bmp_get_img_size
+yf_draw_bmp_init
+yf_draw_bmp_set_bits
+yf_draw_bmp_set_callback_draw_after
+yf_draw_bmp_set_callback_draw_bits_after
+yf_draw_bmp_set_callback_draw_dst_bits_after
+yf_draw_bmp_set_draw_size
+yf_draw_bmp_set_img_size
+yf_draw_bmp_stop_callback_draw_after
+yf_draw_bmp_stop_callback_draw_bits_after
+yf_draw_bmp_stop_callback_draw_dst_bits_after
+yf_draw_bmp_uninit
+.?AVtype_info@@
+.?AV?$sp_counted_impl_p@V?$clone_impl@Ubad_exception_@exception_detail@boost@@@exception_detail@boost@@@detail@boost@@
+.?AV?$sp_counted_impl_p@V?$clone_impl@Ubad_alloc_@exception_detail@boost@@@exception_detail@boost@@@detail@boost@@
+.?AVDrawBMP@@
+.?AVDDrawBMP@@
+.?AVsp_counted_base@detail@boost@@
+.?AVruntime_error@std@@
+.?AVexception@std@@
+.?AVexception@boost@@
+.?AVclone_base@exception_detail@boost@@
+.?AVout_of_range@std@@
+.?AVlogic_error@std@@
+.?AVbad_alloc@std@@
+.?AVbad_exception@std@@
+.?AV?$clone_impl@U?$error_info_injector@Vruntime_error@std@@@exception_detail@boost@@@exception_detail@boost@@
+.?AU?$error_info_injector@Vruntime_error@std@@@exception_detail@boost@@
+.?AV?$clone_impl@U?$error_info_injector@Ubad_day_of_month@gregorian@boost@@@exception_detail@boost@@@exception_detail@boost@@
+.?AU?$error_info_injector@Ubad_day_of_month@gregorian@boost@@@exception_detail@boost@@
+.?AUbad_day_of_month@gregorian@boost@@
+.?AV?$clone_impl@U?$error_info_injector@Vthread_resource_error@boost@@@exception_detail@boost@@@exception_detail@boost@@
+.?AU?$error_info_injector@Vthread_resource_error@boost@@@exception_detail@boost@@
+.?AVthread_resource_error@boost@@
+.?AVthread_exception@boost@@
+.?AVsystem_error@system@boost@@
+.?AV?$clone_impl@U?$error_info_injector@Vlock_error@boost@@@exception_detail@boost@@@exception_detail@boost@@
+.?AU?$error_info_injector@Vlock_error@boost@@@exception_detail@boost@@
+.?AVlock_error@boost@@
+.?AV?$clone_impl@U?$error_info_injector@Ubad_year@gregorian@boost@@@exception_detail@boost@@@exception_detail@boost@@
+.?AU?$error_info_injector@Ubad_year@gregorian@boost@@@exception_detail@boost@@
+.?AUbad_year@gregorian@boost@@
+.?AV?$clone_impl@Ubad_alloc_@exception_detail@boost@@@exception_detail@boost@@
+.?AUbad_alloc_@exception_detail@boost@@
+.?AV?$clone_impl@Ubad_exception_@exception_detail@boost@@@exception_detail@boost@@
+.?AUbad_exception_@exception_detail@boost@@
+.?AVDIBDrawBmp@@
+YIQ5u
+;uMO
+;uMO
+YIQ5u
+;uMO
+;uMO
+02080H0N0[0r0
+2%2@2
+3E3K3Z3e3
+4$4X4
+5%5R5
+6,686C6e6
+8)8 9-9
+:%:+:1:7:=:k:q:w:}:
+<)=2=T=
+?Q?X?]?b?h?
+7)8@8F8M8o8
+8V9e9
+;2<8<j<p<X=^=
+>V>\>
+051&262a2v2
+3h5o5z5
+6&6,6E6q6x6
+6(7/7T7h7o7z7
+8&8,8E8q8x8
+8(9/9\9b9|9
+:4:;:F:v:
+;F;V;q;|;
+<<;<f<v<
+=&=6=[=b=
+=+>9>b>i>
+>(?/?:?M?T?[?|?
+01080C0v0
+1"1D1h1o1v1
+2'242b2k2
+383?3F3f3l3
+4$4B4I4P4q4
+4%5B5I5P5q5
+5%6B6I6P6o6
+7$767F7\7
+81898D8P8r8y8
+9'979T9f9v9
+:3:;:a:i:t:
+<+<^<d<o<
+=N=T=_=
+>V>f>
+?1?8?N?T?k?
+0,030
+2/2=2
+3+333;3F3`3h3v3
+4.4J4P4X4`4x4
+5_5l5q5v5{5
+6)696_6f6|6
+7*7a7h7q7x7
+8*8a8h8q8x8
+9F9M9S9Z9
+:#:*:V:f:
+:F;V;q;x;
+;6<E<_<j<
+=9=@=K=
+>F>V>s>z>
+?!?(?>?D?[?
+0#0^0e0u0|0
+161F1\1
+2#2*232n2u2
+3F3V3l3
+434:4C4~4
+5#5^5e5u5|5
+6f6v6
+6,757
+>#>:>[>
+0%1F2M2R2W2]2
+5i6x6
+808d8j8
+9)9v9
+;';,;7;d;
+=3>:>?>D>J>
+>I?X?
+192H2
+;8;];
+<!?0?6?=?
+0$090D0Z0r0|0
+1"1'1,1B1N1o1}1
+2$202@2F2M2d2j2~2
+333:3?3D3K3X3i3
+3+4s4
+5'5,525<5E5P5\5a5q5v5|5
+6 60666<6A6P6U6v6{687=7O7m7
+818T8a8m8u8}8
+8J9P9V9\9r:
+:.;~;
+<:<j<
+=A=I=T=l=
+>:>t>
+?>?j?
+0V0
+5:5V5b5n5
+6"6'62676B6G6R6W6b6g6r6w6
+H1L1P1T1d1t1x1|1
+8 8$8(8,8084888<8@8D8H8L8P8T8X8\8`8d8h8l8p8t8x8|8
+9 9$9(9,9094989<9@9D9H9L9P9T9X9\9`9d9h9l9p9t9x9|9
+: :$:(:,:0:4:8:<:@:L:P:T:X:\:`:d:h:l:p:
+; ;$;(;,;0;4;8;<;@;D;
+< <$<(<
+==$=4=8=H=L=P=X=p=
+> >(>@>P>T>d>h>x>|>
+? ?$?(?,?0?8?P?`?d?t?x?
+0 0$0(0,00080P0`0d0t0x0
+1 1$1(1,10141<1T1X1p1
+2$2(282<2L2P2T2X2\2`2d2h2l2t2
+3 3$34383H3L3P3T3X3\3`3h3
+4 40444D4H4L4T4l4|4
+55$54585H5L5\5`5d5h5l5t5
+6,606@6D6H6L6P6T6\6t6
+7(7,7<7@7D7H7L7T7l7|7
+8,80888P8`8d8t8x8
+949D9H9X9\9`9h9
+:(:,:4:L:\:`:p:t:x:
+<<$<(<0<D<L<`<h<|<
+= =4=<=P=X=l=t=
+>,>4>H>P>d>l>
+?(?0?4?8?<?@?D?H?L?P?X?`?h?|?
+0 0$0(0,040<0D0X0`0t0|0
+1 1$1(1,141<1D1L1X1
+2(242T2\2d2p2
+3<3H3h3t3
+4(444<4T4\4d4p4
+5 5(545T5`5
+686@6L6l6x6
+7$7,787X7`7l7
+8 8,8L8X8x8
+9 9@9H9P9X9d9
+:$:D:P:p:|:
+;8;@;H;T;t;
+0$1<1T1
+12,2L2h2
+384h4
+4L5x5

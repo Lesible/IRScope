@@ -1,0 +1,75 @@
+name: cross-platform-build
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - rust-version
+  pull_request:
+
+jobs:
+  build:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: windows-x64
+            os: windows-latest
+            target: x86_64-pc-windows-msvc
+            bundles: nsis
+            artifact: IRScope-windows-x64-portable-and-installer
+            path: |
+              src-tauri/target/x86_64-pc-windows-msvc/release/irscope.exe
+              src-tauri/target/x86_64-pc-windows-msvc/release/bundle/nsis/*
+          - name: linux-x64
+            os: ubuntu-22.04
+            target: x86_64-unknown-linux-gnu
+            bundles: appimage,deb
+            artifact: IRScope-linux-x64
+            path: |
+              src-tauri/target/x86_64-unknown-linux-gnu/release/bundle/appimage/*.AppImage
+              src-tauri/target/x86_64-unknown-linux-gnu/release/bundle/deb/*.deb
+          - name: macos-arm64
+            os: macos-latest
+            target: aarch64-apple-darwin
+            bundles: app
+            artifact: IRScope-macos-arm64
+            path: src-tauri/target/aarch64-apple-darwin/release/bundle/macos/*.app
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      - name: Install Linux build dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libwebkit2gtk-4.1-dev \
+            libgtk-3-dev \
+            libayatana-appindicator3-dev \
+            librsvg2-dev \
+            patchelf \
+            libfuse2 \
+            file
+
+      - run: npm ci
+
+      - name: Build Tauri bundle
+        run: npm run tauri build -- --target ${{ matrix.target }} --bundles ${{ matrix.bundles }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.path }}
+          if-no-files-found: error

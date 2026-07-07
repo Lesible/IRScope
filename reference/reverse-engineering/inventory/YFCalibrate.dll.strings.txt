@@ -1,0 +1,529 @@
+!This program cannot be run in DOS mode.
+=run=
+=Rich
+.text
+`.rdata
+@.data
+.rsrc
+@.reloc
+SVWP
+Y_^[
+SVWP
+Y_^[
+D$hSVW
+Y_^[
+L$h3
+_^[]
+_^[]
+PSVW
+Y_^[
+SVWP
+Y_^[
+SVWP
+Y_^[
+D$(d
+L$(d
+A(SV
+=_m
+|Y*f+
+TY(+
+f;D^
+f;D^
+=_m
+SVWy
+Q(tCHt'H
+=_m
+Jt2J
+]=`m
+QQP
+_^Y]
+h@m6
+SVWP
+Y_^[
+SVWP
+Y_^[
+MSQ
+Y_^[
+Y_^[
+gfff
+9Et
+PQVW
+D1 T
+9Et
+D1 T
+PQVW
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+9Et
+PQVW
+D$hd
+D$X`
+D$x
+D$hd
+D$X`
+PQSVW
+Y_^[
+PQSVW
+D1 T
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+D$pd
+D$(X
+L$@Q
+D$P|
+T$DR
+D$T$
+D$T(
+D$@X
+D$h`
+D$4(
+D$ X
+L$pd
+D$pd
+D$$X
+L$@Q
+D$Hx
+D$P|
+T$DR
+D$@@
+D$TH
+D$@X
+D$h`
+D$ X
+L$pd
+D1 0
+D1 T
+PQVW
+PQVW
+PQSVW
+Y_^[
+PQSVW
+D1 T
+Y_^[
+PSVW
+Y_^[
+PQSVW
+Y_^[
+PSVW
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+D9 0
+Y_^[
+D2 0
+PQSVW
+D9 T
+Y_^[
+D2 T
+PQSVW
+D9 0
+Y_^[
+PQSVW
+D9 T
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+_^[]
+2;1u
+t-Vj
+[^_
+E9F
+D$(d
+L~*f
+f;N$s
+L$(d
+Y_^[
+L$(d
+Y_^[
+=_m
+=_m
+t$VRP
+D$ d
+L$ d
+Y_^[
+L$ d
+Y_^[
+SVWP
+Y_^[
+8csm
+jhh
+t%Vh
+6jW
+QQS3
+VW9Eu29
+Y9]u
+;]rN
+@_^[
+u WPS
+uCWVS
+t%WVS
+Y__^[
+_^[]
+Y_^[
+Y_^[
+<$Xf
+;D$v
+L$u
+WVS3
+bad allocation
+could not convert calendar time to UTC time
+Day of month value is out of range 1..31
+Year is out of valid range: 1400..10000
+Day of month is not valid for year
+boost::lock_error
+boost::thread_resource_error
+ad.lua
+IR02
+T300
+A300
+C300
+V300
+S310
+M300
+T310
+compensation_ad
+boost shared_lock has no mutex
+boost shared_lock owns already the mutex
+string too long
+invalid string position
+E:\job\yfcam-core\dll\public\boost/exception/detail/exception_ptr.hpp
+class boost::exception_ptr __cdecl boost::exception_detail::get_static_exception_object<struct boost::exception_detail::bad_alloc_>(void)
+class boost::exception_ptr __cdecl boost::exception_detail::get_static_exception_object<struct boost::exception_detail::bad_exception_>(void)
+bad exception
+boost unique_lock has no mutex
+boost unique_lock owns already the mutex
+@33=@
+RSDS
+E:\job\yfcam-core\dll\bin\Release\YFCalibrate.pdb
+ReleaseSemaphore
+CloseHandle
+CreateSemaphoreA
+WaitForSingleObject
+GetSystemTimeAsFileTime
+GetModuleFileNameW
+WaitForMultipleObjects
+KERNEL32.dll
+?_Xout_of_range@std@@YAXPBD@Z
+?_Xlength_error@std@@YAXPBD@Z
+MSVCP100.dll
+??0greg_month@gregorian@boost@@QAE@G@Z
+boost_date_time-vc100-mt-1_52.dll
+?system_category@system@boost@@YAABVerror_category@12@XZ
+?generic_category@system@boost@@YAABVerror_category@12@XZ
+boost_system-vc100-mt-1_52.dll
+?yf_wstr_to_astr@YFCommon@@YG_NABV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+YFCommon.dll
+luaL_newstate
+lua_pushnumber
+lua_pcall
+luaL_loadfile
+lua_call
+luaL_checknumber
+luaL_openlibs
+lua_getfield
+lua_close
+lua_settop
+lua51.dll
+yf_lz77_uncompress
+yf_lz77_compress
+YFCodec.dll
+?what@exception@std@@UBEPBDXZ
+??1exception@std@@UAE@XZ
+??0exception@std@@QAE@ABQBD@Z
+??0exception@std@@QAE@ABQBDH@Z
+??0exception@std@@QAE@ABV01@@Z
+_gmtime64
+memmove
+fopen
+??_V@YAXPAX@Z
+_purecall
+??3@YAXPAX@Z
+fclose
+??2@YAPAXI@Z
+fflush
+fread
+fwrite
+fseek
+MSVCR100.dll
+?terminate@@YAXXZ
+_unlock
+__dllonexit
+_lock
+_onexit
+_malloc_crt
+free
+_encoded_null
+_initterm
+_initterm_e
+_amsg_exit
+__CppXcptFilter
+_crt_debugger_hook
+_except_handler4_common
+?_type_info_dtor_internal_method@type_info@@QAEXXZ
+__clean_type_info_names_internal
+EncodePointer
+DecodePointer
+InterlockedExchange
+Sleep
+InterlockedCompareExchange
+TerminateProcess
+GetCurrentProcess
+UnhandledExceptionFilter
+SetUnhandledExceptionFilter
+IsDebuggerPresent
+DisableThreadLibraryCalls
+QueryPerformanceCounter
+GetTickCount
+GetCurrentThreadId
+GetCurrentProcessId
+__CxxFrameHandler3
+memcpy
+_CxxThrowException
+memset
+IsProcessorFeaturePresent
+YFCalibrate.dll
+yf_calibrate_format_data
+yf_calibrate_get_AD_range
+yf_calibrate_get_auto_compensation_info
+yf_calibrate_get_base_temp_compensation
+yf_calibrate_get_calibrate_temp
+yf_calibrate_get_calibrate_temp_of_ad
+yf_calibrate_get_calibrate_temp_of_ad_ex
+yf_calibrate_get_calibrate_temp_of_meas
+yf_calibrate_get_data_no_compress
+yf_calibrate_get_detector_serial
+yf_calibrate_get_len
+yf_calibrate_get_machine_serial
+yf_calibrate_get_machine_type
+yf_calibrate_get_measurement_grade
+yf_calibrate_get_product_date
+yf_calibrate_get_productor
+yf_calibrate_get_real_AD_range
+yf_calibrate_get_sample_AD_and_temp
+yf_calibrate_get_sample_count
+yf_calibrate_get_size
+yf_calibrate_get_temp_lesser_interval_stable
+yf_calibrate_get_temp_range
+yf_calibrate_init
+yf_calibrate_is_support_measurement_grade
+yf_calibrate_is_valid_len
+yf_calibrate_is_valid_measgrade
+yf_calibrate_load_file
+yf_calibrate_parse_data
+yf_calibrate_save_calibrate
+yf_calibrate_set_AD_range
+yf_calibrate_set_auto_compensation_info
+yf_calibrate_set_base_temp_compensation
+yf_calibrate_set_calibrate_temp_of_meas
+yf_calibrate_set_correct_temp
+yf_calibrate_set_detector_serial
+yf_calibrate_set_len
+yf_calibrate_set_len_and_measurement_grade
+yf_calibrate_set_machine_serial
+yf_calibrate_set_machine_type
+yf_calibrate_set_measurement_grade
+yf_calibrate_set_product_date
+yf_calibrate_set_productor
+yf_calibrate_set_sample_AD_and_temp
+yf_calibrate_set_sample_count
+yf_calibrate_set_temp_lesser_interval_stable
+yf_calibrate_set_temp_range
+yf_calibrate_uninit
+.?AVtype_info@@
+.?AV?$sp_counted_impl_p@V?$clone_impl@Ubad_exception_@exception_detail@boost@@@exception_detail@boost@@@detail@boost@@
+.?AV?$sp_counted_impl_p@V?$clone_impl@Ubad_alloc_@exception_detail@boost@@@exception_detail@boost@@@detail@boost@@
+.?AVsp_counted_base@detail@boost@@
+.?AVruntime_error@std@@
+.?AVexception@std@@
+.?AVexception@boost@@
+.?AVclone_base@exception_detail@boost@@
+.?AVout_of_range@std@@
+.?AVlogic_error@std@@
+.?AVbad_alloc@std@@
+.?AVbad_exception@std@@
+CALIBRTE
+.?AV?$clone_impl@U?$error_info_injector@Vruntime_error@std@@@exception_detail@boost@@@exception_detail@boost@@
+.?AU?$error_info_injector@Vruntime_error@std@@@exception_detail@boost@@
+.?AV?$clone_impl@U?$error_info_injector@Ubad_day_of_month@gregorian@boost@@@exception_detail@boost@@@exception_detail@boost@@
+.?AU?$error_info_injector@Ubad_day_of_month@gregorian@boost@@@exception_detail@boost@@
+.?AUbad_day_of_month@gregorian@boost@@
+.?AV?$clone_impl@U?$error_info_injector@Vthread_resource_error@boost@@@exception_detail@boost@@@exception_detail@boost@@
+.?AU?$error_info_injector@Vthread_resource_error@boost@@@exception_detail@boost@@
+.?AVthread_resource_error@boost@@
+.?AVthread_exception@boost@@
+.?AVsystem_error@system@boost@@
+.?AV?$clone_impl@U?$error_info_injector@Vlock_error@boost@@@exception_detail@boost@@@exception_detail@boost@@
+.?AU?$error_info_injector@Vlock_error@boost@@@exception_detail@boost@@
+.?AVlock_error@boost@@
+.?AV?$clone_impl@U?$error_info_injector@Ubad_year@gregorian@boost@@@exception_detail@boost@@@exception_detail@boost@@
+.?AU?$error_info_injector@Ubad_year@gregorian@boost@@@exception_detail@boost@@
+.?AUbad_year@gregorian@boost@@
+.?AV?$clone_impl@Ubad_alloc_@exception_detail@boost@@@exception_detail@boost@@
+.?AUbad_alloc_@exception_detail@boost@@
+.?AV?$clone_impl@Ubad_exception_@exception_detail@boost@@@exception_detail@boost@@
+.?AUbad_exception_@exception_detail@boost@@
+YIQ5u
+YIQ5u
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+    <security>
+      <requestedPrivileges>
+        <requestedExecutionLevel level="asInvoker" uiAccess="false"></requestedExecutionLevel>
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+</assembly>PAPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDING
+02080H0N0[0
+1"1<1B1U1
+253;3J3U3
+4F4U4
+5L5P5T5
+516d6l6
+7&7<7T7j7p7
+808K8c8i8
+9?9Q9W9r9):f:x:~:
+<;<A<G<M<S<y<
+=<=v=
+=U>]>
+0/0^0
+2%232b2
+8%898M8a8u8
+0!3:3R3
+6074787<7@7U7i7o7
+8:8R8`8l8
+:?:k:
+?0?6?=?_?
+F0U0w0
+0d1j1
+1q2w2
+2*303
+6F7V7
+9*9/9:9\9
+=6=V=i=
+0<0C0V0g0
+161E1`1f1
+2<2C2V2g2
+363E3`3f3
+4"4;4V4f4
+5!5,5[5i5
+5+6V6f6
+7l7r7
+8F8V8q8|8
+9&9A9L9{9
+:':I:P:f:l:
+; ;&;?;h;o;
+<$<T<x<
+=6=<=e=
+>D>h>o>v>
+1%1,171J1Q1X1w1
+1I2X2c2
+3/3L3U3\3g3z3
+34y4
+5"5)505Q5f5v5
+6,626F6V6q6x6
+667F7a7h7~7
+7&868S8Z8y8
+9)909;9
+:$:/:
+;&;<;C;
+<0<L<R<Z<b<z<
+=a=n=s=x=}=
+>+>;>i>z>
+0$0>0F0T0{0
+0+1F1W1|1
+1+2F2W2|2
+223;3V3e3
+4&454O4
+5+5^5d5o5
+6N6T6_6
+67"7)7V7f7
+8/8:8l8
+9f9v9
+:V:f:
+:5;<;J;];c;i;o;u;
+;E<f<v<
+=E=L=Z=m=s=y=
+=U>v>
+?V?f?
+60F0l0
+01'1
+7-8X8c8z8
+9S9Z9a9o<
+<5=p=
+0i3{3
+;F<U<w<
+<]=l=r=y=
+=:>E>K>^>s>~>
+>?J?X?b?g?l?
+0)0>0C0I0a0f0r0
+1)1:1E1M1u1|1
+1@2m2
+3 3'3.353<3D3L3T3`3i3n3t3~3
+4[4`4p4v4|4
+4x5}5
+5.646:6@6Q6]6q6
+7"7>7:8@8F8<9D9I9r9
+9&:n:
+;N;f;~;
+;><a<i<t<
+<.=Z=
+>B>~>
+?L?z?
+0$1\1
+2'3J3b3g3r3w3
+\1`1d1h1x1
+5 5$5(5,5054585<5@5D5H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+6 6$6(6,6064686<6@6D6H6L6P6T6X6\6`6d6h6l6p6t6x6|6
+7 7$7(7,7074787<7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+74989
+:,:0:@:D:H:P:h:x:|:
+;$;(;8;<;@;D;H;L;P;X;p;
+< <$<4<8<<<@<D<H<L<T<l<|<
+= =$=4=8=<=@=D=H=L=P=X=p=
+>,>0>@>D>T>X>\>`>d>h>l>p>x>
+? ?8?H?L?\?`?p?t?x?|?
+0,000H0X0\0l0p0
+14181P1`1d1t1x1
+2 2$2(202H2X2\2l2p2t2x2|2
+3 3$3,3D3T3X3h3l3p3t3x3
+444D4H4X4\4d4|4
+5 5$54585<5@5H5`5p5t5
+6 6$6,6D6T6X6`6x6\7`7
+88 8(8<8D8X8`8t8|8
+9,949H9P9T9X9\9`9d9h9l9t9|9
+:$:,:@:H:L:P:T:X:\:`:d:h:p:x:
+; ;(;<;D;X;`;d;l;t;|;
+< <4<<<P<X<\<`<d<h<l<t<|<
+=P=d=p=x=
+>(>H>P>X>d>
+?0?<?\?h?
+<0L0`0t0
+1 1(10181D1d1l1t1
+2(2<2H2P2h2t2
+3 3(343T3`3
+4(4H4T4t4|4
+55,545@5`5h5p5|5
+66,686X6d6
+0$1P1p1
+282`2
+4$5P5x5

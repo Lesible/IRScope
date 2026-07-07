@@ -1,0 +1,1461 @@
+
+YFFileIdentify.dll:	file format coff-i386
+
+Disassembly of section .text:
+
+10001000 <yf_get_file_header_size>:
+10001000: 55                           	push	ebp
+10001001: 8b ec                        	mov	ebp, esp
+10001003: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001006: c7 00 18 00 00 00            	mov	dword ptr [eax], 0x18
+1000100c: b0 01                        	mov	al, 0x1
+1000100e: 5d                           	pop	ebp
+1000100f: c2 04 00                     	ret	0x4
+10001012: cc                           	int3
+10001013: cc                           	int3
+10001014: cc                           	int3
+10001015: cc                           	int3
+10001016: cc                           	int3
+10001017: cc                           	int3
+10001018: cc                           	int3
+10001019: cc                           	int3
+1000101a: cc                           	int3
+1000101b: cc                           	int3
+1000101c: cc                           	int3
+1000101d: cc                           	int3
+1000101e: cc                           	int3
+1000101f: cc                           	int3
+
+10001020 <yf_get_file_end_size>:
+10001020: 55                           	push	ebp
+10001021: 8b ec                        	mov	ebp, esp
+10001023: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001026: c7 00 1c 00 00 00            	mov	dword ptr [eax], 0x1c
+1000102c: b0 01                        	mov	al, 0x1
+1000102e: 5d                           	pop	ebp
+1000102f: c2 04 00                     	ret	0x4
+10001032: cc                           	int3
+10001033: cc                           	int3
+10001034: cc                           	int3
+10001035: cc                           	int3
+10001036: cc                           	int3
+10001037: cc                           	int3
+10001038: cc                           	int3
+10001039: cc                           	int3
+1000103a: cc                           	int3
+1000103b: cc                           	int3
+1000103c: cc                           	int3
+1000103d: cc                           	int3
+1000103e: cc                           	int3
+1000103f: cc                           	int3
+
+10001040 <yf_file_identify_init>:
+10001040: 55                           	push	ebp
+10001041: 8b ec                        	mov	ebp, esp
+10001043: 6a 24                        	push	0x24
+10001045: ff 15 78 20 00 10            	call	dword ptr [0x10002078]
+1000104b: 33 c9                        	xor	ecx, ecx
+1000104d: 83 c4 04                     	add	esp, 0x4
+10001050: 3b c1                        	cmp	eax, ecx
+10001052: 74 30                        	je	0x10001084 <yf_file_identify_init+0x44>
+10001054: 89 08                        	mov	dword ptr [eax], ecx
+10001056: 89 48 0c                     	mov	dword ptr [eax + 0xc], ecx
+10001059: 88 48 20                     	mov	byte ptr [eax + 0x20], cl
+1000105c: c7 40 08 ff ff ff ff         	mov	dword ptr [eax + 0x8], 0xffffffff
+10001063: 33 d2                        	xor	edx, edx
+10001065: 66 89 50 04                  	mov	word ptr [eax + 0x4], dx
+10001069: 66 89 50 06                  	mov	word ptr [eax + 0x6], dx
+1000106d: 89 48 10                     	mov	dword ptr [eax + 0x10], ecx
+10001070: 89 48 14                     	mov	dword ptr [eax + 0x14], ecx
+10001073: 89 48 18                     	mov	dword ptr [eax + 0x18], ecx
+10001076: 89 48 1c                     	mov	dword ptr [eax + 0x1c], ecx
+10001079: 8b 4d 08                     	mov	ecx, dword ptr [ebp + 0x8]
+1000107c: 89 01                        	mov	dword ptr [ecx], eax
+1000107e: b0 01                        	mov	al, 0x1
+10001080: 5d                           	pop	ebp
+10001081: c2 04 00                     	ret	0x4
+10001084: 8b 55 08                     	mov	edx, dword ptr [ebp + 0x8]
+10001087: 89 0a                        	mov	dword ptr [edx], ecx
+10001089: 32 c0                        	xor	al, al
+1000108b: 5d                           	pop	ebp
+1000108c: c2 04 00                     	ret	0x4
+1000108f: cc                           	int3
+
+10001090 <yf_file_identify_uninit>:
+10001090: 55                           	push	ebp
+10001091: 8b ec                        	mov	ebp, esp
+10001093: 56                           	push	esi
+10001094: 8b 75 08                     	mov	esi, dword ptr [ebp + 0x8]
+10001097: 8b 06                        	mov	eax, dword ptr [esi]
+10001099: 85 c0                        	test	eax, eax
+1000109b: 74 17                        	je	0x100010b4 <yf_file_identify_uninit+0x24>
+1000109d: 50                           	push	eax
+1000109e: ff 15 84 20 00 10            	call	dword ptr [0x10002084]
+100010a4: 83 c4 04                     	add	esp, 0x4
+100010a7: c7 06 00 00 00 00            	mov	dword ptr [esi], 0x0
+100010ad: b0 01                        	mov	al, 0x1
+100010af: 5e                           	pop	esi
+100010b0: 5d                           	pop	ebp
+100010b1: c2 04 00                     	ret	0x4
+100010b4: 32 c0                        	xor	al, al
+100010b6: 5e                           	pop	esi
+100010b7: 5d                           	pop	ebp
+100010b8: c2 04 00                     	ret	0x4
+100010bb: cc                           	int3
+100010bc: cc                           	int3
+100010bd: cc                           	int3
+100010be: cc                           	int3
+100010bf: cc                           	int3
+
+100010c0 <yf_write_file_header>:
+100010c0: 55                           	push	ebp
+100010c1: 8b ec                        	mov	ebp, esp
+100010c3: 53                           	push	ebx
+100010c4: 8b 5d 08                     	mov	ebx, dword ptr [ebp + 0x8]
+100010c7: 56                           	push	esi
+100010c8: 85 db                        	test	ebx, ebx
+100010ca: 74 5d                        	je	0x10001129 <yf_write_file_header+0x69>
+100010cc: 8b 75 0c                     	mov	esi, dword ptr [ebp + 0xc]
+100010cf: 85 f6                        	test	esi, esi
+100010d1: 74 56                        	je	0x10001129 <yf_write_file_header+0x69>
+100010d3: 57                           	push	edi
+100010d4: 8b 3d 80 20 00 10            	mov	edi, dword ptr [0x10002080]
+100010da: 56                           	push	esi
+100010db: 6a 04                        	push	0x4
+100010dd: 6a 01                        	push	0x1
+100010df: 68 28 30 00 10               	push	0x10003028
+100010e4: ff d7                        	call	edi
+100010e6: 56                           	push	esi
+100010e7: 6a 01                        	push	0x1
+100010e9: 6a 04                        	push	0x4
+100010eb: 53                           	push	ebx
+100010ec: ff d7                        	call	edi
+100010ee: 56                           	push	esi
+100010ef: 6a 01                        	push	0x1
+100010f1: 8d 43 04                     	lea	eax, [ebx + 0x4]
+100010f4: 6a 02                        	push	0x2
+100010f6: 50                           	push	eax
+100010f7: ff d7                        	call	edi
+100010f9: 56                           	push	esi
+100010fa: 6a 01                        	push	0x1
+100010fc: 8d 4b 06                     	lea	ecx, [ebx + 0x6]
+100010ff: 6a 02                        	push	0x2
+10001101: 51                           	push	ecx
+10001102: ff d7                        	call	edi
+10001104: 83 c4 40                     	add	esp, 0x40
+10001107: 56                           	push	esi
+10001108: 6a 08                        	push	0x8
+1000110a: 8d 53 10                     	lea	edx, [ebx + 0x10]
+1000110d: 6a 01                        	push	0x1
+1000110f: 52                           	push	edx
+10001110: ff d7                        	call	edi
+10001112: 56                           	push	esi
+10001113: 6a 01                        	push	0x1
+10001115: 6a 04                        	push	0x4
+10001117: 83 c3 08                     	add	ebx, 0x8
+1000111a: 53                           	push	ebx
+1000111b: ff d7                        	call	edi
+1000111d: 83 c4 20                     	add	esp, 0x20
+10001120: 5f                           	pop	edi
+10001121: 5e                           	pop	esi
+10001122: b0 01                        	mov	al, 0x1
+10001124: 5b                           	pop	ebx
+10001125: 5d                           	pop	ebp
+10001126: c2 08 00                     	ret	0x8
+10001129: 5e                           	pop	esi
+1000112a: 32 c0                        	xor	al, al
+1000112c: 5b                           	pop	ebx
+1000112d: 5d                           	pop	ebp
+1000112e: c2 08 00                     	ret	0x8
+10001131: cc                           	int3
+10001132: cc                           	int3
+10001133: cc                           	int3
+10001134: cc                           	int3
+10001135: cc                           	int3
+10001136: cc                           	int3
+10001137: cc                           	int3
+10001138: cc                           	int3
+10001139: cc                           	int3
+1000113a: cc                           	int3
+1000113b: cc                           	int3
+1000113c: cc                           	int3
+1000113d: cc                           	int3
+1000113e: cc                           	int3
+1000113f: cc                           	int3
+
+10001140 <yf_write_file_end>:
+10001140: 55                           	push	ebp
+10001141: 8b ec                        	mov	ebp, esp
+10001143: 53                           	push	ebx
+10001144: 8b 5d 08                     	mov	ebx, dword ptr [ebp + 0x8]
+10001147: 56                           	push	esi
+10001148: 85 db                        	test	ebx, ebx
+1000114a: 74 3c                        	je	0x10001188 <yf_write_file_end+0x48>
+1000114c: 8b 75 0c                     	mov	esi, dword ptr [ebp + 0xc]
+1000114f: 85 f6                        	test	esi, esi
+10001151: 74 35                        	je	0x10001188 <yf_write_file_end+0x48>
+10001153: 57                           	push	edi
+10001154: 8b 3d 80 20 00 10            	mov	edi, dword ptr [0x10002080]
+1000115a: 56                           	push	esi
+1000115b: 6a 01                        	push	0x1
+1000115d: 8d 43 0c                     	lea	eax, [ebx + 0xc]
+10001160: 6a 04                        	push	0x4
+10001162: 50                           	push	eax
+10001163: ff d7                        	call	edi
+10001165: 56                           	push	esi
+10001166: 6a 08                        	push	0x8
+10001168: 6a 01                        	push	0x1
+1000116a: 83 c3 18                     	add	ebx, 0x18
+1000116d: 53                           	push	ebx
+1000116e: ff d7                        	call	edi
+10001170: 56                           	push	esi
+10001171: 6a 10                        	push	0x10
+10001173: 6a 01                        	push	0x1
+10001175: 68 18 30 00 10               	push	0x10003018
+1000117a: ff d7                        	call	edi
+1000117c: 83 c4 30                     	add	esp, 0x30
+1000117f: 5f                           	pop	edi
+10001180: 5e                           	pop	esi
+10001181: b0 01                        	mov	al, 0x1
+10001183: 5b                           	pop	ebx
+10001184: 5d                           	pop	ebp
+10001185: c2 08 00                     	ret	0x8
+10001188: 5e                           	pop	esi
+10001189: 32 c0                        	xor	al, al
+1000118b: 5b                           	pop	ebx
+1000118c: 5d                           	pop	ebp
+1000118d: c2 08 00                     	ret	0x8
+
+10001190 <yf_parse_file_header>:
+10001190: 55                           	push	ebp
+10001191: 8b ec                        	mov	ebp, esp
+10001193: 83 ec 1c                     	sub	esp, 0x1c
+10001196: a1 00 30 00 10               	mov	eax, dword ptr [0x10003000]
+1000119b: 33 c5                        	xor	eax, ebp
+1000119d: 89 45 fc                     	mov	dword ptr [ebp - 0x4], eax
+100011a0: 8b 45 0c                     	mov	eax, dword ptr [ebp + 0xc]
+100011a3: 56                           	push	esi
+100011a4: 8b 75 08                     	mov	esi, dword ptr [ebp + 0x8]
+100011a7: 85 f6                        	test	esi, esi
+100011a9: 0f 84 9d 00 00 00            	je	0x1000124c <yf_parse_file_header+0xbc>
+100011af: 85 c0                        	test	eax, eax
+100011b1: 0f 84 95 00 00 00            	je	0x1000124c <yf_parse_file_header+0xbc>
+100011b7: 50                           	push	eax
+100011b8: 6a 18                        	push	0x18
+100011ba: 8d 45 e4                     	lea	eax, [ebp - 0x1c]
+100011bd: 6a 01                        	push	0x1
+100011bf: 50                           	push	eax
+100011c0: ff 15 8c 20 00 10            	call	dword ptr [0x1000208c]
+100011c6: 8b 4d e4                     	mov	ecx, dword ptr [ebp - 0x1c]
+100011c9: 8b 15 28 30 00 10            	mov	edx, dword ptr [0x10003028]
+100011cf: 83 c4 10                     	add	esp, 0x10
+100011d2: 3b ca                        	cmp	ecx, edx
+100011d4: 74 3c                        	je	0x10001212 <yf_parse_file_header+0x82>
+100011d6: 57                           	push	edi
+100011d7: 0f b6 fa                     	movzx	edi, dl
+100011da: 0f b6 c1                     	movzx	eax, cl
+100011dd: 2b c7                        	sub	eax, edi
+100011df: 5f                           	pop	edi
+100011e0: 75 28                        	jne	0x1000120a <yf_parse_file_header+0x7a>
+100011e2: 0f b6 d6                     	movzx	edx, dh
+100011e5: 0f b6 c5                     	movzx	eax, ch
+100011e8: 2b c2                        	sub	eax, edx
+100011ea: 75 1e                        	jne	0x1000120a <yf_parse_file_header+0x7a>
+100011ec: 0f b6 0d 2a 30 00 10         	movzx	ecx, byte ptr [0x1000302a]
+100011f3: 0f b6 45 e6                  	movzx	eax, byte ptr [ebp - 0x1a]
+100011f7: 2b c1                        	sub	eax, ecx
+100011f9: 75 0f                        	jne	0x1000120a <yf_parse_file_header+0x7a>
+100011fb: 0f b6 15 2b 30 00 10         	movzx	edx, byte ptr [0x1000302b]
+10001202: 0f b6 45 e7                  	movzx	eax, byte ptr [ebp - 0x19]
+10001206: 2b c2                        	sub	eax, edx
+10001208: 74 08                        	je	0x10001212 <yf_parse_file_header+0x82>
+1000120a: c1 f8 1f                     	sar	eax, 0x1f
+1000120d: 83 c8 01                     	or	eax, 0x1
+10001210: 75 3a                        	jne	0x1000124c <yf_parse_file_header+0xbc>
+10001212: 83 7d f8 ff                  	cmp	dword ptr [ebp - 0x8], -0x1
+10001216: 75 34                        	jne	0x1000124c <yf_parse_file_header+0xbc>
+10001218: 8b 45 f0                     	mov	eax, dword ptr [ebp - 0x10]
+1000121b: 8b 4d f4                     	mov	ecx, dword ptr [ebp - 0xc]
+1000121e: 8b 55 e8                     	mov	edx, dword ptr [ebp - 0x18]
+10001221: 89 46 10                     	mov	dword ptr [esi + 0x10], eax
+10001224: 66 8b 45 ec                  	mov	ax, word ptr [ebp - 0x14]
+10001228: 89 4e 14                     	mov	dword ptr [esi + 0x14], ecx
+1000122b: 66 8b 4d ee                  	mov	cx, word ptr [ebp - 0x12]
+1000122f: 66 89 46 04                  	mov	word ptr [esi + 0x4], ax
+10001233: 89 16                        	mov	dword ptr [esi], edx
+10001235: 66 89 4e 06                  	mov	word ptr [esi + 0x6], cx
+10001239: b0 01                        	mov	al, 0x1
+1000123b: 5e                           	pop	esi
+1000123c: 8b 4d fc                     	mov	ecx, dword ptr [ebp - 0x4]
+1000123f: 33 cd                        	xor	ecx, ebp
+10001241: e8 42 03 00 00               	call	0x10001588 <yf_get_record_time_end+0x28>
+10001246: 8b e5                        	mov	esp, ebp
+10001248: 5d                           	pop	ebp
+10001249: c2 08 00                     	ret	0x8
+1000124c: 8b 4d fc                     	mov	ecx, dword ptr [ebp - 0x4]
+1000124f: 33 cd                        	xor	ecx, ebp
+10001251: 32 c0                        	xor	al, al
+10001253: 5e                           	pop	esi
+10001254: e8 2f 03 00 00               	call	0x10001588 <yf_get_record_time_end+0x28>
+10001259: 8b e5                        	mov	esp, ebp
+1000125b: 5d                           	pop	ebp
+1000125c: c2 08 00                     	ret	0x8
+1000125f: cc                           	int3
+
+10001260 <yf_parse_file_end>:
+10001260: 55                           	push	ebp
+10001261: 8b ec                        	mov	ebp, esp
+10001263: 83 ec 20                     	sub	esp, 0x20
+10001266: a1 00 30 00 10               	mov	eax, dword ptr [0x10003000]
+1000126b: 33 c5                        	xor	eax, ebp
+1000126d: 89 45 fc                     	mov	dword ptr [ebp - 0x4], eax
+10001270: 56                           	push	esi
+10001271: 8b 75 0c                     	mov	esi, dword ptr [ebp + 0xc]
+10001274: 57                           	push	edi
+10001275: 8b 7d 08                     	mov	edi, dword ptr [ebp + 0x8]
+10001278: 85 ff                        	test	edi, edi
+1000127a: 0f 84 aa 00 00 00            	je	0x1000132a <yf_parse_file_end+0xca>
+10001280: 85 f6                        	test	esi, esi
+10001282: 0f 84 a2 00 00 00            	je	0x1000132a <yf_parse_file_end+0xca>
+10001288: 6a 02                        	push	0x2
+1000128a: 6a e4                        	push	-0x1c
+1000128c: 56                           	push	esi
+1000128d: c6 47 20 01                  	mov	byte ptr [edi + 0x20], 0x1
+10001291: ff 15 7c 20 00 10            	call	dword ptr [0x1000207c]
+10001297: 56                           	push	esi
+10001298: 6a 1c                        	push	0x1c
+1000129a: 8d 45 e0                     	lea	eax, [ebp - 0x20]
+1000129d: 6a 01                        	push	0x1
+1000129f: 50                           	push	eax
+100012a0: ff 15 8c 20 00 10            	call	dword ptr [0x1000208c]
+100012a6: 83 c4 1c                     	add	esp, 0x1c
+100012a9: b8 10 00 00 00               	mov	eax, 0x10
+100012ae: b9 18 30 00 10               	mov	ecx, 0x10003018
+100012b3: 8d 55 ec                     	lea	edx, [ebp - 0x14]
+100012b6: 8b 32                        	mov	esi, dword ptr [edx]
+100012b8: 3b 31                        	cmp	esi, dword ptr [ecx]
+100012ba: 75 10                        	jne	0x100012cc <yf_parse_file_end+0x6c>
+100012bc: 83 e8 04                     	sub	eax, 0x4
+100012bf: 83 c1 04                     	add	ecx, 0x4
+100012c2: 83 c2 04                     	add	edx, 0x4
+100012c5: 83 f8 04                     	cmp	eax, 0x4
+100012c8: 73 ec                        	jae	0x100012b6 <yf_parse_file_end+0x56>
+100012ca: eb 34                        	jmp	0x10001300 <yf_parse_file_end+0xa0>
+100012cc: 0f b6 02                     	movzx	eax, byte ptr [edx]
+100012cf: 0f b6 31                     	movzx	esi, byte ptr [ecx]
+100012d2: 2b c6                        	sub	eax, esi
+100012d4: 75 22                        	jne	0x100012f8 <yf_parse_file_end+0x98>
+100012d6: 0f b6 42 01                  	movzx	eax, byte ptr [edx + 0x1]
+100012da: 0f b6 71 01                  	movzx	esi, byte ptr [ecx + 0x1]
+100012de: 2b c6                        	sub	eax, esi
+100012e0: 75 16                        	jne	0x100012f8 <yf_parse_file_end+0x98>
+100012e2: 0f b6 42 02                  	movzx	eax, byte ptr [edx + 0x2]
+100012e6: 0f b6 71 02                  	movzx	esi, byte ptr [ecx + 0x2]
+100012ea: 2b c6                        	sub	eax, esi
+100012ec: 75 0a                        	jne	0x100012f8 <yf_parse_file_end+0x98>
+100012ee: 0f b6 42 03                  	movzx	eax, byte ptr [edx + 0x3]
+100012f2: 0f b6 49 03                  	movzx	ecx, byte ptr [ecx + 0x3]
+100012f6: 2b c1                        	sub	eax, ecx
+100012f8: c1 f8 1f                     	sar	eax, 0x1f
+100012fb: 83 c8 01                     	or	eax, 0x1
+100012fe: 75 2a                        	jne	0x1000132a <yf_parse_file_end+0xca>
+10001300: 8b 45 e4                     	mov	eax, dword ptr [ebp - 0x1c]
+10001303: 8b 55 e0                     	mov	edx, dword ptr [ebp - 0x20]
+10001306: 8b 4d e8                     	mov	ecx, dword ptr [ebp - 0x18]
+10001309: 89 47 18                     	mov	dword ptr [edi + 0x18], eax
+1000130c: 89 57 0c                     	mov	dword ptr [edi + 0xc], edx
+1000130f: 89 4f 1c                     	mov	dword ptr [edi + 0x1c], ecx
+10001312: c6 47 20 00                  	mov	byte ptr [edi + 0x20], 0x0
+10001316: 5f                           	pop	edi
+10001317: b0 01                        	mov	al, 0x1
+10001319: 5e                           	pop	esi
+1000131a: 8b 4d fc                     	mov	ecx, dword ptr [ebp - 0x4]
+1000131d: 33 cd                        	xor	ecx, ebp
+1000131f: e8 64 02 00 00               	call	0x10001588 <yf_get_record_time_end+0x28>
+10001324: 8b e5                        	mov	esp, ebp
+10001326: 5d                           	pop	ebp
+10001327: c2 08 00                     	ret	0x8
+1000132a: 8b 4d fc                     	mov	ecx, dword ptr [ebp - 0x4]
+1000132d: 5f                           	pop	edi
+1000132e: 33 cd                        	xor	ecx, ebp
+10001330: 32 c0                        	xor	al, al
+10001332: 5e                           	pop	esi
+10001333: e8 50 02 00 00               	call	0x10001588 <yf_get_record_time_end+0x28>
+10001338: 8b e5                        	mov	esp, ebp
+1000133a: 5d                           	pop	ebp
+1000133b: c2 08 00                     	ret	0x8
+1000133e: cc                           	int3
+1000133f: cc                           	int3
+
+10001340 <yf_need_repair>:
+10001340: 55                           	push	ebp
+10001341: 8b ec                        	mov	ebp, esp
+10001343: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001346: 85 c0                        	test	eax, eax
+10001348: 74 12                        	je	0x1000135c <yf_need_repair+0x1c>
+1000134a: 8a 48 20                     	mov	cl, byte ptr [eax + 0x20]
+1000134d: 8b 55 0c                     	mov	edx, dword ptr [ebp + 0xc]
+10001350: 88 0a                        	mov	byte ptr [edx], cl
+10001352: c6 40 20 00                  	mov	byte ptr [eax + 0x20], 0x0
+10001356: b0 01                        	mov	al, 0x1
+10001358: 5d                           	pop	ebp
+10001359: c2 08 00                     	ret	0x8
+1000135c: 32 c0                        	xor	al, al
+1000135e: 5d                           	pop	ebp
+1000135f: c2 08 00                     	ret	0x8
+10001362: cc                           	int3
+10001363: cc                           	int3
+10001364: cc                           	int3
+10001365: cc                           	int3
+10001366: cc                           	int3
+10001367: cc                           	int3
+10001368: cc                           	int3
+10001369: cc                           	int3
+1000136a: cc                           	int3
+1000136b: cc                           	int3
+1000136c: cc                           	int3
+1000136d: cc                           	int3
+1000136e: cc                           	int3
+1000136f: cc                           	int3
+
+10001370 <yf_get_img_width>:
+10001370: 55                           	push	ebp
+10001371: 8b ec                        	mov	ebp, esp
+10001373: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001376: 85 c0                        	test	eax, eax
+10001378: 74 10                        	je	0x1000138a <yf_get_img_width+0x1a>
+1000137a: 66 8b 40 04                  	mov	ax, word ptr [eax + 0x4]
+1000137e: 8b 4d 0c                     	mov	ecx, dword ptr [ebp + 0xc]
+10001381: 66 89 01                     	mov	word ptr [ecx], ax
+10001384: b0 01                        	mov	al, 0x1
+10001386: 5d                           	pop	ebp
+10001387: c2 08 00                     	ret	0x8
+1000138a: 32 c0                        	xor	al, al
+1000138c: 5d                           	pop	ebp
+1000138d: c2 08 00                     	ret	0x8
+
+10001390 <yf_get_img_height>:
+10001390: 55                           	push	ebp
+10001391: 8b ec                        	mov	ebp, esp
+10001393: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001396: 85 c0                        	test	eax, eax
+10001398: 74 10                        	je	0x100013aa <yf_get_img_height+0x1a>
+1000139a: 66 8b 40 06                  	mov	ax, word ptr [eax + 0x6]
+1000139e: 8b 4d 0c                     	mov	ecx, dword ptr [ebp + 0xc]
+100013a1: 66 89 01                     	mov	word ptr [ecx], ax
+100013a4: b0 01                        	mov	al, 0x1
+100013a6: 5d                           	pop	ebp
+100013a7: c2 08 00                     	ret	0x8
+100013aa: 32 c0                        	xor	al, al
+100013ac: 5d                           	pop	ebp
+100013ad: c2 08 00                     	ret	0x8
+
+100013b0 <yf_get_img_size>:
+100013b0: 55                           	push	ebp
+100013b1: 8b ec                        	mov	ebp, esp
+100013b3: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+100013b6: 85 c0                        	test	eax, eax
+100013b8: 74 1a                        	je	0x100013d4 <yf_get_img_size+0x24>
+100013ba: 66 8b 48 04                  	mov	cx, word ptr [eax + 0x4]
+100013be: 8b 55 0c                     	mov	edx, dword ptr [ebp + 0xc]
+100013c1: 66 89 0a                     	mov	word ptr [edx], cx
+100013c4: 66 8b 40 06                  	mov	ax, word ptr [eax + 0x6]
+100013c8: 8b 4d 10                     	mov	ecx, dword ptr [ebp + 0x10]
+100013cb: 66 89 01                     	mov	word ptr [ecx], ax
+100013ce: b0 01                        	mov	al, 0x1
+100013d0: 5d                           	pop	ebp
+100013d1: c2 0c 00                     	ret	0xc
+100013d4: 32 c0                        	xor	al, al
+100013d6: 5d                           	pop	ebp
+100013d7: c2 0c 00                     	ret	0xc
+100013da: cc                           	int3
+100013db: cc                           	int3
+100013dc: cc                           	int3
+100013dd: cc                           	int3
+100013de: cc                           	int3
+100013df: cc                           	int3
+
+100013e0 <yf_set_img_width>:
+100013e0: 55                           	push	ebp
+100013e1: 8b ec                        	mov	ebp, esp
+100013e3: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+100013e6: 85 c0                        	test	eax, eax
+100013e8: 74 0e                        	je	0x100013f8 <yf_set_img_width+0x18>
+100013ea: 66 8b 4d 0c                  	mov	cx, word ptr [ebp + 0xc]
+100013ee: 66 89 48 04                  	mov	word ptr [eax + 0x4], cx
+100013f2: b0 01                        	mov	al, 0x1
+100013f4: 5d                           	pop	ebp
+100013f5: c2 08 00                     	ret	0x8
+100013f8: 32 c0                        	xor	al, al
+100013fa: 5d                           	pop	ebp
+100013fb: c2 08 00                     	ret	0x8
+100013fe: cc                           	int3
+100013ff: cc                           	int3
+
+10001400 <yf_set_img_height>:
+10001400: 55                           	push	ebp
+10001401: 8b ec                        	mov	ebp, esp
+10001403: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001406: 85 c0                        	test	eax, eax
+10001408: 74 0e                        	je	0x10001418 <yf_set_img_height+0x18>
+1000140a: 66 8b 4d 0c                  	mov	cx, word ptr [ebp + 0xc]
+1000140e: 66 89 48 06                  	mov	word ptr [eax + 0x6], cx
+10001412: b0 01                        	mov	al, 0x1
+10001414: 5d                           	pop	ebp
+10001415: c2 08 00                     	ret	0x8
+10001418: 32 c0                        	xor	al, al
+1000141a: 5d                           	pop	ebp
+1000141b: c2 08 00                     	ret	0x8
+1000141e: cc                           	int3
+1000141f: cc                           	int3
+
+10001420 <yf_set_img_size>:
+10001420: 55                           	push	ebp
+10001421: 8b ec                        	mov	ebp, esp
+10001423: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001426: 85 c0                        	test	eax, eax
+10001428: 74 16                        	je	0x10001440 <yf_set_img_size+0x20>
+1000142a: 66 8b 4d 0c                  	mov	cx, word ptr [ebp + 0xc]
+1000142e: 66 8b 55 10                  	mov	dx, word ptr [ebp + 0x10]
+10001432: 66 89 48 04                  	mov	word ptr [eax + 0x4], cx
+10001436: 66 89 50 06                  	mov	word ptr [eax + 0x6], dx
+1000143a: b0 01                        	mov	al, 0x1
+1000143c: 5d                           	pop	ebp
+1000143d: c2 0c 00                     	ret	0xc
+10001440: 32 c0                        	xor	al, al
+10001442: 5d                           	pop	ebp
+10001443: c2 0c 00                     	ret	0xc
+10001446: cc                           	int3
+10001447: cc                           	int3
+10001448: cc                           	int3
+10001449: cc                           	int3
+1000144a: cc                           	int3
+1000144b: cc                           	int3
+1000144c: cc                           	int3
+1000144d: cc                           	int3
+1000144e: cc                           	int3
+1000144f: cc                           	int3
+
+10001450 <yf_set_version>:
+10001450: 55                           	push	ebp
+10001451: 8b ec                        	mov	ebp, esp
+10001453: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001456: 85 c0                        	test	eax, eax
+10001458: 74 0b                        	je	0x10001465 <yf_set_version+0x15>
+1000145a: 8b 4d 0c                     	mov	ecx, dword ptr [ebp + 0xc]
+1000145d: 89 08                        	mov	dword ptr [eax], ecx
+1000145f: b0 01                        	mov	al, 0x1
+10001461: 5d                           	pop	ebp
+10001462: c2 08 00                     	ret	0x8
+10001465: 32 c0                        	xor	al, al
+10001467: 5d                           	pop	ebp
+10001468: c2 08 00                     	ret	0x8
+1000146b: cc                           	int3
+1000146c: cc                           	int3
+1000146d: cc                           	int3
+1000146e: cc                           	int3
+1000146f: cc                           	int3
+
+10001470 <yf_get_version>:
+10001470: 55                           	push	ebp
+10001471: 8b ec                        	mov	ebp, esp
+10001473: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001476: 85 c0                        	test	eax, eax
+10001478: 74 0d                        	je	0x10001487 <yf_get_version+0x17>
+1000147a: 8b 00                        	mov	eax, dword ptr [eax]
+1000147c: 8b 4d 0c                     	mov	ecx, dword ptr [ebp + 0xc]
+1000147f: 89 01                        	mov	dword ptr [ecx], eax
+10001481: b0 01                        	mov	al, 0x1
+10001483: 5d                           	pop	ebp
+10001484: c2 08 00                     	ret	0x8
+10001487: 32 c0                        	xor	al, al
+10001489: 5d                           	pop	ebp
+1000148a: c2 08 00                     	ret	0x8
+1000148d: cc                           	int3
+1000148e: cc                           	int3
+1000148f: cc                           	int3
+
+10001490 <yf_set_total_frames>:
+10001490: 55                           	push	ebp
+10001491: 8b ec                        	mov	ebp, esp
+10001493: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001496: 85 c0                        	test	eax, eax
+10001498: 74 0c                        	je	0x100014a6 <yf_set_total_frames+0x16>
+1000149a: 8b 4d 0c                     	mov	ecx, dword ptr [ebp + 0xc]
+1000149d: 89 48 0c                     	mov	dword ptr [eax + 0xc], ecx
+100014a0: b0 01                        	mov	al, 0x1
+100014a2: 5d                           	pop	ebp
+100014a3: c2 08 00                     	ret	0x8
+100014a6: 32 c0                        	xor	al, al
+100014a8: 5d                           	pop	ebp
+100014a9: c2 08 00                     	ret	0x8
+100014ac: cc                           	int3
+100014ad: cc                           	int3
+100014ae: cc                           	int3
+100014af: cc                           	int3
+
+100014b0 <yf_get_total_frames>:
+100014b0: 55                           	push	ebp
+100014b1: 8b ec                        	mov	ebp, esp
+100014b3: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+100014b6: 85 c0                        	test	eax, eax
+100014b8: 74 0e                        	je	0x100014c8 <yf_get_total_frames+0x18>
+100014ba: 8b 40 0c                     	mov	eax, dword ptr [eax + 0xc]
+100014bd: 8b 4d 0c                     	mov	ecx, dword ptr [ebp + 0xc]
+100014c0: 89 01                        	mov	dword ptr [ecx], eax
+100014c2: b0 01                        	mov	al, 0x1
+100014c4: 5d                           	pop	ebp
+100014c5: c2 08 00                     	ret	0x8
+100014c8: 32 c0                        	xor	al, al
+100014ca: 5d                           	pop	ebp
+100014cb: c2 08 00                     	ret	0x8
+100014ce: cc                           	int3
+100014cf: cc                           	int3
+
+100014d0 <yf_set_record_time_start>:
+100014d0: 55                           	push	ebp
+100014d1: 8b ec                        	mov	ebp, esp
+100014d3: 8b 4d 08                     	mov	ecx, dword ptr [ebp + 0x8]
+100014d6: 85 c9                        	test	ecx, ecx
+100014d8: 74 18                        	je	0x100014f2 <yf_set_record_time_start+0x22>
+100014da: 8b 45 0c                     	mov	eax, dword ptr [ebp + 0xc]
+100014dd: 85 c0                        	test	eax, eax
+100014df: 74 11                        	je	0x100014f2 <yf_set_record_time_start+0x22>
+100014e1: 8b 10                        	mov	edx, dword ptr [eax]
+100014e3: 89 51 10                     	mov	dword ptr [ecx + 0x10], edx
+100014e6: 8b 40 04                     	mov	eax, dword ptr [eax + 0x4]
+100014e9: 89 41 14                     	mov	dword ptr [ecx + 0x14], eax
+100014ec: b0 01                        	mov	al, 0x1
+100014ee: 5d                           	pop	ebp
+100014ef: c2 08 00                     	ret	0x8
+100014f2: 32 c0                        	xor	al, al
+100014f4: 5d                           	pop	ebp
+100014f5: c2 08 00                     	ret	0x8
+100014f8: cc                           	int3
+100014f9: cc                           	int3
+100014fa: cc                           	int3
+100014fb: cc                           	int3
+100014fc: cc                           	int3
+100014fd: cc                           	int3
+100014fe: cc                           	int3
+100014ff: cc                           	int3
+
+10001500 <yf_get_record_time_start>:
+10001500: 55                           	push	ebp
+10001501: 8b ec                        	mov	ebp, esp
+10001503: 8b 4d 08                     	mov	ecx, dword ptr [ebp + 0x8]
+10001506: 85 c9                        	test	ecx, ecx
+10001508: 74 18                        	je	0x10001522 <yf_get_record_time_start+0x22>
+1000150a: 8b 45 0c                     	mov	eax, dword ptr [ebp + 0xc]
+1000150d: 85 c0                        	test	eax, eax
+1000150f: 74 11                        	je	0x10001522 <yf_get_record_time_start+0x22>
+10001511: 8b 51 10                     	mov	edx, dword ptr [ecx + 0x10]
+10001514: 89 10                        	mov	dword ptr [eax], edx
+10001516: 8b 49 14                     	mov	ecx, dword ptr [ecx + 0x14]
+10001519: 89 48 04                     	mov	dword ptr [eax + 0x4], ecx
+1000151c: b0 01                        	mov	al, 0x1
+1000151e: 5d                           	pop	ebp
+1000151f: c2 08 00                     	ret	0x8
+10001522: 32 c0                        	xor	al, al
+10001524: 5d                           	pop	ebp
+10001525: c2 08 00                     	ret	0x8
+10001528: cc                           	int3
+10001529: cc                           	int3
+1000152a: cc                           	int3
+1000152b: cc                           	int3
+1000152c: cc                           	int3
+1000152d: cc                           	int3
+1000152e: cc                           	int3
+1000152f: cc                           	int3
+
+10001530 <yf_set_record_time_end>:
+10001530: 55                           	push	ebp
+10001531: 8b ec                        	mov	ebp, esp
+10001533: 8b 4d 08                     	mov	ecx, dword ptr [ebp + 0x8]
+10001536: 85 c9                        	test	ecx, ecx
+10001538: 74 18                        	je	0x10001552 <yf_set_record_time_end+0x22>
+1000153a: 8b 45 0c                     	mov	eax, dword ptr [ebp + 0xc]
+1000153d: 85 c0                        	test	eax, eax
+1000153f: 74 11                        	je	0x10001552 <yf_set_record_time_end+0x22>
+10001541: 8b 10                        	mov	edx, dword ptr [eax]
+10001543: 89 51 18                     	mov	dword ptr [ecx + 0x18], edx
+10001546: 8b 40 04                     	mov	eax, dword ptr [eax + 0x4]
+10001549: 89 41 1c                     	mov	dword ptr [ecx + 0x1c], eax
+1000154c: b0 01                        	mov	al, 0x1
+1000154e: 5d                           	pop	ebp
+1000154f: c2 08 00                     	ret	0x8
+10001552: 32 c0                        	xor	al, al
+10001554: 5d                           	pop	ebp
+10001555: c2 08 00                     	ret	0x8
+10001558: cc                           	int3
+10001559: cc                           	int3
+1000155a: cc                           	int3
+1000155b: cc                           	int3
+1000155c: cc                           	int3
+1000155d: cc                           	int3
+1000155e: cc                           	int3
+1000155f: cc                           	int3
+
+10001560 <yf_get_record_time_end>:
+10001560: 55                           	push	ebp
+10001561: 8b ec                        	mov	ebp, esp
+10001563: 8b 4d 08                     	mov	ecx, dword ptr [ebp + 0x8]
+10001566: 85 c9                        	test	ecx, ecx
+10001568: 74 18                        	je	0x10001582 <yf_get_record_time_end+0x22>
+1000156a: 8b 45 0c                     	mov	eax, dword ptr [ebp + 0xc]
+1000156d: 85 c0                        	test	eax, eax
+1000156f: 74 11                        	je	0x10001582 <yf_get_record_time_end+0x22>
+10001571: 8b 51 18                     	mov	edx, dword ptr [ecx + 0x18]
+10001574: 89 10                        	mov	dword ptr [eax], edx
+10001576: 8b 49 1c                     	mov	ecx, dword ptr [ecx + 0x1c]
+10001579: 89 48 04                     	mov	dword ptr [eax + 0x4], ecx
+1000157c: b0 01                        	mov	al, 0x1
+1000157e: 5d                           	pop	ebp
+1000157f: c2 08 00                     	ret	0x8
+10001582: 32 c0                        	xor	al, al
+10001584: 5d                           	pop	ebp
+10001585: c2 08 00                     	ret	0x8
+10001588: 3b 0d 00 30 00 10            	cmp	ecx, dword ptr [0x10003000]
+1000158e: 75 02                        	jne	0x10001592 <yf_get_record_time_end+0x32>
+10001590: f3 c3                        	rep		ret
+10001592: e9 91 03 00 00               	jmp	0x10001928 <yf_get_record_time_end+0x3c8>
+10001597: 8b ff                        	mov	edi, edi
+10001599: 56                           	push	esi
+1000159a: 68 80 00 00 00               	push	0x80
+1000159f: ff 15 74 20 00 10            	call	dword ptr [0x10002074]
+100015a5: 59                           	pop	ecx
+100015a6: 8b f0                        	mov	esi, eax
+100015a8: 56                           	push	esi
+100015a9: ff 15 38 20 00 10            	call	dword ptr [0x10002038]
+100015af: a3 70 33 00 10               	mov	dword ptr [0x10003370], eax
+100015b4: a3 6c 33 00 10               	mov	dword ptr [0x1000336c], eax
+100015b9: 85 f6                        	test	esi, esi
+100015bb: 75 05                        	jne	0x100015c2 <yf_get_record_time_end+0x62>
+100015bd: 33 c0                        	xor	eax, eax
+100015bf: 40                           	inc	eax
+100015c0: 5e                           	pop	esi
+100015c1: c3                           	ret
+100015c2: 83 26 00                     	and	dword ptr [esi], 0x0
+100015c5: e8 28 05 00 00               	call	0x10001af2 <yf_get_record_time_end+0x592>
+100015ca: 68 18 1b 00 10               	push	0x10001b18
+100015cf: e8 07 05 00 00               	call	0x10001adb <yf_get_record_time_end+0x57b>
+100015d4: c7 04 24 2e 1a 00 10         	mov	dword ptr [esp], 0x10001a2e
+100015db: e8 fb 04 00 00               	call	0x10001adb <yf_get_record_time_end+0x57b>
+100015e0: 59                           	pop	ecx
+100015e1: 33 c0                        	xor	eax, eax
+100015e3: 5e                           	pop	esi
+100015e4: c3                           	ret
+100015e5: 8b ff                        	mov	edi, edi
+100015e7: 55                           	push	ebp
+100015e8: 8b ec                        	mov	ebp, esp
+100015ea: 51                           	push	ecx
+100015eb: 51                           	push	ecx
+100015ec: 53                           	push	ebx
+100015ed: 33 c0                        	xor	eax, eax
+100015ef: 56                           	push	esi
+100015f0: 57                           	push	edi
+100015f1: 39 45 0c                     	cmp	dword ptr [ebp + 0xc], eax
+100015f4: 75 32                        	jne	0x10001628 <yf_get_record_time_end+0xc8>
+100015f6: 39 05 30 30 00 10            	cmp	dword ptr [0x10003030], eax
+100015fc: 7e 23                        	jle	0x10001621 <yf_get_record_time_end+0xc1>
+100015fe: 64 a1 18 00 00 00            	mov	eax, dword ptr fs:[0x18]
+10001604: ff 0d 30 30 00 10            	dec	dword ptr [0x10003030]
+1000160a: 8b 58 04                     	mov	ebx, dword ptr [eax + 0x4]
+1000160d: 83 65 fc 00                  	and	dword ptr [ebp - 0x4], 0x0
+10001611: 8b 35 28 20 00 10            	mov	esi, dword ptr [0x10002028]
+10001617: bf 68 33 00 10               	mov	edi, 0x10003368
+1000161c: e9 ea 00 00 00               	jmp	0x1000170b <yf_get_record_time_end+0x1ab>
+10001621: 33 c0                        	xor	eax, eax
+10001623: e9 c0 01 00 00               	jmp	0x100017e8 <yf_get_record_time_end+0x288>
+10001628: 83 7d 0c 01                  	cmp	dword ptr [ebp + 0xc], 0x1
+1000162c: 0f 85 b3 01 00 00            	jne	0x100017e5 <yf_get_record_time_end+0x285>
+10001632: 64 8b 0d 18 00 00 00         	mov	ecx, dword ptr fs:[0x18]
+10001639: 8b 59 04                     	mov	ebx, dword ptr [ecx + 0x4]
+1000163c: 8b 35 28 20 00 10            	mov	esi, dword ptr [0x10002028]
+10001642: 89 45 0c                     	mov	dword ptr [ebp + 0xc], eax
+10001645: 50                           	push	eax
+10001646: bf 68 33 00 10               	mov	edi, 0x10003368
+1000164b: eb 11                        	jmp	0x1000165e <yf_get_record_time_end+0xfe>
+1000164d: 3b c3                        	cmp	eax, ebx
+1000164f: 74 17                        	je	0x10001668 <yf_get_record_time_end+0x108>
+10001651: 68 e8 03 00 00               	push	0x3e8
+10001656: ff 15 2c 20 00 10            	call	dword ptr [0x1000202c]
+1000165c: 6a 00                        	push	0x0
+1000165e: 53                           	push	ebx
+1000165f: 57                           	push	edi
+10001660: ff d6                        	call	esi
+10001662: 85 c0                        	test	eax, eax
+10001664: 75 e7                        	jne	0x1000164d <yf_get_record_time_end+0xed>
+10001666: eb 07                        	jmp	0x1000166f <yf_get_record_time_end+0x10f>
+10001668: c7 45 0c 01 00 00 00         	mov	dword ptr [ebp + 0xc], 0x1
+1000166f: a1 64 33 00 10               	mov	eax, dword ptr [0x10003364]
+10001674: 6a 02                        	push	0x2
+10001676: 5e                           	pop	esi
+10001677: 85 c0                        	test	eax, eax
+10001679: 74 09                        	je	0x10001684 <yf_get_record_time_end+0x124>
+1000167b: 6a 1f                        	push	0x1f
+1000167d: e8 16 06 00 00               	call	0x10001c98 <yf_get_record_time_end+0x738>
+10001682: eb 39                        	jmp	0x100016bd <yf_get_record_time_end+0x15d>
+10001684: 68 a4 20 00 10               	push	0x100020a4
+10001689: 68 9c 20 00 10               	push	0x1000209c
+1000168e: c7 05 64 33 00 10 01 00 00 00	mov	dword ptr [0x10003364], 0x1
+10001698: e8 f5 05 00 00               	call	0x10001c92 <yf_get_record_time_end+0x732>
+1000169d: 59                           	pop	ecx
+1000169e: 59                           	pop	ecx
+1000169f: 85 c0                        	test	eax, eax
+100016a1: 0f 85 7a ff ff ff            	jne	0x10001621 <yf_get_record_time_end+0xc1>
+100016a7: 68 98 20 00 10               	push	0x10002098
+100016ac: 68 94 20 00 10               	push	0x10002094
+100016b1: e8 d6 05 00 00               	call	0x10001c8c <yf_get_record_time_end+0x72c>
+100016b6: 59                           	pop	ecx
+100016b7: 89 35 64 33 00 10            	mov	dword ptr [0x10003364], esi
+100016bd: 33 db                        	xor	ebx, ebx
+100016bf: 59                           	pop	ecx
+100016c0: 39 5d 0c                     	cmp	dword ptr [ebp + 0xc], ebx
+100016c3: 75 08                        	jne	0x100016cd <yf_get_record_time_end+0x16d>
+100016c5: 53                           	push	ebx
+100016c6: 57                           	push	edi
+100016c7: ff 15 30 20 00 10            	call	dword ptr [0x10002030]
+100016cd: 39 1d 74 33 00 10            	cmp	dword ptr [0x10003374], ebx
+100016d3: 74 1c                        	je	0x100016f1 <yf_get_record_time_end+0x191>
+100016d5: 68 74 33 00 10               	push	0x10003374
+100016da: e8 f1 04 00 00               	call	0x10001bd0 <yf_get_record_time_end+0x670>
+100016df: 59                           	pop	ecx
+100016e0: 85 c0                        	test	eax, eax
+100016e2: 74 0d                        	je	0x100016f1 <yf_get_record_time_end+0x191>
+100016e4: ff 75 10                     	push	dword ptr [ebp + 0x10]
+100016e7: 56                           	push	esi
+100016e8: ff 75 08                     	push	dword ptr [ebp + 0x8]
+100016eb: ff 15 74 33 00 10            	call	dword ptr [0x10003374]
+100016f1: ff 05 30 30 00 10            	inc	dword ptr [0x10003030]
+100016f7: e9 e9 00 00 00               	jmp	0x100017e5 <yf_get_record_time_end+0x285>
+100016fc: 3b c3                        	cmp	eax, ebx
+100016fe: 74 17                        	je	0x10001717 <yf_get_record_time_end+0x1b7>
+10001700: 68 e8 03 00 00               	push	0x3e8
+10001705: ff 15 2c 20 00 10            	call	dword ptr [0x1000202c]
+1000170b: 6a 00                        	push	0x0
+1000170d: 53                           	push	ebx
+1000170e: 57                           	push	edi
+1000170f: ff d6                        	call	esi
+10001711: 85 c0                        	test	eax, eax
+10001713: 75 e7                        	jne	0x100016fc <yf_get_record_time_end+0x19c>
+10001715: eb 07                        	jmp	0x1000171e <yf_get_record_time_end+0x1be>
+10001717: c7 45 fc 01 00 00 00         	mov	dword ptr [ebp - 0x4], 0x1
+1000171e: a1 64 33 00 10               	mov	eax, dword ptr [0x10003364]
+10001723: 83 f8 02                     	cmp	eax, 0x2
+10001726: 74 0d                        	je	0x10001735 <yf_get_record_time_end+0x1d5>
+10001728: 6a 1f                        	push	0x1f
+1000172a: e8 69 05 00 00               	call	0x10001c98 <yf_get_record_time_end+0x738>
+1000172f: 59                           	pop	ecx
+10001730: e9 b0 00 00 00               	jmp	0x100017e5 <yf_get_record_time_end+0x285>
+10001735: ff 35 70 33 00 10            	push	dword ptr [0x10003370]
+1000173b: 8b 35 34 20 00 10            	mov	esi, dword ptr [0x10002034]
+10001741: ff d6                        	call	esi
+10001743: 89 45 0c                     	mov	dword ptr [ebp + 0xc], eax
+10001746: 85 c0                        	test	eax, eax
+10001748: 0f 84 83 00 00 00            	je	0x100017d1 <yf_get_record_time_end+0x271>
+1000174e: ff 35 6c 33 00 10            	push	dword ptr [0x1000336c]
+10001754: ff d6                        	call	esi
+10001756: 8b d8                        	mov	ebx, eax
+10001758: 8b 45 0c                     	mov	eax, dword ptr [ebp + 0xc]
+1000175b: 89 45 10                     	mov	dword ptr [ebp + 0x10], eax
+1000175e: 89 5d 08                     	mov	dword ptr [ebp + 0x8], ebx
+10001761: 83 eb 04                     	sub	ebx, 0x4
+10001764: 3b 5d 0c                     	cmp	ebx, dword ptr [ebp + 0xc]
+10001767: 72 4e                        	jb	0x100017b7 <yf_get_record_time_end+0x257>
+10001769: 83 3b 00                     	cmp	dword ptr [ebx], 0x0
+1000176c: 74 f3                        	je	0x10001761 <yf_get_record_time_end+0x201>
+1000176e: ff 15 6c 20 00 10            	call	dword ptr [0x1000206c]
+10001774: 39 03                        	cmp	dword ptr [ebx], eax
+10001776: 74 e9                        	je	0x10001761 <yf_get_record_time_end+0x201>
+10001778: ff 33                        	push	dword ptr [ebx]
+1000177a: ff d6                        	call	esi
+1000177c: 89 45 f8                     	mov	dword ptr [ebp - 0x8], eax
+1000177f: ff 15 6c 20 00 10            	call	dword ptr [0x1000206c]
+10001785: 89 03                        	mov	dword ptr [ebx], eax
+10001787: ff 55 f8                     	call	dword ptr [ebp - 0x8]
+1000178a: ff 35 70 33 00 10            	push	dword ptr [0x10003370]
+10001790: ff d6                        	call	esi
+10001792: ff 35 6c 33 00 10            	push	dword ptr [0x1000336c]
+10001798: 89 45 f8                     	mov	dword ptr [ebp - 0x8], eax
+1000179b: ff d6                        	call	esi
+1000179d: 8b 4d f8                     	mov	ecx, dword ptr [ebp - 0x8]
+100017a0: 39 4d 10                     	cmp	dword ptr [ebp + 0x10], ecx
+100017a3: 75 05                        	jne	0x100017aa <yf_get_record_time_end+0x24a>
+100017a5: 39 45 08                     	cmp	dword ptr [ebp + 0x8], eax
+100017a8: 74 b7                        	je	0x10001761 <yf_get_record_time_end+0x201>
+100017aa: 89 4d 10                     	mov	dword ptr [ebp + 0x10], ecx
+100017ad: 89 4d 0c                     	mov	dword ptr [ebp + 0xc], ecx
+100017b0: 89 45 08                     	mov	dword ptr [ebp + 0x8], eax
+100017b3: 8b d8                        	mov	ebx, eax
+100017b5: eb aa                        	jmp	0x10001761 <yf_get_record_time_end+0x201>
+100017b7: ff 75 0c                     	push	dword ptr [ebp + 0xc]
+100017ba: ff 15 70 20 00 10            	call	dword ptr [0x10002070]
+100017c0: 59                           	pop	ecx
+100017c1: ff 15 6c 20 00 10            	call	dword ptr [0x1000206c]
+100017c7: a3 6c 33 00 10               	mov	dword ptr [0x1000336c], eax
+100017cc: a3 70 33 00 10               	mov	dword ptr [0x10003370], eax
+100017d1: 33 c0                        	xor	eax, eax
+100017d3: a3 64 33 00 10               	mov	dword ptr [0x10003364], eax
+100017d8: 39 45 fc                     	cmp	dword ptr [ebp - 0x4], eax
+100017db: 75 08                        	jne	0x100017e5 <yf_get_record_time_end+0x285>
+100017dd: 50                           	push	eax
+100017de: 57                           	push	edi
+100017df: ff 15 30 20 00 10            	call	dword ptr [0x10002030]
+100017e5: 33 c0                        	xor	eax, eax
+100017e7: 40                           	inc	eax
+100017e8: 5f                           	pop	edi
+100017e9: 5e                           	pop	esi
+100017ea: 5b                           	pop	ebx
+100017eb: c9                           	leave
+100017ec: c2 0c 00                     	ret	0xc
+100017ef: 6a 10                        	push	0x10
+100017f1: 68 18 21 00 10               	push	0x10002118
+100017f6: e8 d5 04 00 00               	call	0x10001cd0 <yf_get_record_time_end+0x770>
+100017fb: 8b f9                        	mov	edi, ecx
+100017fd: 8b f2                        	mov	esi, edx
+100017ff: 8b 5d 08                     	mov	ebx, dword ptr [ebp + 0x8]
+10001802: 33 c0                        	xor	eax, eax
+10001804: 40                           	inc	eax
+10001805: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001808: 33 c9                        	xor	ecx, ecx
+1000180a: 89 4d fc                     	mov	dword ptr [ebp - 0x4], ecx
+1000180d: 89 35 08 30 00 10            	mov	dword ptr [0x10003008], esi
+10001813: 89 45 fc                     	mov	dword ptr [ebp - 0x4], eax
+10001816: 3b f1                        	cmp	esi, ecx
+10001818: 75 10                        	jne	0x1000182a <yf_get_record_time_end+0x2ca>
+1000181a: 39 0d 30 30 00 10            	cmp	dword ptr [0x10003030], ecx
+10001820: 75 08                        	jne	0x1000182a <yf_get_record_time_end+0x2ca>
+10001822: 89 4d e4                     	mov	dword ptr [ebp - 0x1c], ecx
+10001825: e9 b7 00 00 00               	jmp	0x100018e1 <yf_get_record_time_end+0x381>
+1000182a: 3b f0                        	cmp	esi, eax
+1000182c: 74 05                        	je	0x10001833 <yf_get_record_time_end+0x2d3>
+1000182e: 83 fe 02                     	cmp	esi, 0x2
+10001831: 75 2e                        	jne	0x10001861 <yf_get_record_time_end+0x301>
+10001833: a1 a8 20 00 10               	mov	eax, dword ptr [0x100020a8]
+10001838: 3b c1                        	cmp	eax, ecx
+1000183a: 74 08                        	je	0x10001844 <yf_get_record_time_end+0x2e4>
+1000183c: 57                           	push	edi
+1000183d: 56                           	push	esi
+1000183e: 53                           	push	ebx
+1000183f: ff d0                        	call	eax
+10001841: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001844: 83 7d e4 00                  	cmp	dword ptr [ebp - 0x1c], 0x0
+10001848: 0f 84 93 00 00 00            	je	0x100018e1 <yf_get_record_time_end+0x381>
+1000184e: 57                           	push	edi
+1000184f: 56                           	push	esi
+10001850: 53                           	push	ebx
+10001851: e8 8f fd ff ff               	call	0x100015e5 <yf_get_record_time_end+0x85>
+10001856: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001859: 85 c0                        	test	eax, eax
+1000185b: 0f 84 80 00 00 00            	je	0x100018e1 <yf_get_record_time_end+0x381>
+10001861: 57                           	push	edi
+10001862: 56                           	push	esi
+10001863: 53                           	push	ebx
+10001864: e8 3b 04 00 00               	call	0x10001ca4 <yf_get_record_time_end+0x744>
+10001869: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+1000186c: 83 fe 01                     	cmp	esi, 0x1
+1000186f: 75 24                        	jne	0x10001895 <yf_get_record_time_end+0x335>
+10001871: 85 c0                        	test	eax, eax
+10001873: 75 20                        	jne	0x10001895 <yf_get_record_time_end+0x335>
+10001875: 57                           	push	edi
+10001876: 50                           	push	eax
+10001877: 53                           	push	ebx
+10001878: e8 27 04 00 00               	call	0x10001ca4 <yf_get_record_time_end+0x744>
+1000187d: 57                           	push	edi
+1000187e: 6a 00                        	push	0x0
+10001880: 53                           	push	ebx
+10001881: e8 5f fd ff ff               	call	0x100015e5 <yf_get_record_time_end+0x85>
+10001886: a1 a8 20 00 10               	mov	eax, dword ptr [0x100020a8]
+1000188b: 85 c0                        	test	eax, eax
+1000188d: 74 06                        	je	0x10001895 <yf_get_record_time_end+0x335>
+1000188f: 57                           	push	edi
+10001890: 6a 00                        	push	0x0
+10001892: 53                           	push	ebx
+10001893: ff d0                        	call	eax
+10001895: 85 f6                        	test	esi, esi
+10001897: 74 05                        	je	0x1000189e <yf_get_record_time_end+0x33e>
+10001899: 83 fe 03                     	cmp	esi, 0x3
+1000189c: 75 43                        	jne	0x100018e1 <yf_get_record_time_end+0x381>
+1000189e: 57                           	push	edi
+1000189f: 56                           	push	esi
+100018a0: 53                           	push	ebx
+100018a1: e8 3f fd ff ff               	call	0x100015e5 <yf_get_record_time_end+0x85>
+100018a6: 85 c0                        	test	eax, eax
+100018a8: 75 03                        	jne	0x100018ad <yf_get_record_time_end+0x34d>
+100018aa: 21 45 e4                     	and	dword ptr [ebp - 0x1c], eax
+100018ad: 83 7d e4 00                  	cmp	dword ptr [ebp - 0x1c], 0x0
+100018b1: 74 2e                        	je	0x100018e1 <yf_get_record_time_end+0x381>
+100018b3: a1 a8 20 00 10               	mov	eax, dword ptr [0x100020a8]
+100018b8: 85 c0                        	test	eax, eax
+100018ba: 74 25                        	je	0x100018e1 <yf_get_record_time_end+0x381>
+100018bc: 57                           	push	edi
+100018bd: 56                           	push	esi
+100018be: 53                           	push	ebx
+100018bf: ff d0                        	call	eax
+100018c1: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+100018c4: eb 1b                        	jmp	0x100018e1 <yf_get_record_time_end+0x381>
+100018c6: 8b 45 ec                     	mov	eax, dword ptr [ebp - 0x14]
+100018c9: 8b 08                        	mov	ecx, dword ptr [eax]
+100018cb: 8b 09                        	mov	ecx, dword ptr [ecx]
+100018cd: 89 4d e0                     	mov	dword ptr [ebp - 0x20], ecx
+100018d0: 50                           	push	eax
+100018d1: 51                           	push	ecx
+100018d2: e8 c7 03 00 00               	call	0x10001c9e <yf_get_record_time_end+0x73e>
+100018d7: 59                           	pop	ecx
+100018d8: 59                           	pop	ecx
+100018d9: c3                           	ret
+100018da: 8b 65 e8                     	mov	esp, dword ptr [ebp - 0x18]
+100018dd: 83 65 e4 00                  	and	dword ptr [ebp - 0x1c], 0x0
+100018e1: 83 65 fc 00                  	and	dword ptr [ebp - 0x4], 0x0
+100018e5: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+100018ec: e8 09 00 00 00               	call	0x100018fa <yf_get_record_time_end+0x39a>
+100018f1: 8b 45 e4                     	mov	eax, dword ptr [ebp - 0x1c]
+100018f4: e8 1c 04 00 00               	call	0x10001d15 <yf_get_record_time_end+0x7b5>
+100018f9: c3                           	ret
+100018fa: c7 05 08 30 00 10 ff ff ff ff	mov	dword ptr [0x10003008], 0xffffffff
+10001904: c3                           	ret
+10001905: 8b ff                        	mov	edi, edi
+10001907: 55                           	push	ebp
+10001908: 8b ec                        	mov	ebp, esp
+1000190a: 83 7d 0c 01                  	cmp	dword ptr [ebp + 0xc], 0x1
+1000190e: 75 05                        	jne	0x10001915 <yf_get_record_time_end+0x3b5>
+10001910: e8 39 04 00 00               	call	0x10001d4e <yf_get_record_time_end+0x7ee>
+10001915: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001918: 8b 4d 10                     	mov	ecx, dword ptr [ebp + 0x10]
+1000191b: 8b 55 0c                     	mov	edx, dword ptr [ebp + 0xc]
+1000191e: e8 cc fe ff ff               	call	0x100017ef <yf_get_record_time_end+0x28f>
+10001923: 59                           	pop	ecx
+10001924: 5d                           	pop	ebp
+10001925: c2 0c 00                     	ret	0xc
+10001928: 8b ff                        	mov	edi, edi
+1000192a: 55                           	push	ebp
+1000192b: 8b ec                        	mov	ebp, esp
+1000192d: 81 ec 28 03 00 00            	sub	esp, 0x328
+10001933: a3 40 31 00 10               	mov	dword ptr [0x10003140], eax
+10001938: 89 0d 3c 31 00 10            	mov	dword ptr [0x1000313c], ecx
+1000193e: 89 15 38 31 00 10            	mov	dword ptr [0x10003138], edx
+10001944: 89 1d 34 31 00 10            	mov	dword ptr [0x10003134], ebx
+1000194a: 89 35 30 31 00 10            	mov	dword ptr [0x10003130], esi
+10001950: 89 3d 2c 31 00 10            	mov	dword ptr [0x1000312c], edi
+10001956: 66 8c 15 58 31 00 10         	mov	word ptr [0x10003158], ss
+1000195d: 66 8c 0d 4c 31 00 10         	mov	word ptr [0x1000314c], cs
+10001964: 66 8c 1d 28 31 00 10         	mov	word ptr [0x10003128], ds
+1000196b: 66 8c 05 24 31 00 10         	mov	word ptr [0x10003124], es
+10001972: 66 8c 25 20 31 00 10         	mov	word ptr [0x10003120], fs
+10001979: 66 8c 2d 1c 31 00 10         	mov	word ptr [0x1000311c], gs
+10001980: 9c                           	pushfd
+10001981: 8f 05 50 31 00 10            	pop	dword ptr [0x10003150]
+10001987: 8b 45 00                     	mov	eax, dword ptr [ebp]
+1000198a: a3 44 31 00 10               	mov	dword ptr [0x10003144], eax
+1000198f: 8b 45 04                     	mov	eax, dword ptr [ebp + 0x4]
+10001992: a3 48 31 00 10               	mov	dword ptr [0x10003148], eax
+10001997: 8d 45 08                     	lea	eax, [ebp + 0x8]
+1000199a: a3 54 31 00 10               	mov	dword ptr [0x10003154], eax
+1000199f: 8b 85 e0 fc ff ff            	mov	eax, dword ptr [ebp - 0x320]
+100019a5: c7 05 90 30 00 10 01 00 01 00	mov	dword ptr [0x10003090], 0x10001
+100019af: a1 48 31 00 10               	mov	eax, dword ptr [0x10003148]
+100019b4: a3 44 30 00 10               	mov	dword ptr [0x10003044], eax
+100019b9: c7 05 38 30 00 10 09 04 00 c0	mov	dword ptr [0x10003038], 0xc0000409
+100019c3: c7 05 3c 30 00 10 01 00 00 00	mov	dword ptr [0x1000303c], 0x1
+100019cd: a1 00 30 00 10               	mov	eax, dword ptr [0x10003000]
+100019d2: 89 85 d8 fc ff ff            	mov	dword ptr [ebp - 0x328], eax
+100019d8: a1 04 30 00 10               	mov	eax, dword ptr [0x10003004]
+100019dd: 89 85 dc fc ff ff            	mov	dword ptr [ebp - 0x324], eax
+100019e3: ff 15 14 20 00 10            	call	dword ptr [0x10002014]
+100019e9: a3 88 30 00 10               	mov	dword ptr [0x10003088], eax
+100019ee: 6a 01                        	push	0x1
+100019f0: e8 f5 03 00 00               	call	0x10001dea <yf_get_record_time_end+0x88a>
+100019f5: 59                           	pop	ecx
+100019f6: 6a 00                        	push	0x0
+100019f8: ff 15 18 20 00 10            	call	dword ptr [0x10002018]
+100019fe: 68 ac 20 00 10               	push	0x100020ac
+10001a03: ff 15 1c 20 00 10            	call	dword ptr [0x1000201c]
+10001a09: 83 3d 88 30 00 10 00         	cmp	dword ptr [0x10003088], 0x0
+10001a10: 75 08                        	jne	0x10001a1a <yf_get_record_time_end+0x4ba>
+10001a12: 6a 01                        	push	0x1
+10001a14: e8 d1 03 00 00               	call	0x10001dea <yf_get_record_time_end+0x88a>
+10001a19: 59                           	pop	ecx
+10001a1a: 68 09 04 00 c0               	push	0xc0000409
+10001a1f: ff 15 20 20 00 10            	call	dword ptr [0x10002020]
+10001a25: 50                           	push	eax
+10001a26: ff 15 24 20 00 10            	call	dword ptr [0x10002024]
+10001a2c: c9                           	leave
+10001a2d: c3                           	ret
+10001a2e: 68 5c 33 00 10               	push	0x1000335c
+10001a33: e8 b8 03 00 00               	call	0x10001df0 <yf_get_record_time_end+0x890>
+10001a38: 59                           	pop	ecx
+10001a39: c3                           	ret
+10001a3a: 6a 14                        	push	0x14
+10001a3c: 68 40 21 00 10               	push	0x10002140
+10001a41: e8 8a 02 00 00               	call	0x10001cd0 <yf_get_record_time_end+0x770>
+10001a46: ff 35 70 33 00 10            	push	dword ptr [0x10003370]
+10001a4c: 8b 35 34 20 00 10            	mov	esi, dword ptr [0x10002034]
+10001a52: ff d6                        	call	esi
+10001a54: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001a57: 83 f8 ff                     	cmp	eax, -0x1
+10001a5a: 75 0c                        	jne	0x10001a68 <yf_get_record_time_end+0x508>
+10001a5c: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001a5f: ff 15 88 20 00 10            	call	dword ptr [0x10002088]
+10001a65: 59                           	pop	ecx
+10001a66: eb 64                        	jmp	0x10001acc <yf_get_record_time_end+0x56c>
+10001a68: 6a 08                        	push	0x8
+10001a6a: e8 93 03 00 00               	call	0x10001e02 <yf_get_record_time_end+0x8a2>
+10001a6f: 59                           	pop	ecx
+10001a70: 83 65 fc 00                  	and	dword ptr [ebp - 0x4], 0x0
+10001a74: ff 35 70 33 00 10            	push	dword ptr [0x10003370]
+10001a7a: ff d6                        	call	esi
+10001a7c: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001a7f: ff 35 6c 33 00 10            	push	dword ptr [0x1000336c]
+10001a85: ff d6                        	call	esi
+10001a87: 89 45 e0                     	mov	dword ptr [ebp - 0x20], eax
+10001a8a: 8d 45 e0                     	lea	eax, [ebp - 0x20]
+10001a8d: 50                           	push	eax
+10001a8e: 8d 45 e4                     	lea	eax, [ebp - 0x1c]
+10001a91: 50                           	push	eax
+10001a92: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001a95: 8b 35 38 20 00 10            	mov	esi, dword ptr [0x10002038]
+10001a9b: ff d6                        	call	esi
+10001a9d: 50                           	push	eax
+10001a9e: e8 59 03 00 00               	call	0x10001dfc <yf_get_record_time_end+0x89c>
+10001aa3: 83 c4 0c                     	add	esp, 0xc
+10001aa6: 89 45 dc                     	mov	dword ptr [ebp - 0x24], eax
+10001aa9: ff 75 e4                     	push	dword ptr [ebp - 0x1c]
+10001aac: ff d6                        	call	esi
+10001aae: a3 70 33 00 10               	mov	dword ptr [0x10003370], eax
+10001ab3: ff 75 e0                     	push	dword ptr [ebp - 0x20]
+10001ab6: ff d6                        	call	esi
+10001ab8: a3 6c 33 00 10               	mov	dword ptr [0x1000336c], eax
+10001abd: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+10001ac4: e8 09 00 00 00               	call	0x10001ad2 <yf_get_record_time_end+0x572>
+10001ac9: 8b 45 dc                     	mov	eax, dword ptr [ebp - 0x24]
+10001acc: e8 44 02 00 00               	call	0x10001d15 <yf_get_record_time_end+0x7b5>
+10001ad1: c3                           	ret
+10001ad2: 6a 08                        	push	0x8
+10001ad4: e8 1d 03 00 00               	call	0x10001df6 <yf_get_record_time_end+0x896>
+10001ad9: 59                           	pop	ecx
+10001ada: c3                           	ret
+10001adb: 8b ff                        	mov	edi, edi
+10001add: 55                           	push	ebp
+10001ade: 8b ec                        	mov	ebp, esp
+10001ae0: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001ae3: e8 52 ff ff ff               	call	0x10001a3a <yf_get_record_time_end+0x4da>
+10001ae8: f7 d8                        	neg	eax
+10001aea: 1b c0                        	sbb	eax, eax
+10001aec: f7 d8                        	neg	eax
+10001aee: 59                           	pop	ecx
+10001aef: 48                           	dec	eax
+10001af0: 5d                           	pop	ebp
+10001af1: c3                           	ret
+10001af2: 8b ff                        	mov	edi, edi
+10001af4: 56                           	push	esi
+10001af5: b8 08 21 00 10               	mov	eax, 0x10002108
+10001afa: be 08 21 00 10               	mov	esi, 0x10002108
+10001aff: 57                           	push	edi
+10001b00: 8b f8                        	mov	edi, eax
+10001b02: 3b c6                        	cmp	eax, esi
+10001b04: 73 0f                        	jae	0x10001b15 <yf_get_record_time_end+0x5b5>
+10001b06: 8b 07                        	mov	eax, dword ptr [edi]
+10001b08: 85 c0                        	test	eax, eax
+10001b0a: 74 02                        	je	0x10001b0e <yf_get_record_time_end+0x5ae>
+10001b0c: ff d0                        	call	eax
+10001b0e: 83 c7 04                     	add	edi, 0x4
+10001b11: 3b fe                        	cmp	edi, esi
+10001b13: 72 f1                        	jb	0x10001b06 <yf_get_record_time_end+0x5a6>
+10001b15: 5f                           	pop	edi
+10001b16: 5e                           	pop	esi
+10001b17: c3                           	ret
+10001b18: 8b ff                        	mov	edi, edi
+10001b1a: 56                           	push	esi
+10001b1b: b8 10 21 00 10               	mov	eax, 0x10002110
+10001b20: be 10 21 00 10               	mov	esi, 0x10002110
+10001b25: 57                           	push	edi
+10001b26: 8b f8                        	mov	edi, eax
+10001b28: 3b c6                        	cmp	eax, esi
+10001b2a: 73 0f                        	jae	0x10001b3b <yf_get_record_time_end+0x5db>
+10001b2c: 8b 07                        	mov	eax, dword ptr [edi]
+10001b2e: 85 c0                        	test	eax, eax
+10001b30: 74 02                        	je	0x10001b34 <yf_get_record_time_end+0x5d4>
+10001b32: ff d0                        	call	eax
+10001b34: 83 c7 04                     	add	edi, 0x4
+10001b37: 3b fe                        	cmp	edi, esi
+10001b39: 72 f1                        	jb	0x10001b2c <yf_get_record_time_end+0x5cc>
+10001b3b: 5f                           	pop	edi
+10001b3c: 5e                           	pop	esi
+10001b3d: c3                           	ret
+10001b3e: cc                           	int3
+10001b3f: cc                           	int3
+10001b40: 8b ff                        	mov	edi, edi
+10001b42: 55                           	push	ebp
+10001b43: 8b ec                        	mov	ebp, esp
+10001b45: 8b 4d 08                     	mov	ecx, dword ptr [ebp + 0x8]
+10001b48: b8 4d 5a 00 00               	mov	eax, 0x5a4d
+10001b4d: 66 39 01                     	cmp	word ptr [ecx], ax
+10001b50: 74 04                        	je	0x10001b56 <yf_get_record_time_end+0x5f6>
+10001b52: 33 c0                        	xor	eax, eax
+10001b54: 5d                           	pop	ebp
+10001b55: c3                           	ret
+10001b56: 8b 41 3c                     	mov	eax, dword ptr [ecx + 0x3c]
+10001b59: 03 c1                        	add	eax, ecx
+10001b5b: 81 38 50 45 00 00            	cmp	dword ptr [eax], 0x4550
+10001b61: 75 ef                        	jne	0x10001b52 <yf_get_record_time_end+0x5f2>
+10001b63: 33 d2                        	xor	edx, edx
+10001b65: b9 0b 01 00 00               	mov	ecx, 0x10b
+10001b6a: 66 39 48 18                  	cmp	word ptr [eax + 0x18], cx
+10001b6e: 0f 94 c2                     	sete	dl
+10001b71: 8b c2                        	mov	eax, edx
+10001b73: 5d                           	pop	ebp
+10001b74: c3                           	ret
+10001b75: cc                           	int3
+10001b76: cc                           	int3
+10001b77: cc                           	int3
+10001b78: cc                           	int3
+10001b79: cc                           	int3
+10001b7a: cc                           	int3
+10001b7b: cc                           	int3
+10001b7c: cc                           	int3
+10001b7d: cc                           	int3
+10001b7e: cc                           	int3
+10001b7f: cc                           	int3
+10001b80: 8b ff                        	mov	edi, edi
+10001b82: 55                           	push	ebp
+10001b83: 8b ec                        	mov	ebp, esp
+10001b85: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001b88: 8b 48 3c                     	mov	ecx, dword ptr [eax + 0x3c]
+10001b8b: 03 c8                        	add	ecx, eax
+10001b8d: 0f b7 41 14                  	movzx	eax, word ptr [ecx + 0x14]
+10001b91: 53                           	push	ebx
+10001b92: 56                           	push	esi
+10001b93: 0f b7 71 06                  	movzx	esi, word ptr [ecx + 0x6]
+10001b97: 33 d2                        	xor	edx, edx
+10001b99: 57                           	push	edi
+10001b9a: 8d 44 08 18                  	lea	eax, [eax + ecx + 0x18]
+10001b9e: 85 f6                        	test	esi, esi
+10001ba0: 74 1b                        	je	0x10001bbd <yf_get_record_time_end+0x65d>
+10001ba2: 8b 7d 0c                     	mov	edi, dword ptr [ebp + 0xc]
+10001ba5: 8b 48 0c                     	mov	ecx, dword ptr [eax + 0xc]
+10001ba8: 3b f9                        	cmp	edi, ecx
+10001baa: 72 09                        	jb	0x10001bb5 <yf_get_record_time_end+0x655>
+10001bac: 8b 58 08                     	mov	ebx, dword ptr [eax + 0x8]
+10001baf: 03 d9                        	add	ebx, ecx
+10001bb1: 3b fb                        	cmp	edi, ebx
+10001bb3: 72 0a                        	jb	0x10001bbf <yf_get_record_time_end+0x65f>
+10001bb5: 42                           	inc	edx
+10001bb6: 83 c0 28                     	add	eax, 0x28
+10001bb9: 3b d6                        	cmp	edx, esi
+10001bbb: 72 e8                        	jb	0x10001ba5 <yf_get_record_time_end+0x645>
+10001bbd: 33 c0                        	xor	eax, eax
+10001bbf: 5f                           	pop	edi
+10001bc0: 5e                           	pop	esi
+10001bc1: 5b                           	pop	ebx
+10001bc2: 5d                           	pop	ebp
+10001bc3: c3                           	ret
+10001bc4: cc                           	int3
+10001bc5: cc                           	int3
+10001bc6: cc                           	int3
+10001bc7: cc                           	int3
+10001bc8: cc                           	int3
+10001bc9: cc                           	int3
+10001bca: cc                           	int3
+10001bcb: cc                           	int3
+10001bcc: cc                           	int3
+10001bcd: cc                           	int3
+10001bce: cc                           	int3
+10001bcf: cc                           	int3
+10001bd0: 8b ff                        	mov	edi, edi
+10001bd2: 55                           	push	ebp
+10001bd3: 8b ec                        	mov	ebp, esp
+10001bd5: 6a fe                        	push	-0x2
+10001bd7: 68 60 21 00 10               	push	0x10002160
+10001bdc: 68 29 1d 00 10               	push	0x10001d29
+10001be1: 64 a1 00 00 00 00            	mov	eax, dword ptr fs:[0x0]
+10001be7: 50                           	push	eax
+10001be8: 83 ec 08                     	sub	esp, 0x8
+10001beb: 53                           	push	ebx
+10001bec: 56                           	push	esi
+10001bed: 57                           	push	edi
+10001bee: a1 00 30 00 10               	mov	eax, dword ptr [0x10003000]
+10001bf3: 31 45 f8                     	xor	dword ptr [ebp - 0x8], eax
+10001bf6: 33 c5                        	xor	eax, ebp
+10001bf8: 50                           	push	eax
+10001bf9: 8d 45 f0                     	lea	eax, [ebp - 0x10]
+10001bfc: 64 a3 00 00 00 00            	mov	dword ptr fs:[0x0], eax
+10001c02: 89 65 e8                     	mov	dword ptr [ebp - 0x18], esp
+10001c05: c7 45 fc 00 00 00 00         	mov	dword ptr [ebp - 0x4], 0x0
+10001c0c: 68 00 00 00 10               	push	0x10000000
+10001c11: e8 2a ff ff ff               	call	0x10001b40 <yf_get_record_time_end+0x5e0>
+10001c16: 83 c4 04                     	add	esp, 0x4
+10001c19: 85 c0                        	test	eax, eax
+10001c1b: 74 54                        	je	0x10001c71 <yf_get_record_time_end+0x711>
+10001c1d: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001c20: 2d 00 00 00 10               	sub	eax, 0x10000000
+10001c25: 50                           	push	eax
+10001c26: 68 00 00 00 10               	push	0x10000000
+10001c2b: e8 50 ff ff ff               	call	0x10001b80 <yf_get_record_time_end+0x620>
+10001c30: 83 c4 08                     	add	esp, 0x8
+10001c33: 85 c0                        	test	eax, eax
+10001c35: 74 3a                        	je	0x10001c71 <yf_get_record_time_end+0x711>
+10001c37: 8b 40 24                     	mov	eax, dword ptr [eax + 0x24]
+10001c3a: c1 e8 1f                     	shr	eax, 0x1f
+10001c3d: f7 d0                        	not	eax
+10001c3f: 83 e0 01                     	and	eax, 0x1
+10001c42: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+10001c49: 8b 4d f0                     	mov	ecx, dword ptr [ebp - 0x10]
+10001c4c: 64 89 0d 00 00 00 00         	mov	dword ptr fs:[0x0], ecx
+10001c53: 59                           	pop	ecx
+10001c54: 5f                           	pop	edi
+10001c55: 5e                           	pop	esi
+10001c56: 5b                           	pop	ebx
+10001c57: 8b e5                        	mov	esp, ebp
+10001c59: 5d                           	pop	ebp
+10001c5a: c3                           	ret
+10001c5b: 8b 45 ec                     	mov	eax, dword ptr [ebp - 0x14]
+10001c5e: 8b 08                        	mov	ecx, dword ptr [eax]
+10001c60: 33 d2                        	xor	edx, edx
+10001c62: 81 39 05 00 00 c0            	cmp	dword ptr [ecx], 0xc0000005
+10001c68: 0f 94 c2                     	sete	dl
+10001c6b: 8b c2                        	mov	eax, edx
+10001c6d: c3                           	ret
+10001c6e: 8b 65 e8                     	mov	esp, dword ptr [ebp - 0x18]
+10001c71: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+10001c78: 33 c0                        	xor	eax, eax
+10001c7a: 8b 4d f0                     	mov	ecx, dword ptr [ebp - 0x10]
+10001c7d: 64 89 0d 00 00 00 00         	mov	dword ptr fs:[0x0], ecx
+10001c84: 59                           	pop	ecx
+10001c85: 5f                           	pop	edi
+10001c86: 5e                           	pop	esi
+10001c87: 5b                           	pop	ebx
+10001c88: 8b e5                        	mov	esp, ebp
+10001c8a: 5d                           	pop	ebp
+10001c8b: c3                           	ret
+10001c8c: ff 25 68 20 00 10            	jmp	dword ptr [0x10002068]
+10001c92: ff 25 64 20 00 10            	jmp	dword ptr [0x10002064]
+10001c98: ff 25 60 20 00 10            	jmp	dword ptr [0x10002060]
+10001c9e: ff 25 5c 20 00 10            	jmp	dword ptr [0x1000205c]
+10001ca4: 8b ff                        	mov	edi, edi
+10001ca6: 55                           	push	ebp
+10001ca7: 8b ec                        	mov	ebp, esp
+10001ca9: 83 7d 0c 01                  	cmp	dword ptr [ebp + 0xc], 0x1
+10001cad: 75 12                        	jne	0x10001cc1 <yf_get_record_time_end+0x761>
+10001caf: 83 3d a8 20 00 10 00         	cmp	dword ptr [0x100020a8], 0x0
+10001cb6: 75 09                        	jne	0x10001cc1 <yf_get_record_time_end+0x761>
+10001cb8: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001cbb: ff 15 10 20 00 10            	call	dword ptr [0x10002010]
+10001cc1: 33 c0                        	xor	eax, eax
+10001cc3: 40                           	inc	eax
+10001cc4: 5d                           	pop	ebp
+10001cc5: c2 0c 00                     	ret	0xc
+10001cc8: cc                           	int3
+10001cc9: cc                           	int3
+10001cca: cc                           	int3
+10001ccb: cc                           	int3
+10001ccc: cc                           	int3
+10001ccd: cc                           	int3
+10001cce: cc                           	int3
+10001ccf: cc                           	int3
+10001cd0: 68 29 1d 00 10               	push	0x10001d29
+10001cd5: 64 ff 35 00 00 00 00         	push	dword ptr fs:[0x0]
+10001cdc: 8b 44 24 10                  	mov	eax, dword ptr [esp + 0x10]
+10001ce0: 89 6c 24 10                  	mov	dword ptr [esp + 0x10], ebp
+10001ce4: 8d 6c 24 10                  	lea	ebp, [esp + 0x10]
+10001ce8: 2b e0                        	sub	esp, eax
+10001cea: 53                           	push	ebx
+10001ceb: 56                           	push	esi
+10001cec: 57                           	push	edi
+10001ced: a1 00 30 00 10               	mov	eax, dword ptr [0x10003000]
+10001cf2: 31 45 fc                     	xor	dword ptr [ebp - 0x4], eax
+10001cf5: 33 c5                        	xor	eax, ebp
+10001cf7: 50                           	push	eax
+10001cf8: 89 65 e8                     	mov	dword ptr [ebp - 0x18], esp
+10001cfb: ff 75 f8                     	push	dword ptr [ebp - 0x8]
+10001cfe: 8b 45 fc                     	mov	eax, dword ptr [ebp - 0x4]
+10001d01: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+10001d08: 89 45 f8                     	mov	dword ptr [ebp - 0x8], eax
+10001d0b: 8d 45 f0                     	lea	eax, [ebp - 0x10]
+10001d0e: 64 a3 00 00 00 00            	mov	dword ptr fs:[0x0], eax
+10001d14: c3                           	ret
+10001d15: 8b 4d f0                     	mov	ecx, dword ptr [ebp - 0x10]
+10001d18: 64 89 0d 00 00 00 00         	mov	dword ptr fs:[0x0], ecx
+10001d1f: 59                           	pop	ecx
+10001d20: 5f                           	pop	edi
+10001d21: 5f                           	pop	edi
+10001d22: 5e                           	pop	esi
+10001d23: 5b                           	pop	ebx
+10001d24: 8b e5                        	mov	esp, ebp
+10001d26: 5d                           	pop	ebp
+10001d27: 51                           	push	ecx
+10001d28: c3                           	ret
+10001d29: 8b ff                        	mov	edi, edi
+10001d2b: 55                           	push	ebp
+10001d2c: 8b ec                        	mov	ebp, esp
+10001d2e: ff 75 14                     	push	dword ptr [ebp + 0x14]
+10001d31: ff 75 10                     	push	dword ptr [ebp + 0x10]
+10001d34: ff 75 0c                     	push	dword ptr [ebp + 0xc]
+10001d37: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001d3a: 68 88 15 00 10               	push	0x10001588
+10001d3f: 68 00 30 00 10               	push	0x10003000
+10001d44: e8 bf 00 00 00               	call	0x10001e08 <yf_get_record_time_end+0x8a8>
+10001d49: 83 c4 18                     	add	esp, 0x18
+10001d4c: 5d                           	pop	ebp
+10001d4d: c3                           	ret
+10001d4e: 8b ff                        	mov	edi, edi
+10001d50: 55                           	push	ebp
+10001d51: 8b ec                        	mov	ebp, esp
+10001d53: 83 ec 10                     	sub	esp, 0x10
+10001d56: a1 00 30 00 10               	mov	eax, dword ptr [0x10003000]
+10001d5b: 83 65 f8 00                  	and	dword ptr [ebp - 0x8], 0x0
+10001d5f: 83 65 fc 00                  	and	dword ptr [ebp - 0x4], 0x0
+10001d63: 53                           	push	ebx
+10001d64: 57                           	push	edi
+10001d65: bf 4e e6 40 bb               	mov	edi, 0xbb40e64e
+10001d6a: bb 00 00 ff ff               	mov	ebx, 0xffff0000
+10001d6f: 3b c7                        	cmp	eax, edi
+10001d71: 74 0d                        	je	0x10001d80 <yf_get_record_time_end+0x820>
+10001d73: 85 c3                        	test	ebx, eax
+10001d75: 74 09                        	je	0x10001d80 <yf_get_record_time_end+0x820>
+10001d77: f7 d0                        	not	eax
+10001d79: a3 04 30 00 10               	mov	dword ptr [0x10003004], eax
+10001d7e: eb 65                        	jmp	0x10001de5 <yf_get_record_time_end+0x885>
+10001d80: 56                           	push	esi
+10001d81: 8d 45 f8                     	lea	eax, [ebp - 0x8]
+10001d84: 50                           	push	eax
+10001d85: ff 15 3c 20 00 10            	call	dword ptr [0x1000203c]
+10001d8b: 8b 75 fc                     	mov	esi, dword ptr [ebp - 0x4]
+10001d8e: 33 75 f8                     	xor	esi, dword ptr [ebp - 0x8]
+10001d91: ff 15 00 20 00 10            	call	dword ptr [0x10002000]
+10001d97: 33 f0                        	xor	esi, eax
+10001d99: ff 15 04 20 00 10            	call	dword ptr [0x10002004]
+10001d9f: 33 f0                        	xor	esi, eax
+10001da1: ff 15 08 20 00 10            	call	dword ptr [0x10002008]
+10001da7: 33 f0                        	xor	esi, eax
+10001da9: 8d 45 f0                     	lea	eax, [ebp - 0x10]
+10001dac: 50                           	push	eax
+10001dad: ff 15 0c 20 00 10            	call	dword ptr [0x1000200c]
+10001db3: 8b 45 f4                     	mov	eax, dword ptr [ebp - 0xc]
+10001db6: 33 45 f0                     	xor	eax, dword ptr [ebp - 0x10]
+10001db9: 33 f0                        	xor	esi, eax
+10001dbb: 3b f7                        	cmp	esi, edi
+10001dbd: 75 07                        	jne	0x10001dc6 <yf_get_record_time_end+0x866>
+10001dbf: be 4f e6 40 bb               	mov	esi, 0xbb40e64f
+10001dc4: eb 10                        	jmp	0x10001dd6 <yf_get_record_time_end+0x876>
+10001dc6: 85 f3                        	test	ebx, esi
+10001dc8: 75 0c                        	jne	0x10001dd6 <yf_get_record_time_end+0x876>
+10001dca: 8b c6                        	mov	eax, esi
+10001dcc: 0d 11 47 00 00               	or	eax, 0x4711
+10001dd1: c1 e0 10                     	shl	eax, 0x10
+10001dd4: 0b f0                        	or	esi, eax
+10001dd6: 89 35 00 30 00 10            	mov	dword ptr [0x10003000], esi
+10001ddc: f7 d6                        	not	esi
+10001dde: 89 35 04 30 00 10            	mov	dword ptr [0x10003004], esi
+10001de4: 5e                           	pop	esi
+10001de5: 5f                           	pop	edi
+10001de6: 5b                           	pop	ebx
+10001de7: c9                           	leave
+10001de8: c3                           	ret
+10001de9: cc                           	int3
+10001dea: ff 25 58 20 00 10            	jmp	dword ptr [0x10002058]
+10001df0: ff 25 54 20 00 10            	jmp	dword ptr [0x10002054]
+10001df6: ff 25 50 20 00 10            	jmp	dword ptr [0x10002050]
+10001dfc: ff 25 48 20 00 10            	jmp	dword ptr [0x10002048]
+10001e02: ff 25 44 20 00 10            	jmp	dword ptr [0x10002044]
+10001e08: ff 25 4c 20 00 10            	jmp	dword ptr [0x1000204c]

@@ -1,0 +1,233 @@
+
+YFParaInfo.dll:	file format coff-i386
+Characteristics 0x2102
+	executable
+	32 bit words
+	DLL
+
+Time/Date               Thu Apr 14 16:53:03 2016
+Magic                   010b	(PE32)
+MajorLinkerVersion      10
+MinorLinkerVersion      0
+SizeOfCode              00008000
+SizeOfInitializedData   00005800
+SizeOfUninitializedData 00000000
+AddressOfEntryPoint     00007dc4
+BaseOfCode              00001000
+BaseOfData              00009000
+ImageBase               10000000
+SectionAlignment        00001000
+FileAlignment           00000200
+MajorOSystemVersion     5
+MinorOSystemVersion     1
+MajorImageVersion       0
+MinorImageVersion       0
+MajorSubsystemVersion   5
+MinorSubsystemVersion   1
+Win32Version            00000000
+SizeOfImage             00011000
+SizeOfHeaders           00000400
+CheckSum                0001bf31
+Subsystem               00000002	(Windows GUI)
+DllCharacteristics      00000140
+					DYNAMIC_BASE
+					NX_COMPAT
+SizeOfStackReserve      00100000
+SizeOfStackCommit       00001000
+SizeOfHeapReserve       00100000
+SizeOfHeapCommit        00001000
+LoaderFlags             00000000
+NumberOfRvaAndSizes     00000010
+
+The Data Directory
+Entry 0 0000bb80 000008f9 Export Directory [.edata (or where ever we found it)]
+Entry 1 0000b440 0000008c Import Directory [parts of .idata]
+Entry 2 0000e000 000004c4 Resource Directory [.rsrc]
+Entry 3 00000000 00000000 Exception Directory [.pdata]
+Entry 4 00000000 00000000 Security Directory
+Entry 5 0000f000 00000e70 Base Relocation Directory [.reloc]
+Entry 6 00009150 0000001c Debug Directory
+Entry 7 00000000 00000000 Description Directory
+Entry 8 00000000 00000000 Special Directory
+Entry 9 00000000 00000000 Thread Storage Directory [.tls]
+Entry a 00009758 00000040 Load Configuration Directory
+Entry b 00000000 00000000 Bound Import Directory
+Entry c 00009000 00000104 Import Address Table Directory
+Entry d 00000000 00000000 Delay Import Directory
+Entry e 00000000 00000000 CLR Runtime Header
+Entry f 00000000 00000000 Reserved
+
+Load configuration:
+  Timestamp: 0
+  Major Version: 0
+  Minor Version: 0
+  GlobalFlags Clear: 0
+  GlobalFlags Set: 0
+  Critical Section Default Timeout: 0
+  Decommit Free Block Threshold: 0
+  Decommit Total Free Threshold: 0
+  Lock Prefix Table: 0
+  Maximum Allocation Size: 0
+  Virtual Memory Threshold: 0
+  Process Affinity Mask: 0
+  Process Heap Flags: 0
+  CSD Version: 0
+  Security Cookie: 268488728
+  SEH Table: 268477664
+  SEH Count: 42
+
+SEH Table: 0x10007f59 0x100083c0 0x100083e0 0x10008400 0x10008428 0x1000847c 0x100084cc 0x1000851c 0x10008564 0x1000858c 0x100085b8 0x10008604 0x10008620 0x1000866c 0x100086ba 0x1000870a 0x1000875c 0x10008788 0x100087b8 0x100087e8 0x10008820 0x1000885c 0x10008888 0x100088c0 0x100088e8 0x10008920 0x10008974 0x10008998 0x100089e4 0x10008a19 0x10008a63 0x10008a9b 0x10008acb 0x10008af8 0x10008b30 0x10008b78 0x10008bb0 0x10008bf0 0x10008c28 0x10008c58 0x10008c8b 0x10008cc7
+
+
+The Import Tables:
+  lookup 0000b4cc time 00000000 fwd 00000000 name 0000b650 addr 00009000
+
+    DLL Name: KERNEL32.dll
+    Hint/Ord  Name
+        1271  WaitForMultipleObjects
+        1022  ReleaseSemaphore
+          82  CloseHandle
+         171  CreateSemaphoreA
+        1273  WaitForSingleObject
+         633  GetSystemTimeAsFileTime
+        1235  UnhandledExceptionFilter
+         448  GetCurrentProcess
+        1216  TerminateProcess
+         745  InterlockedCompareExchange
+        1202  Sleep
+         748  InterlockedExchange
+         202  DecodePointer
+         234  EncodePointer
+        1189  SetUnhandledExceptionFilter
+         768  IsDebuggerPresent
+         449  GetCurrentProcessId
+         453  GetCurrentThreadId
+         659  GetTickCount
+         935  QueryPerformanceCounter
+         222  DisableThreadLibraryCalls
+
+  lookup 0000b524 time 00000000 fwd 00000000 name 0000b69e addr 00009058
+
+    DLL Name: MSVCP100.dll
+    Hint/Ord  Name
+         654  ?_Xout_of_range@std@@YAXPBD@Z
+         652  ?_Xlength_error@std@@YAXPBD@Z
+
+  lookup 0000b5b0 time 00000000 fwd 00000000 name 0000b6d6 addr 000090e4
+
+    DLL Name: YFCodec.dll
+    Hint/Ord  Name
+           7  yf_lz77_compress
+           8  yf_lz77_uncompress
+
+  lookup 0000b5bc time 00000000 fwd 00000000 name 0000b70c addr 000090f0
+
+    DLL Name: boost_date_time-vc100-mt-1_52.dll
+    Hint/Ord  Name
+           2  ??0greg_month@gregorian@boost@@QAE@G@Z
+
+  lookup 0000b5c4 time 00000000 fwd 00000000 name 0000b7a6 addr 000090f8
+
+    DLL Name: boost_system-vc100-mt-1_52.dll
+    Hint/Ord  Name
+           0  ?generic_category@system@boost@@YAABVerror_category@12@XZ
+           1  ?system_category@system@boost@@YAABVerror_category@12@XZ
+
+  lookup 0000b530 time 00000000 fwd 00000000 name 0000b8b8 addr 00009064
+
+    DLL Name: MSVCR100.dll
+    Hint/Ord  Name
+        1487  memcpy
+         122  ??_V@YAXPAX@Z
+         984  _purecall
+         101  ??3@YAXPAX@Z
+          99  ??2@YAPAXI@Z
+         258  ?terminate@@YAXXZ
+        1165  _unlock
+         347  __dllonexit
+         803  _lock
+         969  _onexit
+         820  _malloc_crt
+         673  _gmtime64
+         537  _encoded_null
+         688  _initterm
+         689  _initterm_e
+         453  _amsg_exit
+         305  __CppXcptFilter
+         507  _crt_debugger_hook
+         545  _except_handler4_common
+         238  ?_type_info_dtor_internal_method@type_info@@QAEXXZ
+         339  __clean_type_info_names_internal
+         289  _CxxThrowException
+          36  ??0exception@std@@QAE@ABV01@@Z
+          35  ??0exception@std@@QAE@ABQBDH@Z
+          34  ??0exception@std@@QAE@ABQBD@Z
+          93  ??1exception@std@@UAE@XZ
+         269  ?what@exception@std@@UBEPBDXZ
+        1419  free
+         314  __CxxFrameHandler3
+        1489  memmove
+        1491  memset
+
+Export Table:
+ DLL name: YFParaInfo.dll
+ Ordinal base: 1
+ Ordinal      RVA  Name
+       1   0x2630  yf_para_info_format_data
+       2   0x31b0  yf_para_info_get_adjust_type
+       3   0x3170  yf_para_info_get_color_index
+       4   0x3010  yf_para_info_get_correct_temp
+       5   0x3050  yf_para_info_get_cur_detector_temp
+       6   0x2580  yf_para_info_get_data_no_compress
+       7   0x2c40  yf_para_info_get_dist
+       8   0x31f0  yf_para_info_get_edge_except
+       9   0x2bd0  yf_para_info_get_emiss
+      10   0x2cc0  yf_para_info_get_env_temp
+      11   0x2a30  yf_para_info_get_extend_info
+      12   0x2940  yf_para_info_get_extend_info_size
+      13   0x2e30  yf_para_info_get_fahrenheit
+      14   0x3230  yf_para_info_get_image_scale
+      15   0x2eb0  yf_para_info_get_len
+      16   0x2f80  yf_para_info_get_len_and_measurement_grade
+      17   0x3090  yf_para_info_get_level
+      18   0x30d0  yf_para_info_get_level_max
+      19   0x3120  yf_para_info_get_level_span
+      20   0x2de0  yf_para_info_get_mdf
+      21   0x2f20  yf_para_info_get_measurement_grade
+      22   0x2d50  yf_para_info_get_rel_hum
+      23   0x2920  yf_para_info_get_size
+      24   0x2030  yf_para_info_init
+      25   0x2ac0  yf_para_info_is_correct_temp_changed
+      26   0x2ae0  yf_para_info_is_env_temp_changed
+      27   0x2b60  yf_para_info_is_fahrenheit_changed
+      28   0x2aa0  yf_para_info_is_len_or_temp_range_changed
+      29   0x2b00  yf_para_info_is_mdf_changed
+      30   0x2b40  yf_para_info_is_need_update_temp_table
+      31   0x2b20  yf_para_info_is_rel_hum_changed
+      32   0x2ed0  yf_para_info_is_valid_grade
+      33   0x2e50  yf_para_info_is_valid_len
+      34   0x2190  yf_para_info_parse_data
+      35   0x28f0  yf_para_info_restore_status
+      36   0x3190  yf_para_info_set_adjust_type
+      37   0x3150  yf_para_info_set_color_index
+      38   0x2fb0  yf_para_info_set_correct_temp
+      39   0x3030  yf_para_info_set_cur_detector_temp
+      40   0x2bf0  yf_para_info_set_dist
+      41   0x31d0  yf_para_info_set_edge_except
+      42   0x2b80  yf_para_info_set_emiss
+      43   0x2c60  yf_para_info_set_env_temp
+      44   0x2960  yf_para_info_set_extend_info
+      45   0x2e00  yf_para_info_set_fahrenheit
+      46   0x3210  yf_para_info_set_image_scale
+      47   0x2e80  yf_para_info_set_len
+      48   0x2f40  yf_para_info_set_len_and_measurement_grade
+      49   0x3070  yf_para_info_set_level
+      50   0x30b0  yf_para_info_set_level_max
+      51   0x30f0  yf_para_info_set_level_span
+      52   0x2d70  yf_para_info_set_mdf
+      53   0x2ef0  yf_para_info_set_measurement_grade
+      54   0x2ce0  yf_para_info_set_rel_hum
+      55   0x20c0  yf_para_info_uninit
+      56   0x2510  yf_para_info_update_adjust_data
+      57   0x2280  yf_para_info_update_other_data
+      58   0x2440  yf_para_info_update_temp_data

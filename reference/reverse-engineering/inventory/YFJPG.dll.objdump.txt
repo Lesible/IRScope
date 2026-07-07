@@ -1,0 +1,200 @@
+
+YFJPG.dll:	file format coff-i386
+Characteristics 0x2102
+	executable
+	32 bit words
+	DLL
+
+Time/Date               Thu Apr 14 16:51:15 2016
+Magic                   010b	(PE32)
+MajorLinkerVersion      10
+MinorLinkerVersion      0
+SizeOfCode              0001f200
+SizeOfInitializedData   00004400
+SizeOfUninitializedData 00000000
+AddressOfEntryPoint     0001f8cc
+BaseOfCode              00001000
+BaseOfData              00021000
+ImageBase               10000000
+SectionAlignment        00001000
+FileAlignment           00000200
+MajorOSystemVersion     5
+MinorOSystemVersion     1
+MajorImageVersion       0
+MinorImageVersion       0
+MajorSubsystemVersion   5
+MinorSubsystemVersion   1
+Win32Version            00000000
+SizeOfImage             00027000
+SizeOfHeaders           00000400
+CheckSum                00000000
+Subsystem               00000002	(Windows GUI)
+DllCharacteristics      00000140
+					DYNAMIC_BASE
+					NX_COMPAT
+SizeOfStackReserve      00100000
+SizeOfStackCommit       00001000
+SizeOfHeapReserve       00100000
+SizeOfHeapCommit        00001000
+LoaderFlags             00000000
+NumberOfRvaAndSizes     00000010
+
+The Data Directory
+Entry 0 00022d90 00000252 Export Directory [.edata (or where ever we found it)]
+Entry 1 000223b4 000000a0 Import Directory [parts of .idata]
+Entry 2 00025000 00000318 Resource Directory [.rsrc]
+Entry 3 00000000 00000000 Exception Directory [.pdata]
+Entry 4 00000000 00000000 Security Directory
+Entry 5 00026000 00000878 Base Relocation Directory [.reloc]
+Entry 6 00000000 00000000 Debug Directory
+Entry 7 00000000 00000000 Description Directory
+Entry 8 00000000 00000000 Special Directory
+Entry 9 00000000 00000000 Thread Storage Directory [.tls]
+Entry a 00000000 00000000 Load Configuration Directory
+Entry b 00000000 00000000 Bound Import Directory
+Entry c 00021000 00000180 Import Address Table Directory
+Entry d 00000000 00000000 Delay Import Directory
+Entry e 00000000 00000000 CLR Runtime Header
+Entry f 00000000 00000000 Reserved
+
+The Import Tables:
+  lookup 0002258c time 00000000 fwd 00000000 name 00022604 addr 00021138
+
+    DLL Name: USER32.dll
+    Hint/Ord  Name
+         613  ReleaseDC
+         289  GetDC
+         276  GetClientRect
+         526  MessageBoxA
+         246  FillRect
+         256  GetActiveWindow
+
+  lookup 00022454 time 00000000 fwd 00000000 name 00022624 addr 00021000
+
+    DLL Name: GDI32.dll
+    Hint/Ord  Name
+          84  CreateSolidBrush
+
+  lookup 000225a8 time 00000000 fwd 00000000 name 000226d6 addr 00021154
+
+    DLL Name: YFDrawBMP.dll
+    Hint/Ord  Name
+          11  yf_draw_bmp_set_img_size
+          15  yf_draw_bmp_uninit
+           5  yf_draw_bmp_init
+          10  yf_draw_bmp_set_draw_size
+           3  yf_draw_bmp_get_bmpinfo
+           6  yf_draw_bmp_set_bits
+           0  yf_draw_bmp_draw
+
+  lookup 000225c8 time 00000000 fwd 00000000 name 00022704 addr 00021174
+
+    DLL Name: YFLog.dll
+    Hint/Ord  Name
+           4  yf_log_msg_a
+           0  yf_log_err_a
+
+  lookup 000224a0 time 00000000 fwd 00000000 name 00022934 addr 0002104c
+
+    DLL Name: MSVCP100.dll
+    Hint/Ord  Name
+         652  ?_Xlength_error@std@@YAXPBD@Z
+         656  ?_Xruntime_error@std@@YAXPBD@Z
+         580  ?_Makeloc@_Locimp@locale@std@@CAPAV123@ABV_Locinfo@3@HPAV123@PBV23@@Z
+         466  ?_Getgloballocale@locale@std@@CAPAV_Locimp@12@XZ
+         526  ?_Init@locale@std@@CAPAV_Locimp@12@XZ
+        1008  ?global@locale@std@@SA?AV12@ABV12@@Z
+          92  ??0_Locimp@locale@std@@AAE@ABV012@@Z
+         156  ??1_Locimp@locale@std@@MAE@XZ
+         414  ?_Decref@facet@locale@std@@QAEPAV123@XZ
+         499  ?_Incref@facet@locale@std@@QAEXXZ
+         404  ?_Addcats@_Locinfo@std@@QAEAAV12@HPBD@Z
+         157  ??1_Locinfo@std@@QAE@XZ
+          94  ??0_Locinfo@std@@QAE@HPBD@Z
+         654  ?_Xout_of_range@std@@YAXPBD@Z
+
+  lookup 000224dc time 00000000 fwd 00000000 name 00022a9e addr 00021088
+
+    DLL Name: MSVCR100.dll
+    Hint/Ord  Name
+          34  ??0exception@std@@QAE@ABQBD@Z
+          36  ??0exception@std@@QAE@ABV01@@Z
+          93  ??1exception@std@@UAE@XZ
+         269  ?what@exception@std@@UBEPBDXZ
+        1409  fopen
+         122  ??_V@YAXPAX@Z
+        1417  fread
+         101  ??3@YAXPAX@Z
+        1430  fwrite
+        1564  toupper
+        1398  fclose
+          99  ??2@YAPAXI@Z
+        1034  _setjmp3
+        1475  longjmp
+        1609  wcstombs_s
+        1491  memset
+        1487  memcpy
+        1401  fflush
+        1519  sprintf
+        1523  sscanf
+        1435  getenv
+        1476  malloc
+        1419  free
+         615  _ftol
+         820  _malloc_crt
+         537  _encoded_null
+         688  _initterm
+         689  _initterm_e
+         453  _amsg_exit
+         305  __CppXcptFilter
+         507  _crt_debugger_hook
+         258  ?terminate@@YAXXZ
+         238  ?_type_info_dtor_internal_method@type_info@@QAEXXZ
+         339  __clean_type_info_names_internal
+        1165  _unlock
+         347  __dllonexit
+         803  _lock
+         969  _onexit
+         545  _except_handler4_common
+         289  _CxxThrowException
+         314  __CxxFrameHandler3
+        1489  memmove
+        1427  ftell
+
+  lookup 0002245c time 00000000 fwd 00000000 name 00022d2a addr 00021008
+
+    DLL Name: KERNEL32.dll
+    Hint/Ord  Name
+         633  GetSystemTimeAsFileTime
+         234  EncodePointer
+         202  DecodePointer
+        1202  Sleep
+         449  GetCurrentProcessId
+         453  GetCurrentThreadId
+         659  GetTickCount
+         935  QueryPerformanceCounter
+         222  DisableThreadLibraryCalls
+         768  IsDebuggerPresent
+        1189  SetUnhandledExceptionFilter
+        1235  UnhandledExceptionFilter
+         448  GetCurrentProcess
+        1216  TerminateProcess
+         745  InterlockedCompareExchange
+         748  InterlockedExchange
+
+Export Table:
+ DLL name: YFJPG.dll
+ Ordinal base: 1
+ Ordinal      RVA  Name
+       1   0x3260  ?yf_jpg_get_bmp_info@@YG_NPAXAAUtagBITMAPINFO@@@Z
+       2   0x2aa0  ?yf_jpg_get_height@@YG_NPAXAAH@Z
+       3   0x3140  ?yf_jpg_get_org_size@@YG_NPBDAAI@Z
+       4   0x2a80  ?yf_jpg_get_width@@YG_NPAXAAH@Z
+       5   0x2960  ?yf_jpg_init@@YG_NIAAPAX@Z
+       6   0x3230  ?yf_jpg_on_paint@@YG_NPAXI@Z
+       7   0x2ac0  ?yf_jpg_save_a@@YG_NPBDPAEHH_N2H@Z
+       8   0x3050  ?yf_jpg_save_w@@YG_NPB_WPAEHH_N2H@Z
+       9   0x31f0  ?yf_jpg_set_display_wnd@@YG_NPAXI@Z
+      10   0x2b80  ?yf_jpg_set_file_name_a@@YG_NPAXPBD_N2@Z
+      11   0x2f60  ?yf_jpg_set_file_name_w@@YG_NPAXPB_W_N2@Z
+      12   0x2a10  ?yf_jpg_uninit@@YG_NAAPAX@Z

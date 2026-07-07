@@ -1,0 +1,108 @@
+!This program cannot be run in DOS mode.
+CRichs
+.text
+`.rdata
+@.data
+.rsrc
+@.reloc
+]W3
+9EvuV
+41Nx:
+;]r
+SW3
+9uv_S
+FG;uu
+;ur
+ _^3
+USV
+QRPS
+VQ@P
+PQVS
+RCSQ
+MtA
+_^[u
+9Eu
+QQS3
+VW9Eu29
+Y9]u
+;]rN
+@_^[
+u WPS
+uCWVS
+t%WVS
+_^[]
+Y_^[
+Y_^[
+Y__^[
+RSDS
+E:\job\yfcam-core\dll\bin\Release\YFCodec.pdb
+memmove
+??_V@YAXPAX@Z
+??2@YAPAXI@Z
+MSVCR100.dll
+_malloc_crt
+free
+_encoded_null
+_initterm
+_initterm_e
+_amsg_exit
+__CppXcptFilter
+_crt_debugger_hook
+__clean_type_info_names_internal
+_unlock
+__dllonexit
+_lock
+_onexit
+_except_handler4_common
+EncodePointer
+DecodePointer
+InterlockedExchange
+Sleep
+InterlockedCompareExchange
+TerminateProcess
+GetCurrentProcess
+UnhandledExceptionFilter
+SetUnhandledExceptionFilter
+IsDebuggerPresent
+DisableThreadLibraryCalls
+QueryPerformanceCounter
+GetTickCount
+GetCurrentThreadId
+GetCurrentProcessId
+GetSystemTimeAsFileTime
+KERNEL32.dll
+memset
+memcpy
+YFCodec.dll
+yf_dpcm_decode
+yf_dpcm_encode
+yf_dpcm_huff_decode
+yf_dpcm_huff_encode
+yf_half_inner_data_zoom
+yf_huffman_decode
+yf_huffman_encode
+yf_lz77_compress
+yf_lz77_uncompress
+yf_own_decode
+yf_own_encode
+yf_quarter_inner_data_zoom
+YIQ5u
+N8^(u
+YIQ5u
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+    <security>
+      <requestedPrivileges>
+        <requestedExecutionLevel level="asInvoker" uiAccess="false"></requestedExecutionLevel>
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+</assembly>PAPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDING
+5n;
+0*1c=z=
+> >1>I>^>c>i>
+?)?I?Z?e?m?
+1 1&1,12191@1G1N1U1\1c1k1s1{1
+2(2.2A2V2a2w2
+4n4t4z4
+5 575Z5g5s5{5

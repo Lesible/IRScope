@@ -1,0 +1,1708 @@
+
+YFSound.dll:	file format coff-i386
+
+Disassembly of section .text:
+
+10001000 <.text>:
+10001000: 53                           	push	ebx
+10001001: 57                           	push	edi
+10001002: 8b 3d 8c 30 00 10            	mov	edi, dword ptr [0x1000308c]
+10001008: 33 db                        	xor	ebx, ebx
+1000100a: b8 11 2b 00 00               	mov	eax, 0x2b11
+1000100f: 33 c9                        	xor	ecx, ecx
+10001011: 6a 20                        	push	0x20
+10001013: c7 06 24 31 00 10            	mov	dword ptr [esi], 0x10003124
+10001019: 66 89 5e 04                  	mov	word ptr [esi + 0x4], bx
+1000101d: 88 5e 06                     	mov	byte ptr [esi + 0x6], bl
+10001020: 89 5e 08                     	mov	dword ptr [esi + 0x8], ebx
+10001023: c7 46 0c 00 00 04 00         	mov	dword ptr [esi + 0xc], 0x40000
+1000102a: c7 46 2c 01 00 01 00         	mov	dword ptr [esi + 0x2c], 0x10001
+10001031: 89 46 30                     	mov	dword ptr [esi + 0x30], eax
+10001034: 89 46 34                     	mov	dword ptr [esi + 0x34], eax
+10001037: c7 46 38 01 00 08 00         	mov	dword ptr [esi + 0x38], 0x80001
+1000103e: 66 89 4e 3c                  	mov	word ptr [esi + 0x3c], cx
+10001042: ff d7                        	call	edi
+10001044: 33 c9                        	xor	ecx, ecx
+10001046: 89 46 24                     	mov	dword ptr [esi + 0x24], eax
+10001049: 89 08                        	mov	dword ptr [eax], ecx
+1000104b: 89 48 04                     	mov	dword ptr [eax + 0x4], ecx
+1000104e: 89 48 08                     	mov	dword ptr [eax + 0x8], ecx
+10001051: 89 48 0c                     	mov	dword ptr [eax + 0xc], ecx
+10001054: 89 48 10                     	mov	dword ptr [eax + 0x10], ecx
+10001057: 89 48 14                     	mov	dword ptr [eax + 0x14], ecx
+1000105a: 89 48 18                     	mov	dword ptr [eax + 0x18], ecx
+1000105d: 6a 20                        	push	0x20
+1000105f: 89 48 1c                     	mov	dword ptr [eax + 0x1c], ecx
+10001062: ff d7                        	call	edi
+10001064: 33 c9                        	xor	ecx, ecx
+10001066: 89 46 28                     	mov	dword ptr [esi + 0x28], eax
+10001069: 89 08                        	mov	dword ptr [eax], ecx
+1000106b: 89 48 04                     	mov	dword ptr [eax + 0x4], ecx
+1000106e: 89 48 08                     	mov	dword ptr [eax + 0x8], ecx
+10001071: 89 48 0c                     	mov	dword ptr [eax + 0xc], ecx
+10001074: 89 48 10                     	mov	dword ptr [eax + 0x10], ecx
+10001077: 89 48 14                     	mov	dword ptr [eax + 0x14], ecx
+1000107a: 89 48 18                     	mov	dword ptr [eax + 0x18], ecx
+1000107d: 89 48 1c                     	mov	dword ptr [eax + 0x1c], ecx
+10001080: 8b 56 0c                     	mov	edx, dword ptr [esi + 0xc]
+10001083: 52                           	push	edx
+10001084: ff d7                        	call	edi
+10001086: 68 00 40 00 00               	push	0x4000
+1000108b: 89 46 18                     	mov	dword ptr [esi + 0x18], eax
+1000108e: ff d7                        	call	edi
+10001090: 68 00 40 00 00               	push	0x4000
+10001095: 89 46 10                     	mov	dword ptr [esi + 0x10], eax
+10001098: ff d7                        	call	edi
+1000109a: 83 c4 14                     	add	esp, 0x14
+1000109d: 5f                           	pop	edi
+1000109e: 89 46 14                     	mov	dword ptr [esi + 0x14], eax
+100010a1: 8b c6                        	mov	eax, esi
+100010a3: 5b                           	pop	ebx
+100010a4: c3                           	ret
+100010a5: cc                           	int3
+100010a6: cc                           	int3
+100010a7: cc                           	int3
+100010a8: cc                           	int3
+100010a9: cc                           	int3
+100010aa: cc                           	int3
+100010ab: cc                           	int3
+100010ac: cc                           	int3
+100010ad: cc                           	int3
+100010ae: cc                           	int3
+100010af: cc                           	int3
+100010b0: 55                           	push	ebp
+100010b1: 8b ec                        	mov	ebp, esp
+100010b3: 56                           	push	esi
+100010b4: 8b f1                        	mov	esi, ecx
+100010b6: e8 25 00 00 00               	call	0x100010e0 <.text+0xe0>
+100010bb: f6 45 08 01                  	test	byte ptr [ebp + 0x8], 0x1
+100010bf: 74 0a                        	je	0x100010cb <.text+0xcb>
+100010c1: 56                           	push	esi
+100010c2: ff 15 4c 30 00 10            	call	dword ptr [0x1000304c]
+100010c8: 83 c4 04                     	add	esp, 0x4
+100010cb: 8b c6                        	mov	eax, esi
+100010cd: 5e                           	pop	esi
+100010ce: 5d                           	pop	ebp
+100010cf: c2 04 00                     	ret	0x4
+100010d2: cc                           	int3
+100010d3: cc                           	int3
+100010d4: cc                           	int3
+100010d5: cc                           	int3
+100010d6: cc                           	int3
+100010d7: cc                           	int3
+100010d8: cc                           	int3
+100010d9: cc                           	int3
+100010da: cc                           	int3
+100010db: cc                           	int3
+100010dc: cc                           	int3
+100010dd: cc                           	int3
+100010de: cc                           	int3
+100010df: cc                           	int3
+100010e0: 56                           	push	esi
+100010e1: 8b f1                        	mov	esi, ecx
+100010e3: 80 7e 05 00                  	cmp	byte ptr [esi + 0x5], 0x0
+100010e7: 57                           	push	edi
+100010e8: c7 06 24 31 00 10            	mov	dword ptr [esi], 0x10003124
+100010ee: 75 45                        	jne	0x10001135 <.text+0x135>
+100010f0: 80 7e 04 00                  	cmp	byte ptr [esi + 0x4], 0x0
+100010f4: 74 45                        	je	0x1000113b <.text+0x13b>
+100010f6: 8b 46 1c                     	mov	eax, dword ptr [esi + 0x1c]
+100010f9: 50                           	push	eax
+100010fa: c6 46 06 01                  	mov	byte ptr [esi + 0x6], 0x1
+100010fe: ff 15 b8 30 00 10            	call	dword ptr [0x100030b8]
+10001104: 85 c0                        	test	eax, eax
+10001106: 75 2d                        	jne	0x10001135 <.text+0x135>
+10001108: 39 46 08                     	cmp	dword ptr [esi + 0x8], eax
+1000110b: 74 1e                        	je	0x1000112b <.text+0x12b>
+1000110d: 8b 4e 24                     	mov	ecx, dword ptr [esi + 0x24]
+10001110: 8b 56 1c                     	mov	edx, dword ptr [esi + 0x1c]
+10001113: 8b 3d c0 30 00 10            	mov	edi, dword ptr [0x100030c0]
+10001119: 6a 20                        	push	0x20
+1000111b: 51                           	push	ecx
+1000111c: 52                           	push	edx
+1000111d: ff d7                        	call	edi
+1000111f: 8b 46 28                     	mov	eax, dword ptr [esi + 0x28]
+10001122: 8b 4e 1c                     	mov	ecx, dword ptr [esi + 0x1c]
+10001125: 6a 20                        	push	0x20
+10001127: 50                           	push	eax
+10001128: 51                           	push	ecx
+10001129: ff d7                        	call	edi
+1000112b: 8b 56 1c                     	mov	edx, dword ptr [esi + 0x1c]
+1000112e: 52                           	push	edx
+1000112f: ff 15 a0 30 00 10            	call	dword ptr [0x100030a0]
+10001135: 80 7e 04 00                  	cmp	byte ptr [esi + 0x4], 0x0
+10001139: 75 36                        	jne	0x10001171 <.text+0x171>
+1000113b: 80 7e 05 00                  	cmp	byte ptr [esi + 0x5], 0x0
+1000113f: 74 30                        	je	0x10001171 <.text+0x171>
+10001141: 8b 46 20                     	mov	eax, dword ptr [esi + 0x20]
+10001144: 50                           	push	eax
+10001145: c6 46 06 01                  	mov	byte ptr [esi + 0x6], 0x1
+10001149: ff 15 a8 30 00 10            	call	dword ptr [0x100030a8]
+1000114f: 85 c0                        	test	eax, eax
+10001151: 75 1e                        	jne	0x10001171 <.text+0x171>
+10001153: 8b 4e 24                     	mov	ecx, dword ptr [esi + 0x24]
+10001156: 8b 56 20                     	mov	edx, dword ptr [esi + 0x20]
+10001159: 6a 20                        	push	0x20
+1000115b: 51                           	push	ecx
+1000115c: 52                           	push	edx
+1000115d: ff 15 bc 30 00 10            	call	dword ptr [0x100030bc]
+10001163: 85 c0                        	test	eax, eax
+10001165: 75 0a                        	jne	0x10001171 <.text+0x171>
+10001167: 8b 46 20                     	mov	eax, dword ptr [esi + 0x20]
+1000116a: 50                           	push	eax
+1000116b: ff 15 9c 30 00 10            	call	dword ptr [0x1000309c]
+10001171: 8b 46 24                     	mov	eax, dword ptr [esi + 0x24]
+10001174: 8b 3d 90 30 00 10            	mov	edi, dword ptr [0x10003090]
+1000117a: 85 c0                        	test	eax, eax
+1000117c: 74 06                        	je	0x10001184 <.text+0x184>
+1000117e: 50                           	push	eax
+1000117f: ff d7                        	call	edi
+10001181: 83 c4 04                     	add	esp, 0x4
+10001184: 8b 46 28                     	mov	eax, dword ptr [esi + 0x28]
+10001187: 85 c0                        	test	eax, eax
+10001189: 74 06                        	je	0x10001191 <.text+0x191>
+1000118b: 50                           	push	eax
+1000118c: ff d7                        	call	edi
+1000118e: 83 c4 04                     	add	esp, 0x4
+10001191: 8b 46 18                     	mov	eax, dword ptr [esi + 0x18]
+10001194: 85 c0                        	test	eax, eax
+10001196: 74 06                        	je	0x1000119e <.text+0x19e>
+10001198: 50                           	push	eax
+10001199: ff d7                        	call	edi
+1000119b: 83 c4 04                     	add	esp, 0x4
+1000119e: 8b 46 14                     	mov	eax, dword ptr [esi + 0x14]
+100011a1: 85 c0                        	test	eax, eax
+100011a3: 74 06                        	je	0x100011ab <.text+0x1ab>
+100011a5: 50                           	push	eax
+100011a6: ff d7                        	call	edi
+100011a8: 83 c4 04                     	add	esp, 0x4
+100011ab: 8b 76 10                     	mov	esi, dword ptr [esi + 0x10]
+100011ae: 85 f6                        	test	esi, esi
+100011b0: 74 06                        	je	0x100011b8 <.text+0x1b8>
+100011b2: 56                           	push	esi
+100011b3: ff d7                        	call	edi
+100011b5: 83 c4 04                     	add	esp, 0x4
+100011b8: 5f                           	pop	edi
+100011b9: 5e                           	pop	esi
+100011ba: c3                           	ret
+100011bb: cc                           	int3
+100011bc: cc                           	int3
+100011bd: cc                           	int3
+100011be: cc                           	int3
+100011bf: cc                           	int3
+100011c0: 53                           	push	ebx
+100011c1: 33 db                        	xor	ebx, ebx
+100011c3: 38 5e 05                     	cmp	byte ptr [esi + 0x5], bl
+100011c6: 74 04                        	je	0x100011cc <.text+0x1cc>
+100011c8: 32 c0                        	xor	al, al
+100011ca: 5b                           	pop	ebx
+100011cb: c3                           	ret
+100011cc: 38 5e 04                     	cmp	byte ptr [esi + 0x4], bl
+100011cf: 74 04                        	je	0x100011d5 <.text+0x1d5>
+100011d1: b0 01                        	mov	al, 0x1
+100011d3: 5b                           	pop	ebx
+100011d4: c3                           	ret
+100011d5: 57                           	push	edi
+100011d6: 68 00 00 03 00               	push	0x30000
+100011db: 56                           	push	esi
+100011dc: 68 70 13 00 10               	push	0x10001370
+100011e1: 8d 46 2c                     	lea	eax, [esi + 0x2c]
+100011e4: 50                           	push	eax
+100011e5: 6a ff                        	push	-0x1
+100011e7: 8d 7e 1c                     	lea	edi, [esi + 0x1c]
+100011ea: 57                           	push	edi
+100011eb: ff 15 b0 30 00 10            	call	dword ptr [0x100030b0]
+100011f1: 85 c0                        	test	eax, eax
+100011f3: 74 05                        	je	0x100011fa <.text+0x1fa>
+100011f5: 5f                           	pop	edi
+100011f6: 32 c0                        	xor	al, al
+100011f8: 5b                           	pop	ebx
+100011f9: c3                           	ret
+100011fa: 8b 4e 24                     	mov	ecx, dword ptr [esi + 0x24]
+100011fd: 8b 56 10                     	mov	edx, dword ptr [esi + 0x10]
+10001200: 89 5e 08                     	mov	dword ptr [esi + 0x8], ebx
+10001203: 89 11                        	mov	dword ptr [ecx], edx
+10001205: 8b 4e 24                     	mov	ecx, dword ptr [esi + 0x24]
+10001208: b8 00 40 00 00               	mov	eax, 0x4000
+1000120d: 89 41 04                     	mov	dword ptr [ecx + 0x4], eax
+10001210: 8b 56 24                     	mov	edx, dword ptr [esi + 0x24]
+10001213: 89 5a 08                     	mov	dword ptr [edx + 0x8], ebx
+10001216: 8b 4e 24                     	mov	ecx, dword ptr [esi + 0x24]
+10001219: 89 59 10                     	mov	dword ptr [ecx + 0x10], ebx
+1000121c: 8b 56 24                     	mov	edx, dword ptr [esi + 0x24]
+1000121f: c7 42 14 01 00 00 00         	mov	dword ptr [edx + 0x14], 0x1
+10001226: 8b 4e 28                     	mov	ecx, dword ptr [esi + 0x28]
+10001229: 8b 56 14                     	mov	edx, dword ptr [esi + 0x14]
+1000122c: 89 11                        	mov	dword ptr [ecx], edx
+1000122e: 8b 4e 28                     	mov	ecx, dword ptr [esi + 0x28]
+10001231: 89 41 04                     	mov	dword ptr [ecx + 0x4], eax
+10001234: 8b 56 28                     	mov	edx, dword ptr [esi + 0x28]
+10001237: 89 5a 08                     	mov	dword ptr [edx + 0x8], ebx
+1000123a: 8b 46 28                     	mov	eax, dword ptr [esi + 0x28]
+1000123d: 89 58 10                     	mov	dword ptr [eax + 0x10], ebx
+10001240: 8b 4e 28                     	mov	ecx, dword ptr [esi + 0x28]
+10001243: c7 41 14 01 00 00 00         	mov	dword ptr [ecx + 0x14], 0x1
+1000124a: 8b 56 28                     	mov	edx, dword ptr [esi + 0x28]
+1000124d: 8b 07                        	mov	eax, dword ptr [edi]
+1000124f: 6a 20                        	push	0x20
+10001251: 52                           	push	edx
+10001252: 50                           	push	eax
+10001253: ff 15 ac 30 00 10            	call	dword ptr [0x100030ac]
+10001259: 8b 4e 28                     	mov	ecx, dword ptr [esi + 0x28]
+1000125c: 8b 17                        	mov	edx, dword ptr [edi]
+1000125e: 6a 20                        	push	0x20
+10001260: 51                           	push	ecx
+10001261: 52                           	push	edx
+10001262: ff 15 b4 30 00 10            	call	dword ptr [0x100030b4]
+10001268: 8b 46 24                     	mov	eax, dword ptr [esi + 0x24]
+1000126b: 8b 0f                        	mov	ecx, dword ptr [edi]
+1000126d: 6a 20                        	push	0x20
+1000126f: 50                           	push	eax
+10001270: 51                           	push	ecx
+10001271: ff 15 ac 30 00 10            	call	dword ptr [0x100030ac]
+10001277: 85 c0                        	test	eax, eax
+10001279: 75 28                        	jne	0x100012a3 <.text+0x2a3>
+1000127b: 8b 56 24                     	mov	edx, dword ptr [esi + 0x24]
+1000127e: 8b 07                        	mov	eax, dword ptr [edi]
+10001280: 6a 20                        	push	0x20
+10001282: 52                           	push	edx
+10001283: 50                           	push	eax
+10001284: ff 15 b4 30 00 10            	call	dword ptr [0x100030b4]
+1000128a: 85 c0                        	test	eax, eax
+1000128c: 75 15                        	jne	0x100012a3 <.text+0x2a3>
+1000128e: 8b 0f                        	mov	ecx, dword ptr [edi]
+10001290: 51                           	push	ecx
+10001291: ff 15 cc 30 00 10            	call	dword ptr [0x100030cc]
+10001297: 85 c0                        	test	eax, eax
+10001299: 75 08                        	jne	0x100012a3 <.text+0x2a3>
+1000129b: 5f                           	pop	edi
+1000129c: b8 01 00 00 00               	mov	eax, 0x1
+100012a1: 5b                           	pop	ebx
+100012a2: c3                           	ret
+100012a3: 5f                           	pop	edi
+100012a4: 33 c0                        	xor	eax, eax
+100012a6: 5b                           	pop	ebx
+100012a7: c3                           	ret
+100012a8: cc                           	int3
+100012a9: cc                           	int3
+100012aa: cc                           	int3
+100012ab: cc                           	int3
+100012ac: cc                           	int3
+100012ad: cc                           	int3
+100012ae: cc                           	int3
+100012af: cc                           	int3
+100012b0: 80 7e 05 00                  	cmp	byte ptr [esi + 0x5], 0x0
+100012b4: 74 03                        	je	0x100012b9 <.text+0x2b9>
+100012b6: 32 c0                        	xor	al, al
+100012b8: c3                           	ret
+100012b9: 80 7e 04 00                  	cmp	byte ptr [esi + 0x4], 0x0
+100012bd: 75 03                        	jne	0x100012c2 <.text+0x2c2>
+100012bf: b0 01                        	mov	al, 0x1
+100012c1: c3                           	ret
+100012c2: 8b 46 1c                     	mov	eax, dword ptr [esi + 0x1c]
+100012c5: 50                           	push	eax
+100012c6: c6 46 06 01                  	mov	byte ptr [esi + 0x6], 0x1
+100012ca: ff 15 b8 30 00 10            	call	dword ptr [0x100030b8]
+100012d0: 85 c0                        	test	eax, eax
+100012d2: 75 e2                        	jne	0x100012b6 <.text+0x2b6>
+100012d4: 39 46 08                     	cmp	dword ptr [esi + 0x8], eax
+100012d7: 74 20                        	je	0x100012f9 <.text+0x2f9>
+100012d9: 8b 4e 24                     	mov	ecx, dword ptr [esi + 0x24]
+100012dc: 8b 56 1c                     	mov	edx, dword ptr [esi + 0x1c]
+100012df: 57                           	push	edi
+100012e0: 8b 3d c0 30 00 10            	mov	edi, dword ptr [0x100030c0]
+100012e6: 6a 20                        	push	0x20
+100012e8: 51                           	push	ecx
+100012e9: 52                           	push	edx
+100012ea: ff d7                        	call	edi
+100012ec: 8b 46 28                     	mov	eax, dword ptr [esi + 0x28]
+100012ef: 8b 4e 1c                     	mov	ecx, dword ptr [esi + 0x1c]
+100012f2: 6a 20                        	push	0x20
+100012f4: 50                           	push	eax
+100012f5: 51                           	push	ecx
+100012f6: ff d7                        	call	edi
+100012f8: 5f                           	pop	edi
+100012f9: 8b 56 1c                     	mov	edx, dword ptr [esi + 0x1c]
+100012fc: 52                           	push	edx
+100012fd: ff 15 a0 30 00 10            	call	dword ptr [0x100030a0]
+10001303: f7 d8                        	neg	eax
+10001305: 1b c0                        	sbb	eax, eax
+10001307: 40                           	inc	eax
+10001308: c3                           	ret
+10001309: cc                           	int3
+1000130a: cc                           	int3
+1000130b: cc                           	int3
+1000130c: cc                           	int3
+1000130d: cc                           	int3
+1000130e: cc                           	int3
+1000130f: cc                           	int3
+10001310: 8b 4e 08                     	mov	ecx, dword ptr [esi + 0x8]
+10001313: 03 4f 08                     	add	ecx, dword ptr [edi + 0x8]
+10001316: 8b 46 0c                     	mov	eax, dword ptr [esi + 0xc]
+10001319: 3b c1                        	cmp	eax, ecx
+1000131b: 73 16                        	jae	0x10001333 <.text+0x333>
+1000131d: 8b 56 18                     	mov	edx, dword ptr [esi + 0x18]
+10001320: 03 c0                        	add	eax, eax
+10001322: 50                           	push	eax
+10001323: 52                           	push	edx
+10001324: 89 46 0c                     	mov	dword ptr [esi + 0xc], eax
+10001327: ff 15 44 30 00 10            	call	dword ptr [0x10003044]
+1000132d: 83 c4 08                     	add	esp, 0x8
+10001330: 89 46 18                     	mov	dword ptr [esi + 0x18], eax
+10001333: 8b 47 08                     	mov	eax, dword ptr [edi + 0x8]
+10001336: 8b 56 18                     	mov	edx, dword ptr [esi + 0x18]
+10001339: 8b 0f                        	mov	ecx, dword ptr [edi]
+1000133b: 03 56 08                     	add	edx, dword ptr [esi + 0x8]
+1000133e: 50                           	push	eax
+1000133f: 51                           	push	ecx
+10001340: 52                           	push	edx
+10001341: e8 94 0d 00 00               	call	0x100020da <yf_sound_get_data_ptr+0x9ca>
+10001346: 8b 47 08                     	mov	eax, dword ptr [edi + 0x8]
+10001349: 01 46 08                     	add	dword ptr [esi + 0x8], eax
+1000134c: 83 c4 0c                     	add	esp, 0xc
+1000134f: 80 7e 06 00                  	cmp	byte ptr [esi + 0x6], 0x0
+10001353: 75 0d                        	jne	0x10001362 <.text+0x362>
+10001355: 8b 4e 1c                     	mov	ecx, dword ptr [esi + 0x1c]
+10001358: 6a 20                        	push	0x20
+1000135a: 57                           	push	edi
+1000135b: 51                           	push	ecx
+1000135c: ff 15 b4 30 00 10            	call	dword ptr [0x100030b4]
+10001362: c3                           	ret
+10001363: cc                           	int3
+10001364: cc                           	int3
+10001365: cc                           	int3
+10001366: cc                           	int3
+10001367: cc                           	int3
+10001368: cc                           	int3
+10001369: cc                           	int3
+1000136a: cc                           	int3
+1000136b: cc                           	int3
+1000136c: cc                           	int3
+1000136d: cc                           	int3
+1000136e: cc                           	int3
+1000136f: cc                           	int3
+10001370: 55                           	push	ebp
+10001371: 8b ec                        	mov	ebp, esp
+10001373: 8b 45 0c                     	mov	eax, dword ptr [ebp + 0xc]
+10001376: 2d be 03 00 00               	sub	eax, 0x3be
+1000137b: 74 24                        	je	0x100013a1 <.text+0x3a1>
+1000137d: 48                           	dec	eax
+1000137e: 74 16                        	je	0x10001396 <.text+0x396>
+10001380: 48                           	dec	eax
+10001381: 75 2d                        	jne	0x100013b0 <.text+0x3b0>
+10001383: 56                           	push	esi
+10001384: 8b 75 10                     	mov	esi, dword ptr [ebp + 0x10]
+10001387: 57                           	push	edi
+10001388: 8b 7d 14                     	mov	edi, dword ptr [ebp + 0x14]
+1000138b: e8 80 ff ff ff               	call	0x10001310 <.text+0x310>
+10001390: 5f                           	pop	edi
+10001391: 5e                           	pop	esi
+10001392: 5d                           	pop	ebp
+10001393: c2 14 00                     	ret	0x14
+10001396: 8b 45 10                     	mov	eax, dword ptr [ebp + 0x10]
+10001399: c6 40 04 00                  	mov	byte ptr [eax + 0x4], 0x0
+1000139d: 5d                           	pop	ebp
+1000139e: c2 14 00                     	ret	0x14
+100013a1: 8b 45 10                     	mov	eax, dword ptr [ebp + 0x10]
+100013a4: 33 c9                        	xor	ecx, ecx
+100013a6: c6 40 04 01                  	mov	byte ptr [eax + 0x4], 0x1
+100013aa: 88 48 06                     	mov	byte ptr [eax + 0x6], cl
+100013ad: 89 48 08                     	mov	dword ptr [eax + 0x8], ecx
+100013b0: 5d                           	pop	ebp
+100013b1: c2 14 00                     	ret	0x14
+100013b4: cc                           	int3
+100013b5: cc                           	int3
+100013b6: cc                           	int3
+100013b7: cc                           	int3
+100013b8: cc                           	int3
+100013b9: cc                           	int3
+100013ba: cc                           	int3
+100013bb: cc                           	int3
+100013bc: cc                           	int3
+100013bd: cc                           	int3
+100013be: cc                           	int3
+100013bf: cc                           	int3
+100013c0: 56                           	push	esi
+100013c1: 8b f0                        	mov	esi, eax
+100013c3: 83 7e 08 00                  	cmp	dword ptr [esi + 0x8], 0x0
+100013c7: 0f 84 92 00 00 00            	je	0x1000145f <.text+0x45f>
+100013cd: 80 7e 04 00                  	cmp	byte ptr [esi + 0x4], 0x0
+100013d1: 0f 85 88 00 00 00            	jne	0x1000145f <.text+0x45f>
+100013d7: 80 7e 05 00                  	cmp	byte ptr [esi + 0x5], 0x0
+100013db: 74 05                        	je	0x100013e2 <.text+0x3e2>
+100013dd: e8 8e 00 00 00               	call	0x10001470 <.text+0x470>
+100013e2: 57                           	push	edi
+100013e3: 68 00 00 03 00               	push	0x30000
+100013e8: 56                           	push	esi
+100013e9: 68 c0 14 00 10               	push	0x100014c0
+100013ee: 8d 46 2c                     	lea	eax, [esi + 0x2c]
+100013f1: 50                           	push	eax
+100013f2: 6a ff                        	push	-0x1
+100013f4: 8d 7e 20                     	lea	edi, [esi + 0x20]
+100013f7: 57                           	push	edi
+100013f8: ff 15 c4 30 00 10            	call	dword ptr [0x100030c4]
+100013fe: 85 c0                        	test	eax, eax
+10001400: 74 05                        	je	0x10001407 <.text+0x407>
+10001402: 5f                           	pop	edi
+10001403: 32 c0                        	xor	al, al
+10001405: 5e                           	pop	esi
+10001406: c3                           	ret
+10001407: 8b 4e 24                     	mov	ecx, dword ptr [esi + 0x24]
+1000140a: 8b 56 18                     	mov	edx, dword ptr [esi + 0x18]
+1000140d: 89 11                        	mov	dword ptr [ecx], edx
+1000140f: 8b 46 24                     	mov	eax, dword ptr [esi + 0x24]
+10001412: 8b 4e 08                     	mov	ecx, dword ptr [esi + 0x8]
+10001415: 89 48 04                     	mov	dword ptr [eax + 0x4], ecx
+10001418: 8b 56 24                     	mov	edx, dword ptr [esi + 0x24]
+1000141b: c7 42 08 00 00 00 00         	mov	dword ptr [edx + 0x8], 0x0
+10001422: 8b 46 24                     	mov	eax, dword ptr [esi + 0x24]
+10001425: c7 40 10 0c 00 00 00         	mov	dword ptr [eax + 0x10], 0xc
+1000142c: 8b 4e 24                     	mov	ecx, dword ptr [esi + 0x24]
+1000142f: 8b 17                        	mov	edx, dword ptr [edi]
+10001431: 6a 20                        	push	0x20
+10001433: 51                           	push	ecx
+10001434: 52                           	push	edx
+10001435: ff 15 c8 30 00 10            	call	dword ptr [0x100030c8]
+1000143b: 85 c0                        	test	eax, eax
+1000143d: 75 1b                        	jne	0x1000145a <.text+0x45a>
+1000143f: 8b 46 24                     	mov	eax, dword ptr [esi + 0x24]
+10001442: 8b 0f                        	mov	ecx, dword ptr [edi]
+10001444: 6a 20                        	push	0x20
+10001446: 50                           	push	eax
+10001447: 51                           	push	ecx
+10001448: ff 15 a4 30 00 10            	call	dword ptr [0x100030a4]
+1000144e: 85 c0                        	test	eax, eax
+10001450: 75 08                        	jne	0x1000145a <.text+0x45a>
+10001452: 5f                           	pop	edi
+10001453: b8 01 00 00 00               	mov	eax, 0x1
+10001458: 5e                           	pop	esi
+10001459: c3                           	ret
+1000145a: 5f                           	pop	edi
+1000145b: 33 c0                        	xor	eax, eax
+1000145d: 5e                           	pop	esi
+1000145e: c3                           	ret
+1000145f: 32 c0                        	xor	al, al
+10001461: 5e                           	pop	esi
+10001462: c3                           	ret
+10001463: cc                           	int3
+10001464: cc                           	int3
+10001465: cc                           	int3
+10001466: cc                           	int3
+10001467: cc                           	int3
+10001468: cc                           	int3
+10001469: cc                           	int3
+1000146a: cc                           	int3
+1000146b: cc                           	int3
+1000146c: cc                           	int3
+1000146d: cc                           	int3
+1000146e: cc                           	int3
+1000146f: cc                           	int3
+10001470: 80 7e 04 00                  	cmp	byte ptr [esi + 0x4], 0x0
+10001474: 74 03                        	je	0x10001479 <.text+0x479>
+10001476: 32 c0                        	xor	al, al
+10001478: c3                           	ret
+10001479: 80 7e 05 00                  	cmp	byte ptr [esi + 0x5], 0x0
+1000147d: 75 03                        	jne	0x10001482 <.text+0x482>
+1000147f: b0 01                        	mov	al, 0x1
+10001481: c3                           	ret
+10001482: 8b 46 20                     	mov	eax, dword ptr [esi + 0x20]
+10001485: 50                           	push	eax
+10001486: c6 46 06 01                  	mov	byte ptr [esi + 0x6], 0x1
+1000148a: ff 15 a8 30 00 10            	call	dword ptr [0x100030a8]
+10001490: 85 c0                        	test	eax, eax
+10001492: 75 28                        	jne	0x100014bc <.text+0x4bc>
+10001494: 8b 4e 24                     	mov	ecx, dword ptr [esi + 0x24]
+10001497: 8b 56 20                     	mov	edx, dword ptr [esi + 0x20]
+1000149a: 6a 20                        	push	0x20
+1000149c: 51                           	push	ecx
+1000149d: 52                           	push	edx
+1000149e: ff 15 bc 30 00 10            	call	dword ptr [0x100030bc]
+100014a4: 85 c0                        	test	eax, eax
+100014a6: 75 14                        	jne	0x100014bc <.text+0x4bc>
+100014a8: 8b 46 20                     	mov	eax, dword ptr [esi + 0x20]
+100014ab: 50                           	push	eax
+100014ac: ff 15 9c 30 00 10            	call	dword ptr [0x1000309c]
+100014b2: 85 c0                        	test	eax, eax
+100014b4: 75 06                        	jne	0x100014bc <.text+0x4bc>
+100014b6: b8 01 00 00 00               	mov	eax, 0x1
+100014bb: c3                           	ret
+100014bc: 33 c0                        	xor	eax, eax
+100014be: c3                           	ret
+100014bf: cc                           	int3
+100014c0: 55                           	push	ebp
+100014c1: 8b ec                        	mov	ebp, esp
+100014c3: 8b 45 0c                     	mov	eax, dword ptr [ebp + 0xc]
+100014c6: 2d bb 03 00 00               	sub	eax, 0x3bb
+100014cb: 74 1c                        	je	0x100014e9 <.text+0x4e9>
+100014cd: 48                           	dec	eax
+100014ce: 74 0e                        	je	0x100014de <.text+0x4de>
+100014d0: 48                           	dec	eax
+100014d1: 75 1f                        	jne	0x100014f2 <.text+0x4f2>
+100014d3: 8b 45 10                     	mov	eax, dword ptr [ebp + 0x10]
+100014d6: c6 40 05 00                  	mov	byte ptr [eax + 0x5], 0x0
+100014da: 5d                           	pop	ebp
+100014db: c2 14 00                     	ret	0x14
+100014de: 8b 4d 10                     	mov	ecx, dword ptr [ebp + 0x10]
+100014e1: c6 41 05 00                  	mov	byte ptr [ecx + 0x5], 0x0
+100014e5: 5d                           	pop	ebp
+100014e6: c2 14 00                     	ret	0x14
+100014e9: 8b 45 10                     	mov	eax, dword ptr [ebp + 0x10]
+100014ec: 66 c7 40 05 01 00            	mov	word ptr [eax + 0x5], 0x1
+100014f2: 5d                           	pop	ebp
+100014f3: c2 14 00                     	ret	0x14
+100014f6: cc                           	int3
+100014f7: cc                           	int3
+100014f8: cc                           	int3
+100014f9: cc                           	int3
+100014fa: cc                           	int3
+100014fb: cc                           	int3
+100014fc: cc                           	int3
+100014fd: cc                           	int3
+100014fe: cc                           	int3
+100014ff: cc                           	int3
+
+10001500 <yf_sound_init>:
+10001500: 55                           	push	ebp
+10001501: 8b ec                        	mov	ebp, esp
+10001503: 6a 40                        	push	0x40
+10001505: ff 15 48 30 00 10            	call	dword ptr [0x10003048]
+1000150b: 83 c4 04                     	add	esp, 0x4
+1000150e: 85 c0                        	test	eax, eax
+10001510: 74 18                        	je	0x1000152a <yf_sound_init+0x2a>
+10001512: 56                           	push	esi
+10001513: 8b f0                        	mov	esi, eax
+10001515: e8 e6 fa ff ff               	call	0x10001000 <.text>
+1000151a: 5e                           	pop	esi
+1000151b: 85 c0                        	test	eax, eax
+1000151d: 74 0b                        	je	0x1000152a <yf_sound_init+0x2a>
+1000151f: 8b 4d 08                     	mov	ecx, dword ptr [ebp + 0x8]
+10001522: 89 01                        	mov	dword ptr [ecx], eax
+10001524: b0 01                        	mov	al, 0x1
+10001526: 5d                           	pop	ebp
+10001527: c2 04 00                     	ret	0x4
+1000152a: 8b 55 08                     	mov	edx, dword ptr [ebp + 0x8]
+1000152d: c7 02 00 00 00 00            	mov	dword ptr [edx], 0x0
+10001533: 32 c0                        	xor	al, al
+10001535: 5d                           	pop	ebp
+10001536: c2 04 00                     	ret	0x4
+10001539: cc                           	int3
+1000153a: cc                           	int3
+1000153b: cc                           	int3
+1000153c: cc                           	int3
+1000153d: cc                           	int3
+1000153e: cc                           	int3
+1000153f: cc                           	int3
+
+10001540 <yf_sound_uninit>:
+10001540: 55                           	push	ebp
+10001541: 8b ec                        	mov	ebp, esp
+10001543: 56                           	push	esi
+10001544: 8b 75 08                     	mov	esi, dword ptr [ebp + 0x8]
+10001547: 8b 0e                        	mov	ecx, dword ptr [esi]
+10001549: 85 c9                        	test	ecx, ecx
+1000154b: 74 15                        	je	0x10001562 <yf_sound_uninit+0x22>
+1000154d: 8b 01                        	mov	eax, dword ptr [ecx]
+1000154f: 8b 10                        	mov	edx, dword ptr [eax]
+10001551: 6a 01                        	push	0x1
+10001553: ff d2                        	call	edx
+10001555: c7 06 00 00 00 00            	mov	dword ptr [esi], 0x0
+1000155b: b0 01                        	mov	al, 0x1
+1000155d: 5e                           	pop	esi
+1000155e: 5d                           	pop	ebp
+1000155f: c2 04 00                     	ret	0x4
+10001562: 32 c0                        	xor	al, al
+10001564: 5e                           	pop	esi
+10001565: 5d                           	pop	ebp
+10001566: c2 04 00                     	ret	0x4
+10001569: cc                           	int3
+1000156a: cc                           	int3
+1000156b: cc                           	int3
+1000156c: cc                           	int3
+1000156d: cc                           	int3
+1000156e: cc                           	int3
+1000156f: cc                           	int3
+
+10001570 <yf_sound_start_record>:
+10001570: 55                           	push	ebp
+10001571: 8b ec                        	mov	ebp, esp
+10001573: 56                           	push	esi
+10001574: 8b 75 08                     	mov	esi, dword ptr [ebp + 0x8]
+10001577: 85 f6                        	test	esi, esi
+10001579: 74 0a                        	je	0x10001585 <yf_sound_start_record+0x15>
+1000157b: e8 40 fc ff ff               	call	0x100011c0 <.text+0x1c0>
+10001580: 5e                           	pop	esi
+10001581: 5d                           	pop	ebp
+10001582: c2 04 00                     	ret	0x4
+10001585: 32 c0                        	xor	al, al
+10001587: 5e                           	pop	esi
+10001588: 5d                           	pop	ebp
+10001589: c2 04 00                     	ret	0x4
+1000158c: cc                           	int3
+1000158d: cc                           	int3
+1000158e: cc                           	int3
+1000158f: cc                           	int3
+
+10001590 <yf_sound_stop_record>:
+10001590: 55                           	push	ebp
+10001591: 8b ec                        	mov	ebp, esp
+10001593: 56                           	push	esi
+10001594: 8b 75 08                     	mov	esi, dword ptr [ebp + 0x8]
+10001597: 85 f6                        	test	esi, esi
+10001599: 74 0a                        	je	0x100015a5 <yf_sound_stop_record+0x15>
+1000159b: e8 10 fd ff ff               	call	0x100012b0 <.text+0x2b0>
+100015a0: 5e                           	pop	esi
+100015a1: 5d                           	pop	ebp
+100015a2: c2 04 00                     	ret	0x4
+100015a5: 32 c0                        	xor	al, al
+100015a7: 5e                           	pop	esi
+100015a8: 5d                           	pop	ebp
+100015a9: c2 04 00                     	ret	0x4
+100015ac: cc                           	int3
+100015ad: cc                           	int3
+100015ae: cc                           	int3
+100015af: cc                           	int3
+
+100015b0 <yf_sound_is_recording>:
+100015b0: 55                           	push	ebp
+100015b1: 8b ec                        	mov	ebp, esp
+100015b3: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+100015b6: 85 c0                        	test	eax, eax
+100015b8: 74 0e                        	je	0x100015c8 <yf_sound_is_recording+0x18>
+100015ba: 8a 40 04                     	mov	al, byte ptr [eax + 0x4]
+100015bd: 8b 4d 0c                     	mov	ecx, dword ptr [ebp + 0xc]
+100015c0: 88 01                        	mov	byte ptr [ecx], al
+100015c2: b0 01                        	mov	al, 0x1
+100015c4: 5d                           	pop	ebp
+100015c5: c2 08 00                     	ret	0x8
+100015c8: 32 c0                        	xor	al, al
+100015ca: 5d                           	pop	ebp
+100015cb: c2 08 00                     	ret	0x8
+100015ce: cc                           	int3
+100015cf: cc                           	int3
+
+100015d0 <yf_sound_play>:
+100015d0: 55                           	push	ebp
+100015d1: 8b ec                        	mov	ebp, esp
+100015d3: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+100015d6: 85 c0                        	test	eax, eax
+100015d8: 74 09                        	je	0x100015e3 <yf_sound_play+0x13>
+100015da: e8 e1 fd ff ff               	call	0x100013c0 <.text+0x3c0>
+100015df: 5d                           	pop	ebp
+100015e0: c2 04 00                     	ret	0x4
+100015e3: 32 c0                        	xor	al, al
+100015e5: 5d                           	pop	ebp
+100015e6: c2 04 00                     	ret	0x4
+100015e9: cc                           	int3
+100015ea: cc                           	int3
+100015eb: cc                           	int3
+100015ec: cc                           	int3
+100015ed: cc                           	int3
+100015ee: cc                           	int3
+100015ef: cc                           	int3
+
+100015f0 <yf_sound_stop>:
+100015f0: 55                           	push	ebp
+100015f1: 8b ec                        	mov	ebp, esp
+100015f3: 56                           	push	esi
+100015f4: 8b 75 08                     	mov	esi, dword ptr [ebp + 0x8]
+100015f7: 85 f6                        	test	esi, esi
+100015f9: 74 47                        	je	0x10001642 <yf_sound_stop+0x52>
+100015fb: 80 7e 04 00                  	cmp	byte ptr [esi + 0x4], 0x0
+100015ff: 75 41                        	jne	0x10001642 <yf_sound_stop+0x52>
+10001601: 80 7e 05 00                  	cmp	byte ptr [esi + 0x5], 0x0
+10001605: 74 34                        	je	0x1000163b <yf_sound_stop+0x4b>
+10001607: 8b 46 20                     	mov	eax, dword ptr [esi + 0x20]
+1000160a: 50                           	push	eax
+1000160b: c6 46 06 01                  	mov	byte ptr [esi + 0x6], 0x1
+1000160f: ff 15 a8 30 00 10            	call	dword ptr [0x100030a8]
+10001615: 85 c0                        	test	eax, eax
+10001617: 75 29                        	jne	0x10001642 <yf_sound_stop+0x52>
+10001619: 8b 4e 24                     	mov	ecx, dword ptr [esi + 0x24]
+1000161c: 8b 56 20                     	mov	edx, dword ptr [esi + 0x20]
+1000161f: 6a 20                        	push	0x20
+10001621: 51                           	push	ecx
+10001622: 52                           	push	edx
+10001623: ff 15 bc 30 00 10            	call	dword ptr [0x100030bc]
+10001629: 85 c0                        	test	eax, eax
+1000162b: 75 15                        	jne	0x10001642 <yf_sound_stop+0x52>
+1000162d: 8b 46 20                     	mov	eax, dword ptr [esi + 0x20]
+10001630: 50                           	push	eax
+10001631: ff 15 9c 30 00 10            	call	dword ptr [0x1000309c]
+10001637: 85 c0                        	test	eax, eax
+10001639: 75 07                        	jne	0x10001642 <yf_sound_stop+0x52>
+1000163b: b0 01                        	mov	al, 0x1
+1000163d: 5e                           	pop	esi
+1000163e: 5d                           	pop	ebp
+1000163f: c2 04 00                     	ret	0x4
+10001642: 32 c0                        	xor	al, al
+10001644: 5e                           	pop	esi
+10001645: 5d                           	pop	ebp
+10001646: c2 04 00                     	ret	0x4
+10001649: cc                           	int3
+1000164a: cc                           	int3
+1000164b: cc                           	int3
+1000164c: cc                           	int3
+1000164d: cc                           	int3
+1000164e: cc                           	int3
+1000164f: cc                           	int3
+
+10001650 <yf_sound_set_data>:
+10001650: 55                           	push	ebp
+10001651: 8b ec                        	mov	ebp, esp
+10001653: 56                           	push	esi
+10001654: 8b 75 08                     	mov	esi, dword ptr [ebp + 0x8]
+10001657: 33 c0                        	xor	eax, eax
+10001659: 3b f0                        	cmp	esi, eax
+1000165b: 74 4a                        	je	0x100016a7 <yf_sound_set_data+0x57>
+1000165d: 53                           	push	ebx
+1000165e: 8b 5d 0c                     	mov	ebx, dword ptr [ebp + 0xc]
+10001661: 57                           	push	edi
+10001662: 89 46 08                     	mov	dword ptr [esi + 0x8], eax
+10001665: 3b d8                        	cmp	ebx, eax
+10001667: 74 37                        	je	0x100016a0 <yf_sound_set_data+0x50>
+10001669: 8b 7d 10                     	mov	edi, dword ptr [ebp + 0x10]
+1000166c: 81 ff 00 00 40 00            	cmp	edi, 0x400000
+10001672: 77 2c                        	ja	0x100016a0 <yf_sound_set_data+0x50>
+10001674: 39 7e 0c                     	cmp	dword ptr [esi + 0xc], edi
+10001677: 73 14                        	jae	0x1000168d <yf_sound_set_data+0x3d>
+10001679: 8b 46 18                     	mov	eax, dword ptr [esi + 0x18]
+1000167c: 57                           	push	edi
+1000167d: 50                           	push	eax
+1000167e: 89 7e 0c                     	mov	dword ptr [esi + 0xc], edi
+10001681: ff 15 44 30 00 10            	call	dword ptr [0x10003044]
+10001687: 83 c4 08                     	add	esp, 0x8
+1000168a: 89 46 18                     	mov	dword ptr [esi + 0x18], eax
+1000168d: 8b 4e 18                     	mov	ecx, dword ptr [esi + 0x18]
+10001690: 57                           	push	edi
+10001691: 53                           	push	ebx
+10001692: 51                           	push	ecx
+10001693: 89 7e 08                     	mov	dword ptr [esi + 0x8], edi
+10001696: e8 3f 0a 00 00               	call	0x100020da <yf_sound_get_data_ptr+0x9ca>
+1000169b: 83 c4 0c                     	add	esp, 0xc
+1000169e: b0 01                        	mov	al, 0x1
+100016a0: 5f                           	pop	edi
+100016a1: 5b                           	pop	ebx
+100016a2: 5e                           	pop	esi
+100016a3: 5d                           	pop	ebp
+100016a4: c2 0c 00                     	ret	0xc
+100016a7: 32 c0                        	xor	al, al
+100016a9: 5e                           	pop	esi
+100016aa: 5d                           	pop	ebp
+100016ab: c2 0c 00                     	ret	0xc
+100016ae: cc                           	int3
+100016af: cc                           	int3
+
+100016b0 <yf_sound_get_data_len>:
+100016b0: 55                           	push	ebp
+100016b1: 8b ec                        	mov	ebp, esp
+100016b3: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+100016b6: 85 c0                        	test	eax, eax
+100016b8: 74 0e                        	je	0x100016c8 <yf_sound_get_data_len+0x18>
+100016ba: 8b 40 08                     	mov	eax, dword ptr [eax + 0x8]
+100016bd: 8b 4d 0c                     	mov	ecx, dword ptr [ebp + 0xc]
+100016c0: 89 01                        	mov	dword ptr [ecx], eax
+100016c2: b0 01                        	mov	al, 0x1
+100016c4: 5d                           	pop	ebp
+100016c5: c2 08 00                     	ret	0x8
+100016c8: 32 c0                        	xor	al, al
+100016ca: 5d                           	pop	ebp
+100016cb: c2 08 00                     	ret	0x8
+100016ce: cc                           	int3
+100016cf: cc                           	int3
+
+100016d0 <yf_sound_get_data>:
+100016d0: 55                           	push	ebp
+100016d1: 8b ec                        	mov	ebp, esp
+100016d3: 8b 4d 08                     	mov	ecx, dword ptr [ebp + 0x8]
+100016d6: 85 c9                        	test	ecx, ecx
+100016d8: 74 22                        	je	0x100016fc <yf_sound_get_data+0x2c>
+100016da: 8b 55 0c                     	mov	edx, dword ptr [ebp + 0xc]
+100016dd: 85 d2                        	test	edx, edx
+100016df: 74 1b                        	je	0x100016fc <yf_sound_get_data+0x2c>
+100016e1: 8b 41 08                     	mov	eax, dword ptr [ecx + 0x8]
+100016e4: 85 c0                        	test	eax, eax
+100016e6: 74 14                        	je	0x100016fc <yf_sound_get_data+0x2c>
+100016e8: 50                           	push	eax
+100016e9: 8b 41 18                     	mov	eax, dword ptr [ecx + 0x18]
+100016ec: 50                           	push	eax
+100016ed: 52                           	push	edx
+100016ee: e8 e7 09 00 00               	call	0x100020da <yf_sound_get_data_ptr+0x9ca>
+100016f3: 83 c4 0c                     	add	esp, 0xc
+100016f6: b0 01                        	mov	al, 0x1
+100016f8: 5d                           	pop	ebp
+100016f9: c2 08 00                     	ret	0x8
+100016fc: 32 c0                        	xor	al, al
+100016fe: 5d                           	pop	ebp
+100016ff: c2 08 00                     	ret	0x8
+10001702: cc                           	int3
+10001703: cc                           	int3
+10001704: cc                           	int3
+10001705: cc                           	int3
+10001706: cc                           	int3
+10001707: cc                           	int3
+10001708: cc                           	int3
+10001709: cc                           	int3
+1000170a: cc                           	int3
+1000170b: cc                           	int3
+1000170c: cc                           	int3
+1000170d: cc                           	int3
+1000170e: cc                           	int3
+1000170f: cc                           	int3
+
+10001710 <yf_sound_get_data_ptr>:
+10001710: 55                           	push	ebp
+10001711: 8b ec                        	mov	ebp, esp
+10001713: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001716: 85 c0                        	test	eax, eax
+10001718: 74 0e                        	je	0x10001728 <yf_sound_get_data_ptr+0x18>
+1000171a: 8b 40 18                     	mov	eax, dword ptr [eax + 0x18]
+1000171d: 8b 4d 0c                     	mov	ecx, dword ptr [ebp + 0xc]
+10001720: 89 01                        	mov	dword ptr [ecx], eax
+10001722: b0 01                        	mov	al, 0x1
+10001724: 5d                           	pop	ebp
+10001725: c2 08 00                     	ret	0x8
+10001728: 32 c0                        	xor	al, al
+1000172a: 5d                           	pop	ebp
+1000172b: c2 08 00                     	ret	0x8
+1000172e: 3b 0d 18 40 00 10            	cmp	ecx, dword ptr [0x10004018]
+10001734: 75 02                        	jne	0x10001738 <yf_sound_get_data_ptr+0x28>
+10001736: f3 c3                        	rep		ret
+10001738: e9 e4 03 00 00               	jmp	0x10001b21 <yf_sound_get_data_ptr+0x411>
+1000173d: cc                           	int3
+1000173e: ff 25 4c 30 00 10            	jmp	dword ptr [0x1000304c]
+10001744: 8b ff                        	mov	edi, edi
+10001746: 55                           	push	ebp
+10001747: 8b ec                        	mov	ebp, esp
+10001749: f6 45 08 02                  	test	byte ptr [ebp + 0x8], 0x2
+1000174d: 57                           	push	edi
+1000174e: 8b f9                        	mov	edi, ecx
+10001750: 74 25                        	je	0x10001777 <yf_sound_get_data_ptr+0x67>
+10001752: 56                           	push	esi
+10001753: 68 b6 20 00 10               	push	0x100020b6
+10001758: 8d 77 fc                     	lea	esi, [edi - 0x4]
+1000175b: ff 36                        	push	dword ptr [esi]
+1000175d: 6a 0c                        	push	0xc
+1000175f: 57                           	push	edi
+10001760: e8 20 05 00 00               	call	0x10001c85 <yf_sound_get_data_ptr+0x575>
+10001765: f6 45 08 01                  	test	byte ptr [ebp + 0x8], 0x1
+10001769: 74 07                        	je	0x10001772 <yf_sound_get_data_ptr+0x62>
+1000176b: 56                           	push	esi
+1000176c: e8 cd ff ff ff               	call	0x1000173e <yf_sound_get_data_ptr+0x2e>
+10001771: 59                           	pop	ecx
+10001772: 8b c6                        	mov	eax, esi
+10001774: 5e                           	pop	esi
+10001775: eb 14                        	jmp	0x1000178b <yf_sound_get_data_ptr+0x7b>
+10001777: e8 3a 09 00 00               	call	0x100020b6 <yf_sound_get_data_ptr+0x9a6>
+1000177c: f6 45 08 01                  	test	byte ptr [ebp + 0x8], 0x1
+10001780: 74 07                        	je	0x10001789 <yf_sound_get_data_ptr+0x79>
+10001782: 57                           	push	edi
+10001783: e8 b6 ff ff ff               	call	0x1000173e <yf_sound_get_data_ptr+0x2e>
+10001788: 59                           	pop	ecx
+10001789: 8b c7                        	mov	eax, edi
+1000178b: 5f                           	pop	edi
+1000178c: 5d                           	pop	ebp
+1000178d: c2 04 00                     	ret	0x4
+10001790: 8b ff                        	mov	edi, edi
+10001792: 56                           	push	esi
+10001793: 68 80 00 00 00               	push	0x80
+10001798: ff 15 94 30 00 10            	call	dword ptr [0x10003094]
+1000179e: 59                           	pop	ecx
+1000179f: 8b f0                        	mov	esi, eax
+100017a1: 56                           	push	esi
+100017a2: ff 15 38 30 00 10            	call	dword ptr [0x10003038]
+100017a8: a3 88 43 00 10               	mov	dword ptr [0x10004388], eax
+100017ad: a3 84 43 00 10               	mov	dword ptr [0x10004384], eax
+100017b2: 85 f6                        	test	esi, esi
+100017b4: 75 05                        	jne	0x100017bb <yf_sound_get_data_ptr+0xab>
+100017b6: 33 c0                        	xor	eax, eax
+100017b8: 40                           	inc	eax
+100017b9: 5e                           	pop	esi
+100017ba: c3                           	ret
+100017bb: 83 26 00                     	and	dword ptr [esi], 0x0
+100017be: e8 e9 05 00 00               	call	0x10001dac <yf_sound_get_data_ptr+0x69c>
+100017c3: 68 d2 1d 00 10               	push	0x10001dd2
+100017c8: e8 c8 05 00 00               	call	0x10001d95 <yf_sound_get_data_ptr+0x685>
+100017cd: c7 04 24 e8 1c 00 10         	mov	dword ptr [esp], 0x10001ce8
+100017d4: e8 bc 05 00 00               	call	0x10001d95 <yf_sound_get_data_ptr+0x685>
+100017d9: 59                           	pop	ecx
+100017da: 33 c0                        	xor	eax, eax
+100017dc: 5e                           	pop	esi
+100017dd: c3                           	ret
+100017de: 8b ff                        	mov	edi, edi
+100017e0: 55                           	push	ebp
+100017e1: 8b ec                        	mov	ebp, esp
+100017e3: 51                           	push	ecx
+100017e4: 51                           	push	ecx
+100017e5: 53                           	push	ebx
+100017e6: 33 c0                        	xor	eax, eax
+100017e8: 56                           	push	esi
+100017e9: 57                           	push	edi
+100017ea: 39 45 0c                     	cmp	dword ptr [ebp + 0xc], eax
+100017ed: 75 32                        	jne	0x10001821 <yf_sound_get_data_ptr+0x111>
+100017ef: 39 05 48 40 00 10            	cmp	dword ptr [0x10004048], eax
+100017f5: 7e 23                        	jle	0x1000181a <yf_sound_get_data_ptr+0x10a>
+100017f7: 64 a1 18 00 00 00            	mov	eax, dword ptr fs:[0x18]
+100017fd: ff 0d 48 40 00 10            	dec	dword ptr [0x10004048]
+10001803: 8b 58 04                     	mov	ebx, dword ptr [eax + 0x4]
+10001806: 83 65 fc 00                  	and	dword ptr [ebp - 0x4], 0x0
+1000180a: 8b 35 30 30 00 10            	mov	esi, dword ptr [0x10003030]
+10001810: bf 80 43 00 10               	mov	edi, 0x10004380
+10001815: e9 ea 00 00 00               	jmp	0x10001904 <yf_sound_get_data_ptr+0x1f4>
+1000181a: 33 c0                        	xor	eax, eax
+1000181c: e9 c0 01 00 00               	jmp	0x100019e1 <yf_sound_get_data_ptr+0x2d1>
+10001821: 83 7d 0c 01                  	cmp	dword ptr [ebp + 0xc], 0x1
+10001825: 0f 85 b3 01 00 00            	jne	0x100019de <yf_sound_get_data_ptr+0x2ce>
+1000182b: 64 8b 0d 18 00 00 00         	mov	ecx, dword ptr fs:[0x18]
+10001832: 8b 59 04                     	mov	ebx, dword ptr [ecx + 0x4]
+10001835: 8b 35 30 30 00 10            	mov	esi, dword ptr [0x10003030]
+1000183b: 89 45 0c                     	mov	dword ptr [ebp + 0xc], eax
+1000183e: 50                           	push	eax
+1000183f: bf 80 43 00 10               	mov	edi, 0x10004380
+10001844: eb 11                        	jmp	0x10001857 <yf_sound_get_data_ptr+0x147>
+10001846: 3b c3                        	cmp	eax, ebx
+10001848: 74 17                        	je	0x10001861 <yf_sound_get_data_ptr+0x151>
+1000184a: 68 e8 03 00 00               	push	0x3e8
+1000184f: ff 15 00 30 00 10            	call	dword ptr [0x10003000]
+10001855: 6a 00                        	push	0x0
+10001857: 53                           	push	ebx
+10001858: 57                           	push	edi
+10001859: ff d6                        	call	esi
+1000185b: 85 c0                        	test	eax, eax
+1000185d: 75 e7                        	jne	0x10001846 <yf_sound_get_data_ptr+0x136>
+1000185f: eb 07                        	jmp	0x10001868 <yf_sound_get_data_ptr+0x158>
+10001861: c7 45 0c 01 00 00 00         	mov	dword ptr [ebp + 0xc], 0x1
+10001868: a1 7c 43 00 10               	mov	eax, dword ptr [0x1000437c]
+1000186d: 6a 02                        	push	0x2
+1000186f: 5e                           	pop	esi
+10001870: 85 c0                        	test	eax, eax
+10001872: 74 09                        	je	0x1000187d <yf_sound_get_data_ptr+0x16d>
+10001874: 6a 1f                        	push	0x1f
+10001876: e8 dd 06 00 00               	call	0x10001f58 <yf_sound_get_data_ptr+0x848>
+1000187b: eb 39                        	jmp	0x100018b6 <yf_sound_get_data_ptr+0x1a6>
+1000187d: 68 e4 30 00 10               	push	0x100030e4
+10001882: 68 dc 30 00 10               	push	0x100030dc
+10001887: c7 05 7c 43 00 10 01 00 00 00	mov	dword ptr [0x1000437c], 0x1
+10001891: e8 bc 06 00 00               	call	0x10001f52 <yf_sound_get_data_ptr+0x842>
+10001896: 59                           	pop	ecx
+10001897: 59                           	pop	ecx
+10001898: 85 c0                        	test	eax, eax
+1000189a: 0f 85 7a ff ff ff            	jne	0x1000181a <yf_sound_get_data_ptr+0x10a>
+100018a0: 68 d8 30 00 10               	push	0x100030d8
+100018a5: 68 d4 30 00 10               	push	0x100030d4
+100018aa: e8 9d 06 00 00               	call	0x10001f4c <yf_sound_get_data_ptr+0x83c>
+100018af: 59                           	pop	ecx
+100018b0: 89 35 7c 43 00 10            	mov	dword ptr [0x1000437c], esi
+100018b6: 33 db                        	xor	ebx, ebx
+100018b8: 59                           	pop	ecx
+100018b9: 39 5d 0c                     	cmp	dword ptr [ebp + 0xc], ebx
+100018bc: 75 08                        	jne	0x100018c6 <yf_sound_get_data_ptr+0x1b6>
+100018be: 53                           	push	ebx
+100018bf: 57                           	push	edi
+100018c0: ff 15 3c 30 00 10            	call	dword ptr [0x1000303c]
+100018c6: 39 1d 8c 43 00 10            	cmp	dword ptr [0x1000438c], ebx
+100018cc: 74 1c                        	je	0x100018ea <yf_sound_get_data_ptr+0x1da>
+100018ce: 68 8c 43 00 10               	push	0x1000438c
+100018d3: e8 b8 05 00 00               	call	0x10001e90 <yf_sound_get_data_ptr+0x780>
+100018d8: 59                           	pop	ecx
+100018d9: 85 c0                        	test	eax, eax
+100018db: 74 0d                        	je	0x100018ea <yf_sound_get_data_ptr+0x1da>
+100018dd: ff 75 10                     	push	dword ptr [ebp + 0x10]
+100018e0: 56                           	push	esi
+100018e1: ff 75 08                     	push	dword ptr [ebp + 0x8]
+100018e4: ff 15 8c 43 00 10            	call	dword ptr [0x1000438c]
+100018ea: ff 05 48 40 00 10            	inc	dword ptr [0x10004048]
+100018f0: e9 e9 00 00 00               	jmp	0x100019de <yf_sound_get_data_ptr+0x2ce>
+100018f5: 3b c3                        	cmp	eax, ebx
+100018f7: 74 17                        	je	0x10001910 <yf_sound_get_data_ptr+0x200>
+100018f9: 68 e8 03 00 00               	push	0x3e8
+100018fe: ff 15 00 30 00 10            	call	dword ptr [0x10003000]
+10001904: 6a 00                        	push	0x0
+10001906: 53                           	push	ebx
+10001907: 57                           	push	edi
+10001908: ff d6                        	call	esi
+1000190a: 85 c0                        	test	eax, eax
+1000190c: 75 e7                        	jne	0x100018f5 <yf_sound_get_data_ptr+0x1e5>
+1000190e: eb 07                        	jmp	0x10001917 <yf_sound_get_data_ptr+0x207>
+10001910: c7 45 fc 01 00 00 00         	mov	dword ptr [ebp - 0x4], 0x1
+10001917: a1 7c 43 00 10               	mov	eax, dword ptr [0x1000437c]
+1000191c: 83 f8 02                     	cmp	eax, 0x2
+1000191f: 74 0d                        	je	0x1000192e <yf_sound_get_data_ptr+0x21e>
+10001921: 6a 1f                        	push	0x1f
+10001923: e8 30 06 00 00               	call	0x10001f58 <yf_sound_get_data_ptr+0x848>
+10001928: 59                           	pop	ecx
+10001929: e9 b0 00 00 00               	jmp	0x100019de <yf_sound_get_data_ptr+0x2ce>
+1000192e: ff 35 88 43 00 10            	push	dword ptr [0x10004388]
+10001934: 8b 35 34 30 00 10            	mov	esi, dword ptr [0x10003034]
+1000193a: ff d6                        	call	esi
+1000193c: 89 45 0c                     	mov	dword ptr [ebp + 0xc], eax
+1000193f: 85 c0                        	test	eax, eax
+10001941: 0f 84 83 00 00 00            	je	0x100019ca <yf_sound_get_data_ptr+0x2ba>
+10001947: ff 35 84 43 00 10            	push	dword ptr [0x10004384]
+1000194d: ff d6                        	call	esi
+1000194f: 8b d8                        	mov	ebx, eax
+10001951: 8b 45 0c                     	mov	eax, dword ptr [ebp + 0xc]
+10001954: 89 45 10                     	mov	dword ptr [ebp + 0x10], eax
+10001957: 89 5d 08                     	mov	dword ptr [ebp + 0x8], ebx
+1000195a: 83 eb 04                     	sub	ebx, 0x4
+1000195d: 3b 5d 0c                     	cmp	ebx, dword ptr [ebp + 0xc]
+10001960: 72 4e                        	jb	0x100019b0 <yf_sound_get_data_ptr+0x2a0>
+10001962: 83 3b 00                     	cmp	dword ptr [ebx], 0x0
+10001965: 74 f3                        	je	0x1000195a <yf_sound_get_data_ptr+0x24a>
+10001967: ff 15 50 30 00 10            	call	dword ptr [0x10003050]
+1000196d: 39 03                        	cmp	dword ptr [ebx], eax
+1000196f: 74 e9                        	je	0x1000195a <yf_sound_get_data_ptr+0x24a>
+10001971: ff 33                        	push	dword ptr [ebx]
+10001973: ff d6                        	call	esi
+10001975: 89 45 f8                     	mov	dword ptr [ebp - 0x8], eax
+10001978: ff 15 50 30 00 10            	call	dword ptr [0x10003050]
+1000197e: 89 03                        	mov	dword ptr [ebx], eax
+10001980: ff 55 f8                     	call	dword ptr [ebp - 0x8]
+10001983: ff 35 88 43 00 10            	push	dword ptr [0x10004388]
+10001989: ff d6                        	call	esi
+1000198b: ff 35 84 43 00 10            	push	dword ptr [0x10004384]
+10001991: 89 45 f8                     	mov	dword ptr [ebp - 0x8], eax
+10001994: ff d6                        	call	esi
+10001996: 8b 4d f8                     	mov	ecx, dword ptr [ebp - 0x8]
+10001999: 39 4d 10                     	cmp	dword ptr [ebp + 0x10], ecx
+1000199c: 75 05                        	jne	0x100019a3 <yf_sound_get_data_ptr+0x293>
+1000199e: 39 45 08                     	cmp	dword ptr [ebp + 0x8], eax
+100019a1: 74 b7                        	je	0x1000195a <yf_sound_get_data_ptr+0x24a>
+100019a3: 89 4d 10                     	mov	dword ptr [ebp + 0x10], ecx
+100019a6: 89 4d 0c                     	mov	dword ptr [ebp + 0xc], ecx
+100019a9: 89 45 08                     	mov	dword ptr [ebp + 0x8], eax
+100019ac: 8b d8                        	mov	ebx, eax
+100019ae: eb aa                        	jmp	0x1000195a <yf_sound_get_data_ptr+0x24a>
+100019b0: ff 75 0c                     	push	dword ptr [ebp + 0xc]
+100019b3: ff 15 90 30 00 10            	call	dword ptr [0x10003090]
+100019b9: 59                           	pop	ecx
+100019ba: ff 15 50 30 00 10            	call	dword ptr [0x10003050]
+100019c0: a3 84 43 00 10               	mov	dword ptr [0x10004384], eax
+100019c5: a3 88 43 00 10               	mov	dword ptr [0x10004388], eax
+100019ca: 33 c0                        	xor	eax, eax
+100019cc: a3 7c 43 00 10               	mov	dword ptr [0x1000437c], eax
+100019d1: 39 45 fc                     	cmp	dword ptr [ebp - 0x4], eax
+100019d4: 75 08                        	jne	0x100019de <yf_sound_get_data_ptr+0x2ce>
+100019d6: 50                           	push	eax
+100019d7: 57                           	push	edi
+100019d8: ff 15 3c 30 00 10            	call	dword ptr [0x1000303c]
+100019de: 33 c0                        	xor	eax, eax
+100019e0: 40                           	inc	eax
+100019e1: 5f                           	pop	edi
+100019e2: 5e                           	pop	esi
+100019e3: 5b                           	pop	ebx
+100019e4: c9                           	leave
+100019e5: c2 0c 00                     	ret	0xc
+100019e8: 6a 10                        	push	0x10
+100019ea: 68 68 32 00 10               	push	0x10003268
+100019ef: e8 9c 05 00 00               	call	0x10001f90 <yf_sound_get_data_ptr+0x880>
+100019f4: 8b f9                        	mov	edi, ecx
+100019f6: 8b f2                        	mov	esi, edx
+100019f8: 8b 5d 08                     	mov	ebx, dword ptr [ebp + 0x8]
+100019fb: 33 c0                        	xor	eax, eax
+100019fd: 40                           	inc	eax
+100019fe: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001a01: 33 c9                        	xor	ecx, ecx
+10001a03: 89 4d fc                     	mov	dword ptr [ebp - 0x4], ecx
+10001a06: 89 35 20 40 00 10            	mov	dword ptr [0x10004020], esi
+10001a0c: 89 45 fc                     	mov	dword ptr [ebp - 0x4], eax
+10001a0f: 3b f1                        	cmp	esi, ecx
+10001a11: 75 10                        	jne	0x10001a23 <yf_sound_get_data_ptr+0x313>
+10001a13: 39 0d 48 40 00 10            	cmp	dword ptr [0x10004048], ecx
+10001a19: 75 08                        	jne	0x10001a23 <yf_sound_get_data_ptr+0x313>
+10001a1b: 89 4d e4                     	mov	dword ptr [ebp - 0x1c], ecx
+10001a1e: e9 b7 00 00 00               	jmp	0x10001ada <yf_sound_get_data_ptr+0x3ca>
+10001a23: 3b f0                        	cmp	esi, eax
+10001a25: 74 05                        	je	0x10001a2c <yf_sound_get_data_ptr+0x31c>
+10001a27: 83 fe 02                     	cmp	esi, 0x2
+10001a2a: 75 2e                        	jne	0x10001a5a <yf_sound_get_data_ptr+0x34a>
+10001a2c: a1 14 31 00 10               	mov	eax, dword ptr [0x10003114]
+10001a31: 3b c1                        	cmp	eax, ecx
+10001a33: 74 08                        	je	0x10001a3d <yf_sound_get_data_ptr+0x32d>
+10001a35: 57                           	push	edi
+10001a36: 56                           	push	esi
+10001a37: 53                           	push	ebx
+10001a38: ff d0                        	call	eax
+10001a3a: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001a3d: 83 7d e4 00                  	cmp	dword ptr [ebp - 0x1c], 0x0
+10001a41: 0f 84 93 00 00 00            	je	0x10001ada <yf_sound_get_data_ptr+0x3ca>
+10001a47: 57                           	push	edi
+10001a48: 56                           	push	esi
+10001a49: 53                           	push	ebx
+10001a4a: e8 8f fd ff ff               	call	0x100017de <yf_sound_get_data_ptr+0xce>
+10001a4f: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001a52: 85 c0                        	test	eax, eax
+10001a54: 0f 84 80 00 00 00            	je	0x10001ada <yf_sound_get_data_ptr+0x3ca>
+10001a5a: 57                           	push	edi
+10001a5b: 56                           	push	esi
+10001a5c: 53                           	push	ebx
+10001a5d: e8 02 05 00 00               	call	0x10001f64 <yf_sound_get_data_ptr+0x854>
+10001a62: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001a65: 83 fe 01                     	cmp	esi, 0x1
+10001a68: 75 24                        	jne	0x10001a8e <yf_sound_get_data_ptr+0x37e>
+10001a6a: 85 c0                        	test	eax, eax
+10001a6c: 75 20                        	jne	0x10001a8e <yf_sound_get_data_ptr+0x37e>
+10001a6e: 57                           	push	edi
+10001a6f: 50                           	push	eax
+10001a70: 53                           	push	ebx
+10001a71: e8 ee 04 00 00               	call	0x10001f64 <yf_sound_get_data_ptr+0x854>
+10001a76: 57                           	push	edi
+10001a77: 6a 00                        	push	0x0
+10001a79: 53                           	push	ebx
+10001a7a: e8 5f fd ff ff               	call	0x100017de <yf_sound_get_data_ptr+0xce>
+10001a7f: a1 14 31 00 10               	mov	eax, dword ptr [0x10003114]
+10001a84: 85 c0                        	test	eax, eax
+10001a86: 74 06                        	je	0x10001a8e <yf_sound_get_data_ptr+0x37e>
+10001a88: 57                           	push	edi
+10001a89: 6a 00                        	push	0x0
+10001a8b: 53                           	push	ebx
+10001a8c: ff d0                        	call	eax
+10001a8e: 85 f6                        	test	esi, esi
+10001a90: 74 05                        	je	0x10001a97 <yf_sound_get_data_ptr+0x387>
+10001a92: 83 fe 03                     	cmp	esi, 0x3
+10001a95: 75 43                        	jne	0x10001ada <yf_sound_get_data_ptr+0x3ca>
+10001a97: 57                           	push	edi
+10001a98: 56                           	push	esi
+10001a99: 53                           	push	ebx
+10001a9a: e8 3f fd ff ff               	call	0x100017de <yf_sound_get_data_ptr+0xce>
+10001a9f: 85 c0                        	test	eax, eax
+10001aa1: 75 03                        	jne	0x10001aa6 <yf_sound_get_data_ptr+0x396>
+10001aa3: 21 45 e4                     	and	dword ptr [ebp - 0x1c], eax
+10001aa6: 83 7d e4 00                  	cmp	dword ptr [ebp - 0x1c], 0x0
+10001aaa: 74 2e                        	je	0x10001ada <yf_sound_get_data_ptr+0x3ca>
+10001aac: a1 14 31 00 10               	mov	eax, dword ptr [0x10003114]
+10001ab1: 85 c0                        	test	eax, eax
+10001ab3: 74 25                        	je	0x10001ada <yf_sound_get_data_ptr+0x3ca>
+10001ab5: 57                           	push	edi
+10001ab6: 56                           	push	esi
+10001ab7: 53                           	push	ebx
+10001ab8: ff d0                        	call	eax
+10001aba: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001abd: eb 1b                        	jmp	0x10001ada <yf_sound_get_data_ptr+0x3ca>
+10001abf: 8b 45 ec                     	mov	eax, dword ptr [ebp - 0x14]
+10001ac2: 8b 08                        	mov	ecx, dword ptr [eax]
+10001ac4: 8b 09                        	mov	ecx, dword ptr [ecx]
+10001ac6: 89 4d e0                     	mov	dword ptr [ebp - 0x20], ecx
+10001ac9: 50                           	push	eax
+10001aca: 51                           	push	ecx
+10001acb: e8 8e 04 00 00               	call	0x10001f5e <yf_sound_get_data_ptr+0x84e>
+10001ad0: 59                           	pop	ecx
+10001ad1: 59                           	pop	ecx
+10001ad2: c3                           	ret
+10001ad3: 8b 65 e8                     	mov	esp, dword ptr [ebp - 0x18]
+10001ad6: 83 65 e4 00                  	and	dword ptr [ebp - 0x1c], 0x0
+10001ada: 83 65 fc 00                  	and	dword ptr [ebp - 0x4], 0x0
+10001ade: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+10001ae5: e8 09 00 00 00               	call	0x10001af3 <yf_sound_get_data_ptr+0x3e3>
+10001aea: 8b 45 e4                     	mov	eax, dword ptr [ebp - 0x1c]
+10001aed: e8 e3 04 00 00               	call	0x10001fd5 <yf_sound_get_data_ptr+0x8c5>
+10001af2: c3                           	ret
+10001af3: c7 05 20 40 00 10 ff ff ff ff	mov	dword ptr [0x10004020], 0xffffffff
+10001afd: c3                           	ret
+10001afe: 8b ff                        	mov	edi, edi
+10001b00: 55                           	push	ebp
+10001b01: 8b ec                        	mov	ebp, esp
+10001b03: 83 7d 0c 01                  	cmp	dword ptr [ebp + 0xc], 0x1
+10001b07: 75 05                        	jne	0x10001b0e <yf_sound_get_data_ptr+0x3fe>
+10001b09: e8 00 05 00 00               	call	0x1000200e <yf_sound_get_data_ptr+0x8fe>
+10001b0e: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001b11: 8b 4d 10                     	mov	ecx, dword ptr [ebp + 0x10]
+10001b14: 8b 55 0c                     	mov	edx, dword ptr [ebp + 0xc]
+10001b17: e8 cc fe ff ff               	call	0x100019e8 <yf_sound_get_data_ptr+0x2d8>
+10001b1c: 59                           	pop	ecx
+10001b1d: 5d                           	pop	ebp
+10001b1e: c2 0c 00                     	ret	0xc
+10001b21: 8b ff                        	mov	edi, edi
+10001b23: 55                           	push	ebp
+10001b24: 8b ec                        	mov	ebp, esp
+10001b26: 81 ec 28 03 00 00            	sub	esp, 0x328
+10001b2c: a3 58 41 00 10               	mov	dword ptr [0x10004158], eax
+10001b31: 89 0d 54 41 00 10            	mov	dword ptr [0x10004154], ecx
+10001b37: 89 15 50 41 00 10            	mov	dword ptr [0x10004150], edx
+10001b3d: 89 1d 4c 41 00 10            	mov	dword ptr [0x1000414c], ebx
+10001b43: 89 35 48 41 00 10            	mov	dword ptr [0x10004148], esi
+10001b49: 89 3d 44 41 00 10            	mov	dword ptr [0x10004144], edi
+10001b4f: 66 8c 15 70 41 00 10         	mov	word ptr [0x10004170], ss
+10001b56: 66 8c 0d 64 41 00 10         	mov	word ptr [0x10004164], cs
+10001b5d: 66 8c 1d 40 41 00 10         	mov	word ptr [0x10004140], ds
+10001b64: 66 8c 05 3c 41 00 10         	mov	word ptr [0x1000413c], es
+10001b6b: 66 8c 25 38 41 00 10         	mov	word ptr [0x10004138], fs
+10001b72: 66 8c 2d 34 41 00 10         	mov	word ptr [0x10004134], gs
+10001b79: 9c                           	pushfd
+10001b7a: 8f 05 68 41 00 10            	pop	dword ptr [0x10004168]
+10001b80: 8b 45 00                     	mov	eax, dword ptr [ebp]
+10001b83: a3 5c 41 00 10               	mov	dword ptr [0x1000415c], eax
+10001b88: 8b 45 04                     	mov	eax, dword ptr [ebp + 0x4]
+10001b8b: a3 60 41 00 10               	mov	dword ptr [0x10004160], eax
+10001b90: 8d 45 08                     	lea	eax, [ebp + 0x8]
+10001b93: a3 6c 41 00 10               	mov	dword ptr [0x1000416c], eax
+10001b98: 8b 85 e0 fc ff ff            	mov	eax, dword ptr [ebp - 0x320]
+10001b9e: c7 05 a8 40 00 10 01 00 01 00	mov	dword ptr [0x100040a8], 0x10001
+10001ba8: a1 60 41 00 10               	mov	eax, dword ptr [0x10004160]
+10001bad: a3 5c 40 00 10               	mov	dword ptr [0x1000405c], eax
+10001bb2: c7 05 50 40 00 10 09 04 00 c0	mov	dword ptr [0x10004050], 0xc0000409
+10001bbc: c7 05 54 40 00 10 01 00 00 00	mov	dword ptr [0x10004054], 0x1
+10001bc6: a1 18 40 00 10               	mov	eax, dword ptr [0x10004018]
+10001bcb: 89 85 d8 fc ff ff            	mov	dword ptr [ebp - 0x328], eax
+10001bd1: a1 1c 40 00 10               	mov	eax, dword ptr [0x1000401c]
+10001bd6: 89 85 dc fc ff ff            	mov	dword ptr [ebp - 0x324], eax
+10001bdc: ff 15 1c 30 00 10            	call	dword ptr [0x1000301c]
+10001be2: a3 a0 40 00 10               	mov	dword ptr [0x100040a0], eax
+10001be7: 6a 01                        	push	0x1
+10001be9: e8 bc 04 00 00               	call	0x100020aa <yf_sound_get_data_ptr+0x99a>
+10001bee: 59                           	pop	ecx
+10001bef: 6a 00                        	push	0x0
+10001bf1: ff 15 20 30 00 10            	call	dword ptr [0x10003020]
+10001bf7: 68 18 31 00 10               	push	0x10003118
+10001bfc: ff 15 24 30 00 10            	call	dword ptr [0x10003024]
+10001c02: 83 3d a0 40 00 10 00         	cmp	dword ptr [0x100040a0], 0x0
+10001c09: 75 08                        	jne	0x10001c13 <yf_sound_get_data_ptr+0x503>
+10001c0b: 6a 01                        	push	0x1
+10001c0d: e8 98 04 00 00               	call	0x100020aa <yf_sound_get_data_ptr+0x99a>
+10001c12: 59                           	pop	ecx
+10001c13: 68 09 04 00 c0               	push	0xc0000409
+10001c18: ff 15 28 30 00 10            	call	dword ptr [0x10003028]
+10001c1e: 50                           	push	eax
+10001c1f: ff 15 2c 30 00 10            	call	dword ptr [0x1000302c]
+10001c25: c9                           	leave
+10001c26: c3                           	ret
+10001c27: 6a 14                        	push	0x14
+10001c29: 68 90 32 00 10               	push	0x10003290
+10001c2e: e8 5d 03 00 00               	call	0x10001f90 <yf_sound_get_data_ptr+0x880>
+10001c33: 83 65 fc 00                  	and	dword ptr [ebp - 0x4], 0x0
+10001c37: ff 4d 10                     	dec	dword ptr [ebp + 0x10]
+10001c3a: 78 3a                        	js	0x10001c76 <yf_sound_get_data_ptr+0x566>
+10001c3c: 8b 4d 08                     	mov	ecx, dword ptr [ebp + 0x8]
+10001c3f: 2b 4d 0c                     	sub	ecx, dword ptr [ebp + 0xc]
+10001c42: 89 4d 08                     	mov	dword ptr [ebp + 0x8], ecx
+10001c45: ff 55 14                     	call	dword ptr [ebp + 0x14]
+10001c48: eb ed                        	jmp	0x10001c37 <yf_sound_get_data_ptr+0x527>
+10001c4a: 8b 45 ec                     	mov	eax, dword ptr [ebp - 0x14]
+10001c4d: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001c50: 8b 45 e4                     	mov	eax, dword ptr [ebp - 0x1c]
+10001c53: 8b 00                        	mov	eax, dword ptr [eax]
+10001c55: 89 45 e0                     	mov	dword ptr [ebp - 0x20], eax
+10001c58: 8b 45 e0                     	mov	eax, dword ptr [ebp - 0x20]
+10001c5b: 81 38 63 73 6d e0            	cmp	dword ptr [eax], 0xe06d7363
+10001c61: 74 0b                        	je	0x10001c6e <yf_sound_get_data_ptr+0x55e>
+10001c63: c7 45 dc 00 00 00 00         	mov	dword ptr [ebp - 0x24], 0x0
+10001c6a: 8b 45 dc                     	mov	eax, dword ptr [ebp - 0x24]
+10001c6d: c3                           	ret
+10001c6e: e8 3d 04 00 00               	call	0x100020b0 <yf_sound_get_data_ptr+0x9a0>
+10001c73: 8b 65 e8                     	mov	esp, dword ptr [ebp - 0x18]
+10001c76: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+10001c7d: e8 53 03 00 00               	call	0x10001fd5 <yf_sound_get_data_ptr+0x8c5>
+10001c82: c2 10 00                     	ret	0x10
+10001c85: 6a 0c                        	push	0xc
+10001c87: 68 b0 32 00 10               	push	0x100032b0
+10001c8c: e8 ff 02 00 00               	call	0x10001f90 <yf_sound_get_data_ptr+0x880>
+10001c91: 83 65 e4 00                  	and	dword ptr [ebp - 0x1c], 0x0
+10001c95: 8b 75 0c                     	mov	esi, dword ptr [ebp + 0xc]
+10001c98: 8b c6                        	mov	eax, esi
+10001c9a: 0f af 45 10                  	imul	eax, dword ptr [ebp + 0x10]
+10001c9e: 01 45 08                     	add	dword ptr [ebp + 0x8], eax
+10001ca1: 83 65 fc 00                  	and	dword ptr [ebp - 0x4], 0x0
+10001ca5: ff 4d 10                     	dec	dword ptr [ebp + 0x10]
+10001ca8: 78 0b                        	js	0x10001cb5 <yf_sound_get_data_ptr+0x5a5>
+10001caa: 29 75 08                     	sub	dword ptr [ebp + 0x8], esi
+10001cad: 8b 4d 08                     	mov	ecx, dword ptr [ebp + 0x8]
+10001cb0: ff 55 14                     	call	dword ptr [ebp + 0x14]
+10001cb3: eb f0                        	jmp	0x10001ca5 <yf_sound_get_data_ptr+0x595>
+10001cb5: c7 45 e4 01 00 00 00         	mov	dword ptr [ebp - 0x1c], 0x1
+10001cbc: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+10001cc3: e8 08 00 00 00               	call	0x10001cd0 <yf_sound_get_data_ptr+0x5c0>
+10001cc8: e8 08 03 00 00               	call	0x10001fd5 <yf_sound_get_data_ptr+0x8c5>
+10001ccd: c2 10 00                     	ret	0x10
+10001cd0: 83 7d e4 00                  	cmp	dword ptr [ebp - 0x1c], 0x0
+10001cd4: 75 11                        	jne	0x10001ce7 <yf_sound_get_data_ptr+0x5d7>
+10001cd6: ff 75 14                     	push	dword ptr [ebp + 0x14]
+10001cd9: ff 75 10                     	push	dword ptr [ebp + 0x10]
+10001cdc: ff 75 0c                     	push	dword ptr [ebp + 0xc]
+10001cdf: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001ce2: e8 40 ff ff ff               	call	0x10001c27 <yf_sound_get_data_ptr+0x517>
+10001ce7: c3                           	ret
+10001ce8: 68 74 43 00 10               	push	0x10004374
+10001ced: e8 ca 03 00 00               	call	0x100020bc <yf_sound_get_data_ptr+0x9ac>
+10001cf2: 59                           	pop	ecx
+10001cf3: c3                           	ret
+10001cf4: 6a 14                        	push	0x14
+10001cf6: 68 d0 32 00 10               	push	0x100032d0
+10001cfb: e8 90 02 00 00               	call	0x10001f90 <yf_sound_get_data_ptr+0x880>
+10001d00: ff 35 88 43 00 10            	push	dword ptr [0x10004388]
+10001d06: 8b 35 34 30 00 10            	mov	esi, dword ptr [0x10003034]
+10001d0c: ff d6                        	call	esi
+10001d0e: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001d11: 83 f8 ff                     	cmp	eax, -0x1
+10001d14: 75 0c                        	jne	0x10001d22 <yf_sound_get_data_ptr+0x612>
+10001d16: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001d19: ff 15 84 30 00 10            	call	dword ptr [0x10003084]
+10001d1f: 59                           	pop	ecx
+10001d20: eb 64                        	jmp	0x10001d86 <yf_sound_get_data_ptr+0x676>
+10001d22: 6a 08                        	push	0x8
+10001d24: e8 a5 03 00 00               	call	0x100020ce <yf_sound_get_data_ptr+0x9be>
+10001d29: 59                           	pop	ecx
+10001d2a: 83 65 fc 00                  	and	dword ptr [ebp - 0x4], 0x0
+10001d2e: ff 35 88 43 00 10            	push	dword ptr [0x10004388]
+10001d34: ff d6                        	call	esi
+10001d36: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001d39: ff 35 84 43 00 10            	push	dword ptr [0x10004384]
+10001d3f: ff d6                        	call	esi
+10001d41: 89 45 e0                     	mov	dword ptr [ebp - 0x20], eax
+10001d44: 8d 45 e0                     	lea	eax, [ebp - 0x20]
+10001d47: 50                           	push	eax
+10001d48: 8d 45 e4                     	lea	eax, [ebp - 0x1c]
+10001d4b: 50                           	push	eax
+10001d4c: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001d4f: 8b 35 38 30 00 10            	mov	esi, dword ptr [0x10003038]
+10001d55: ff d6                        	call	esi
+10001d57: 50                           	push	eax
+10001d58: e8 6b 03 00 00               	call	0x100020c8 <yf_sound_get_data_ptr+0x9b8>
+10001d5d: 83 c4 0c                     	add	esp, 0xc
+10001d60: 89 45 dc                     	mov	dword ptr [ebp - 0x24], eax
+10001d63: ff 75 e4                     	push	dword ptr [ebp - 0x1c]
+10001d66: ff d6                        	call	esi
+10001d68: a3 88 43 00 10               	mov	dword ptr [0x10004388], eax
+10001d6d: ff 75 e0                     	push	dword ptr [ebp - 0x20]
+10001d70: ff d6                        	call	esi
+10001d72: a3 84 43 00 10               	mov	dword ptr [0x10004384], eax
+10001d77: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+10001d7e: e8 09 00 00 00               	call	0x10001d8c <yf_sound_get_data_ptr+0x67c>
+10001d83: 8b 45 dc                     	mov	eax, dword ptr [ebp - 0x24]
+10001d86: e8 4a 02 00 00               	call	0x10001fd5 <yf_sound_get_data_ptr+0x8c5>
+10001d8b: c3                           	ret
+10001d8c: 6a 08                        	push	0x8
+10001d8e: e8 2f 03 00 00               	call	0x100020c2 <yf_sound_get_data_ptr+0x9b2>
+10001d93: 59                           	pop	ecx
+10001d94: c3                           	ret
+10001d95: 8b ff                        	mov	edi, edi
+10001d97: 55                           	push	ebp
+10001d98: 8b ec                        	mov	ebp, esp
+10001d9a: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001d9d: e8 52 ff ff ff               	call	0x10001cf4 <yf_sound_get_data_ptr+0x5e4>
+10001da2: f7 d8                        	neg	eax
+10001da4: 1b c0                        	sbb	eax, eax
+10001da6: f7 d8                        	neg	eax
+10001da8: 59                           	pop	ecx
+10001da9: 48                           	dec	eax
+10001daa: 5d                           	pop	ebp
+10001dab: c3                           	ret
+10001dac: 8b ff                        	mov	edi, edi
+10001dae: 56                           	push	esi
+10001daf: b8 58 32 00 10               	mov	eax, 0x10003258
+10001db4: be 58 32 00 10               	mov	esi, 0x10003258
+10001db9: 57                           	push	edi
+10001dba: 8b f8                        	mov	edi, eax
+10001dbc: 3b c6                        	cmp	eax, esi
+10001dbe: 73 0f                        	jae	0x10001dcf <yf_sound_get_data_ptr+0x6bf>
+10001dc0: 8b 07                        	mov	eax, dword ptr [edi]
+10001dc2: 85 c0                        	test	eax, eax
+10001dc4: 74 02                        	je	0x10001dc8 <yf_sound_get_data_ptr+0x6b8>
+10001dc6: ff d0                        	call	eax
+10001dc8: 83 c7 04                     	add	edi, 0x4
+10001dcb: 3b fe                        	cmp	edi, esi
+10001dcd: 72 f1                        	jb	0x10001dc0 <yf_sound_get_data_ptr+0x6b0>
+10001dcf: 5f                           	pop	edi
+10001dd0: 5e                           	pop	esi
+10001dd1: c3                           	ret
+10001dd2: 8b ff                        	mov	edi, edi
+10001dd4: 56                           	push	esi
+10001dd5: b8 60 32 00 10               	mov	eax, 0x10003260
+10001dda: be 60 32 00 10               	mov	esi, 0x10003260
+10001ddf: 57                           	push	edi
+10001de0: 8b f8                        	mov	edi, eax
+10001de2: 3b c6                        	cmp	eax, esi
+10001de4: 73 0f                        	jae	0x10001df5 <yf_sound_get_data_ptr+0x6e5>
+10001de6: 8b 07                        	mov	eax, dword ptr [edi]
+10001de8: 85 c0                        	test	eax, eax
+10001dea: 74 02                        	je	0x10001dee <yf_sound_get_data_ptr+0x6de>
+10001dec: ff d0                        	call	eax
+10001dee: 83 c7 04                     	add	edi, 0x4
+10001df1: 3b fe                        	cmp	edi, esi
+10001df3: 72 f1                        	jb	0x10001de6 <yf_sound_get_data_ptr+0x6d6>
+10001df5: 5f                           	pop	edi
+10001df6: 5e                           	pop	esi
+10001df7: c3                           	ret
+10001df8: cc                           	int3
+10001df9: cc                           	int3
+10001dfa: cc                           	int3
+10001dfb: cc                           	int3
+10001dfc: cc                           	int3
+10001dfd: cc                           	int3
+10001dfe: cc                           	int3
+10001dff: cc                           	int3
+10001e00: 8b ff                        	mov	edi, edi
+10001e02: 55                           	push	ebp
+10001e03: 8b ec                        	mov	ebp, esp
+10001e05: 8b 4d 08                     	mov	ecx, dword ptr [ebp + 0x8]
+10001e08: b8 4d 5a 00 00               	mov	eax, 0x5a4d
+10001e0d: 66 39 01                     	cmp	word ptr [ecx], ax
+10001e10: 74 04                        	je	0x10001e16 <yf_sound_get_data_ptr+0x706>
+10001e12: 33 c0                        	xor	eax, eax
+10001e14: 5d                           	pop	ebp
+10001e15: c3                           	ret
+10001e16: 8b 41 3c                     	mov	eax, dword ptr [ecx + 0x3c]
+10001e19: 03 c1                        	add	eax, ecx
+10001e1b: 81 38 50 45 00 00            	cmp	dword ptr [eax], 0x4550
+10001e21: 75 ef                        	jne	0x10001e12 <yf_sound_get_data_ptr+0x702>
+10001e23: 33 d2                        	xor	edx, edx
+10001e25: b9 0b 01 00 00               	mov	ecx, 0x10b
+10001e2a: 66 39 48 18                  	cmp	word ptr [eax + 0x18], cx
+10001e2e: 0f 94 c2                     	sete	dl
+10001e31: 8b c2                        	mov	eax, edx
+10001e33: 5d                           	pop	ebp
+10001e34: c3                           	ret
+10001e35: cc                           	int3
+10001e36: cc                           	int3
+10001e37: cc                           	int3
+10001e38: cc                           	int3
+10001e39: cc                           	int3
+10001e3a: cc                           	int3
+10001e3b: cc                           	int3
+10001e3c: cc                           	int3
+10001e3d: cc                           	int3
+10001e3e: cc                           	int3
+10001e3f: cc                           	int3
+10001e40: 8b ff                        	mov	edi, edi
+10001e42: 55                           	push	ebp
+10001e43: 8b ec                        	mov	ebp, esp
+10001e45: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001e48: 8b 48 3c                     	mov	ecx, dword ptr [eax + 0x3c]
+10001e4b: 03 c8                        	add	ecx, eax
+10001e4d: 0f b7 41 14                  	movzx	eax, word ptr [ecx + 0x14]
+10001e51: 53                           	push	ebx
+10001e52: 56                           	push	esi
+10001e53: 0f b7 71 06                  	movzx	esi, word ptr [ecx + 0x6]
+10001e57: 33 d2                        	xor	edx, edx
+10001e59: 57                           	push	edi
+10001e5a: 8d 44 08 18                  	lea	eax, [eax + ecx + 0x18]
+10001e5e: 85 f6                        	test	esi, esi
+10001e60: 74 1b                        	je	0x10001e7d <yf_sound_get_data_ptr+0x76d>
+10001e62: 8b 7d 0c                     	mov	edi, dword ptr [ebp + 0xc]
+10001e65: 8b 48 0c                     	mov	ecx, dword ptr [eax + 0xc]
+10001e68: 3b f9                        	cmp	edi, ecx
+10001e6a: 72 09                        	jb	0x10001e75 <yf_sound_get_data_ptr+0x765>
+10001e6c: 8b 58 08                     	mov	ebx, dword ptr [eax + 0x8]
+10001e6f: 03 d9                        	add	ebx, ecx
+10001e71: 3b fb                        	cmp	edi, ebx
+10001e73: 72 0a                        	jb	0x10001e7f <yf_sound_get_data_ptr+0x76f>
+10001e75: 42                           	inc	edx
+10001e76: 83 c0 28                     	add	eax, 0x28
+10001e79: 3b d6                        	cmp	edx, esi
+10001e7b: 72 e8                        	jb	0x10001e65 <yf_sound_get_data_ptr+0x755>
+10001e7d: 33 c0                        	xor	eax, eax
+10001e7f: 5f                           	pop	edi
+10001e80: 5e                           	pop	esi
+10001e81: 5b                           	pop	ebx
+10001e82: 5d                           	pop	ebp
+10001e83: c3                           	ret
+10001e84: cc                           	int3
+10001e85: cc                           	int3
+10001e86: cc                           	int3
+10001e87: cc                           	int3
+10001e88: cc                           	int3
+10001e89: cc                           	int3
+10001e8a: cc                           	int3
+10001e8b: cc                           	int3
+10001e8c: cc                           	int3
+10001e8d: cc                           	int3
+10001e8e: cc                           	int3
+10001e8f: cc                           	int3
+10001e90: 8b ff                        	mov	edi, edi
+10001e92: 55                           	push	ebp
+10001e93: 8b ec                        	mov	ebp, esp
+10001e95: 6a fe                        	push	-0x2
+10001e97: 68 f0 32 00 10               	push	0x100032f0
+10001e9c: 68 e9 1f 00 10               	push	0x10001fe9
+10001ea1: 64 a1 00 00 00 00            	mov	eax, dword ptr fs:[0x0]
+10001ea7: 50                           	push	eax
+10001ea8: 83 ec 08                     	sub	esp, 0x8
+10001eab: 53                           	push	ebx
+10001eac: 56                           	push	esi
+10001ead: 57                           	push	edi
+10001eae: a1 18 40 00 10               	mov	eax, dword ptr [0x10004018]
+10001eb3: 31 45 f8                     	xor	dword ptr [ebp - 0x8], eax
+10001eb6: 33 c5                        	xor	eax, ebp
+10001eb8: 50                           	push	eax
+10001eb9: 8d 45 f0                     	lea	eax, [ebp - 0x10]
+10001ebc: 64 a3 00 00 00 00            	mov	dword ptr fs:[0x0], eax
+10001ec2: 89 65 e8                     	mov	dword ptr [ebp - 0x18], esp
+10001ec5: c7 45 fc 00 00 00 00         	mov	dword ptr [ebp - 0x4], 0x0
+10001ecc: 68 00 00 00 10               	push	0x10000000
+10001ed1: e8 2a ff ff ff               	call	0x10001e00 <yf_sound_get_data_ptr+0x6f0>
+10001ed6: 83 c4 04                     	add	esp, 0x4
+10001ed9: 85 c0                        	test	eax, eax
+10001edb: 74 54                        	je	0x10001f31 <yf_sound_get_data_ptr+0x821>
+10001edd: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001ee0: 2d 00 00 00 10               	sub	eax, 0x10000000
+10001ee5: 50                           	push	eax
+10001ee6: 68 00 00 00 10               	push	0x10000000
+10001eeb: e8 50 ff ff ff               	call	0x10001e40 <yf_sound_get_data_ptr+0x730>
+10001ef0: 83 c4 08                     	add	esp, 0x8
+10001ef3: 85 c0                        	test	eax, eax
+10001ef5: 74 3a                        	je	0x10001f31 <yf_sound_get_data_ptr+0x821>
+10001ef7: 8b 40 24                     	mov	eax, dword ptr [eax + 0x24]
+10001efa: c1 e8 1f                     	shr	eax, 0x1f
+10001efd: f7 d0                        	not	eax
+10001eff: 83 e0 01                     	and	eax, 0x1
+10001f02: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+10001f09: 8b 4d f0                     	mov	ecx, dword ptr [ebp - 0x10]
+10001f0c: 64 89 0d 00 00 00 00         	mov	dword ptr fs:[0x0], ecx
+10001f13: 59                           	pop	ecx
+10001f14: 5f                           	pop	edi
+10001f15: 5e                           	pop	esi
+10001f16: 5b                           	pop	ebx
+10001f17: 8b e5                        	mov	esp, ebp
+10001f19: 5d                           	pop	ebp
+10001f1a: c3                           	ret
+10001f1b: 8b 45 ec                     	mov	eax, dword ptr [ebp - 0x14]
+10001f1e: 8b 08                        	mov	ecx, dword ptr [eax]
+10001f20: 33 d2                        	xor	edx, edx
+10001f22: 81 39 05 00 00 c0            	cmp	dword ptr [ecx], 0xc0000005
+10001f28: 0f 94 c2                     	sete	dl
+10001f2b: 8b c2                        	mov	eax, edx
+10001f2d: c3                           	ret
+10001f2e: 8b 65 e8                     	mov	esp, dword ptr [ebp - 0x18]
+10001f31: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+10001f38: 33 c0                        	xor	eax, eax
+10001f3a: 8b 4d f0                     	mov	ecx, dword ptr [ebp - 0x10]
+10001f3d: 64 89 0d 00 00 00 00         	mov	dword ptr fs:[0x0], ecx
+10001f44: 59                           	pop	ecx
+10001f45: 5f                           	pop	edi
+10001f46: 5e                           	pop	esi
+10001f47: 5b                           	pop	ebx
+10001f48: 8b e5                        	mov	esp, ebp
+10001f4a: 5d                           	pop	ebp
+10001f4b: c3                           	ret
+10001f4c: ff 25 54 30 00 10            	jmp	dword ptr [0x10003054]
+10001f52: ff 25 58 30 00 10            	jmp	dword ptr [0x10003058]
+10001f58: ff 25 5c 30 00 10            	jmp	dword ptr [0x1000305c]
+10001f5e: ff 25 60 30 00 10            	jmp	dword ptr [0x10003060]
+10001f64: 8b ff                        	mov	edi, edi
+10001f66: 55                           	push	ebp
+10001f67: 8b ec                        	mov	ebp, esp
+10001f69: 83 7d 0c 01                  	cmp	dword ptr [ebp + 0xc], 0x1
+10001f6d: 75 12                        	jne	0x10001f81 <yf_sound_get_data_ptr+0x871>
+10001f6f: 83 3d 14 31 00 10 00         	cmp	dword ptr [0x10003114], 0x0
+10001f76: 75 09                        	jne	0x10001f81 <yf_sound_get_data_ptr+0x871>
+10001f78: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001f7b: ff 15 18 30 00 10            	call	dword ptr [0x10003018]
+10001f81: 33 c0                        	xor	eax, eax
+10001f83: 40                           	inc	eax
+10001f84: 5d                           	pop	ebp
+10001f85: c2 0c 00                     	ret	0xc
+10001f88: cc                           	int3
+10001f89: cc                           	int3
+10001f8a: cc                           	int3
+10001f8b: cc                           	int3
+10001f8c: cc                           	int3
+10001f8d: cc                           	int3
+10001f8e: cc                           	int3
+10001f8f: cc                           	int3
+10001f90: 68 e9 1f 00 10               	push	0x10001fe9
+10001f95: 64 ff 35 00 00 00 00         	push	dword ptr fs:[0x0]
+10001f9c: 8b 44 24 10                  	mov	eax, dword ptr [esp + 0x10]
+10001fa0: 89 6c 24 10                  	mov	dword ptr [esp + 0x10], ebp
+10001fa4: 8d 6c 24 10                  	lea	ebp, [esp + 0x10]
+10001fa8: 2b e0                        	sub	esp, eax
+10001faa: 53                           	push	ebx
+10001fab: 56                           	push	esi
+10001fac: 57                           	push	edi
+10001fad: a1 18 40 00 10               	mov	eax, dword ptr [0x10004018]
+10001fb2: 31 45 fc                     	xor	dword ptr [ebp - 0x4], eax
+10001fb5: 33 c5                        	xor	eax, ebp
+10001fb7: 50                           	push	eax
+10001fb8: 89 65 e8                     	mov	dword ptr [ebp - 0x18], esp
+10001fbb: ff 75 f8                     	push	dword ptr [ebp - 0x8]
+10001fbe: 8b 45 fc                     	mov	eax, dword ptr [ebp - 0x4]
+10001fc1: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+10001fc8: 89 45 f8                     	mov	dword ptr [ebp - 0x8], eax
+10001fcb: 8d 45 f0                     	lea	eax, [ebp - 0x10]
+10001fce: 64 a3 00 00 00 00            	mov	dword ptr fs:[0x0], eax
+10001fd4: c3                           	ret
+10001fd5: 8b 4d f0                     	mov	ecx, dword ptr [ebp - 0x10]
+10001fd8: 64 89 0d 00 00 00 00         	mov	dword ptr fs:[0x0], ecx
+10001fdf: 59                           	pop	ecx
+10001fe0: 5f                           	pop	edi
+10001fe1: 5f                           	pop	edi
+10001fe2: 5e                           	pop	esi
+10001fe3: 5b                           	pop	ebx
+10001fe4: 8b e5                        	mov	esp, ebp
+10001fe6: 5d                           	pop	ebp
+10001fe7: 51                           	push	ecx
+10001fe8: c3                           	ret
+10001fe9: 8b ff                        	mov	edi, edi
+10001feb: 55                           	push	ebp
+10001fec: 8b ec                        	mov	ebp, esp
+10001fee: ff 75 14                     	push	dword ptr [ebp + 0x14]
+10001ff1: ff 75 10                     	push	dword ptr [ebp + 0x10]
+10001ff4: ff 75 0c                     	push	dword ptr [ebp + 0xc]
+10001ff7: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001ffa: 68 2e 17 00 10               	push	0x1000172e
+10001fff: 68 18 40 00 10               	push	0x10004018
+10002004: e8 cb 00 00 00               	call	0x100020d4 <yf_sound_get_data_ptr+0x9c4>
+10002009: 83 c4 18                     	add	esp, 0x18
+1000200c: 5d                           	pop	ebp
+1000200d: c3                           	ret
+1000200e: 8b ff                        	mov	edi, edi
+10002010: 55                           	push	ebp
+10002011: 8b ec                        	mov	ebp, esp
+10002013: 83 ec 10                     	sub	esp, 0x10
+10002016: a1 18 40 00 10               	mov	eax, dword ptr [0x10004018]
+1000201b: 83 65 f8 00                  	and	dword ptr [ebp - 0x8], 0x0
+1000201f: 83 65 fc 00                  	and	dword ptr [ebp - 0x4], 0x0
+10002023: 53                           	push	ebx
+10002024: 57                           	push	edi
+10002025: bf 4e e6 40 bb               	mov	edi, 0xbb40e64e
+1000202a: bb 00 00 ff ff               	mov	ebx, 0xffff0000
+1000202f: 3b c7                        	cmp	eax, edi
+10002031: 74 0d                        	je	0x10002040 <yf_sound_get_data_ptr+0x930>
+10002033: 85 c3                        	test	ebx, eax
+10002035: 74 09                        	je	0x10002040 <yf_sound_get_data_ptr+0x930>
+10002037: f7 d0                        	not	eax
+10002039: a3 1c 40 00 10               	mov	dword ptr [0x1000401c], eax
+1000203e: eb 65                        	jmp	0x100020a5 <yf_sound_get_data_ptr+0x995>
+10002040: 56                           	push	esi
+10002041: 8d 45 f8                     	lea	eax, [ebp - 0x8]
+10002044: 50                           	push	eax
+10002045: ff 15 04 30 00 10            	call	dword ptr [0x10003004]
+1000204b: 8b 75 fc                     	mov	esi, dword ptr [ebp - 0x4]
+1000204e: 33 75 f8                     	xor	esi, dword ptr [ebp - 0x8]
+10002051: ff 15 08 30 00 10            	call	dword ptr [0x10003008]
+10002057: 33 f0                        	xor	esi, eax
+10002059: ff 15 0c 30 00 10            	call	dword ptr [0x1000300c]
+1000205f: 33 f0                        	xor	esi, eax
+10002061: ff 15 10 30 00 10            	call	dword ptr [0x10003010]
+10002067: 33 f0                        	xor	esi, eax
+10002069: 8d 45 f0                     	lea	eax, [ebp - 0x10]
+1000206c: 50                           	push	eax
+1000206d: ff 15 14 30 00 10            	call	dword ptr [0x10003014]
+10002073: 8b 45 f4                     	mov	eax, dword ptr [ebp - 0xc]
+10002076: 33 45 f0                     	xor	eax, dword ptr [ebp - 0x10]
+10002079: 33 f0                        	xor	esi, eax
+1000207b: 3b f7                        	cmp	esi, edi
+1000207d: 75 07                        	jne	0x10002086 <yf_sound_get_data_ptr+0x976>
+1000207f: be 4f e6 40 bb               	mov	esi, 0xbb40e64f
+10002084: eb 10                        	jmp	0x10002096 <yf_sound_get_data_ptr+0x986>
+10002086: 85 f3                        	test	ebx, esi
+10002088: 75 0c                        	jne	0x10002096 <yf_sound_get_data_ptr+0x986>
+1000208a: 8b c6                        	mov	eax, esi
+1000208c: 0d 11 47 00 00               	or	eax, 0x4711
+10002091: c1 e0 10                     	shl	eax, 0x10
+10002094: 0b f0                        	or	esi, eax
+10002096: 89 35 18 40 00 10            	mov	dword ptr [0x10004018], esi
+1000209c: f7 d6                        	not	esi
+1000209e: 89 35 1c 40 00 10            	mov	dword ptr [0x1000401c], esi
+100020a4: 5e                           	pop	esi
+100020a5: 5f                           	pop	edi
+100020a6: 5b                           	pop	ebx
+100020a7: c9                           	leave
+100020a8: c3                           	ret
+100020a9: cc                           	int3
+100020aa: ff 25 64 30 00 10            	jmp	dword ptr [0x10003064]
+100020b0: ff 25 6c 30 00 10            	jmp	dword ptr [0x1000306c]
+100020b6: ff 25 70 30 00 10            	jmp	dword ptr [0x10003070]
+100020bc: ff 25 74 30 00 10            	jmp	dword ptr [0x10003074]
+100020c2: ff 25 78 30 00 10            	jmp	dword ptr [0x10003078]
+100020c8: ff 25 7c 30 00 10            	jmp	dword ptr [0x1000307c]
+100020ce: ff 25 80 30 00 10            	jmp	dword ptr [0x10003080]
+100020d4: ff 25 88 30 00 10            	jmp	dword ptr [0x10003088]
+100020da: ff 25 68 30 00 10            	jmp	dword ptr [0x10003068]

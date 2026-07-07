@@ -1,0 +1,219 @@
+
+YFDrawBMP.dll:	file format coff-i386
+Characteristics 0x2102
+	executable
+	32 bit words
+	DLL
+
+Time/Date               Thu Apr 14 16:51:12 2016
+Magic                   010b	(PE32)
+MajorLinkerVersion      10
+MinorLinkerVersion      0
+SizeOfCode              00009800
+SizeOfInitializedData   00006000
+SizeOfUninitializedData 00000000
+AddressOfEntryPoint     0000947c
+BaseOfCode              00001000
+BaseOfData              0000b000
+ImageBase               10000000
+SectionAlignment        00001000
+FileAlignment           00000200
+MajorOSystemVersion     5
+MinorOSystemVersion     1
+MajorImageVersion       0
+MinorImageVersion       0
+MajorSubsystemVersion   5
+MinorSubsystemVersion   1
+Win32Version            00000000
+SizeOfImage             00013000
+SizeOfHeaders           00000400
+CheckSum                00000000
+Subsystem               00000002	(Windows GUI)
+DllCharacteristics      00000140
+					DYNAMIC_BASE
+					NX_COMPAT
+SizeOfStackReserve      00100000
+SizeOfStackCommit       00001000
+SizeOfHeapReserve       00100000
+SizeOfHeapCommit        00001000
+LoaderFlags             00000000
+NumberOfRvaAndSizes     00000010
+
+The Data Directory
+Entry 0 0000e490 000002ae Export Directory [.edata (or where ever we found it)]
+Entry 1 0000dc04 000000c8 Import Directory [parts of .idata]
+Entry 2 00010000 00000300 Resource Directory [.rsrc]
+Entry 3 00000000 00000000 Exception Directory [.pdata]
+Entry 4 00000000 00000000 Security Directory
+Entry 5 00011000 00001058 Base Relocation Directory [.reloc]
+Entry 6 00000000 00000000 Debug Directory
+Entry 7 00000000 00000000 Description Directory
+Entry 8 00000000 00000000 Special Directory
+Entry 9 00000000 00000000 Thread Storage Directory [.tls]
+Entry a 0000bc98 00000040 Load Configuration Directory
+Entry b 00000000 00000000 Bound Import Directory
+Entry c 0000b000 00000144 Import Address Table Directory
+Entry d 00000000 00000000 Delay Import Directory
+Entry e 00000000 00000000 CLR Runtime Header
+Entry f 00000000 00000000 Reserved
+
+Load configuration:
+  Timestamp: 0
+  Major Version: 0
+  Minor Version: 0
+  GlobalFlags Clear: 0
+  GlobalFlags Set: 0
+  Critical Section Default Timeout: 0
+  Decommit Free Block Threshold: 0
+  Decommit Total Free Threshold: 0
+  Lock Prefix Table: 0
+  Maximum Allocation Size: 0
+  Virtual Memory Threshold: 0
+  Process Affinity Mask: 0
+  Process Heap Flags: 0
+  CSD Version: 0
+  Security Cookie: 268496920
+  SEH Table: 268487344
+  SEH Count: 50
+
+SEH Table: 0x10009609 0x10009a60 0x10009a80 0x10009aa0 0x10009ac8 0x10009b1c 0x10009b6c 0x10009bb4 0x10009bfc 0x10009c28 0x10009c58 0x10009ca4 0x10009cc0 0x10009d0c 0x10009d5a 0x10009daa 0x10009dfc 0x10009e28 0x10009e58 0x10009e88 0x10009eb8 0x10009ef0 0x10009f2c 0x10009f58 0x10009f90 0x10009fb8 0x10009ff0 0x1000a044 0x1000a084 0x1000a0b9 0x1000a0fc 0x1000a133 0x1000a16b 0x1000a19b 0x1000a1c8 0x1000a200 0x1000a248 0x1000a2a2 0x1000a2d0 0x1000a308 0x1000a340 0x1000a378 0x1000a3a8 0x1000a3d8 0x1000a408 0x1000a491 0x1000a4c8 0x1000a4f8 0x1000a528 0x1000a574
+
+
+The Import Tables:
+  lookup 0000dcfc time 00000000 fwd 00000000 name 0000de90 addr 0000b030
+
+    DLL Name: KERNEL32.dll
+    Hint/Ord  Name
+         234  EncodePointer
+         453  GetCurrentThreadId
+         202  DecodePointer
+         748  InterlockedExchange
+         171  CreateSemaphoreA
+        1271  WaitForMultipleObjects
+         633  GetSystemTimeAsFileTime
+        1273  WaitForSingleObject
+          82  CloseHandle
+         449  GetCurrentProcessId
+        1022  ReleaseSemaphore
+         745  InterlockedCompareExchange
+        1216  TerminateProcess
+         448  GetCurrentProcess
+        1235  UnhandledExceptionFilter
+        1189  SetUnhandledExceptionFilter
+         659  GetTickCount
+         935  QueryPerformanceCounter
+         222  DisableThreadLibraryCalls
+         768  IsDebuggerPresent
+        1202  Sleep
+
+  lookup 0000dddc time 00000000 fwd 00000000 name 0000ded4 addr 0000b110
+
+    DLL Name: USER32.dll
+    Hint/Ord  Name
+          71  ClientToScreen
+         613  ReleaseDC
+         289  GetDC
+         276  GetClientRect
+
+  lookup 0000dcd4 time 00000000 fwd 00000000 name 0000df6e addr 0000b008
+
+    DLL Name: GDI32.dll
+    Hint/Ord  Name
+         227  DeleteDC
+          53  CreateDIBSection
+         691  StretchBlt
+         230  DeleteObject
+         631  SelectObject
+          48  CreateCompatibleDC
+         639  SetBkMode
+         674  SetStretchBltMode
+          19  BitBlt
+
+  lookup 0000dd54 time 00000000 fwd 00000000 name 0000dfb8 addr 0000b088
+
+    DLL Name: MSVCP100.dll
+    Hint/Ord  Name
+         652  ?_Xlength_error@std@@YAXPBD@Z
+         654  ?_Xout_of_range@std@@YAXPBD@Z
+
+  lookup 0000ddf0 time 00000000 fwd 00000000 name 0000dfe6 addr 0000b124
+
+    DLL Name: YFLog.dll
+    Hint/Ord  Name
+           5  yf_log_msg_w
+           1  yf_log_err_w
+
+  lookup 0000ddfc time 00000000 fwd 00000000 name 0000e01a addr 0000b130
+
+    DLL Name: boost_date_time-vc100-mt-1_52.dll
+    Hint/Ord  Name
+           2  ??0greg_month@gregorian@boost@@QAE@G@Z
+
+  lookup 0000de04 time 00000000 fwd 00000000 name 0000e0b4 addr 0000b138
+
+    DLL Name: boost_system-vc100-mt-1_52.dll
+    Hint/Ord  Name
+           0  ?generic_category@system@boost@@YAABVerror_category@12@XZ
+           1  ?system_category@system@boost@@YAABVerror_category@12@XZ
+
+  lookup 0000dccc time 00000000 fwd 00000000 name 0000e0ea addr 0000b000
+
+    DLL Name: DDRAW.dll
+    Hint/Ord  Name
+           9  DirectDrawCreateEx
+
+  lookup 0000dd60 time 00000000 fwd 00000000 name 0000e1d6 addr 0000b094
+
+    DLL Name: MSVCR100.dll
+    Hint/Ord  Name
+          93  ??1exception@std@@UAE@XZ
+          34  ??0exception@std@@QAE@ABQBD@Z
+          35  ??0exception@std@@QAE@ABQBDH@Z
+          36  ??0exception@std@@QAE@ABV01@@Z
+         673  _gmtime64
+        1489  memmove
+         984  _purecall
+         101  ??3@YAXPAX@Z
+          99  ??2@YAPAXI@Z
+         258  ?terminate@@YAXXZ
+         269  ?what@exception@std@@UBEPBDXZ
+         347  __dllonexit
+         803  _lock
+         969  _onexit
+         820  _malloc_crt
+        1419  free
+         537  _encoded_null
+         688  _initterm
+         689  _initterm_e
+         453  _amsg_exit
+         305  __CppXcptFilter
+         507  _crt_debugger_hook
+         545  _except_handler4_common
+         238  ?_type_info_dtor_internal_method@type_info@@QAEXXZ
+         339  __clean_type_info_names_internal
+        1491  memset
+         314  __CxxFrameHandler3
+        1487  memcpy
+        1165  _unlock
+         289  _CxxThrowException
+
+Export Table:
+ DLL name: YFDrawBMP.dll
+ Ordinal base: 1
+ Ordinal      RVA  Name
+       1   0x8d30  yf_draw_bmp_draw
+       2   0x8dc0  yf_draw_bmp_get_bit_count
+       3   0x8f00  yf_draw_bmp_get_bits_ptr
+       4   0x8d70  yf_draw_bmp_get_bmpinfo
+       5   0x8d50  yf_draw_bmp_get_img_size
+       6   0x8b00  yf_draw_bmp_init
+       7   0x8d10  yf_draw_bmp_set_bits
+       8   0x8de0  yf_draw_bmp_set_callback_draw_after
+       9   0x8e40  yf_draw_bmp_set_callback_draw_bits_after
+      10   0x8ea0  yf_draw_bmp_set_callback_draw_dst_bits_after
+      11   0x8c90  yf_draw_bmp_set_draw_size
+      12   0x8c60  yf_draw_bmp_set_img_size
+      13   0x8e10  yf_draw_bmp_stop_callback_draw_after
+      14   0x8e70  yf_draw_bmp_stop_callback_draw_bits_after
+      15   0x8ed0  yf_draw_bmp_stop_callback_draw_dst_bits_after
+      16   0x8c30  yf_draw_bmp_uninit

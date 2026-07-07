@@ -1,0 +1,154 @@
+
+YFFileIdentify.dll:	file format coff-i386
+Characteristics 0x2102
+	executable
+	32 bit words
+	DLL
+
+Time/Date               Thu Apr 14 16:50:45 2016
+Magic                   010b	(PE32)
+MajorLinkerVersion      10
+MinorLinkerVersion      0
+SizeOfCode              00001000
+SizeOfInitializedData   00001200
+SizeOfUninitializedData 00000000
+AddressOfEntryPoint     00001905
+BaseOfCode              00001000
+BaseOfData              00002000
+ImageBase               10000000
+SectionAlignment        00001000
+FileAlignment           00000200
+MajorOSystemVersion     5
+MinorOSystemVersion     1
+MajorImageVersion       0
+MinorImageVersion       0
+MajorSubsystemVersion   5
+MinorSubsystemVersion   1
+Win32Version            00000000
+SizeOfImage             00006000
+SizeOfHeaders           00000400
+CheckSum                00000000
+Subsystem               00000002	(Windows GUI)
+DllCharacteristics      00000140
+					DYNAMIC_BASE
+					NX_COMPAT
+SizeOfStackReserve      00100000
+SizeOfStackCommit       00001000
+SizeOfHeapReserve       00100000
+SizeOfHeapCommit        00001000
+LoaderFlags             00000000
+NumberOfRvaAndSizes     00000010
+
+The Data Directory
+Entry 0 000024e0 000002e5 Export Directory [.edata (or where ever we found it)]
+Entry 1 0000217c 0000003c Import Directory [parts of .idata]
+Entry 2 00004000 00000308 Resource Directory [.rsrc]
+Entry 3 00000000 00000000 Exception Directory [.pdata]
+Entry 4 00000000 00000000 Security Directory
+Entry 5 00005000 00000140 Base Relocation Directory [.reloc]
+Entry 6 00000000 00000000 Debug Directory
+Entry 7 00000000 00000000 Description Directory
+Entry 8 00000000 00000000 Special Directory
+Entry 9 00000000 00000000 Thread Storage Directory [.tls]
+Entry a 000020b8 00000040 Load Configuration Directory
+Entry b 00000000 00000000 Bound Import Directory
+Entry c 00002000 00000094 Import Address Table Directory
+Entry d 00000000 00000000 Delay Import Directory
+Entry e 00000000 00000000 CLR Runtime Header
+Entry f 00000000 00000000 Reserved
+
+Load configuration:
+  Timestamp: 0
+  Major Version: 0
+  Minor Version: 0
+  GlobalFlags Clear: 0
+  GlobalFlags Set: 0
+  Critical Section Default Timeout: 0
+  Decommit Free Block Threshold: 0
+  Decommit Total Free Threshold: 0
+  Lock Prefix Table: 0
+  Maximum Allocation Size: 0
+  Virtual Memory Threshold: 0
+  Process Affinity Mask: 0
+  Process Heap Flags: 0
+  CSD Version: 0
+  Security Cookie: 268447744
+  SEH Table: 268443904
+  SEH Count: 1
+
+SEH Table: 0x10001d29
+
+
+The Import Tables:
+  lookup 000021fc time 00000000 fwd 00000000 name 00002286 addr 00002044
+
+    DLL Name: MSVCR100.dll
+    Hint/Ord  Name
+         803  _lock
+         347  __dllonexit
+         545  _except_handler4_common
+        1165  _unlock
+         339  __clean_type_info_names_internal
+         507  _crt_debugger_hook
+         305  __CppXcptFilter
+         453  _amsg_exit
+         689  _initterm_e
+         688  _initterm
+         537  _encoded_null
+        1419  free
+         820  _malloc_crt
+          99  ??2@YAPAXI@Z
+        1425  fseek
+        1430  fwrite
+         101  ??3@YAXPAX@Z
+         969  _onexit
+        1417  fread
+
+  lookup 000021b8 time 00000000 fwd 00000000 name 000024d0 addr 00002000
+
+    DLL Name: KERNEL32.dll
+    Hint/Ord  Name
+         449  GetCurrentProcessId
+         453  GetCurrentThreadId
+         659  GetTickCount
+         935  QueryPerformanceCounter
+         222  DisableThreadLibraryCalls
+         768  IsDebuggerPresent
+        1189  SetUnhandledExceptionFilter
+        1235  UnhandledExceptionFilter
+         448  GetCurrentProcess
+        1216  TerminateProcess
+         745  InterlockedCompareExchange
+        1202  Sleep
+         748  InterlockedExchange
+         202  DecodePointer
+         234  EncodePointer
+         633  GetSystemTimeAsFileTime
+
+Export Table:
+ DLL name: YFFileIdentify.dll
+ Ordinal base: 1
+ Ordinal      RVA  Name
+       1   0x1040  yf_file_identify_init
+       2   0x1090  yf_file_identify_uninit
+       3   0x1020  yf_get_file_end_size
+       4   0x1000  yf_get_file_header_size
+       5   0x1390  yf_get_img_height
+       6   0x13b0  yf_get_img_size
+       7   0x1370  yf_get_img_width
+       8   0x1560  yf_get_record_time_end
+       9   0x1500  yf_get_record_time_start
+      10   0x14b0  yf_get_total_frames
+      11   0x1470  yf_get_version
+      12   0x1340  yf_need_repair
+      13   0x1260  yf_parse_file_end
+      14   0x1190  yf_parse_file_header
+      15   0x1400  yf_set_img_height
+      16   0x1420  yf_set_img_size
+      17   0x13e0  yf_set_img_width
+      18   0x1530  yf_set_record_time_end
+      19   0x14d0  yf_set_record_time_start
+      20   0x1490  yf_set_total_frames
+      21   0x1450  yf_set_version
+      22   0x1140  yf_write_file_end
+      23   0x10c0  yf_write_file_header

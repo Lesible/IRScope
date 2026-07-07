@@ -1,0 +1,299 @@
+!This program cannot be run in DOS mode.
+Rich
+.text
+`.rdata
+@.data
+.rsrc
+@.reloc
+]VW
+O,+O(
+F,+F(
+SVWP
+2vgh
+9P r4
+Y_^[
+_^[v
+9P r
+_^[v
+9P r
+AQWV
+;Mu
+;Mu
+;Mu
+Y_^[
+Y_^[
+8X,u
+8X,te
+8X,u
+8X,u
+8X,u
+8X,u
+Y_^[
+8^9uY
+8_9t
+SVWP
+Y_^[
+SVWP
+Y_^[
+tr;2u#j
+;0u%
+E_^
+VWrL
+Y_^[
+Y_^[
+PQSVW
+Y_^[
+PQSVW
+Y_^[
+F,+F(
+F,+F(
+SVWP
+2vuh
+9P r4
+Y_^[
+SVW
+Y_^[
+Y_^[
+F,+F(
+F,+F(
+SVWP
+2vmh$
+Y_^[
+F,+F(
+F,+F(
+SVWP
+2vmhT
+Y_^[
+@_^
+(SW;
+B@;U
+E;E
+B@;U
+;t$$
+;D$$
+T$ ;
+L$ ;
+D$$;D$
+t$ ;
+T$ ;
+L$ ;
+t$ ;t$
+L$$+L$
++\$ +D$$3
+L$,8L$
+D$0KN
+D$0C
+D$0KN
+D$0C
+SVWP
+G(9E
+9P r
+Y_^[
+0SVW
+D$@d
+|$(J#
+L$ )D$
+)D$ )D$
+)D$ )D$
+T$,+
+L$@d
+Y_^[
+0SVW
+D$@d
+t$(J#
+T$,+
+L$@d
+Y_^[
+tM9^
+SVWP
+Y_^[
+;0u%
+E_^
+Y_^[
+(SVW
+Y_^[
+Y_^[
+D$(d
+L$(d
+Y_^[
+L$(d
+Y_^[
+VW9M }
+t%Vh
+6jW
+QQS3
+VW9Eu29
+Y9]u
+;]rN
+@_^[
+u WPS
+uCWVS
+t%WVS
+Y__^[
+8csm
+jh(
+_^[]
+Y_^[
+Y_^[
+<$Xf
+PQVW
+PQVW
+PQVW
+PQVW
+PQVW
+PQVW
+PQVW
+PQVW
+PQVW
+PQVW
+PQVW
+invalid map/set<T> iterator
+invalid string position
+vector<T> too long
+string too long
+map/set<T> too long
+RSDS
+E:\job\yfcam-core\dll\bin\Release\YFDrawShape.pdb
+?_Xout_of_range@std@@YAXPBD@Z
+?_Xlength_error@std@@YAXPBD@Z
+MSVCP100.dll
+yf_get_pts_from_ana_str
+yf_get_anas_from_str
+yf_parse_ana_char_a
+YFFormatAnaStr.dll
+?what@exception@std@@UBEPBDXZ
+??1exception@std@@UAE@XZ
+??0exception@std@@QAE@ABQBD@Z
+??0exception@std@@QAE@ABV01@@Z
+memmove
+??3@YAXPAX@Z
+??2@YAPAXI@Z
+MSVCR100.dll
+_unlock
+__dllonexit
+_lock
+_onexit
+_malloc_crt
+free
+_encoded_null
+_initterm
+_initterm_e
+_amsg_exit
+__CppXcptFilter
+_crt_debugger_hook
+_except_handler4_common
+?terminate@@YAXXZ
+?_type_info_dtor_internal_method@type_info@@QAEXXZ
+__clean_type_info_names_internal
+EncodePointer
+DecodePointer
+InterlockedExchange
+Sleep
+InterlockedCompareExchange
+TerminateProcess
+GetCurrentProcess
+UnhandledExceptionFilter
+SetUnhandledExceptionFilter
+IsDebuggerPresent
+DisableThreadLibraryCalls
+QueryPerformanceCounter
+GetTickCount
+GetCurrentThreadId
+GetCurrentProcessId
+GetSystemTimeAsFileTime
+KERNEL32.dll
+memcpy
+_CIsqrt
+_CxxThrowException
+__CxxFrameHandler3
+IsProcessorFeaturePresent
+YFDrawShape.dll
+yf_calc_lines_in_ellipse
+yf_calc_pts_in_line
+yf_draw_max_point
+yf_draw_min_point
+yf_draw_shape
+yf_normalize_rect
+yf_pt_in_line
+.?AVtype_info@@
+.?AVexception@std@@
+.?AVbad_alloc@std@@
+YIQ5u
+P };u
+NO)n
+YIQ5u
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+    <security>
+      <requestedPrivileges>
+        <requestedExecutionLevel level="asInvoker" uiAccess="false"></requestedExecutionLevel>
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+</assembly>PAPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGX
+4l4k5
+6=6N6g67
+838i8
+9>9_9
+;";S;
+0+1{1
+4&4.454>4D4
+4V8h8
+9&989Y9_9
+9":(:Z:`:
+>'>K>Q>
+>:?Z?_?j?
+0^0z0
+2(3V3e3
+8S8Y8d8m8z8
+:H:u:
+60F0
+1f2u2
+2i3|3
+4&4F4W4e4v4
+9*:L:
+;^<q<
+=P=X=x=
+=5>C>
+>=?K?j?}?
+2F2U2
+3'4Y4k4
+6'9e9|9
+9&;5;
+5-5F6h6
+6(7,7074787<7@7
+;?;U;d;j;q;|;
+;(<<<
+=(=9=Q=f=k=q=
+>1>Q>b>m>u>
+0!0'0-030:0A0H0O0V0]0d0l0t0|0
+111N1
+2h3m3
+4$4*404A4M4a4
+5"5(5.545B5^5
+6B6b6
+7?7|7
+:1:L:a:|:
+;,;A;\;q;
+<1<6<A<Z<f<m<u<~<
+=1=6=A=Z=f=m=u=~=
+>1>6>A>Z>f>m>u>~>
+?1?6?A?Z?f?m?u?~?
+0)0.0Q0V0a0z0
+1)1.1Q1V1a1z1
+2-242V2e2}2
+363E3]3i3s3z3
+4%4=4I4S4Z4
+5)535:5f5u5
+6F6U6m6y6
+1<1@1H1L1
+2p2t2
+4 4@4\4`4h4|4
+5 5(5X5l5x5
+66<6P6\6d6
+7<7D7\7p7|7
+888D8d8p8
+9<9D9L9T9\9d9p9
+:<:H:h:t:
+;$;D;P;p;|;
+0(0D0

@@ -1,0 +1,545 @@
+!This program cannot be run in DOS mode.
+Richzno
+.text
+`.rdata
+@.data
+.rsrc
+@.reloc
+D$`SVW
+D$xd
+t$D;
+T$Ds
+A9_
+?Wht
+T$hj
+D$xf
+Vf9D$dt*
+L$$j(Q
+T$0R
+9t$X
+T$DR
+_SP
+L$`QR
+D$l+D$d
+L$h+L$`
+T$DR
+L$xd
+Y_^[
+L$`3
+SVWP
+Y_^[
+SVWP
+u99_
+QRSP
+Y_^[
+Y_^[
+u99~
+6Vhl
+u=9~
+6Vhl
+EVW
+u=9^
+,SVW
+Y_^[
+PQSVW
+Y_^[
+Y_^[
+SVWP
+RPQS
+Y_^[
+SVWP
+Y_^[
+SVW
+Y_^[
+SVWP
+HPV3
+Y_^[
+SVWP
+Y_^[
+SVWP
+RPQW
+Y_^[
+SVWP
+Y_^[
+AQWV
+QQP
+s"PWV
+Y_^[
+;Hts}
+;Btr!
+;Btr$
+u>j(j
+E;B
+U+Q
+}=t1
+;Qts
+MQh
+MQh
+;Q4}M
+;M}A
+;E}
+}=t1
+@ha
+Hh;M|
+;B||#
+;P0w@j
+;J0w=j
+;P0w=j
+;B }p
+;Q }i
+Qj`j
+@!z
+BH+w
+;Q }
+;Q~
+;Q |
+;Hw
+M9A
+;Hw
+M9A
+HH+M
+QH+U
+;Q4}
+;H4}
+;H4}C
+EPj
+;Q }N
+Q$Rj
+Q4;U
+J4;HHs
+P4;QHs
+URj
+;H }s
+;JH}R
+;Q8}^
+;Q4}$
+;H }.
+jTj
+;Q }Bh
+QxRj
+BxPj
+Pt+Q
+;H }?
+;Q`v
+;M v
+B`+E
+BpPj
+;B }
+J(;H$u
+Qj0j
+B(Pj
+@m(
+H(Qj
+;B,v
+;U v
+H,+M
+j,j
+ }%h
+;E}P
+J+H
+;E}%
+;E}
+QjXj
+A@\
+;Hx}"
+;Bx}
+;Hx}y
+j@j
+;Q4}2
+;Q4}U
+;B4}a
+Q4+U
+;B4}"
+;H4}
+;Q8}^
+;Q4}$
+j0j
+;B4}C
+B0+E
+;Q4}-
+;M so
+;H4}6
+EPj
+A<+B4
+A0;B
+;B4}S
+Q0+U
+J4;H<}S
+;H4}*
+J4;H<
+H8;M
+H4;M
+;H4}J
+;U}D
+;H}x
+jj
+A8;B$u
+A4;B t
+Qj$j
+;B~
+;H4}7
+;Q4}
+;Q4|(
+;Q4}/
+;Q4})
+;H4}
+J+H
+J+H
+t%Vh
+6jW
+QQS3
+VW9Eu29
+Y9]u
+;]rN
+@_^[
+u WPS
+uCWVS
+t%WVS
+8csm
+_^[]
+Y_^[
+Y_^[
+Y__^[
+$3br
+%&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz
+&'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz
+sAmTb
+BKbhTb~XBK!;
+A!;I2
+sAmTb
+BKbhTb~XBK!;
+A!;I2
+Fu='
+.JPG
+JPEG
+.BMP
+Failed open file %s
+JPG::set_file_name
+JPG.cpp
+YFJPG.log
+Failed Read BITMAPFILEHEADER %s
+File %s is not bmp or jpg file
+Failed to create file"%s"!
+JPG::save
+File %s is not jpg or bmp
+invalid string position
+string too long
+JPEG: Can't open %s
+JpegFile::get_org_size
+JPG\Jpegfile.cpp
+JpegFile::JpegFileToRGB
+JpegFile: Out of memory
+JpegFile::RGBToJpegFile
+JpegFile: Can't open %s
+bad locale name
+ReleaseDC
+GetDC
+GetClientRect
+FillRect
+USER32.dll
+CreateSolidBrush
+GDI32.dll
+yf_draw_bmp_init
+yf_draw_bmp_uninit
+yf_draw_bmp_set_img_size
+yf_draw_bmp_set_bits
+yf_draw_bmp_draw
+yf_draw_bmp_set_draw_size
+yf_draw_bmp_get_bmpinfo
+YFDrawBMP.dll
+yf_log_err_a
+yf_log_msg_a
+YFLog.dll
+?_Xout_of_range@std@@YAXPBD@Z
+?_Xlength_error@std@@YAXPBD@Z
+?_Xruntime_error@std@@YAXPBD@Z
+?_Makeloc@_Locimp@locale@std@@CAPAV123@ABV_Locinfo@3@HPAV123@PBV23@@Z
+?_Getgloballocale@locale@std@@CAPAV_Locimp@12@XZ
+?_Init@locale@std@@CAPAV_Locimp@12@XZ
+?global@locale@std@@SA?AV12@ABV12@@Z
+??0_Locimp@locale@std@@AAE@ABV012@@Z
+??1_Locimp@locale@std@@MAE@XZ
+?_Decref@facet@locale@std@@QAEPAV123@XZ
+?_Incref@facet@locale@std@@QAEXXZ
+?_Addcats@_Locinfo@std@@QAEAAV12@HPBD@Z
+??1_Locinfo@std@@QAE@XZ
+??0_Locinfo@std@@QAE@HPBD@Z
+MSVCP100.dll
+?what@exception@std@@UBEPBDXZ
+??1exception@std@@UAE@XZ
+??0exception@std@@QAE@ABQBD@Z
+??0exception@std@@QAE@ABV01@@Z
+memmove
+fopen
+??_V@YAXPAX@Z
+fread
+??3@YAXPAX@Z
+fwrite
+toupper
+fclose
+??2@YAPAXI@Z
+ftell
+longjmp
+wcstombs_s
+memset
+memcpy
+fflush
+sprintf
+sscanf
+getenv
+malloc
+free
+_ftol
+MSVCR100.dll
+_malloc_crt
+_encoded_null
+_initterm
+_initterm_e
+_amsg_exit
+__CppXcptFilter
+_crt_debugger_hook
+?terminate@@YAXXZ
+?_type_info_dtor_internal_method@type_info@@QAEXXZ
+__clean_type_info_names_internal
+_unlock
+__dllonexit
+_lock
+_onexit
+_except_handler4_common
+EncodePointer
+DecodePointer
+InterlockedExchange
+Sleep
+InterlockedCompareExchange
+TerminateProcess
+GetCurrentProcess
+UnhandledExceptionFilter
+SetUnhandledExceptionFilter
+IsDebuggerPresent
+DisableThreadLibraryCalls
+QueryPerformanceCounter
+GetTickCount
+GetCurrentThreadId
+GetCurrentProcessId
+GetSystemTimeAsFileTime
+KERNEL32.dll
+MessageBoxA
+GetActiveWindow
+_CxxThrowException
+__CxxFrameHandler3
+_setjmp3
+YFJPG.dll
+?yf_jpg_get_bmp_info@@YG_NPAXAAUtagBITMAPINFO@@@Z
+?yf_jpg_get_height@@YG_NPAXAAH@Z
+?yf_jpg_get_org_size@@YG_NPBDAAI@Z
+?yf_jpg_get_width@@YG_NPAXAAH@Z
+?yf_jpg_init@@YG_NIAAPAX@Z
+?yf_jpg_on_paint@@YG_NPAXI@Z
+?yf_jpg_save_a@@YG_NPBDPAEHH_N2H@Z
+?yf_jpg_save_w@@YG_NPB_WPAEHH_N2H@Z
+?yf_jpg_set_display_wnd@@YG_NPAXI@Z
+?yf_jpg_set_file_name_a@@YG_NPAXPBD_N2@Z
+?yf_jpg_set_file_name_w@@YG_NPAXPB_W_N2@Z
+?yf_jpg_uninit@@YG_NAAPAX@Z
+Bogus message code %d
+Sorry, there are legal restrictions on arithmetic coding
+ALIGN_TYPE is wrong, please fix
+MAX_ALLOC_CHUNK is wrong, please fix
+Bogus buffer control mode
+Invalid component ID %d in SOS
+IDCT output block size %d not supported
+Bogus input colorspace
+Bogus JPEG colorspace
+Bogus marker length
+Wrong JPEG library version: library is %d, caller expects %d
+Sampling factors too large for interleaved scan
+Invalid memory pool code %d
+Unsupported JPEG data precision %d
+Invalid progressive parameters Ss=%d Se=%d Ah=%d Al=%d
+Invalid progressive parameters at scan script entry %d
+Bogus sampling factors
+Invalid scan script at entry %d
+Improper call to JPEG library in state %d
+JPEG parameter struct mismatch: library thinks size is %u, caller expects %u
+Bogus virtual array access
+Buffer passed to JPEG library is too small
+Suspension not allowed here
+CCIR601 sampling not implemented yet
+Too many color components: %d, max %d
+Unsupported color conversion request
+Bogus DAC index %d
+Bogus DAC value 0x%x
+Bogus DHT counts
+Bogus DHT index %d
+Bogus DQT index %d
+Empty JPEG image (DNL not supported)
+Read from EMS failed
+Write to EMS failed
+Didn't expect more than one scan
+Input file read error
+Output file write error --- out of disk space?
+Fractional sampling not implemented yet
+Huffman code size table overflow
+Missing Huffman code table entry
+Maximum supported image dimension is %u pixels
+Empty input file
+Premature end of input file
+Cannot transcode due to multiple use of quantization table %d
+Scan script does not transmit all data
+Invalid color quantization mode change
+Not implemented yet
+Requested feature was omitted at compile time
+Backing store not supported
+Huffman table 0x%02x was not defined
+JPEG datastream contains no image
+Quantization table 0x%02x was not defined
+Not a JPEG file: starts with 0x%02x 0x%02x
+Insufficient memory (case %d)
+Cannot quantize more than %d color components
+Cannot quantize to fewer than %d colors
+Cannot quantize to more than %d colors
+Invalid JPEG file structure: two SOF markers
+Invalid JPEG file structure: missing SOS marker
+Unsupported JPEG process: SOF type 0x%02x
+Invalid JPEG file structure: two SOI markers
+Invalid JPEG file structure: SOS before SOF
+Failed to create temporary file %s
+Read failed on temporary file
+Seek failed on temporary file
+Write failed on temporary file --- out of disk space?
+Application transferred too few scanlines
+Unsupported marker type 0x%02x
+Virtual array controller messed up
+Image too wide for this implementation
+Read from XMS failed
+Write to XMS failed
+Copyright (C) 1996, Thomas G. Lane
+6a  7-Feb-96
+Caution: quantization tables are too coarse for baseline JPEG
+Adobe APP14 marker: version %d, flags 0x%04x 0x%04x, transform %d
+Unknown APP0 marker (not JFIF), length %u
+Unknown APP14 marker (not Adobe), length %u
+Define Arithmetic Table 0x%02x: 0x%02x
+Define Huffman Table 0x%02x
+Define Quantization Table %d  precision %d
+Define Restart Interval %u
+Freed EMS handle %u
+Obtained EMS handle %u
+End Of Image
+        %3d %3d %3d %3d %3d %3d %3d %3d
+JFIF APP0 marker, density %dx%d  %d
+Warning: thumbnail image size does not match data length %u
+Unknown JFIF minor revision number %d.%02d
+    with %d x %d thumbnail image
+Skipping marker 0x%02x, length %u
+Unexpected marker 0x%02x
+        %4u %4u %4u %4u %4u %4u %4u %4u
+Quantizing to %d = %d*%d*%d colors
+Quantizing to %d colors
+Selected %d colors for quantization
+At marker 0x%02x, recovery action %d
+RST%d
+Smoothing not supported with nonstandard sampling ratios
+Start Of Frame 0x%02x: width=%u, height=%u, components=%d
+    Component %d: %dhx%dv q=%d
+Start of Image
+Start Of Scan: %d components
+    Component %d: dc=%d ac=%d
+  Ss=%d, Se=%d, Ah=%d, Al=%d
+Closed temporary file %s
+Opened temporary file %s
+Unrecognized component IDs %d %d %d, assuming YCbCr
+Freed XMS handle %u
+Obtained XMS handle %u
+Unknown Adobe color transform code %d
+Inconsistent progression sequence for component %d coefficient %d
+Corrupt JPEG data: %u extraneous bytes before marker 0x%02x
+Corrupt JPEG data: premature end of data segment
+Corrupt JPEG data: bad Huffman code
+Warning: unknown JFIF revision number %d.%02d
+Premature end of JPEG file
+Corrupt JPEG data: found marker 0x%02x instead of RST%d
+Invalid SOS parameters for sequential JPEG
+Application transferred too many scanlines
+JPEG Error
+JPEGMEM
+%ld%c
+.?AVtype_info@@
+.?AVexception@std@@
+.?AVbad_alloc@std@@
+.?AVfacet@locale@std@@
+.?AV_Locimp@locale@std@@
+YIQ5u
+>f:y
+>f:yJ
+YIQ5u
+>f:yJ
+>f:yJ
+1$2+2Q2X2]2b2h2
+3@3G3i3p3u3z3
+4$4M4Z4c4u4
+5&555
+676`6
+7X8_8u8
+;K<Q<
+<:=Z=_=j=
+>D>_>d>o>
+?3?:???D?J?
+02191S1]1b1g1m1
+1h2r2w2|2
+5'51565;5A5Y6y6 7
+8"8L8\8o8
+989E9f9v9
+9(:H:O:V:
+<F<X<m<u<
+=,=f=t=
+?+?f?u?
+V0e0
+0F1U1
+2C3I3
+596?6
+7!7&717S7
+858:8E8
+%3)3-3135393
+(020<0F0P0x0
+;K>O>S>W>[>_>c>g>k>o>s>w>{>
+7;=E=O=Y=
+M2W2
+&252
+:&:8:D:
+;.<><N<|=
+=<>@>D>H>L>P>T>X>
+#0A3K3W4
+5B5}=
+?[?|?
+0+5^5h5
+K<U<_<
+&000<0F0
+<S=_=q=}=
+9r;]>
+0Z1d1j1p1{8
+E0O0
+=->A>K>`>
+? ?5?
+0_0g0k0o0s0w0{0
+`;c<r<{<
+93:<:K:]:
+5Z5h5r5w5|5
+676L6Q6W6o6t6
+777H7S7[7
+7N8{8
+9 9&9,9<9B9H9N9T9Z9a9h9o9v9}9
+:):0:9:
+;*;?;J;`;x;
+<^=d=j=p=
+>'>J>W>c>k>s>
+?'?J?
+0G0b0
+1H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+6 6$6(6,6064686<6@6D6H6L6P6T6X6\6`6d6h6l6p6t6x6|6
+7 7$7D<H<P<T<`=d=h= >$>4>8>H>L>T>l>|>
+? ?8?H?L?T?l?
+0 0(0<0D0X0`0d0l0t0|0
+1 1,1L1X1
+202<2
+3$3,383X3`3l3

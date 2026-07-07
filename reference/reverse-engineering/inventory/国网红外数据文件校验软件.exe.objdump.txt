@@ -1,0 +1,533 @@
+
+国网红外数据文件校验软件.exe:	file format coff-i386
+Characteristics 0x102
+	executable
+	32 bit words
+
+Time/Date               Thu Apr 14 16:56:01 2016
+Magic                   010b	(PE32)
+MajorLinkerVersion      10
+MinorLinkerVersion      0
+SizeOfCode              00005600
+SizeOfInitializedData   00028a00
+SizeOfUninitializedData 00000000
+AddressOfEntryPoint     00005704
+BaseOfCode              00001000
+BaseOfData              00007000
+ImageBase               00400000
+SectionAlignment        00001000
+FileAlignment           00000200
+MajorOSystemVersion     5
+MinorOSystemVersion     1
+MajorImageVersion       0
+MinorImageVersion       0
+MajorSubsystemVersion   5
+MinorSubsystemVersion   1
+Win32Version            00000000
+SizeOfImage             00031000
+SizeOfHeaders           00000400
+CheckSum                00000000
+Subsystem               00000002	(Windows GUI)
+DllCharacteristics      00008140
+					DYNAMIC_BASE
+					NX_COMPAT
+					TERMINAL_SERVER_AWARE
+SizeOfStackReserve      00100000
+SizeOfStackCommit       00001000
+SizeOfHeapReserve       00100000
+SizeOfHeapCommit        00001000
+LoaderFlags             00000000
+NumberOfRvaAndSizes     00000010
+
+The Data Directory
+Entry 0 00000000 00000000 Export Directory [.edata (or where ever we found it)]
+Entry 1 000095d0 00000154 Import Directory [parts of .idata]
+Entry 2 0000c000 00022b80 Resource Directory [.rsrc]
+Entry 3 00000000 00000000 Exception Directory [.pdata]
+Entry 4 00000000 00000000 Security Directory
+Entry 5 0002f000 00000f84 Base Relocation Directory [.reloc]
+Entry 6 00000000 00000000 Debug Directory
+Entry 7 00000000 00000000 Description Directory
+Entry 8 00000000 00000000 Special Directory
+Entry 9 00000000 00000000 Thread Storage Directory [.tls]
+Entry a 000088f8 00000040 Load Configuration Directory
+Entry b 00000000 00000000 Bound Import Directory
+Entry c 00007000 0000060c Import Address Table Directory
+Entry d 00000000 00000000 Delay Import Directory
+Entry e 00000000 00000000 CLR Runtime Header
+Entry f 00000000 00000000 Reserved
+
+Load configuration:
+  Timestamp: 0
+  Major Version: 0
+  Minor Version: 0
+  GlobalFlags Clear: 0
+  GlobalFlags Set: 0
+  Critical Section Default Timeout: 0
+  Decommit Free Block Threshold: 0
+  Decommit Total Free Threshold: 0
+  Lock Prefix Table: 0
+  Maximum Allocation Size: 0
+  Virtual Memory Threshold: 0
+  Process Affinity Mask: 0
+  Process Heap Flags: 0
+  CSD Version: 0
+  Security Cookie: 4239400
+  SEH Table: 4230976
+  SEH Count: 22
+
+SEH Table: 0x405b59 0x405eaa 0x405ed9 0x405f15 0x405f30 0x405f59 0x405f8c 0x40603a 0x406069 0x406099 0x4060d8 0x406127 0x4061b2 0x4061d9 0x40628a 0x4062fd 0x406338 0x406368 0x4063a8 0x4063f0 0x406428 0x406474
+
+
+The Import Tables:
+  lookup 00009994 time 00000000 fwd 00000000 name 00009d30 addr 00007270
+
+    DLL Name: mfc100u.dll
+    Hint/Ord  Name
+        3438
+        2618
+        7902
+        3751
+        2780
+        8269
+        5882
+        8277
+        5846
+        1934
+        3261
+        6713
+        9525
+        7973
+       12349
+        4805
+       10081
+         422
+         980
+        5563
+        3628
+       12951
+        2629
+        5264
+         285
+        7911
+        5652
+        5276
+        7006
+       11164
+        4810
+        2620
+       12351
+        4808
+        2614
+        7347
+        5830
+        8347
+        8372
+        2417
+       12606
+        5556
+        2756
+        2980
+        2981
+       10412
+       10058
+        8179
+       11123
+        4151
+        4512
+        2164
+       12557
+       10725
+        6156
+       13388
+        7109
+       13382
+        2665
+        3992
+       14067
+        3999
+        4416
+        4383
+        4379
+        4413
+        4434
+        4392
+        4421
+        4430
+        4400
+        4404
+        4408
+        4396
+        4425
+        4388
+        1519
+        1512
+        1514
+        1508
+        1501
+       11244
+       11246
+       12724
+        2853
+        8393
+       10045
+        6247
+       11210
+        8112
+       13380
+       10937
+        3402
+       11081
+        8273
+       14060
+       14059
+       14132
+       14149
+       11476
+       11477
+       13381
+        7108
+       13387
+        8530
+       13366
+        3625
+       11864
+        7126
+        1739
+       14162
+       10976
+       13267
+       11469
+        7179
+       13570
+       13567
+       13572
+       14145
+       14147
+       14148
+       14146
+        2418
+        7385
+        2884
+        2887
+       12610
+       13569
+       13571
+       13568
+        3416
+        5558
+        2844
+        3763
+        5261
+       11228
+       11236
+        4086
+        7391
+        9498
+       11240
+       11209
+       11845
+        5118
+        9328
+        6140
+         950
+        5801
+         948
+         970
+        1013
+        3627
+       12753
+         849
+        1895
+        1986
+        7176
+        1292
+         890
+        6869
+        9447
+       13342
+         286
+        1734
+        1282
+         880
+        1298
+        4360
+        3397
+       12186
+        4139
+       12821
+       11982
+        2184
+        4355
+        1212
+         788
+        6870
+        3428
+        2185
+        1905
+        6080
+        5862
+        3446
+         296
+         902
+        4290
+        1987
+        5799
+         945
+         374
+        1266
+         897
+        8346
+        9333
+        7393
+        4792
+        6922
+        6932
+        6931
+        5468
+        4623
+        4794
+        4645
+        5143
+        4901
+        8483
+        5115
+        4923
+        4642
+       11159
+        2852
+        2951
+        2952
+        3491
+        2410
+         385
+        7624
+        7548
+       11784
+       13854
+        3684
+        4744
+       11116
+        2339
+        1490
+        2089
+        6633
+        8550
+        1300
+
+  lookup 00009798 time 00000000 fwd 00000000 name 00009e78 addr 00007074
+
+    DLL Name: MSVCR100.dll
+    Hint/Ord  Name
+         314  __CxxFrameHandler3
+         238  ?_type_info_dtor_internal_method@type_info@@QAEXXZ
+         507  _crt_debugger_hook
+         495  _controlfp_s
+         696  _invoke_watson
+         545  _except_handler4_common
+         258  ?terminate@@YAXXZ
+         969  _onexit
+         803  _lock
+         347  __dllonexit
+        1165  _unlock
+         415  __set_app_type
+         581  _fmode
+         491  _commode
+         418  __setusermatherr
+         492  _configthreadlocale
+         689  _initterm_e
+         688  _initterm
+        1233  _wcmdln
+        1395  exit
+         301  _XcptFilter
+         554  _exit
+         476  _cexit
+         438  __wgetmainargs
+         453  _amsg_exit
+          36  ??0exception@std@@QAE@ABV01@@Z
+          34  ??0exception@std@@QAE@ABQBD@Z
+          93  ??1exception@std@@UAE@XZ
+         269  ?what@exception@std@@UBEPBDXZ
+         289  _CxxThrowException
+
+  lookup 00009744 time 00000000 fwd 00000000 name 0000a0b6 addr 00007020
+
+    DLL Name: KERNEL32.dll
+    Hint/Ord  Name
+         723  HeapSetInformation
+         745  InterlockedCompareExchange
+        1202  Sleep
+         772  IsProcessorFeaturePresent
+         611  GetStartupInfoW
+         768  IsDebuggerPresent
+        1235  UnhandledExceptionFilter
+         448  GetCurrentProcess
+        1216  TerminateProcess
+         633  GetSystemTimeAsFileTime
+         449  GetCurrentProcessId
+         453  GetCurrentThreadId
+         659  GetTickCount
+         935  QueryPerformanceCounter
+        1189  SetUnhandledExceptionFilter
+         202  DecodePointer
+         234  EncodePointer
+         748  InterlockedExchange
+
+  lookup 00009814 time 00000000 fwd 00000000 name 0000a1c6 addr 000070f0
+
+    DLL Name: USER32.dll
+    Hint/Ord  Name
+         289  GetDC
+         276  GetClientRect
+         640  SetCapture
+         576  PtInRect
+         648  SetCursor
+         491  LoadCursorW
+         612  ReleaseCapture
+         586  RedrawWindow
+         487  LoadBitmapW
+         446  InvalidateRect
+         636  SendMessageW
+         493  LoadIconW
+         465  IsIconic
+         382  GetSystemMetrics
+         199  DrawIcon
+         412  GetWindowRect
+         216  EnableWindow
+         356  GetParent
+
+  lookup 0000972c time 00000000 fwd 00000000 name 0000a226 addr 00007008
+
+    DLL Name: GDI32.dll
+    Hint/Ord  Name
+          19  BitBlt
+         691  StretchBlt
+          75  CreatePen
+          47  CreateCompatibleBitmap
+          48  CreateCompatibleDC
+
+  lookup 00009724 time 00000000 fwd 00000000 name 0000a248 addr 00007000
+
+    DLL Name: COMCTL32.dll
+    Hint/Ord  Name
+         123  InitCommonControlsEx
+
+  lookup 00009860 time 00000000 fwd 00000000 name 0000a256 addr 0000713c
+
+    DLL Name: WS2_32.dll
+    Hint/Ord  Name
+         115
+
+  lookup 00009790 time 00000000 fwd 00000000 name 0000a282 addr 0000706c
+
+    DLL Name: MSVCP100.dll
+    Hint/Ord  Name
+         652  ?_Xlength_error@std@@YAXPBD@Z
+
+  lookup 00009868 time 00000000 fwd 00000000 name 0000a35e addr 00007144
+
+    DLL Name: YFCommon.dll
+    Hint/Ord  Name
+           4  ?yf_is_valid_handle@YFCommon@@YG_NPAX@Z
+           0  ?yf_astr_to_wstr@YFCommon@@YG_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@3@@Z
+
+  lookup 000098a8 time 00000000 fwd 00000000 name 0000a80e addr 00007184
+
+    DLL Name: YFIR.dll
+    Hint/Ord  Name
+         133  ?yf_ir_get_temp_from_ad@@YG_NPAXGAAM@Z
+         109  ?yf_ir_get_imaging_handle@@YG_NPAXAAPAX@Z
+         158  ?yf_ir_save_temp_direct@@YG_NPAX_N@Z
+          50  ?yf_ana_set_visibled@@YG_NPAX_N@Z
+          39  ?yf_ana_set_can_move@@YG_NPAX_N@Z
+         198  ?yf_ir_update_all_ana_temp@@YG_NPAX@Z
+         177  ?yf_ir_set_mdf@@YG_NPAXM_N@Z
+          72  ?yf_ir_delete_all_dw@@YG_NPAX@Z
+          75  ?yf_ir_delete_dw@@YG_NPAXAAPAX@Z
+          65  ?yf_ir_add_dw@@YG_NPAXAAPAXMMI_N@Z
+         147  ?yf_ir_load_anas_from_str_ex_w@@YG_NPAXPB_WMM_N@Z
+          17  ?yf_ana_get_max_temp@@YG_NPAXAAUtagYFTemperature@@@Z
+          81  ?yf_ir_get_ana@@YG_NPAXHHAAPAX@Z
+          86  ?yf_ir_get_anas_count@@YG_NPAXHAAH@Z
+          90  ?yf_ir_get_anas_str_w@@YG_NPAXAAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z
+          71  ?yf_ir_delete_all_ana@@YG_NPAX@Z
+         187  ?yf_ir_set_sound_data@@YG_NPAXPAEI@Z
+         170  ?yf_ir_set_fahrenheit@@YG_NPAX_N1@Z
+         151  ?yf_ir_reg_wnd_msg@@YG_NPAXII@Z
+          84  ?yf_ir_get_ana_name_w@@YG_NPAX0AAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z
+         105  ?yf_ir_get_hit_ana@@YG_NPAXAAPAX@Z
+         135  ?yf_ir_get_temp_from_loc@@YG_NPAXGGAAM@Z
+         110  ?yf_ir_get_img_size@@YG_NPAXAAG1@Z
+          79  ?yf_ir_get_ad_from_temp@@YG_NPAXMAAG@Z
+         118  ?yf_ir_get_min_temp@@YG_NPAXAAUtagYFTemperature@@@Z
+         115  ?yf_ir_get_max_temp@@YG_NPAXAAUtagYFTemperature@@@Z
+
+  lookup 00009950 time 00000000 fwd 00000000 name 0000a8c0 addr 0000722c
+
+    DLL Name: YFIRShow.dll
+    Hint/Ord  Name
+           3  ?yf_show_get_draw_ana@@YG_NPAXAAPAX@Z
+           1  ?yf_show_clear@@YG_NPAX@Z
+           5  ?yf_show_get_ir@@YG_NPAXAAPAX@Z
+          15  ?yf_show_rotate@@YG_NPAXH_N@Z
+          13  ?yf_show_on_paint@@YG_NPAX_N@Z
+
+  lookup 00009874 time 00000000 fwd 00000000 name 0000aaac addr 00007150
+
+    DLL Name: YFDrawAna.dll
+    Hint/Ord  Name
+           1  ?yf_draw_ana_ellipse@@YG_NPAX@Z
+           7  ?yf_draw_ana_rect@@YG_NPAX@Z
+           3  ?yf_draw_ana_line@@YG_NPAX@Z
+           4  ?yf_draw_ana_point@@YG_NPAX@Z
+           0  ?yf_draw_ana_delete@@YG_NPAX@Z
+          13  ?yf_draw_on_lbutton_dblclk@@YG_NPAXIABUtagPOINT@@@Z
+          11  ?yf_draw_get_draw_type@@YG_NPAXAAH@Z
+          15  ?yf_draw_on_lbutton_up@@YG_NPAXIABUtagPOINT@@@Z
+          14  ?yf_draw_on_lbutton_down@@YG_NPAXIABUtagPOINT@@@Z
+           5  ?yf_draw_ana_poly@@YG_NPAX@Z
+           6  ?yf_draw_ana_polyline@@YG_NPAX@Z
+          16  ?yf_draw_on_mouse_move@@YG_NPAXIABUtagPOINT@@@Z
+
+  lookup 00009914 time 00000000 fwd 00000000 name 0000ac96 addr 000071f0
+
+    DLL Name: YFIRImage.dll
+    Hint/Ord  Name
+          16  ?yf_image_get_sound_handle@@YG_NPAXAAPAX@Z
+          19  ?yf_image_has_sound@@YG_NPAXAA_N@Z
+          11  ?yf_image_get_next_text@@YG_NPAXAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+           9  ?yf_image_get_ir_show@@YG_NPAXAAPAX@Z
+          28  ?yf_image_uninit@@YG_NAAPAX@Z
+          20  ?yf_image_init@@YG_NAAPAXI@Z
+          25  ?yf_image_load_file_w@@YG_NPAXPB_W_N@Z
+          27  ?yf_image_save_file_w@@YG_NPAXPB_W_N2@Z
+           6  ?yf_image_get_frist_text@@YG_NPAXAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+
+  lookup 0000993c time 00000000 fwd 00000000 name 0000ad56 addr 00007218
+
+    DLL Name: YFIRImaging.dll
+    Hint/Ord  Name
+          18  ?yf_imaging_set_adjust_type@@YG_NPAXW4YFAdjustType@@@Z
+          28  ?yf_imaging_set_level_max@@YG_NPAXG@Z
+          27  ?yf_imaging_set_level@@YG_NPAXG@Z
+          16  ?yf_imaging_get_level_span@@YG_NPAXAAG1@Z
+
+  lookup 00009974 time 00000000 fwd 00000000 name 0000adf8 addr 00007250
+
+    DLL Name: YFSound.dll
+    Hint/Ord  Name
+           9  yf_sound_stop_record
+           7  yf_sound_start_record
+          10  yf_sound_uninit
+           2  yf_sound_get_data_ptr
+           1  yf_sound_get_data_len
+           3  yf_sound_init
+           5  yf_sound_play
+
+  lookup 00009968 time 00000000 fwd 00000000 name 0000ae40 addr 00007244
+
+    DLL Name: YFJPG.dll
+    Hint/Ord  Name
+           4  ?yf_jpg_init@@YG_NIAAPAX@Z
+          11  ?yf_jpg_uninit@@YG_NAAPAX@Z
+

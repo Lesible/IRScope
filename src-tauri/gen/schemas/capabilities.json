@@ -1,0 +1,1 @@
+{"default":{"identifier":"default","description":"Default desktop permissions for IRScope.","local":true,"windows":["main"],"permissions":["core:default","core:window:allow-center","core:window:allow-set-size","dialog:default"]}}

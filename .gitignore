@@ -1,0 +1,21 @@
+# Tauri / Rust / Node build output
+node_modules/
+dist/
+src-tauri/target/
+target/
+*.lockb
+
+# IDE and editor local state
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Local logs and temp files
+*.log
+*.tmp

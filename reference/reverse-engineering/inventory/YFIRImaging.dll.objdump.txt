@@ -1,0 +1,201 @@
+
+YFIRImaging.dll:	file format coff-i386
+Characteristics 0x2102
+	executable
+	32 bit words
+	DLL
+
+Time/Date               Thu Apr 14 16:53:04 2016
+Magic                   010b	(PE32)
+MajorLinkerVersion      10
+MinorLinkerVersion      0
+SizeOfCode              0000a000
+SizeOfInitializedData   00006800
+SizeOfUninitializedData 00000000
+AddressOfEntryPoint     00009cb4
+BaseOfCode              00001000
+BaseOfData              0000b000
+ImageBase               10000000
+SectionAlignment        00001000
+FileAlignment           00000200
+MajorOSystemVersion     5
+MinorOSystemVersion     1
+MajorImageVersion       0
+MinorImageVersion       0
+MajorSubsystemVersion   5
+MinorSubsystemVersion   1
+Win32Version            00000000
+SizeOfImage             00014000
+SizeOfHeaders           00000400
+CheckSum                00000000
+Subsystem               00000002	(Windows GUI)
+DllCharacteristics      00000140
+					DYNAMIC_BASE
+					NX_COMPAT
+SizeOfStackReserve      00100000
+SizeOfStackCommit       00001000
+SizeOfHeapReserve       00100000
+SizeOfHeapCommit        00001000
+LoaderFlags             00000000
+NumberOfRvaAndSizes     00000010
+
+The Data Directory
+Entry 0 0000ddc0 00000774 Export Directory [.edata (or where ever we found it)]
+Entry 1 0000d6dc 00000078 Import Directory [parts of .idata]
+Entry 2 00011000 00000310 Resource Directory [.rsrc]
+Entry 3 00000000 00000000 Exception Directory [.pdata]
+Entry 4 00000000 00000000 Security Directory
+Entry 5 00012000 00000f94 Base Relocation Directory [.reloc]
+Entry 6 00000000 00000000 Debug Directory
+Entry 7 00000000 00000000 Description Directory
+Entry 8 00000000 00000000 Special Directory
+Entry 9 00000000 00000000 Thread Storage Directory [.tls]
+Entry a 0000b748 00000040 Load Configuration Directory
+Entry b 00000000 00000000 Bound Import Directory
+Entry c 0000b000 000000f8 Import Address Table Directory
+Entry d 00000000 00000000 Delay Import Directory
+Entry e 00000000 00000000 CLR Runtime Header
+Entry f 00000000 00000000 Reserved
+
+Load configuration:
+  Timestamp: 0
+  Major Version: 0
+  Minor Version: 0
+  GlobalFlags Clear: 0
+  GlobalFlags Set: 0
+  Critical Section Default Timeout: 0
+  Decommit Free Block Threshold: 0
+  Decommit Total Free Threshold: 0
+  Lock Prefix Table: 0
+  Maximum Allocation Size: 0
+  Virtual Memory Threshold: 0
+  Process Affinity Mask: 0
+  Process Heap Flags: 0
+  CSD Version: 0
+  Security Cookie: 268496920
+  SEH Table: 268485840
+  SEH Count: 52
+
+SEH Table: 0x10009e49 0x1000a2a0 0x1000a2c0 0x1000a2e0 0x1000a300 0x1000a328 0x1000a37c 0x1000a3ac 0x1000a3fc 0x1000a444 0x1000a48c 0x1000a4b0 0x1000a4f4 0x1000a518 0x1000a540 0x1000a568 0x1000a5ba 0x1000a60a 0x1000a65c 0x1000a6ac 0x1000a6d8 0x1000a708 0x1000a738 0x1000a768 0x1000a7a0 0x1000a7dc 0x1000a808 0x1000a840 0x1000a868 0x1000a8a0 0x1000a8f4 0x1000a934 0x1000a969 0x1000a9b3 0x1000a9eb 0x1000aa1b 0x1000aa48 0x1000aa80 0x1000aac8 0x1000ab00 0x1000ab40 0x1000ab78 0x1000aba8 0x1000ac38 0x1000acc0 0x1000acec 0x1000ad18 0x1000ad50 0x1000ad78 0x1000ada8 0x1000add8 0x1000ae10
+
+
+The Import Tables:
+  lookup 0000d754 time 00000000 fwd 00000000 name 0000d8cc addr 0000b000
+
+    DLL Name: KERNEL32.dll
+    Hint/Ord  Name
+        1271  WaitForMultipleObjects
+        1022  ReleaseSemaphore
+          82  CloseHandle
+         171  CreateSemaphoreA
+        1273  WaitForSingleObject
+         633  GetSystemTimeAsFileTime
+         222  DisableThreadLibraryCalls
+         768  IsDebuggerPresent
+        1189  SetUnhandledExceptionFilter
+        1235  UnhandledExceptionFilter
+         448  GetCurrentProcess
+        1216  TerminateProcess
+         745  InterlockedCompareExchange
+        1202  Sleep
+         748  InterlockedExchange
+         202  DecodePointer
+         234  EncodePointer
+         449  GetCurrentProcessId
+         453  GetCurrentThreadId
+         659  GetTickCount
+         935  QueryPerformanceCounter
+
+  lookup 0000d7ac time 00000000 fwd 00000000 name 0000d91a addr 0000b058
+
+    DLL Name: MSVCP100.dll
+    Hint/Ord  Name
+         654  ?_Xout_of_range@std@@YAXPBD@Z
+         652  ?_Xlength_error@std@@YAXPBD@Z
+
+  lookup 0000d838 time 00000000 fwd 00000000 name 0000d952 addr 0000b0e4
+
+    DLL Name: boost_date_time-vc100-mt-1_52.dll
+    Hint/Ord  Name
+           2  ??0greg_month@gregorian@boost@@QAE@G@Z
+
+  lookup 0000d840 time 00000000 fwd 00000000 name 0000d9ec addr 0000b0ec
+
+    DLL Name: boost_system-vc100-mt-1_52.dll
+    Hint/Ord  Name
+           1  ?system_category@system@boost@@YAABVerror_category@12@XZ
+           0  ?generic_category@system@boost@@YAABVerror_category@12@XZ
+
+  lookup 0000d7b8 time 00000000 fwd 00000000 name 0000dafe addr 0000b064
+
+    DLL Name: MSVCR100.dll
+    Hint/Ord  Name
+         101  ??3@YAXPAX@Z
+          99  ??2@YAPAXI@Z
+         258  ?terminate@@YAXXZ
+        1165  _unlock
+         347  __dllonexit
+         803  _lock
+         969  _onexit
+         820  _malloc_crt
+        1419  free
+         537  _encoded_null
+         269  ?what@exception@std@@UBEPBDXZ
+         689  _initterm_e
+         453  _amsg_exit
+         305  __CppXcptFilter
+         507  _crt_debugger_hook
+         545  _except_handler4_common
+         238  ?_type_info_dtor_internal_method@type_info@@QAEXXZ
+         339  __clean_type_info_names_internal
+         314  __CxxFrameHandler3
+        1487  memcpy
+         289  _CxxThrowException
+         122  ??_V@YAXPAX@Z
+        1489  memmove
+         673  _gmtime64
+          36  ??0exception@std@@QAE@ABV01@@Z
+          35  ??0exception@std@@QAE@ABQBDH@Z
+          34  ??0exception@std@@QAE@ABQBD@Z
+         688  _initterm
+          93  ??1exception@std@@UAE@XZ
+         984  _purecall
+        1491  memset
+
+Export Table:
+ DLL name: YFIRImaging.dll
+ Ordinal base: 1
+ Ordinal      RVA  Name
+       1   0x8d30  ?yf_enforce_adjust@@YG_NPAX@Z
+       2   0x9020  ?yf_imaging_ad_to_pal_no@@YG_NPAXPAGGGGGGGAAUtagYFTemperature@@22@Z
+       3   0x90b0  ?yf_imaging_ad_to_pal_no_ex@@YG_NPAXGG@Z
+       4   0x9070  ?yf_imaging_ad_to_pal_no_line_tbl@@YG_NPAXPAGPAU_LineTbl@@HGGAAUtagYFTemperature@@33@Z
+       5   0x90e0  ?yf_imaging_ad_to_pixel@@YG_NPAXAAUtagAD2Pixel@@@Z
+       6   0x9150  ?yf_imaging_ad_to_pixel_line_tbl@@YG_NPAXAAUtagAD2Pixel@@PAU_LineTbl@@H@Z
+       7   0x9110  ?yf_imaging_ad_to_pixel_rect@@YG_NPAXAAUtagAD2Pixel@@HHHH@Z
+       8   0x9230  ?yf_imaging_add_dw@@YG_NPAXGGI_N@Z
+       9   0x9280  ?yf_imaging_delete_all_dw@@YG_NPAX@Z
+      10   0x9260  ?yf_imaging_delete_dw@@YG_NPAXH@Z
+      11   0x9200  ?yf_imaging_draw_sound@@YG_NPAXPAIGGGG@Z
+      12   0x8fc0  ?yf_imaging_get_adjust_type@@YG_NPAXAAW4YFAdjustType@@@Z
+      13   0x8f90  ?yf_imaging_get_color_index@@YG_NPAXAAW4ColorIndex@@@Z
+      14   0x8ff0  ?yf_imaging_get_edge_except@@YG_NPAXAAG@Z
+      15   0x8f00  ?yf_imaging_get_level@@YG_NPAXAAG@Z
+      16   0x8f30  ?yf_imaging_get_level_max@@YG_NPAXAAG@Z
+      17   0x8f60  ?yf_imaging_get_level_span@@YG_NPAXAAG1@Z
+      18   0x8c80  ?yf_imaging_init@@YG_NAAPAX@Z
+      19   0x8e50  ?yf_imaging_set_adjust_type@@YG_NPAXW4YFAdjustType@@@Z
+      20   0x9180  ?yf_imaging_set_callback_level_span_changed@@YG_NPAXP6AX0GG@Z0@Z
+      21   0x8e30  ?yf_imaging_set_color_index@@YG_NPAXW4ColorIndex@@@Z
+      22   0x9330  ?yf_imaging_set_dw_clr@@YG_NPAXHI@Z
+      23   0x92a0  ?yf_imaging_set_dw_down_range@@YG_NPAXHG@Z
+      24   0x9300  ?yf_imaging_set_dw_range@@YG_NPAXHGG@Z
+      25   0x9360  ?yf_imaging_set_dw_transparent@@YG_NPAXH_N@Z
+      26   0x92d0  ?yf_imaging_set_dw_up_range@@YG_NPAXHG@Z
+      27   0x8ed0  ?yf_imaging_set_edge_except@@YG_NPAXH@Z
+      28   0x8d80  ?yf_imaging_set_level@@YG_NPAXG@Z
+      29   0x8dc0  ?yf_imaging_set_level_max@@YG_NPAXG@Z
+      30   0x8e00  ?yf_imaging_set_level_span@@YG_NPAXGG@Z
+      31   0x91d0  ?yf_imaging_stop_callback_level_span_changed@@YG_NPAXP6AX0GG@Z@Z
+      32   0x8d00  ?yf_imaging_uninit@@YG_NAAPAX@Z
+      33   0x8d50  ?yf_is_color_reverse@@YG_NPAXAA_N@Z

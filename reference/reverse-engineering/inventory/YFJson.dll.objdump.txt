@@ -1,0 +1,162 @@
+
+YFJson.dll:	file format coff-i386
+Characteristics 0x2102
+	executable
+	32 bit words
+	DLL
+
+Time/Date               Thu Apr 14 16:36:08 2016
+Magic                   010b	(PE32)
+MajorLinkerVersion      10
+MinorLinkerVersion      0
+SizeOfCode              00002800
+SizeOfInitializedData   00001800
+SizeOfUninitializedData 00000000
+AddressOfEntryPoint     00002ff8
+BaseOfCode              00001000
+BaseOfData              00004000
+ImageBase               10000000
+SectionAlignment        00001000
+FileAlignment           00000200
+MajorOSystemVersion     5
+MinorOSystemVersion     1
+MajorImageVersion       0
+MinorImageVersion       0
+MajorSubsystemVersion   5
+MinorSubsystemVersion   1
+Win32Version            00000000
+SizeOfImage             00008000
+SizeOfHeaders           00000400
+CheckSum                00005b11
+Subsystem               00000002	(Windows GUI)
+DllCharacteristics      00000140
+					DYNAMIC_BASE
+					NX_COMPAT
+SizeOfStackReserve      00100000
+SizeOfStackCommit       00001000
+SizeOfHeapReserve       00100000
+SizeOfHeapCommit        00001000
+LoaderFlags             00000000
+NumberOfRvaAndSizes     00000010
+
+The Data Directory
+Entry 0 00004a50 00000123 Export Directory [.edata (or where ever we found it)]
+Entry 1 000044ec 00000050 Import Directory [parts of .idata]
+Entry 2 00006000 00000540 Resource Directory [.rsrc]
+Entry 3 00000000 00000000 Exception Directory [.pdata]
+Entry 4 00000000 00000000 Security Directory
+Entry 5 00007000 000002e4 Base Relocation Directory [.reloc]
+Entry 6 00004100 0000001c Debug Directory
+Entry 7 00000000 00000000 Description Directory
+Entry 8 00000000 00000000 Special Directory
+Entry 9 00000000 00000000 Thread Storage Directory [.tls]
+Entry a 000041f0 00000040 Load Configuration Directory
+Entry b 00000000 00000000 Bound Import Directory
+Entry c 00004000 000000dc Import Address Table Directory
+Entry d 00000000 00000000 Delay Import Directory
+Entry e 00000000 00000000 CLR Runtime Header
+Entry f 00000000 00000000 Reserved
+
+Load configuration:
+  Timestamp: 0
+  Major Version: 0
+  Minor Version: 0
+  GlobalFlags Clear: 0
+  GlobalFlags Set: 0
+  Critical Section Default Timeout: 0
+  Decommit Free Block Threshold: 0
+  Decommit Total Free Threshold: 0
+  Lock Prefix Table: 0
+  Maximum Allocation Size: 0
+  Virtual Memory Threshold: 0
+  Process Affinity Mask: 0
+  Process Heap Flags: 0
+  CSD Version: 0
+  Security Cookie: 268455960
+  SEH Table: 268452688
+  SEH Count: 2
+
+SEH Table: 0x100034e9 0x100036c0
+
+
+The Import Tables:
+  lookup 00004584 time 00000000 fwd 00000000 name 00004658 addr 00004048
+
+    DLL Name: MSVCP100.dll
+    Hint/Ord  Name
+         652  ?_Xlength_error@std@@YAXPBD@Z
+         654  ?_Xout_of_range@std@@YAXPBD@Z
+
+  lookup 00004590 time 00000000 fwd 00000000 name 0000473e addr 00004054
+
+    DLL Name: MSVCR100.dll
+    Hint/Ord  Name
+         305  __CppXcptFilter
+         507  _crt_debugger_hook
+         258  ?terminate@@YAXXZ
+         238  ?_type_info_dtor_internal_method@type_info@@QAEXXZ
+         339  __clean_type_info_names_internal
+        1165  _unlock
+         453  _amsg_exit
+         803  _lock
+         969  _onexit
+         545  _except_handler4_common
+         689  _initterm_e
+         688  _initterm
+         537  _encoded_null
+         820  _malloc_crt
+          99  ??2@YAPAXI@Z
+         101  ??3@YAXPAX@Z
+        1489  memmove
+          36  ??0exception@std@@QAE@ABV01@@Z
+          34  ??0exception@std@@QAE@ABQBD@Z
+          93  ??1exception@std@@UAE@XZ
+         269  ?what@exception@std@@UBEPBDXZ
+        1527  strchr
+        1476  malloc
+        1419  free
+        1539  strncmp
+        1519  sprintf
+        1487  memcpy
+        1491  memset
+        1407  floor
+         280  _CIpow
+         289  _CxxThrowException
+         314  __CxxFrameHandler3
+         347  __dllonexit
+
+  lookup 0000453c time 00000000 fwd 00000000 name 000049ca addr 00004000
+
+    DLL Name: KERNEL32.dll
+    Hint/Ord  Name
+         772  IsProcessorFeaturePresent
+         202  DecodePointer
+         748  InterlockedExchange
+         633  GetSystemTimeAsFileTime
+         449  GetCurrentProcessId
+         453  GetCurrentThreadId
+         659  GetTickCount
+         935  QueryPerformanceCounter
+         222  DisableThreadLibraryCalls
+         768  IsDebuggerPresent
+        1189  SetUnhandledExceptionFilter
+        1235  UnhandledExceptionFilter
+         448  GetCurrentProcess
+        1216  TerminateProcess
+         745  InterlockedCompareExchange
+        1202  Sleep
+         234  EncodePointer
+
+Export Table:
+ DLL name: YFJson.dll
+ Ordinal base: 1
+ Ordinal      RVA  Name
+       1   0x2540  yf_json_add_value
+       2   0x2690  yf_json_delete_value
+       3   0x2790  yf_json_free_fun
+       4   0x23b0  yf_json_get_value
+       5   0x2310  yf_json_init
+       6   0x2360  yf_json_init_ex
+       7   0x2760  yf_json_print
+       8   0x2460  yf_json_set_value
+       9   0x2380  yf_json_uninit

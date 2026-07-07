@@ -1,0 +1,605 @@
+
+YFIR.dll:	file format coff-i386
+Characteristics 0x2102
+	executable
+	32 bit words
+	DLL
+
+Time/Date               Thu Apr 14 17:52:43 2016
+Magic                   010b	(PE32)
+MajorLinkerVersion      10
+MinorLinkerVersion      0
+SizeOfCode              0001d600
+SizeOfInitializedData   0000d000
+SizeOfUninitializedData 00000000
+AddressOfEntryPoint     0001bbbe
+BaseOfCode              00001000
+BaseOfData              0001f000
+ImageBase               10000000
+SectionAlignment        00001000
+FileAlignment           00000200
+MajorOSystemVersion     5
+MinorOSystemVersion     1
+MajorImageVersion       0
+MinorImageVersion       0
+MajorSubsystemVersion   5
+MinorSubsystemVersion   1
+Win32Version            00000000
+SizeOfImage             0002e000
+SizeOfHeaders           00000400
+CheckSum                00000000
+Subsystem               00000002	(Windows GUI)
+DllCharacteristics      00000140
+					DYNAMIC_BASE
+					NX_COMPAT
+SizeOfStackReserve      00100000
+SizeOfStackCommit       00001000
+SizeOfHeapReserve       00100000
+SizeOfHeapCommit        00001000
+LoaderFlags             00000000
+NumberOfRvaAndSizes     00000010
+
+The Data Directory
+Entry 0 00025510 00002bd0 Export Directory [.edata (or where ever we found it)]
+Entry 1 000234d0 00000168 Import Directory [parts of .idata]
+Entry 2 0002a000 000002f0 Resource Directory [.rsrc]
+Entry 3 00000000 00000000 Exception Directory [.pdata]
+Entry 4 00000000 00000000 Security Directory
+Entry 5 0002b000 00001ea4 Base Relocation Directory [.reloc]
+Entry 6 00000000 00000000 Debug Directory
+Entry 7 00000000 00000000 Description Directory
+Entry 8 00000000 00000000 Special Directory
+Entry 9 00000000 00000000 Thread Storage Directory [.tls]
+Entry a 00020080 00000040 Load Configuration Directory
+Entry b 00000000 00000000 Bound Import Directory
+Entry c 0001f000 000003e4 Import Address Table Directory
+Entry d 00000000 00000000 Delay Import Directory
+Entry e 00000000 00000000 CLR Runtime Header
+Entry f 00000000 00000000 Reserved
+
+Load configuration:
+  Timestamp: 0
+  Major Version: 0
+  Minor Version: 0
+  GlobalFlags Clear: 0
+  GlobalFlags Set: 0
+  Critical Section Default Timeout: 0
+  Decommit Free Block Threshold: 0
+  Decommit Total Free Threshold: 0
+  Lock Prefix Table: 0
+  Maximum Allocation Size: 0
+  Virtual Memory Threshold: 0
+  Process Affinity Mask: 0
+  Process Heap Flags: 0
+  CSD Version: 0
+  Security Cookie: 268603416
+  SEH Table: 268570912
+  SEH Count: 126
+
+SEH Table: 0x1001bd49 0x1001c285 0x1001c2b0 0x1001c2d8 0x1001c318 0x1001c340 0x1001c360 0x1001c388 0x1001c3b0 0x1001c3d0 0x1001c3f8 0x1001c420 0x1001c440 0x1001c48c 0x1001c4dc 0x1001c524 0x1001c564 0x1001c580 0x1001c5a8 0x1001c5dd 0x1001c605 0x1001c628 0x1001c658 0x1001c69c 0x1001c6c0 0x1001c6fa 0x1001c728 0x1001c774 0x1001c7b4 0x1001c7fa 0x1001c84a 0x1001c891 0x1001c8b8 0x1001c943 0x1001c9d8 0x1001ca18 0x1001ca48 0x1001ca86 0x1001cab8 0x1001caf0 0x1001cb2c 0x1001cb58 0x1001cb90 0x1001cbb8 0x1001cbf0 0x1001cc30 0x1001cc7a 0x1001cca8 0x1001ccf4 0x1001cd34 0x1001cd69 0x1001cdac 0x1001cde3 0x1001ce1b 0x1001ce4b 0x1001ce78 0x1001cea8 0x1001cee0 0x1001cf28 0x1001cf7e 0x1001cfd0 0x1001cffb 0x1001d036 0x1001d068 0x1001d0a0 0x1001d0d8 0x1001d110 0x1001d188 0x1001d1c0 0x1001d200 0x1001d238 0x1001d270 0x1001d2a8 0x1001d2d8 0x1001d308 0x1001d338 0x1001d368 0x1001d398 0x1001d3fe 0x1001d428 0x1001d458 0x1001d488 0x1001d4c0 0x1001d4f0 0x1001d518 0x1001d558 0x1001d590 0x1001d5b8 0x1001d5f0 0x1001d628 0x1001d660 0x1001d698 0x1001d6d8 0x1001d708 0x1001d77b 0x1001d7a8 0x1001d7e8 0x1001d828 0x1001d858 0x1001d888 0x1001d8b8 0x1001d986 0x1001da46 0x1001da78 0x1001daac 0x1001dad8 0x1001db08 0x1001db38 0x1001db68 0x1001dba0 0x1001dbc8 0x1001dbf8 0x1001dc28 0x1001dc60 0x1001dca0 0x1001dcc8 0x1001dcf8 0x1001dd28 0x1001dd5c 0x1001dd88 0x1001ddc8 0x1001ddf8 0x1001de30 0x1001de68 0x1001de98 0x1001ded9
+
+
+The Import Tables:
+  lookup 00023638 time 00000000 fwd 00000000 name 00023ab8 addr 0001f000
+
+    DLL Name: KERNEL32.dll
+    Hint/Ord  Name
+        1271  WaitForMultipleObjects
+        1022  ReleaseSemaphore
+         130  CreateEventA
+          82  CloseHandle
+         171  CreateSemaphoreA
+        1273  WaitForSingleObject
+        1113  SetEvent
+         633  GetSystemTimeAsFileTime
+         449  GetCurrentProcessId
+         453  GetCurrentThreadId
+         659  GetTickCount
+         935  QueryPerformanceCounter
+         222  DisableThreadLibraryCalls
+         768  IsDebuggerPresent
+        1189  SetUnhandledExceptionFilter
+        1235  UnhandledExceptionFilter
+         448  GetCurrentProcess
+        1216  TerminateProcess
+         745  InterlockedCompareExchange
+        1202  Sleep
+         748  InterlockedExchange
+         202  DecodePointer
+         234  EncodePointer
+         772  IsProcessorFeaturePresent
+
+  lookup 00023798 time 00000000 fwd 00000000 name 00023ae6 addr 0001f160
+
+    DLL Name: USER32.dll
+    Hint/Ord  Name
+         566  PostMessageW
+         636  SendMessageW
+
+  lookup 0002369c time 00000000 fwd 00000000 name 00023d18 addr 0001f064
+
+    DLL Name: MSVCP100.dll
+    Hint/Ord  Name
+          92  ??0_Locimp@locale@std@@AAE@ABV012@@Z
+         156  ??1_Locimp@locale@std@@MAE@XZ
+         414  ?_Decref@facet@locale@std@@QAEPAV123@XZ
+         499  ?_Incref@facet@locale@std@@QAEXXZ
+         404  ?_Addcats@_Locinfo@std@@QAEAAV12@HPBD@Z
+         157  ??1_Locinfo@std@@QAE@XZ
+          94  ??0_Locinfo@std@@QAE@HPBD@Z
+        1008  ?global@locale@std@@SA?AV12@ABV12@@Z
+         526  ?_Init@locale@std@@CAPAV_Locimp@12@XZ
+         466  ?_Getgloballocale@locale@std@@CAPAV_Locimp@12@XZ
+         580  ?_Makeloc@_Locimp@locale@std@@CAPAV123@ABV_Locinfo@3@HPAV123@PBV23@@Z
+         656  ?_Xruntime_error@std@@YAXPBD@Z
+         654  ?_Xout_of_range@std@@YAXPBD@Z
+         652  ?_Xlength_error@std@@YAXPBD@Z
+
+  lookup 00023a08 time 00000000 fwd 00000000 name 00023d50 addr 0001f3d0
+
+    DLL Name: boost_date_time-vc100-mt-1_52.dll
+    Hint/Ord  Name
+           2  ??0greg_month@gregorian@boost@@QAE@G@Z
+
+  lookup 00023a10 time 00000000 fwd 00000000 name 00023dea addr 0001f3d8
+
+    DLL Name: boost_system-vc100-mt-1_52.dll
+    Hint/Ord  Name
+           1  ?system_category@system@boost@@YAABVerror_category@12@XZ
+           0  ?generic_category@system@boost@@YAABVerror_category@12@XZ
+
+  lookup 00023898 time 00000000 fwd 00000000 name 00024328 addr 0001f260
+
+    DLL Name: YFIRImaging.dll
+    Hint/Ord  Name
+           7  ?yf_imaging_add_dw@@YG_NPAXGGI_N@Z
+          25  ?yf_imaging_set_dw_up_range@@YG_NPAXHG@Z
+          24  ?yf_imaging_set_dw_transparent@@YG_NPAXH_N@Z
+          17  ?yf_imaging_init@@YG_NAAPAX@Z
+          12  ?yf_imaging_get_color_index@@YG_NPAXAAW4ColorIndex@@@Z
+          16  ?yf_imaging_get_level_span@@YG_NPAXAAG1@Z
+          21  ?yf_imaging_set_dw_clr@@YG_NPAXHI@Z
+           9  ?yf_imaging_delete_dw@@YG_NPAXH@Z
+          23  ?yf_imaging_set_dw_range@@YG_NPAXHGG@Z
+           8  ?yf_imaging_delete_all_dw@@YG_NPAX@Z
+          11  ?yf_imaging_get_adjust_type@@YG_NPAXAAW4YFAdjustType@@@Z
+          13  ?yf_imaging_get_edge_except@@YG_NPAXAAG@Z
+          26  ?yf_imaging_set_edge_except@@YG_NPAXH@Z
+           4  ?yf_imaging_ad_to_pixel@@YG_NPAXAAUtagAD2Pixel@@@Z
+          27  ?yf_imaging_set_level@@YG_NPAXG@Z
+          14  ?yf_imaging_get_level@@YG_NPAXAAG@Z
+          15  ?yf_imaging_get_level_max@@YG_NPAXAAG@Z
+          28  ?yf_imaging_set_level_max@@YG_NPAXG@Z
+           1  ?yf_imaging_ad_to_pal_no@@YG_NPAXPAGGGGGGGAAUtagYFTemperature@@22@Z
+           6  ?yf_imaging_ad_to_pixel_rect@@YG_NPAXAAUtagAD2Pixel@@HHHH@Z
+           5  ?yf_imaging_ad_to_pixel_line_tbl@@YG_NPAXAAUtagAD2Pixel@@PAU_LineTbl@@H@Z
+           3  ?yf_imaging_ad_to_pal_no_line_tbl@@YG_NPAXPAGPAU_LineTbl@@HGGAAUtagYFTemperature@@33@Z
+          20  ?yf_imaging_set_color_index@@YG_NPAXW4ColorIndex@@@Z
+          29  ?yf_imaging_set_level_span@@YG_NPAXGG@Z
+          31  ?yf_imaging_uninit@@YG_NAAPAX@Z
+          22  ?yf_imaging_set_dw_down_range@@YG_NPAXHG@Z
+          18  ?yf_imaging_set_adjust_type@@YG_NPAXW4YFAdjustType@@@Z
+
+  lookup 0002384c time 00000000 fwd 00000000 name 0002437a addr 0001f214
+
+    DLL Name: YFDrawShape.dll
+    Hint/Ord  Name
+           1  yf_calc_pts_in_line
+           6  yf_pt_in_line
+           0  yf_calc_lines_in_ellipse
+
+  lookup 00023878 time 00000000 fwd 00000000 name 00024430 addr 0001f240
+
+    DLL Name: YFFormatAnaStr.dll
+    Hint/Ord  Name
+           9  yf_get_anas_from_str
+           2  yf_format_ana_str_a
+          10  yf_get_pts_from_ana_str
+           6  yf_get_alias_from_str
+           0  yf_format_ana_index_a
+           1  yf_format_ana_index_w
+          11  yf_parse_ana_char_a
+
+  lookup 00023928 time 00000000 fwd 00000000 name 00024454 addr 0001f2f0
+
+    DLL Name: YFLog.dll
+    Hint/Ord  Name
+           0  yf_log_err_a
+
+  lookup 000237a4 time 00000000 fwd 00000000 name 000244fc addr 0001f16c
+
+    DLL Name: YFCalcTemp.dll
+    Hint/Ord  Name
+           8  yf_temp_set_fahrenheit
+           7  yf_temp_set_env_temp
+          10  yf_temp_set_rel_hum
+           0  yf_calc_temp
+           1  yf_calc_temp_ex
+           5  yf_temp_init
+          11  yf_temp_uninit
+           9  yf_temp_set_mdf
+
+  lookup 0002385c time 00000000 fwd 00000000 name 0002459e addr 0001f224
+
+    DLL Name: YFFileIdentify.dll
+    Hint/Ord  Name
+          19  yf_set_total_frames
+          17  yf_set_record_time_end
+          21  yf_write_file_end
+           1  yf_file_identify_uninit
+           0  yf_file_identify_init
+           8  yf_get_record_time_start
+
+  lookup 000239fc time 00000000 fwd 00000000 name 000245e0 addr 0001f3c4
+
+    DLL Name: YFTime.dll
+    Hint/Ord  Name
+          11  yf_time_sub_ex
+           0  yf_get_arr_from_cur_time
+
+  lookup 00023908 time 00000000 fwd 00000000 name 0002466c addr 0001f2d0
+
+    DLL Name: YFJson.dll
+    Hint/Ord  Name
+           6  yf_json_print
+           7  yf_json_set_value
+           5  yf_json_init_ex
+           4  yf_json_init
+           8  yf_json_uninit
+           0  yf_json_add_value
+           2  yf_json_free_fun
+
+  lookup 000237c8 time 00000000 fwd 00000000 name 00024a2c addr 0001f190
+
+    DLL Name: YFCalibrate.dll
+    Hint/Ord  Name
+          15  yf_calibrate_get_productor
+          40  yf_calibrate_set_product_date
+           3  yf_calibrate_get_base_temp_compensation
+          14  yf_calibrate_get_product_date
+          37  yf_calibrate_set_machine_serial
+          34  yf_calibrate_set_detector_serial
+          23  yf_calibrate_is_support_measurement_grade
+           0  yf_calibrate_format_data
+          46  yf_calibrate_uninit
+          22  yf_calibrate_init
+          21  yf_calibrate_get_temp_range
+           4  yf_calibrate_get_calibrate_temp
+           5  yf_calibrate_get_calibrate_temp_of_ad
+           6  yf_calibrate_get_calibrate_temp_of_ad_ex
+          16  yf_calibrate_get_real_AD_range
+          36  yf_calibrate_set_len_and_measurement_grade
+          35  yf_calibrate_set_len
+          33  yf_calibrate_set_correct_temp
+          39  yf_calibrate_set_measurement_grade
+          11  yf_calibrate_get_machine_serial
+          13  yf_calibrate_get_measurement_grade
+           1  yf_calibrate_get_AD_range
+          19  yf_calibrate_get_size
+          38  yf_calibrate_set_machine_type
+          41  yf_calibrate_set_productor
+           9  yf_calibrate_get_detector_serial
+          26  yf_calibrate_load_file
+          27  yf_calibrate_parse_data
+          12  yf_calibrate_get_machine_type
+
+  lookup 00023930 time 00000000 fwd 00000000 name 00025062 addr 0001f2f8
+
+    DLL Name: YFParaInfo.dll
+    Hint/Ord  Name
+          40  yf_para_info_set_edge_except
+          54  yf_para_info_uninit
+          20  yf_para_info_get_measurement_grade
+          23  yf_para_info_init
+           8  yf_para_info_get_emiss
+           6  yf_para_info_get_dist
+          13  yf_para_info_get_image_scale
+           9  yf_para_info_get_env_temp
+          56  yf_para_info_update_other_data
+          28  yf_para_info_is_mdf_changed
+          14  yf_para_info_get_len
+          10  yf_para_info_get_extend_info
+          45  yf_para_info_set_image_scale
+          11  yf_para_info_get_extend_info_size
+           4  yf_para_info_get_cur_detector_temp
+          39  yf_para_info_set_dist
+          27  yf_para_info_is_len_or_temp_range_changed
+          35  yf_para_info_set_adjust_type
+          34  yf_para_info_restore_status
+          42  yf_para_info_set_env_temp
+          47  yf_para_info_set_len_and_measurement_grade
+          50  yf_para_info_set_level_span
+          53  yf_para_info_set_rel_hum
+          43  yf_para_info_set_extend_info
+          19  yf_para_info_get_mdf
+          41  yf_para_info_set_emiss
+          44  yf_para_info_set_fahrenheit
+          26  yf_para_info_is_fahrenheit_changed
+          38  yf_para_info_set_cur_detector_temp
+          22  yf_para_info_get_size
+           3  yf_para_info_get_correct_temp
+          15  yf_para_info_get_len_and_measurement_grade
+          51  yf_para_info_set_mdf
+          36  yf_para_info_set_color_index
+           7  yf_para_info_get_edge_except
+          55  yf_para_info_update_adjust_data
+          46  yf_para_info_set_len
+          37  yf_para_info_set_correct_temp
+          18  yf_para_info_get_level_span
+          29  yf_para_info_is_need_update_temp_table
+          57  yf_para_info_update_temp_data
+           2  yf_para_info_get_color_index
+          33  yf_para_info_parse_data
+          12  yf_para_info_get_fahrenheit
+          30  yf_para_info_is_rel_hum_changed
+           0  yf_para_info_format_data
+          24  yf_para_info_is_correct_temp_changed
+          25  yf_para_info_is_env_temp_changed
+          21  yf_para_info_get_rel_hum
+          52  yf_para_info_set_measurement_grade
+
+  lookup 000236d8 time 00000000 fwd 00000000 name 000251f8 addr 0001f0a0
+
+    DLL Name: MSVCR100.dll
+    Hint/Ord  Name
+        1427  ftell
+        1476  malloc
+        1401  fflush
+         568  _fileno
+         289  _CxxThrowException
+         314  __CxxFrameHandler3
+        1491  memset
+        1487  memcpy
+         339  __clean_type_info_names_internal
+         238  ?_type_info_dtor_internal_method@type_info@@QAEXXZ
+         545  _except_handler4_common
+         507  _crt_debugger_hook
+         305  __CppXcptFilter
+         453  _amsg_exit
+         689  _initterm_e
+         688  _initterm
+         537  _encoded_null
+         820  _malloc_crt
+         969  _onexit
+         803  _lock
+         347  __dllonexit
+        1165  _unlock
+         258  ?terminate@@YAXXZ
+        1483  mbstowcs_s
+        1609  wcstombs_s
+          99  ??2@YAPAXI@Z
+        1398  fclose
+        1425  fseek
+        1507  realloc
+         283  _CIsqrt
+        1564  toupper
+        1430  fwrite
+         490  _commit
+         101  ??3@YAXPAX@Z
+         984  _purecall
+        1519  sprintf
+         269  ?what@exception@std@@UBEPBDXZ
+          93  ??1exception@std@@UAE@XZ
+          34  ??0exception@std@@QAE@ABQBD@Z
+          35  ??0exception@std@@QAE@ABQBDH@Z
+          36  ??0exception@std@@QAE@ABV01@@Z
+        1409  fopen
+         673  _gmtime64
+        1489  memmove
+        1417  fread
+         122  ??_V@YAXPAX@Z
+        1419  free
+
+  lookup 00023840 time 00000000 fwd 00000000 name 00025346 addr 0001f208
+
+    DLL Name: YFCodec.dll
+    Hint/Ord  Name
+           9  yf_own_decode
+          10  yf_own_encode
+
+Export Table:
+ DLL name: YFIR.dll
+ Ordinal base: 1
+ Ordinal      RVA  Name
+       1  0x19960  ?yf_ana_get_adjust_type@@YG_NPAXAAW4YFAdjustType@@@Z
+       2  0x19250  ?yf_ana_get_alias_a@@YG_NPAXAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+       3  0x1ac00  ?yf_ana_get_alias_w@@YG_NPAXAAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z
+       4  0x195a0  ?yf_ana_get_avg_temp@@YG_NPAXAAUtagYFTemperature@@@Z
+       5  0x19800  ?yf_ana_get_clr_index@@YG_NPAXAAH@Z
+       6  0x191c0  ?yf_ana_get_des_a@@YG_NPAXAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+       7  0x1ab40  ?yf_ana_get_des_w@@YG_NPAXAAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z
+       8  0x19370  ?yf_ana_get_first_node@@YG_NPAXAAH1MM@Z
+       9  0x19450  ?yf_ana_get_hit_point@@YG_NPAXAAH1@Z
+      10  0x198d0  ?yf_ana_get_level@@YG_NPAXAAG@Z
+      11  0x19900  ?yf_ana_get_level_max@@YG_NPAXAAG@Z
+      12  0x19930  ?yf_ana_get_level_span@@YG_NPAXAAG1@Z
+      13  0x199e0  ?yf_ana_get_line_color@@YG_NPAXAAI@Z
+      14  0x18da0  ?yf_ana_get_loc_str_a@@YG_NPAXAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+      15  0x18e00  ?yf_ana_get_loc_str_ex_a@@YG_NPAXAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MM@Z
+      16  0x1aa80  ?yf_ana_get_loc_str_ex_w@@YG_NPAXAAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@MM@Z
+      17  0x1a990  ?yf_ana_get_loc_str_w@@YG_NPAXAAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z
+      18  0x19540  ?yf_ana_get_max_temp@@YG_NPAXAAUtagYFTemperature@@@Z
+      19  0x19570  ?yf_ana_get_min_temp@@YG_NPAXAAUtagYFTemperature@@@Z
+      20  0x193b0  ?yf_ana_get_next_node@@YG_NPAXAAH1MM@Z
+      21  0x193f0  ?yf_ana_get_nodes_count@@YG_NPAXAAH@Z
+      22  0x19420  ?yf_ana_get_pts_count@@YG_NPAXAAI@Z
+      23  0x19130  ?yf_ana_get_self_para@@YG_NPAXAA_NAAM2@Z
+      24  0x195d0  ?yf_ana_get_temp@@YG_NPAXAAUtagYFTemperature@@11@Z
+      25  0x192e0  ?yf_ana_get_temp_text_a@@YG_NPAXAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+      26  0x1acc0  ?yf_ana_get_temp_text_w@@YG_NPAXAAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z
+      27  0x194e0  ?yf_ana_get_text_loc@@YG_NPAXAAH1@Z
+      28  0x194b0  ?yf_ana_get_text_type@@YG_NPAXAAH@Z
+      29  0x190d0  ?yf_ana_get_type@@YG_NPAXAAH@Z
+      30  0x19780  ?yf_ana_has_self_clr@@YG_NPAXAA_N@Z
+      31  0x19720  ?yf_ana_is_can_move@@YG_NPAXAA_N@Z
+      32  0x19750  ?yf_ana_is_selected@@YG_NPAXAA_N@Z
+      33  0x19190  ?yf_ana_is_show_des@@YG_NPAXAA_N@Z
+      34  0x19670  ?yf_ana_is_show_max@@YG_NPAXAA_N@Z
+      35  0x19690  ?yf_ana_is_show_min@@YG_NPAXAA_N@Z
+      36  0x196d0  ?yf_ana_is_visibled@@YG_NPAXAA_N@Z
+      37  0x19990  ?yf_ana_set_adjust_type@@YG_NPAXW4YFAdjustType@@@Z
+      38  0x19340  ?yf_ana_set_alias_a@@YG_NPAXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+      39  0x1a8f0  ?yf_ana_set_alias_w@@YG_NPAXABV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z
+      40  0x19700  ?yf_ana_set_can_move@@YG_NPAX_N@Z
+      41  0x197d0  ?yf_ana_set_clr_index@@YG_NPAXH@Z
+      42  0x19310  ?yf_ana_set_des_a@@YG_NPAXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+      43  0x1a850  ?yf_ana_set_des_w@@YG_NPAXABV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z
+      44  0x197a0  ?yf_ana_set_has_self_clr@@YG_NPAX_N@Z
+      45  0x19840  ?yf_ana_set_level@@YG_NPAXG@Z
+      46  0x19870  ?yf_ana_set_level_max@@YG_NPAXG@Z
+      47  0x198a0  ?yf_ana_set_level_span@@YG_NPAXGG@Z
+      48  0x199c0  ?yf_ana_set_line_color@@YG_NPAXI@Z
+      49  0x19100  ?yf_ana_set_self_para@@YG_NPAX_NMM@Z
+      50  0x19480  ?yf_ana_set_text_type@@YG_NPAXH@Z
+      51  0x196b0  ?yf_ana_set_visibled@@YG_NPAX_N@Z
+      52  0x19170  ?yf_ana_show_des@@YG_NPAX_N@Z
+      53  0x19630  ?yf_ana_show_max@@YG_NPAX_N@Z
+      54  0x19650  ?yf_ana_show_min@@YG_NPAX_N@Z
+      55  0x19d50  ?yf_dw_get_clr@@YG_NPAXAAI@Z
+      56  0x19d10  ?yf_dw_get_down_range@@YG_NPAXAAM@Z
+      57  0x19ce0  ?yf_dw_get_range@@YG_NPAXAAM1@Z
+      58  0x19d70  ?yf_dw_get_transparent@@YG_NPAXAA_N@Z
+      59  0x19d30  ?yf_dw_get_up_range@@YG_NPAXAAM@Z
+      60  0x19c60  ?yf_dw_set_clr@@YG_NPAXI@Z
+      61  0x19ba0  ?yf_dw_set_down_range@@YG_NPAXM@Z
+      62  0x19b70  ?yf_dw_set_range@@YG_NPAXMM@Z
+      63  0x19ca0  ?yf_dw_set_transparent@@YG_NPAX_N@Z
+      64  0x19c00  ?yf_dw_set_up_range@@YG_NPAXM@Z
+      65  0x17c90  ?yf_ir_ad_to_pixel@@YG_NPAXPAE_N@Z
+      66  0x19a70  ?yf_ir_add_dw@@YG_NPAXAAPAXMMI_N@Z
+      67  0x187d0  ?yf_ir_add_one_record_frame@@YG_NPAX0G@Z
+      68  0x184f0  ?yf_ir_assemble_image_to_memory@@YG_NPAX@Z
+      69  0x17b10  ?yf_ir_calc_ad_to_pal_table@@YG_NPAX@Z
+      70  0x18cd0  ?yf_ir_calc_anas_pixel@@YG_NPAXPAE@Z
+      71  0x190a0  ?yf_ir_change_anas_size@@YG_NPAXMM@Z
+      72  0x18c40  ?yf_ir_delete_all_ana@@YG_NPAX@Z
+      73  0x19ad0  ?yf_ir_delete_all_dw@@YG_NPAX@Z
+      74  0x18be0  ?yf_ir_delete_ana@@YG_NPAXAAPAX@Z
+      75  0x18bc0  ?yf_ir_delete_anas_belong_to_file@@YG_NPAX@Z
+      76  0x19ab0  ?yf_ir_delete_dw@@YG_NPAXAAPAX@Z
+      77  0x18c60  ?yf_ir_delete_line_cursor@@YG_NPAXH@Z
+      78  0x18860  ?yf_ir_file_is_real_temp@@YG_NPAXAA_N@Z
+      79  0x17ba0  ?yf_ir_get_ad_data@@YG_NPAXPAG@Z
+      80  0x18490  ?yf_ir_get_ad_from_temp@@YG_NPAXMAAG@Z
+      81  0x17a20  ?yf_ir_get_ad_range@@YG_NPAXW4YFMeasGrade@@AAG2@Z
+      82  0x18b00  ?yf_ir_get_ana@@YG_NPAXHHAAPAX@Z
+      83  0x18b30  ?yf_ir_get_ana_ex@@YG_NPAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAPAX@Z
+      84  0x18d60  ?yf_ir_get_ana_name_a@@YG_NPAX0AAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+      85  0x1a810  ?yf_ir_get_ana_name_w@@YG_NPAX0AAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z
+      86  0x18ed0  ?yf_ir_get_ana_temp@@YG_NPAX0PAMAAI@Z
+      87  0x18c70  ?yf_ir_get_anas_count@@YG_NPAXHAAH@Z
+      88  0x18d00  ?yf_ir_get_anas_str_a@@YG_NPAXAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+      89  0x18d30  ?yf_ir_get_anas_str_ex_a@@YG_NPAXAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+      90  0x1a770  ?yf_ir_get_anas_str_ex_w@@YG_NPAXAAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@H@Z
+      91  0x1a6d0  ?yf_ir_get_anas_str_w@@YG_NPAXAAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z
+      92  0x17a50  ?yf_ir_get_base_temp_compensation@@YG_NPAXAAM@Z
+      93  0x179c0  ?yf_ir_get_calibrate_data@@YG_NPAXPAEAAI@Z
+      94  0x17800  ?yf_ir_get_calibrate_handle@@YG_NPAXAAPAX@Z
+      95  0x18170  ?yf_ir_get_correct_temp@@YG_NPAXAAM@Z
+      96  0x181a0  ?yf_ir_get_cur_detector_temp@@YG_NPAXAAM@Z
+      97  0x17fc0  ?yf_ir_get_dist@@YG_NPAXAAM@Z
+      98  0x19b20  ?yf_ir_get_dw@@YG_NPAXAAPAXH@Z
+      99  0x19af0  ?yf_ir_get_dw_count@@YG_NPAXAAH@Z
+     100  0x17f90  ?yf_ir_get_emiss@@YG_NPAXAAM@Z
+     101  0x17ff0  ?yf_ir_get_env_temp@@YG_NPAXAAM@Z
+     102  0x18110  ?yf_ir_get_extend_info@@YG_NPAX0@Z
+     103  0x18140  ?yf_ir_get_extend_info_size@@YG_NPAXAAI@Z
+     104  0x184c0  ?yf_ir_get_fahrenheit@@YG_NPAXAA_N@Z
+     105  0x17030  ?yf_ir_get_file_version@@YG_NPAXAAI@Z
+     106  0x19070  ?yf_ir_get_hit_ana@@YG_NPAXAAPAX@Z
+     107  0x19020  ?yf_ir_get_hit_ana_ex@@YG_NPAXHHAAPAX@Z
+     108  0x18fc0  ?yf_ir_get_hit_type@@YG_NPAXHH_NAAH@Z
+     109  0x17bc0  ?yf_ir_get_image_scale@@YG_NPAXAAE@Z
+     110  0x17b70  ?yf_ir_get_imaging_handle@@YG_NPAXAAPAX@Z
+     111  0x16fd0  ?yf_ir_get_img_size@@YG_NPAXAAG1@Z
+     112  0x18080  ?yf_ir_get_len@@YG_NPAXAAW4YFLenType@@@Z
+     113  0x180e0  ?yf_ir_get_len_and_measurement_grade@@YG_NPAXAAW4YFLenType@@AAW4YFMeasGrade@@@Z
+     114  0x17680  ?yf_ir_get_mac_serial@@YG_NPAXPAD@Z
+     115  0x17500  ?yf_ir_get_mac_type@@YG_NPAXPAD@Z
+     116  0x17bf0  ?yf_ir_get_max_temp@@YG_NPAXAAUtagYFTemperature@@@Z
+     117  0x18050  ?yf_ir_get_mdf@@YG_NPAXAAM@Z
+     118  0x180b0  ?yf_ir_get_measurement_grade@@YG_NPAXAAW4YFMeasGrade@@@Z
+     119  0x17c40  ?yf_ir_get_min_temp@@YG_NPAXAAUtagYFTemperature@@@Z
+     120  0x18820  ?yf_ir_get_one_mark_size@@YG_NPAXAAI@Z
+     121  0x181d0  ?yf_ir_get_org_level_span@@YG_NPAXAAG1@Z
+     122  0x17090  ?yf_ir_get_other_para@@YG_NPAX0AAI@Z
+     123  0x17f60  ?yf_ir_get_para_info@@YG_NPAXPAEAAI@Z
+     124  0x17400  ?yf_ir_get_product_date@@YG_NPAXPAE@Z
+     125  0x175c0  ?yf_ir_get_productor@@YG_NPAXPAD@Z
+     126  0x18020  ?yf_ir_get_rel_hum@@YG_NPAXAAM@Z
+     127  0x18f80  ?yf_ir_get_selected_ana@@YG_NPAXHAAPAX@Z
+     128  0x18f50  ?yf_ir_get_selected_ana_count@@YG_NPAXAAI@Z
+     129  0x17490  ?yf_ir_get_sound_data@@YG_NPAXPAE@Z
+     130  0x17460  ?yf_ir_get_sound_length@@YG_NPAXAAI@Z
+     131  0x174d0  ?yf_ir_get_sound_ptr@@YG_NPAXAAPAE@Z
+     132  0x183b0  ?yf_ir_get_temp_block@@YG_NPAXPAGPAMH@Z
+     133  0x183e0  ?yf_ir_get_temp_block_ex@@YG_NPAXPAGPAMHMM@Z
+     134  0x18420  ?yf_ir_get_temp_from_ad@@YG_NPAXGAAM@Z
+     135  0x18450  ?yf_ir_get_temp_from_ad_ex@@YG_NPAXGMMAAM@Z
+     136  0x18310  ?yf_ir_get_temp_from_loc@@YG_NPAXGGAAM@Z
+     137  0x18360  ?yf_ir_get_temp_from_loc_ex@@YG_NPAXGGMMAAM@Z
+     138  0x179f0  ?yf_ir_get_temp_range@@YG_NPAXW4YFMeasGrade@@AAM2@Z
+     139  0x17740  ?yf_ir_get_ul_serial@@YG_NPAXPAD@Z
+     140  0x17430  ?yf_ir_has_sound@@YG_NPAXAA_N@Z
+     141  0x16e90  ?yf_ir_init@@YG_NAAPAX@Z
+     142  0x17ab0  ?yf_ir_is_support@@YG_NPAXW4YFLenType@@W4YFMeasGrade@@AA_N@Z
+     143  0x182b0  ?yf_ir_is_use_level_span_in_file@@YG_NPAXAA_N@Z
+     144  0x18240  ?yf_ir_is_use_org_para@@YG_NPAXAA_N@Z
+     145  0x18fb0  ?yf_ir_line_has_cursor@@YG_NPAXHAA_N@Z
+     146  0x18910  ?yf_ir_load_anas_from_str_a@@YG_NPAXPBD@Z
+     147  0x18a20  ?yf_ir_load_anas_from_str_ex_a@@YG_NPAXPBDMM_N@Z
+     148  0x1a5c0  ?yf_ir_load_anas_from_str_ex_w@@YG_NPAXPB_WMM_N@Z
+     149  0x1a470  ?yf_ir_load_anas_from_str_w@@YG_NPAXPB_W@Z
+     150  0x17830  ?yf_ir_load_calibrate_file@@YG_NPAXPBD@Z
+     151  0x18ae0  ?yf_ir_read_anas@@YG_NPAXPAU_iobuf@@@Z
+     152  0x19a10  ?yf_ir_reg_wnd_msg@@YG_NPAXII@Z
+     153  0x18ca0  ?yf_ir_rotate@@YG_NPAXW4RotateAngle@@_N@Z
+     154  0x185c0  ?yf_ir_save_image_a@@YG_NPAXPBD@Z
+     155  0x18670  ?yf_ir_save_image_no_temp_a@@YG_NPAXPBD@Z
+     156  0x1ae40  ?yf_ir_save_image_no_temp_w@@YG_NPAXPB_W@Z
+     157  0x18510  ?yf_ir_save_image_of_memory_to_file_a@@YG_NPAXPBD@Z
+     158  0x1ad60  ?yf_ir_save_image_w@@YG_NPAXPB_W@Z
+     159  0x18840  ?yf_ir_save_temp_direct@@YG_NPAX_N@Z
+     160  0x17ae0  ?yf_ir_set_ad_data@@YG_NPAXPAE_N@Z
+     161  0x17cc0  ?yf_ir_set_ad_data_callback@@YG_NPAXP6AX0PAGGG@Z0@Z
+     162  0x17900  ?yf_ir_set_calibrate_data@@YG_NPAXPAE_N@Z
+     163  0x16f40  ?yf_ir_set_callback_change_temp@@YG_NPAXP6GX00@Z0@Z
+     164  0x17930  ?yf_ir_set_correct_temp@@YG_NPAXM_N@Z
+     165  0x17990  ?yf_ir_set_cur_detector_temp@@YG_NPAXM@Z
+     166  0x17000  ?yf_ir_set_cur_version@@YG_NPAXI@Z
+     167  0x17d70  ?yf_ir_set_dist@@YG_NPAXM_N@Z
+     168  0x17d40  ?yf_ir_set_emiss@@YG_NPAXM_N@Z
+     169  0x17da0  ?yf_ir_set_env_temp@@YG_NPAXM_N@Z
+     170  0x17ec0  ?yf_ir_set_extend_info@@YG_NPAX0G@Z
+     171  0x182e0  ?yf_ir_set_fahrenheit@@YG_NPAX_N1@Z
+     172  0x17b40  ?yf_ir_set_image_scale@@YG_NPAXE@Z
+     173  0x16fa0  ?yf_ir_set_img_size@@YG_NPAXGG@Z
+     174  0x17e30  ?yf_ir_set_len@@YG_NPAXW4YFLenType@@_N@Z
+     175  0x17e90  ?yf_ir_set_len_and_measurement_grade@@YG_NPAXW4YFLenType@@W4YFMeasGrade@@_N@Z
+     176  0x171f0  ?yf_ir_set_mac_serial@@YG_NPAXPBD@Z
+     177  0x17140  ?yf_ir_set_mac_type@@YG_NPAXPBD@Z
+     178  0x17e00  ?yf_ir_set_mdf@@YG_NPAXM_N@Z
+     179  0x17e60  ?yf_ir_set_measurement_grade@@YG_NPAXW4YFMeasGrade@@_N@Z
+     180  0x18ff0  ?yf_ir_set_min_dist_for_hit@@YG_NPAXE@Z
+     181  0x17060  ?yf_ir_set_other_para@@YG_NPAX0I@Z
+     182  0x17d00  ?yf_ir_set_para_info@@YG_NPAXPAE_N@Z
+     183  0x170e0  ?yf_ir_set_product_date@@YG_NPAXPAE@Z
+     184  0x17350  ?yf_ir_set_productor@@YG_NPAXPBD@Z
+     185  0x17dd0  ?yf_ir_set_rel_hum@@YG_NPAXM_N@Z
+     186  0x18f30  ?yf_ir_set_selected@@YG_NPAX@Z
+     187  0x18f00  ?yf_ir_set_selected_ana@@YG_NPAX0_N@Z
+     188  0x17110  ?yf_ir_set_sound_data@@YG_NPAXPAEI@Z
+     189  0x172a0  ?yf_ir_set_ul_serial@@YG_NPAXPBD@Z
+     190  0x18270  ?yf_ir_set_use_level_span_in_file@@YG_NPAX_N@Z
+     191  0x18200  ?yf_ir_set_use_org_para@@YG_NPAX_N@Z
+     192  0x18720  ?yf_ir_start_record_a@@YG_NPAXPBD@Z
+     193  0x1af20  ?yf_ir_start_record_w@@YG_NPAXPB_W@Z
+     194  0x17ce0  ?yf_ir_stop_ad_data_callback@@YG_NPAXP6AX0PAGGG@Z@Z
+     195  0x16f70  ?yf_ir_stop_callback_change_temp@@YG_NPAXP6GX00@Z@Z
+     196  0x18800  ?yf_ir_stop_record@@YG_NPAX@Z
+     197  0x16f10  ?yf_ir_un_init@@YG_NAAPAX@Z
+     198  0x19a40  ?yf_ir_unreg_wnd_msg@@YG_NPAXII@Z
+     199  0x18e80  ?yf_ir_update_all_ana_temp@@YG_NPAX@Z
+     200  0x18ea0  ?yf_ir_update_ana_size@@YG_NPAX0ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MM@Z
+     201  0x18e30  ?yf_ir_update_ana_temp@@YG_NPAX0@Z
+     202  0x17ef0  ?yf_ir_update_org_level_span@@YG_NPAXGG@Z

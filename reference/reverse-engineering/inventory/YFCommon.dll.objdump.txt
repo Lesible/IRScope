@@ -1,0 +1,196 @@
+
+YFCommon.dll:	file format coff-i386
+Characteristics 0x2102
+	executable
+	32 bit words
+	DLL
+
+Time/Date               Thu Apr 14 16:50:57 2016
+Magic                   010b	(PE32)
+MajorLinkerVersion      10
+MinorLinkerVersion      0
+SizeOfCode              00003a00
+SizeOfInitializedData   00003800
+SizeOfUninitializedData 00000000
+AddressOfEntryPoint     00003f9e
+BaseOfCode              00001000
+BaseOfData              00005000
+ImageBase               10000000
+SectionAlignment        00001000
+FileAlignment           00000200
+MajorOSystemVersion     5
+MinorOSystemVersion     1
+MajorImageVersion       0
+MinorImageVersion       0
+MajorSubsystemVersion   5
+MinorSubsystemVersion   1
+Win32Version            00000000
+SizeOfImage             0000a000
+SizeOfHeaders           00000400
+CheckSum                00000000
+Subsystem               00000002	(Windows GUI)
+DllCharacteristics      00000140
+					DYNAMIC_BASE
+					NX_COMPAT
+SizeOfStackReserve      00100000
+SizeOfStackCommit       00001000
+SizeOfHeapReserve       00100000
+SizeOfHeapCommit        00001000
+LoaderFlags             00000000
+NumberOfRvaAndSizes     00000010
+
+The Data Directory
+Entry 0 00006aa0 00000333 Export Directory [.edata (or where ever we found it)]
+Entry 1 00006190 00000078 Import Directory [parts of .idata]
+Entry 2 00008000 00000300 Resource Directory [.rsrc]
+Entry 3 00000000 00000000 Exception Directory [.pdata]
+Entry 4 00000000 00000000 Security Directory
+Entry 5 00009000 000006f0 Base Relocation Directory [.reloc]
+Entry 6 00000000 00000000 Debug Directory
+Entry 7 00000000 00000000 Description Directory
+Entry 8 00000000 00000000 Special Directory
+Entry 9 00000000 00000000 Thread Storage Directory [.tls]
+Entry a 00005448 00000040 Load Configuration Directory
+Entry b 00000000 00000000 Bound Import Directory
+Entry c 00005000 00000140 Import Address Table Directory
+Entry d 00000000 00000000 Delay Import Directory
+Entry e 00000000 00000000 CLR Runtime Header
+Entry f 00000000 00000000 Reserved
+
+Load configuration:
+  Timestamp: 0
+  Major Version: 0
+  Minor Version: 0
+  GlobalFlags Clear: 0
+  GlobalFlags Set: 0
+  Critical Section Default Timeout: 0
+  Decommit Free Block Threshold: 0
+  Decommit Total Free Threshold: 0
+  Lock Prefix Table: 0
+  Maximum Allocation Size: 0
+  Virtual Memory Threshold: 0
+  Process Affinity Mask: 0
+  Process Heap Flags: 0
+  CSD Version: 0
+  Security Cookie: 268464152
+  SEH Table: 268458464
+  SEH Count: 19
+
+SEH Table: 0x10004129 0x10004435 0x10004460 0x10004488 0x100044c8 0x100044f0 0x10004510 0x10004538 0x1000458c 0x100045bc 0x1000460c 0x10004654 0x10004670 0x10004690 0x100046ca 0x1000470a 0x10004746 0x1000479a 0x100047ea
+
+
+The Import Tables:
+  lookup 00006218 time 00000000 fwd 00000000 name 00006372 addr 00005010
+
+    DLL Name: KERNEL32.dll
+    Hint/Ord  Name
+         532  GetModuleFileNameW
+         536  GetModuleHandleW
+        1202  Sleep
+         748  InterlockedExchange
+         202  DecodePointer
+         234  EncodePointer
+        1216  TerminateProcess
+         448  GetCurrentProcess
+        1235  UnhandledExceptionFilter
+        1189  SetUnhandledExceptionFilter
+         768  IsDebuggerPresent
+         222  DisableThreadLibraryCalls
+         935  QueryPerformanceCounter
+         659  GetTickCount
+         453  GetCurrentThreadId
+         449  GetCurrentProcessId
+         633  GetSystemTimeAsFileTime
+         745  InterlockedCompareExchange
+
+  lookup 00006208 time 00000000 fwd 00000000 name 000063a0 addr 00005000
+
+    DLL Name: GDI32.dll
+    Hint/Ord  Name
+         566  LineTo
+         237  Ellipse
+         570  MoveToEx
+
+  lookup 00006264 time 00000000 fwd 00000000 name 000065d0 addr 0000505c
+
+    DLL Name: MSVCP100.dll
+    Hint/Ord  Name
+          94  ??0_Locinfo@std@@QAE@HPBD@Z
+         654  ?_Xout_of_range@std@@YAXPBD@Z
+         652  ?_Xlength_error@std@@YAXPBD@Z
+         656  ?_Xruntime_error@std@@YAXPBD@Z
+         404  ?_Addcats@_Locinfo@std@@QAEAAV12@HPBD@Z
+         499  ?_Incref@facet@locale@std@@QAEXXZ
+         414  ?_Decref@facet@locale@std@@QAEPAV123@XZ
+         156  ??1_Locimp@locale@std@@MAE@XZ
+          92  ??0_Locimp@locale@std@@AAE@ABV012@@Z
+        1008  ?global@locale@std@@SA?AV12@ABV12@@Z
+         526  ?_Init@locale@std@@CAPAV_Locimp@12@XZ
+         466  ?_Getgloballocale@locale@std@@CAPAV_Locimp@12@XZ
+         580  ?_Makeloc@_Locimp@locale@std@@CAPAV123@ABV_Locinfo@3@HPAV123@PBV23@@Z
+         157  ??1_Locinfo@std@@QAE@XZ
+
+  lookup 0000633c time 00000000 fwd 00000000 name 00006656 addr 00005134
+
+    DLL Name: boost_system-vc100-mt-1_52.dll
+    Hint/Ord  Name
+           0  ?generic_category@system@boost@@YAABVerror_category@12@XZ
+           1  ?system_category@system@boost@@YAABVerror_category@12@XZ
+
+  lookup 000062a0 time 00000000 fwd 00000000 name 000067c0 addr 00005098
+
+    DLL Name: MSVCR100.dll
+    Hint/Ord  Name
+          34  ??0exception@std@@QAE@ABQBD@Z
+          35  ??0exception@std@@QAE@ABQBDH@Z
+          36  ??0exception@std@@QAE@ABV01@@Z
+        1489  memmove
+         122  ??_V@YAXPAX@Z
+         984  _purecall
+         101  ??3@YAXPAX@Z
+          99  ??2@YAPAXI@Z
+        1549  strtok_s
+          93  ??1exception@std@@UAE@XZ
+        1609  wcstombs_s
+        1606  wcstok_s
+        1483  mbstowcs_s
+        1583  wcscat_s
+        1526  strcat_s
+        1588  wcscpy_s
+         258  ?terminate@@YAXXZ
+        1165  _unlock
+         347  __dllonexit
+         803  _lock
+         969  _onexit
+         820  _malloc_crt
+        1419  free
+         537  _encoded_null
+         688  _initterm
+         689  _initterm_e
+         453  _amsg_exit
+         305  __CppXcptFilter
+         507  _crt_debugger_hook
+         545  _except_handler4_common
+         238  ?_type_info_dtor_internal_method@type_info@@QAEXXZ
+         339  __clean_type_info_names_internal
+         269  ?what@exception@std@@UBEPBDXZ
+        1487  memcpy
+        1491  memset
+         289  _CxxThrowException
+        1531  strcpy_s
+         314  __CxxFrameHandler3
+
+Export Table:
+ DLL name: YFCommon.dll
+ Ordinal base: 1
+ Ordinal      RVA  Name
+       1   0x2f20  ?yf_astr_to_wstr@YFCommon@@YG_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@3@@Z
+       2   0x2ba0  ?yf_draw_ellipse@YFCommon@@YGXPAUHDC__@@HHH@Z
+       3   0x2ad0  ?yf_draw_point@YFCommon@@YGXPAUHDC__@@HHH@Z
+       4   0x2970  ?yf_get_instance@YFCommon@@YG_NAAPAUHINSTANCE__@@@Z
+       5   0x2ac0  ?yf_is_valid_handle@YFCommon@@YG_NPAX@Z
+       6   0x2bf0  ?yf_line_to@YFCommon@@YGXPAUHDC__@@HH@Z
+       7   0x2bd0  ?yf_move_to@YFCommon@@YGXPAUHDC__@@HH@Z
+       8   0x3080  ?yf_str_trim_a@YFCommon@@YG_NPADIPBD@Z
+       9   0x3140  ?yf_str_trim_w@YFCommon@@YG_NPA_WIPB_W@Z
+      10   0x2db0  ?yf_wstr_to_astr@YFCommon@@YG_NABV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z

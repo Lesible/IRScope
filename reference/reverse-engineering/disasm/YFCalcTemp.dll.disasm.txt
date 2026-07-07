@@ -1,0 +1,1490 @@
+
+YFCalcTemp.dll:	file format coff-i386
+
+Disassembly of section .text:
+
+10001000 <.text>:
+10001000: 55                           	push	ebp
+10001001: 8b ec                        	mov	ebp, esp
+10001003: d9 40 0c                     	fld	dword ptr [eax + 0xc]
+10001006: dc 08                        	fmul	qword ptr [eax]
+10001008: dc 05 00 31 00 10            	fadd	qword ptr [0x10003100]
+1000100e: d8 4d 08                     	fmul	dword ptr [ebp + 0x8]
+10001011: dc 35 f8 30 00 10            	fdiv	qword ptr [0x100030f8]
+10001017: dd 05 f0 30 00 10            	fld	qword ptr [0x100030f0]
+1000101d: d8 d1                        	fcom	st(1)
+1000101f: df e0                        	fnstsw	ax
+10001021: f6 c4 41                     	test	ah, 0x41
+10001024: 75 1c                        	jne	0x10001042 <.text+0x42>
+10001026: dd d8                        	fstp	st(0)
+10001028: dd 05 e8 30 00 10            	fld	qword ptr [0x100030e8]
+1000102e: e8 53 12 00 00               	call	0x10002286 <yf_calc_temp_ex+0xa76>
+10001033: dc 0d e0 30 00 10            	fmul	qword ptr [0x100030e0]
+10001039: e8 42 12 00 00               	call	0x10002280 <yf_calc_temp_ex+0xa70>
+1000103e: 5d                           	pop	ebp
+1000103f: c2 04 00                     	ret	0x4
+10001042: de f1                        	fdivrp	st(1), st
+10001044: dd 05 d8 30 00 10            	fld	qword ptr [0x100030d8]
+1000104a: e8 37 12 00 00               	call	0x10002286 <yf_calc_temp_ex+0xa76>
+1000104f: dc 0d d0 30 00 10            	fmul	qword ptr [0x100030d0]
+10001055: 5d                           	pop	ebp
+10001056: c2 04 00                     	ret	0x4
+10001059: cc                           	int3
+1000105a: cc                           	int3
+1000105b: cc                           	int3
+1000105c: cc                           	int3
+1000105d: cc                           	int3
+1000105e: cc                           	int3
+1000105f: cc                           	int3
+
+10001060 <yf_temp_set_env_temp>:
+10001060: 55                           	push	ebp
+10001061: 8b ec                        	mov	ebp, esp
+10001063: 83 e4 f8                     	and	esp, -0x8
+10001066: 81 ec bc 01 00 00            	sub	esp, 0x1bc
+1000106c: a1 00 40 00 10               	mov	eax, dword ptr [0x10004000]
+10001071: 33 c4                        	xor	eax, esp
+10001073: 89 84 24 b8 01 00 00         	mov	dword ptr [esp + 0x1b8], eax
+1000107a: 56                           	push	esi
+1000107b: 8b 75 08                     	mov	esi, dword ptr [ebp + 0x8]
+1000107e: 85 f6                        	test	esi, esi
+10001080: 74 29                        	je	0x100010ab <yf_temp_set_env_temp+0x4b>
+10001082: d9 45 0c                     	fld	dword ptr [ebp + 0xc]
+10001085: d9 c0                        	fld	st(0)
+10001087: d8 66 08                     	fsub	dword ptr [esi + 0x8]
+1000108a: d9 5c 24 04                  	fstp	dword ptr [esp + 0x4]
+1000108e: d9 44 24 04                  	fld	dword ptr [esp + 0x4]
+10001092: d9 e1                        	fabs
+10001094: d9 5c 24 04                  	fstp	dword ptr [esp + 0x4]
+10001098: d9 44 24 04                  	fld	dword ptr [esp + 0x4]
+1000109c: d8 1d 58 31 00 10            	fcomp	dword ptr [0x10003158]
+100010a2: df e0                        	fnstsw	ax
+100010a4: f6 c4 05                     	test	ah, 0x5
+100010a7: 7a 19                        	jp	0x100010c2 <yf_temp_set_env_temp+0x62>
+100010a9: dd d8                        	fstp	st(0)
+100010ab: 32 c0                        	xor	al, al
+100010ad: 5e                           	pop	esi
+100010ae: 8b 8c 24 b8 01 00 00         	mov	ecx, dword ptr [esp + 0x1b8]
+100010b5: 33 cc                        	xor	ecx, esp
+100010b7: e8 2f 09 00 00               	call	0x100019eb <yf_calc_temp_ex+0x1db>
+100010bc: 8b e5                        	mov	esp, ebp
+100010be: 5d                           	pop	ebp
+100010bf: c2 08 00                     	ret	0x8
+100010c2: b8 03 00 00 00               	mov	eax, 0x3
+100010c7: d9 56 08                     	fst	dword ptr [esi + 0x8]
+100010ca: 89 44 24 0c                  	mov	dword ptr [esp + 0xc], eax
+100010ce: 89 44 24 10                  	mov	dword ptr [esp + 0x10], eax
+100010d2: 89 44 24 14                  	mov	dword ptr [esp + 0x14], eax
+100010d6: b8 04 00 00 00               	mov	eax, 0x4
+100010db: c7 44 24 08 02 00 00 00      	mov	dword ptr [esp + 0x8], 0x2
+100010e3: 89 44 24 18                  	mov	dword ptr [esp + 0x18], eax
+100010e7: 89 44 24 1c                  	mov	dword ptr [esp + 0x1c], eax
+100010eb: c7 44 24 20 05 00 00 00      	mov	dword ptr [esp + 0x20], 0x5
+100010f3: c7 44 24 24 07 00 00 00      	mov	dword ptr [esp + 0x24], 0x7
+100010fb: c7 44 24 28 0a 00 00 00      	mov	dword ptr [esp + 0x28], 0xa
+10001103: c7 44 24 2c 0f 00 00 00      	mov	dword ptr [esp + 0x2c], 0xf
+1000110b: c7 44 24 30 19 00 00 00      	mov	dword ptr [esp + 0x30], 0x19
+10001113: c7 44 24 34 22 00 00 00      	mov	dword ptr [esp + 0x34], 0x22
+1000111b: c7 44 24 38 29 00 00 00      	mov	dword ptr [esp + 0x38], 0x29
+10001123: c7 44 24 3c 30 00 00 00      	mov	dword ptr [esp + 0x3c], 0x30
+1000112b: c7 44 24 40 38 00 00 00      	mov	dword ptr [esp + 0x40], 0x38
+10001133: c7 44 24 44 3d 00 00 00      	mov	dword ptr [esp + 0x44], 0x3d
+1000113b: c7 44 24 48 43 00 00 00      	mov	dword ptr [esp + 0x48], 0x43
+10001143: c7 44 24 4c 4a 00 00 00      	mov	dword ptr [esp + 0x4c], 0x4a
+1000114b: c7 44 24 50 51 00 00 00      	mov	dword ptr [esp + 0x50], 0x51
+10001153: c7 44 24 54 59 00 00 00      	mov	dword ptr [esp + 0x54], 0x59
+1000115b: c7 44 24 58 62 00 00 00      	mov	dword ptr [esp + 0x58], 0x62
+10001163: c7 44 24 5c 6c 00 00 00      	mov	dword ptr [esp + 0x5c], 0x6c
+1000116b: c7 44 24 60 76 00 00 00      	mov	dword ptr [esp + 0x60], 0x76
+10001173: c7 44 24 64 80 00 00 00      	mov	dword ptr [esp + 0x64], 0x80
+1000117b: c7 44 24 68 8c 00 00 00      	mov	dword ptr [esp + 0x68], 0x8c
+10001183: c7 44 24 6c 98 00 00 00      	mov	dword ptr [esp + 0x6c], 0x98
+1000118b: c7 44 24 70 a6 00 00 00      	mov	dword ptr [esp + 0x70], 0xa6
+10001193: c7 44 24 74 b5 00 00 00      	mov	dword ptr [esp + 0x74], 0xb5
+1000119b: c7 44 24 78 c6 00 00 00      	mov	dword ptr [esp + 0x78], 0xc6
+100011a3: c7 44 24 7c d7 00 00 00      	mov	dword ptr [esp + 0x7c], 0xd7
+100011ab: c7 84 24 80 00 00 00 ea 00 00 00     	mov	dword ptr [esp + 0x80], 0xea
+100011b6: c7 84 24 84 00 00 00 fe 00 00 00     	mov	dword ptr [esp + 0x84], 0xfe
+100011c1: c7 84 24 88 00 00 00 13 01 00 00     	mov	dword ptr [esp + 0x88], 0x113
+100011cc: c7 84 24 8c 00 00 00 2b 01 00 00     	mov	dword ptr [esp + 0x8c], 0x12b
+100011d7: c7 84 24 90 00 00 00 44 01 00 00     	mov	dword ptr [esp + 0x90], 0x144
+100011e2: c7 84 24 94 00 00 00 61 01 00 00     	mov	dword ptr [esp + 0x94], 0x161
+100011ed: c7 84 24 98 00 00 00 7d 01 00 00     	mov	dword ptr [esp + 0x98], 0x17d
+100011f8: c7 84 24 9c 00 00 00 9d 01 00 00     	mov	dword ptr [esp + 0x9c], 0x19d
+10001203: c7 84 24 a0 00 00 00 bf 01 00 00     	mov	dword ptr [esp + 0xa0], 0x1bf
+1000120e: c7 84 24 a4 00 00 00 e4 01 00 00     	mov	dword ptr [esp + 0xa4], 0x1e4
+10001219: c7 84 24 a8 00 00 00 06 02 00 00     	mov	dword ptr [esp + 0xa8], 0x206
+10001224: c7 84 24 ac 00 00 00 2a 02 00 00     	mov	dword ptr [esp + 0xac], 0x22a
+1000122f: c7 84 24 b0 00 00 00 50 02 00 00     	mov	dword ptr [esp + 0xb0], 0x250
+1000123a: c7 84 24 b4 00 00 00 79 02 00 00     	mov	dword ptr [esp + 0xb4], 0x279
+10001245: c7 84 24 b8 00 00 00 a4 02 00 00     	mov	dword ptr [esp + 0xb8], 0x2a4
+10001250: c7 84 24 bc 00 00 00 d2 02 00 00     	mov	dword ptr [esp + 0xbc], 0x2d2
+1000125b: c7 84 24 c0 00 00 00 02 03 00 00     	mov	dword ptr [esp + 0xc0], 0x302
+10001266: c7 84 24 c4 00 00 00 36 03 00 00     	mov	dword ptr [esp + 0xc4], 0x336
+10001271: c7 84 24 c8 00 00 00 6c 03 00 00     	mov	dword ptr [esp + 0xc8], 0x36c
+1000127c: c7 84 24 cc 00 00 00 a5 03 00 00     	mov	dword ptr [esp + 0xcc], 0x3a5
+10001287: c7 84 24 d0 00 00 00 e2 03 00 00     	mov	dword ptr [esp + 0xd0], 0x3e2
+10001292: c7 84 24 d4 00 00 00 21 04 00 00     	mov	dword ptr [esp + 0xd4], 0x421
+1000129d: c7 84 24 d8 00 00 00 65 04 00 00     	mov	dword ptr [esp + 0xd8], 0x465
+100012a8: c7 84 24 dc 00 00 00 ac 04 00 00     	mov	dword ptr [esp + 0xdc], 0x4ac
+100012b3: c7 84 24 e0 00 00 00 f7 04 00 00     	mov	dword ptr [esp + 0xe0], 0x4f7
+100012be: c7 84 24 e4 00 00 00 46 05 00 00     	mov	dword ptr [esp + 0xe4], 0x546
+100012c9: c7 84 24 e8 00 00 00 9a 05 00 00     	mov	dword ptr [esp + 0xe8], 0x59a
+100012d4: c7 84 24 ec 00 00 00 f2 05 00 00     	mov	dword ptr [esp + 0xec], 0x5f2
+100012df: c7 84 24 f0 00 00 00 4e 06 00 00     	mov	dword ptr [esp + 0xf0], 0x64e
+100012ea: c7 84 24 f4 00 00 00 ba 06 00 00     	mov	dword ptr [esp + 0xf4], 0x6ba
+100012f5: c7 84 24 f8 00 00 00 16 07 00 00     	mov	dword ptr [esp + 0xf8], 0x716
+10001300: c7 84 24 fc 00 00 00 82 07 00 00     	mov	dword ptr [esp + 0xfc], 0x782
+1000130b: c7 84 24 00 01 00 00 f4 07 00 00     	mov	dword ptr [esp + 0x100], 0x7f4
+10001316: c7 84 24 04 01 00 00 6b 08 00 00     	mov	dword ptr [esp + 0x104], 0x86b
+10001321: c7 84 24 08 01 00 00 e8 08 00 00     	mov	dword ptr [esp + 0x108], 0x8e8
+1000132c: c7 84 24 0c 01 00 00 6b 09 00 00     	mov	dword ptr [esp + 0x10c], 0x96b
+10001337: c7 84 24 10 01 00 00 f5 09 00 00     	mov	dword ptr [esp + 0x110], 0x9f5
+10001342: c7 84 24 14 01 00 00 8c 0a 00 00     	mov	dword ptr [esp + 0x114], 0xa8c
+1000134d: c7 84 24 18 01 00 00 1d 0b 00 00     	mov	dword ptr [esp + 0x118], 0xb1d
+10001358: c7 84 24 1c 01 00 00 bc 0b 00 00     	mov	dword ptr [esp + 0x11c], 0xbbc
+10001363: c7 84 24 20 01 00 00 62 0c 00 00     	mov	dword ptr [esp + 0x120], 0xc62
+1000136e: c7 84 24 24 01 00 00 11 0d 00 00     	mov	dword ptr [esp + 0x124], 0xd11
+10001379: c7 84 24 28 01 00 00 c8 0d 00 00     	mov	dword ptr [esp + 0x128], 0xdc8
+10001384: c7 84 24 2c 01 00 00 87 0e 00 00     	mov	dword ptr [esp + 0x12c], 0xe87
+1000138f: c7 84 24 30 01 00 00 4f 0f 00 00     	mov	dword ptr [esp + 0x130], 0xf4f
+1000139a: c7 84 24 34 01 00 00 1a 10 00 00     	mov	dword ptr [esp + 0x134], 0x101a
+100013a5: c7 84 24 38 01 00 00 f1 10 00 00     	mov	dword ptr [esp + 0x138], 0x10f1
+100013b0: c7 84 24 3c 01 00 00 d0 11 00 00     	mov	dword ptr [esp + 0x13c], 0x11d0
+100013bb: dc 05 68 31 00 10            	fadd	qword ptr [0x10003168]
+100013c1: c7 84 24 40 01 00 00 b7 12 00 00     	mov	dword ptr [esp + 0x140], 0x12b7
+100013cc: c7 84 24 44 01 00 00 a7 13 00 00     	mov	dword ptr [esp + 0x144], 0x13a7
+100013d7: c7 84 24 48 01 00 00 a0 14 00 00     	mov	dword ptr [esp + 0x148], 0x14a0
+100013e2: c7 84 24 4c 01 00 00 a1 15 00 00     	mov	dword ptr [esp + 0x14c], 0x15a1
+100013ed: c7 84 24 50 01 00 00 aa 16 00 00     	mov	dword ptr [esp + 0x150], 0x16aa
+100013f8: c7 84 24 54 01 00 00 bc 17 00 00     	mov	dword ptr [esp + 0x154], 0x17bc
+10001403: c7 84 24 58 01 00 00 d7 18 00 00     	mov	dword ptr [esp + 0x158], 0x18d7
+1000140e: c7 84 24 5c 01 00 00 f9 19 00 00     	mov	dword ptr [esp + 0x15c], 0x19f9
+10001419: c7 84 24 60 01 00 00 23 1b 00 00     	mov	dword ptr [esp + 0x160], 0x1b23
+10001424: c7 84 24 64 01 00 00 55 1c 00 00     	mov	dword ptr [esp + 0x164], 0x1c55
+1000142f: c7 84 24 68 01 00 00 8f 1d 00 00     	mov	dword ptr [esp + 0x168], 0x1d8f
+1000143a: c7 84 24 6c 01 00 00 cf 1e 00 00     	mov	dword ptr [esp + 0x16c], 0x1ecf
+10001445: c7 84 24 70 01 00 00 16 20 00 00     	mov	dword ptr [esp + 0x170], 0x2016
+10001450: c7 84 24 74 01 00 00 63 21 00 00     	mov	dword ptr [esp + 0x174], 0x2163
+1000145b: c7 84 24 78 01 00 00 b5 22 00 00     	mov	dword ptr [esp + 0x178], 0x22b5
+10001466: c7 84 24 7c 01 00 00 0d 24 00 00     	mov	dword ptr [esp + 0x17c], 0x240d
+10001471: c7 84 24 80 01 00 00 69 25 00 00     	mov	dword ptr [esp + 0x180], 0x2569
+1000147c: c7 84 24 84 01 00 00 c8 26 00 00     	mov	dword ptr [esp + 0x184], 0x26c8
+10001487: c7 84 24 88 01 00 00 2a 28 00 00     	mov	dword ptr [esp + 0x188], 0x282a
+10001492: c7 84 24 8c 01 00 00 8f 29 00 00     	mov	dword ptr [esp + 0x18c], 0x298f
+1000149d: c7 84 24 90 01 00 00 f4 2a 00 00     	mov	dword ptr [esp + 0x190], 0x2af4
+100014a8: c7 84 24 94 01 00 00 59 2c 00 00     	mov	dword ptr [esp + 0x194], 0x2c59
+100014b3: c7 84 24 98 01 00 00 bd 2d 00 00     	mov	dword ptr [esp + 0x198], 0x2dbd
+100014be: c7 84 24 9c 01 00 00 1e 2f 00 00     	mov	dword ptr [esp + 0x19c], 0x2f1e
+100014c9: c7 84 24 a0 01 00 00 7b 30 00 00     	mov	dword ptr [esp + 0x1a0], 0x307b
+100014d4: c7 84 24 a4 01 00 00 d4 31 00 00     	mov	dword ptr [esp + 0x1a4], 0x31d4
+100014df: c7 84 24 a8 01 00 00 25 33 00 00     	mov	dword ptr [esp + 0x1a8], 0x3325
+100014ea: c7 84 24 ac 01 00 00 6e 34 00 00     	mov	dword ptr [esp + 0x1ac], 0x346e
+100014f5: c7 84 24 b0 01 00 00 00 00 00 00     	mov	dword ptr [esp + 0x1b0], 0x0
+10001500: e8 8b 0d 00 00               	call	0x10002290 <yf_calc_temp_ex+0xa80>
+10001505: 85 c0                        	test	eax, eax
+10001507: 79 04                        	jns	0x1000150d <yf_temp_set_env_temp+0x4ad>
+10001509: 33 c0                        	xor	eax, eax
+1000150b: eb 0a                        	jmp	0x10001517 <yf_temp_set_env_temp+0x4b7>
+1000150d: 83 f8 6a                     	cmp	eax, 0x6a
+10001510: 7e 05                        	jle	0x10001517 <yf_temp_set_env_temp+0x4b7>
+10001512: b8 6a 00 00 00               	mov	eax, 0x6a
+10001517: db 44 84 08                  	fild	dword ptr [esp + 4*eax + 0x8]
+1000151b: 8b 8c 24 bc 01 00 00         	mov	ecx, dword ptr [esp + 0x1bc]
+10001522: b0 01                        	mov	al, 0x1
+10001524: dc 35 60 31 00 10            	fdiv	qword ptr [0x10003160]
+1000152a: dd 1e                        	fstp	qword ptr [esi]
+1000152c: 5e                           	pop	esi
+1000152d: 33 cc                        	xor	ecx, esp
+1000152f: e8 b7 04 00 00               	call	0x100019eb <yf_calc_temp_ex+0x1db>
+10001534: 8b e5                        	mov	esp, ebp
+10001536: 5d                           	pop	ebp
+10001537: c2 08 00                     	ret	0x8
+1000153a: cc                           	int3
+1000153b: cc                           	int3
+1000153c: cc                           	int3
+1000153d: cc                           	int3
+1000153e: cc                           	int3
+1000153f: cc                           	int3
+
+10001540 <yf_temp_init>:
+10001540: 55                           	push	ebp
+10001541: 8b ec                        	mov	ebp, esp
+10001543: 6a 18                        	push	0x18
+10001545: ff 15 80 30 00 10            	call	dword ptr [0x10003080]
+1000154b: 83 c4 04                     	add	esp, 0x4
+1000154e: 85 c0                        	test	eax, eax
+10001550: 74 2f                        	je	0x10001581 <yf_temp_init+0x41>
+10001552: d9 ee                        	fldz
+10001554: 8b 4d 08                     	mov	ecx, dword ptr [ebp + 0x8]
+10001557: dd 18                        	fstp	qword ptr [eax]
+10001559: 51                           	push	ecx
+1000155a: d9 05 08 31 00 10            	fld	dword ptr [0x10003108]
+10001560: c6 40 14 00                  	mov	byte ptr [eax + 0x14], 0x0
+10001564: d9 58 0c                     	fstp	dword ptr [eax + 0xc]
+10001567: d9 ee                        	fldz
+10001569: d9 58 10                     	fstp	dword ptr [eax + 0x10]
+1000156c: d9 05 70 31 00 10            	fld	dword ptr [0x10003170]
+10001572: d9 1c 24                     	fstp	dword ptr [esp]
+10001575: 89 01                        	mov	dword ptr [ecx], eax
+10001577: 50                           	push	eax
+10001578: e8 e3 fa ff ff               	call	0x10001060 <yf_temp_set_env_temp>
+1000157d: 5d                           	pop	ebp
+1000157e: c2 04 00                     	ret	0x4
+10001581: 8b 55 08                     	mov	edx, dword ptr [ebp + 0x8]
+10001584: c7 02 00 00 00 00            	mov	dword ptr [edx], 0x0
+1000158a: 32 c0                        	xor	al, al
+1000158c: 5d                           	pop	ebp
+1000158d: c2 04 00                     	ret	0x4
+
+10001590 <yf_temp_uninit>:
+10001590: 55                           	push	ebp
+10001591: 8b ec                        	mov	ebp, esp
+10001593: 56                           	push	esi
+10001594: 8b 75 08                     	mov	esi, dword ptr [ebp + 0x8]
+10001597: 8b 06                        	mov	eax, dword ptr [esi]
+10001599: 85 c0                        	test	eax, eax
+1000159b: 74 17                        	je	0x100015b4 <yf_temp_uninit+0x24>
+1000159d: 50                           	push	eax
+1000159e: ff 15 8c 30 00 10            	call	dword ptr [0x1000308c]
+100015a4: 83 c4 04                     	add	esp, 0x4
+100015a7: c7 06 00 00 00 00            	mov	dword ptr [esi], 0x0
+100015ad: b0 01                        	mov	al, 0x1
+100015af: 5e                           	pop	esi
+100015b0: 5d                           	pop	ebp
+100015b1: c2 04 00                     	ret	0x4
+100015b4: 32 c0                        	xor	al, al
+100015b6: 5e                           	pop	esi
+100015b7: 5d                           	pop	ebp
+100015b8: c2 04 00                     	ret	0x4
+100015bb: cc                           	int3
+100015bc: cc                           	int3
+100015bd: cc                           	int3
+100015be: cc                           	int3
+100015bf: cc                           	int3
+
+100015c0 <yf_temp_get_evn_temp>:
+100015c0: 55                           	push	ebp
+100015c1: 8b ec                        	mov	ebp, esp
+100015c3: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+100015c6: 85 c0                        	test	eax, eax
+100015c8: 74 0e                        	je	0x100015d8 <yf_temp_get_evn_temp+0x18>
+100015ca: d9 40 08                     	fld	dword ptr [eax + 0x8]
+100015cd: 8b 45 0c                     	mov	eax, dword ptr [ebp + 0xc]
+100015d0: d9 18                        	fstp	dword ptr [eax]
+100015d2: b0 01                        	mov	al, 0x1
+100015d4: 5d                           	pop	ebp
+100015d5: c2 08 00                     	ret	0x8
+100015d8: 32 c0                        	xor	al, al
+100015da: 5d                           	pop	ebp
+100015db: c2 08 00                     	ret	0x8
+100015de: cc                           	int3
+100015df: cc                           	int3
+
+100015e0 <yf_temp_set_rel_hum>:
+100015e0: 55                           	push	ebp
+100015e1: 8b ec                        	mov	ebp, esp
+100015e3: 8b 4d 08                     	mov	ecx, dword ptr [ebp + 0x8]
+100015e6: 85 c9                        	test	ecx, ecx
+100015e8: 74 2c                        	je	0x10001616 <yf_temp_set_rel_hum+0x36>
+100015ea: d9 05 c8 30 00 10            	fld	dword ptr [0x100030c8]
+100015f0: d9 45 0c                     	fld	dword ptr [ebp + 0xc]
+100015f3: d8 d1                        	fcom	st(1)
+100015f5: df e0                        	fnstsw	ax
+100015f7: dd d9                        	fstp	st(1)
+100015f9: f6 c4 41                     	test	ah, 0x41
+100015fc: 75 16                        	jne	0x10001614 <yf_temp_set_rel_hum+0x34>
+100015fe: dc 15 c0 30 00 10            	fcom	qword ptr [0x100030c0]
+10001604: df e0                        	fnstsw	ax
+10001606: f6 c4 05                     	test	ah, 0x5
+10001609: 7a 09                        	jp	0x10001614 <yf_temp_set_rel_hum+0x34>
+1000160b: d9 59 0c                     	fstp	dword ptr [ecx + 0xc]
+1000160e: b0 01                        	mov	al, 0x1
+10001610: 5d                           	pop	ebp
+10001611: c2 08 00                     	ret	0x8
+10001614: dd d8                        	fstp	st(0)
+10001616: 32 c0                        	xor	al, al
+10001618: 5d                           	pop	ebp
+10001619: c2 08 00                     	ret	0x8
+1000161c: cc                           	int3
+1000161d: cc                           	int3
+1000161e: cc                           	int3
+1000161f: cc                           	int3
+
+10001620 <yf_temp_get_rel_hum>:
+10001620: 55                           	push	ebp
+10001621: 8b ec                        	mov	ebp, esp
+10001623: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001626: 85 c0                        	test	eax, eax
+10001628: 74 0e                        	je	0x10001638 <yf_temp_get_rel_hum+0x18>
+1000162a: d9 40 0c                     	fld	dword ptr [eax + 0xc]
+1000162d: 8b 45 0c                     	mov	eax, dword ptr [ebp + 0xc]
+10001630: d9 18                        	fstp	dword ptr [eax]
+10001632: b0 01                        	mov	al, 0x1
+10001634: 5d                           	pop	ebp
+10001635: c2 08 00                     	ret	0x8
+10001638: 32 c0                        	xor	al, al
+1000163a: 5d                           	pop	ebp
+1000163b: c2 08 00                     	ret	0x8
+1000163e: cc                           	int3
+1000163f: cc                           	int3
+
+10001640 <yf_temp_set_mdf>:
+10001640: 55                           	push	ebp
+10001641: 8b ec                        	mov	ebp, esp
+10001643: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001646: 85 c0                        	test	eax, eax
+10001648: 74 0c                        	je	0x10001656 <yf_temp_set_mdf+0x16>
+1000164a: d9 45 0c                     	fld	dword ptr [ebp + 0xc]
+1000164d: d9 58 10                     	fstp	dword ptr [eax + 0x10]
+10001650: b0 01                        	mov	al, 0x1
+10001652: 5d                           	pop	ebp
+10001653: c2 08 00                     	ret	0x8
+10001656: 32 c0                        	xor	al, al
+10001658: 5d                           	pop	ebp
+10001659: c2 08 00                     	ret	0x8
+1000165c: cc                           	int3
+1000165d: cc                           	int3
+1000165e: cc                           	int3
+1000165f: cc                           	int3
+
+10001660 <yf_temp_get_mdf>:
+10001660: 55                           	push	ebp
+10001661: 8b ec                        	mov	ebp, esp
+10001663: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001666: 85 c0                        	test	eax, eax
+10001668: 74 0e                        	je	0x10001678 <yf_temp_get_mdf+0x18>
+1000166a: d9 40 10                     	fld	dword ptr [eax + 0x10]
+1000166d: 8b 45 0c                     	mov	eax, dword ptr [ebp + 0xc]
+10001670: d9 18                        	fstp	dword ptr [eax]
+10001672: b0 01                        	mov	al, 0x1
+10001674: 5d                           	pop	ebp
+10001675: c2 08 00                     	ret	0x8
+10001678: 32 c0                        	xor	al, al
+1000167a: 5d                           	pop	ebp
+1000167b: c2 08 00                     	ret	0x8
+1000167e: cc                           	int3
+1000167f: cc                           	int3
+
+10001680 <yf_temp_set_fahrenheit>:
+10001680: 55                           	push	ebp
+10001681: 8b ec                        	mov	ebp, esp
+10001683: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001686: 85 c0                        	test	eax, eax
+10001688: 74 0c                        	je	0x10001696 <yf_temp_set_fahrenheit+0x16>
+1000168a: 8a 4d 0c                     	mov	cl, byte ptr [ebp + 0xc]
+1000168d: 88 48 14                     	mov	byte ptr [eax + 0x14], cl
+10001690: b0 01                        	mov	al, 0x1
+10001692: 5d                           	pop	ebp
+10001693: c2 08 00                     	ret	0x8
+10001696: 32 c0                        	xor	al, al
+10001698: 5d                           	pop	ebp
+10001699: c2 08 00                     	ret	0x8
+1000169c: cc                           	int3
+1000169d: cc                           	int3
+1000169e: cc                           	int3
+1000169f: cc                           	int3
+
+100016a0 <yf_temp_is_fahrenheit>:
+100016a0: 55                           	push	ebp
+100016a1: 8b ec                        	mov	ebp, esp
+100016a3: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+100016a6: 85 c0                        	test	eax, eax
+100016a8: 74 0e                        	je	0x100016b8 <yf_temp_is_fahrenheit+0x18>
+100016aa: 8a 40 14                     	mov	al, byte ptr [eax + 0x14]
+100016ad: 8b 4d 0c                     	mov	ecx, dword ptr [ebp + 0xc]
+100016b0: 88 01                        	mov	byte ptr [ecx], al
+100016b2: b0 01                        	mov	al, 0x1
+100016b4: 5d                           	pop	ebp
+100016b5: c2 08 00                     	ret	0x8
+100016b8: 32 c0                        	xor	al, al
+100016ba: 5d                           	pop	ebp
+100016bb: c2 08 00                     	ret	0x8
+100016be: cc                           	int3
+100016bf: cc                           	int3
+
+100016c0 <yf_calc_temp>:
+100016c0: 55                           	push	ebp
+100016c1: 8b ec                        	mov	ebp, esp
+100016c3: 83 e4 f8                     	and	esp, -0x8
+100016c6: 83 ec 20                     	sub	esp, 0x20
+100016c9: 56                           	push	esi
+100016ca: 8b 75 08                     	mov	esi, dword ptr [ebp + 0x8]
+100016cd: 57                           	push	edi
+100016ce: 85 f6                        	test	esi, esi
+100016d0: 0f 84 27 01 00 00            	je	0x100017fd <yf_calc_temp+0x13d>
+100016d6: d9 e8                        	fld1
+100016d8: d9 45 10                     	fld	dword ptr [ebp + 0x10]
+100016db: d8 d1                        	fcom	st(1)
+100016dd: df e0                        	fnstsw	ax
+100016df: f6 c4 41                     	test	ah, 0x41
+100016e2: 0f 84 11 01 00 00            	je	0x100017f9 <yf_calc_temp+0x139>
+100016e8: d9 ee                        	fldz
+100016ea: d8 d1                        	fcom	st(1)
+100016ec: df e0                        	fnstsw	ax
+100016ee: dd d9                        	fstp	st(1)
+100016f0: f6 c4 41                     	test	ah, 0x41
+100016f3: 0f 84 00 01 00 00            	je	0x100017f9 <yf_calc_temp+0x139>
+100016f9: d9 45 14                     	fld	dword ptr [ebp + 0x14]
+100016fc: d8 d1                        	fcom	st(1)
+100016fe: df e0                        	fnstsw	ax
+10001700: f6 c4 05                     	test	ah, 0x5
+10001703: 0f 8b ee 00 00 00            	jnp	0x100017f7 <yf_calc_temp+0x137>
+10001709: d9 c9                        	fxch	st(1)
+1000170b: d8 5e 0c                     	fcomp	dword ptr [esi + 0xc]
+1000170e: df e0                        	fnstsw	ax
+10001710: f6 c4 41                     	test	ah, 0x41
+10001713: 0f 84 e0 00 00 00            	je	0x100017f9 <yf_calc_temp+0x139>
+10001719: d9 c9                        	fxch	st(1)
+1000171b: d8 5e 0c                     	fcomp	dword ptr [esi + 0xc]
+1000171e: df e0                        	fnstsw	ax
+10001720: f6 c4 05                     	test	ah, 0x5
+10001723: 0f 8b d2 00 00 00            	jnp	0x100017fb <yf_calc_temp+0x13b>
+10001729: 51                           	push	ecx
+1000172a: 8b c6                        	mov	eax, esi
+1000172c: d9 1c 24                     	fstp	dword ptr [esp]
+1000172f: e8 cc f8 ff ff               	call	0x10001000 <.text>
+10001734: d8 4d 10                     	fmul	dword ptr [ebp + 0x10]
+10001737: dd 5c 24 10                  	fstp	qword ptr [esp + 0x10]
+1000173b: d9 45 0c                     	fld	dword ptr [ebp + 0xc]
+1000173e: dc 05 50 31 00 10            	fadd	qword ptr [0x10003150]
+10001744: dd 05 48 31 00 10            	fld	qword ptr [0x10003148]
+1000174a: e8 37 0b 00 00               	call	0x10002286 <yf_calc_temp_ex+0xa76>
+1000174f: dd 5c 24 20                  	fstp	qword ptr [esp + 0x20]
+10001753: d9 46 08                     	fld	dword ptr [esi + 0x8]
+10001756: dc 05 50 31 00 10            	fadd	qword ptr [0x10003150]
+1000175c: dd 05 48 31 00 10            	fld	qword ptr [0x10003148]
+10001762: e8 1f 0b 00 00               	call	0x10002286 <yf_calc_temp_ex+0xa76>
+10001767: dd 5c 24 18                  	fstp	qword ptr [esp + 0x18]
+1000176b: d9 45 10                     	fld	dword ptr [ebp + 0x10]
+1000176e: dd 05 40 31 00 10            	fld	qword ptr [0x10003140]
+10001774: e8 0d 0b 00 00               	call	0x10002286 <yf_calc_temp_ex+0xa76>
+10001779: d9 5c 24 0c                  	fstp	dword ptr [esp + 0xc]
+1000177d: d9 e8                        	fld1
+1000177f: 8b 7d 18                     	mov	edi, dword ptr [ebp + 0x18]
+10001782: dd 44 24 10                  	fld	qword ptr [esp + 0x10]
+10001786: dc e9                        	fsub	st(1), st
+10001788: d9 c9                        	fxch	st(1)
+1000178a: d8 4c 24 0c                  	fmul	dword ptr [esp + 0xc]
+1000178e: dc 4c 24 18                  	fmul	qword ptr [esp + 0x18]
+10001792: dc 6c 24 20                  	fsubr	qword ptr [esp + 0x20]
+10001796: d9 5c 24 0c                  	fstp	dword ptr [esp + 0xc]
+1000179a: d9 44 24 0c                  	fld	dword ptr [esp + 0xc]
+1000179e: d9 17                        	fst	dword ptr [edi]
+100017a0: d9 ee                        	fldz
+100017a2: d8 d9                        	fcomp	st(1)
+100017a4: df e0                        	fnstsw	ax
+100017a6: f6 c4 41                     	test	ah, 0x41
+100017a9: 74 4e                        	je	0x100017f9 <yf_calc_temp+0x139>
+100017ab: de f1                        	fdivrp	st(1), st
+100017ad: dd 05 28 31 00 10            	fld	qword ptr [0x10003128]
+100017b3: e8 ce 0a 00 00               	call	0x10002286 <yf_calc_temp_ex+0xa76>
+100017b8: dc 25 50 31 00 10            	fsub	qword ptr [0x10003150]
+100017be: d9 5c 24 0c                  	fstp	dword ptr [esp + 0xc]
+100017c2: d9 44 24 0c                  	fld	dword ptr [esp + 0xc]
+100017c6: d8 46 10                     	fadd	dword ptr [esi + 0x10]
+100017c9: d9 5c 24 0c                  	fstp	dword ptr [esp + 0xc]
+100017cd: d9 44 24 0c                  	fld	dword ptr [esp + 0xc]
+100017d1: d9 17                        	fst	dword ptr [edi]
+100017d3: 80 7e 14 00                  	cmp	byte ptr [esi + 0x14], 0x0
+100017d7: 74 12                        	je	0x100017eb <yf_calc_temp+0x12b>
+100017d9: dc 35 20 31 00 10            	fdiv	qword ptr [0x10003120]
+100017df: dc 05 18 31 00 10            	fadd	qword ptr [0x10003118]
+100017e5: dc 0d 10 31 00 10            	fmul	qword ptr [0x10003110]
+100017eb: d9 1f                        	fstp	dword ptr [edi]
+100017ed: b0 01                        	mov	al, 0x1
+100017ef: 5f                           	pop	edi
+100017f0: 5e                           	pop	esi
+100017f1: 8b e5                        	mov	esp, ebp
+100017f3: 5d                           	pop	ebp
+100017f4: c2 14 00                     	ret	0x14
+100017f7: dd d8                        	fstp	st(0)
+100017f9: dd d8                        	fstp	st(0)
+100017fb: dd d8                        	fstp	st(0)
+100017fd: 5f                           	pop	edi
+100017fe: 32 c0                        	xor	al, al
+10001800: 5e                           	pop	esi
+10001801: 8b e5                        	mov	esp, ebp
+10001803: 5d                           	pop	ebp
+10001804: c2 14 00                     	ret	0x14
+10001807: cc                           	int3
+10001808: cc                           	int3
+10001809: cc                           	int3
+1000180a: cc                           	int3
+1000180b: cc                           	int3
+1000180c: cc                           	int3
+1000180d: cc                           	int3
+1000180e: cc                           	int3
+1000180f: cc                           	int3
+
+10001810 <yf_calc_temp_ex>:
+10001810: 55                           	push	ebp
+10001811: 8b ec                        	mov	ebp, esp
+10001813: 83 e4 f8                     	and	esp, -0x8
+10001816: 83 ec 1c                     	sub	esp, 0x1c
+10001819: 53                           	push	ebx
+1000181a: 56                           	push	esi
+1000181b: 57                           	push	edi
+1000181c: 8b 7d 08                     	mov	edi, dword ptr [ebp + 0x8]
+1000181f: 85 ff                        	test	edi, edi
+10001821: 0f 84 b9 01 00 00            	je	0x100019e0 <yf_calc_temp_ex+0x1d0>
+10001827: 8b 5d 14                     	mov	ebx, dword ptr [ebp + 0x14]
+1000182a: 85 db                        	test	ebx, ebx
+1000182c: 0f 84 ae 01 00 00            	je	0x100019e0 <yf_calc_temp_ex+0x1d0>
+10001832: 83 7d 0c 00                  	cmp	dword ptr [ebp + 0xc], 0x0
+10001836: 0f 84 a4 01 00 00            	je	0x100019e0 <yf_calc_temp_ex+0x1d0>
+1000183c: 8b 75 10                     	mov	esi, dword ptr [ebp + 0x10]
+1000183f: 85 f6                        	test	esi, esi
+10001841: 0f 84 99 01 00 00            	je	0x100019e0 <yf_calc_temp_ex+0x1d0>
+10001847: d9 e8                        	fld1
+10001849: d9 45 18                     	fld	dword ptr [ebp + 0x18]
+1000184c: d8 d1                        	fcom	st(1)
+1000184e: df e0                        	fnstsw	ax
+10001850: f6 c4 41                     	test	ah, 0x41
+10001853: 0f 84 83 01 00 00            	je	0x100019dc <yf_calc_temp_ex+0x1cc>
+10001859: d9 ee                        	fldz
+1000185b: d8 d1                        	fcom	st(1)
+1000185d: df e0                        	fnstsw	ax
+1000185f: dd d9                        	fstp	st(1)
+10001861: f6 c4 41                     	test	ah, 0x41
+10001864: 0f 84 72 01 00 00            	je	0x100019dc <yf_calc_temp_ex+0x1cc>
+1000186a: d9 45 1c                     	fld	dword ptr [ebp + 0x1c]
+1000186d: d8 d1                        	fcom	st(1)
+1000186f: df e0                        	fnstsw	ax
+10001871: f6 c4 05                     	test	ah, 0x5
+10001874: 0f 8b 60 01 00 00            	jnp	0x100019da <yf_calc_temp_ex+0x1ca>
+1000187a: d9 c9                        	fxch	st(1)
+1000187c: d8 5f 0c                     	fcomp	dword ptr [edi + 0xc]
+1000187f: df e0                        	fnstsw	ax
+10001881: f6 c4 41                     	test	ah, 0x41
+10001884: 0f 84 52 01 00 00            	je	0x100019dc <yf_calc_temp_ex+0x1cc>
+1000188a: d9 c9                        	fxch	st(1)
+1000188c: d8 5f 0c                     	fcomp	dword ptr [edi + 0xc]
+1000188f: df e0                        	fnstsw	ax
+10001891: f6 c4 05                     	test	ah, 0x5
+10001894: 0f 8b 44 01 00 00            	jnp	0x100019de <yf_calc_temp_ex+0x1ce>
+1000189a: 51                           	push	ecx
+1000189b: 8b c7                        	mov	eax, edi
+1000189d: d9 1c 24                     	fstp	dword ptr [esp]
+100018a0: e8 5b f7 ff ff               	call	0x10001000 <.text>
+100018a5: d8 4d 18                     	fmul	dword ptr [ebp + 0x18]
+100018a8: dd 5c 24 10                  	fstp	qword ptr [esp + 0x10]
+100018ac: d9 47 08                     	fld	dword ptr [edi + 0x8]
+100018af: dc 05 50 31 00 10            	fadd	qword ptr [0x10003150]
+100018b5: dd 05 48 31 00 10            	fld	qword ptr [0x10003148]
+100018bb: e8 c6 09 00 00               	call	0x10002286 <yf_calc_temp_ex+0xa76>
+100018c0: dd 5c 24 18                  	fstp	qword ptr [esp + 0x18]
+100018c4: d9 45 18                     	fld	dword ptr [ebp + 0x18]
+100018c7: dd 05 40 31 00 10            	fld	qword ptr [0x10003140]
+100018cd: e8 b4 09 00 00               	call	0x10002286 <yf_calc_temp_ex+0xa76>
+100018d2: d9 5c 24 0c                  	fstp	dword ptr [esp + 0xc]
+100018d6: d9 e8                        	fld1
+100018d8: dd 44 24 10                  	fld	qword ptr [esp + 0x10]
+100018dc: dc e9                        	fsub	st(1), st
+100018de: d9 c9                        	fxch	st(1)
+100018e0: d8 4c 24 0c                  	fmul	dword ptr [esp + 0xc]
+100018e4: dc 4c 24 18                  	fmul	qword ptr [esp + 0x18]
+100018e8: dd 5c 24 18                  	fstp	qword ptr [esp + 0x18]
+100018ec: dd 5c 24 20                  	fstp	qword ptr [esp + 0x20]
+100018f0: d9 05 38 31 00 10            	fld	dword ptr [0x10003138]
+100018f6: d9 5c 24 0c                  	fstp	dword ptr [esp + 0xc]
+100018fa: 85 db                        	test	ebx, ebx
+100018fc: 0f 8e cd 00 00 00            	jle	0x100019cf <yf_calc_temp_ex+0x1bf>
+10001902: 8b 7d 0c                     	mov	edi, dword ptr [ebp + 0xc]
+10001905: 2b fe                        	sub	edi, esi
+10001907: eb 07                        	jmp	0x10001910 <yf_calc_temp_ex+0x100>
+10001909: 8d a4 24 00 00 00 00         	lea	esp, [esp]
+10001910: d9 04 37                     	fld	dword ptr [edi + esi]
+10001913: d8 64 24 0c                  	fsub	dword ptr [esp + 0xc]
+10001917: d9 5c 24 10                  	fstp	dword ptr [esp + 0x10]
+1000191b: d9 44 24 10                  	fld	dword ptr [esp + 0x10]
+1000191f: d9 e1                        	fabs
+10001921: d9 5c 24 10                  	fstp	dword ptr [esp + 0x10]
+10001925: d9 44 24 10                  	fld	dword ptr [esp + 0x10]
+10001929: dc 1d 30 31 00 10            	fcomp	qword ptr [0x10003130]
+1000192f: df e0                        	fnstsw	ax
+10001931: f6 c4 41                     	test	ah, 0x41
+10001934: 0f 85 86 00 00 00            	jne	0x100019c0 <yf_calc_temp_ex+0x1b0>
+1000193a: d9 04 37                     	fld	dword ptr [edi + esi]
+1000193d: dc 05 50 31 00 10            	fadd	qword ptr [0x10003150]
+10001943: dd 05 48 31 00 10            	fld	qword ptr [0x10003148]
+10001949: e8 38 09 00 00               	call	0x10002286 <yf_calc_temp_ex+0xa76>
+1000194e: dc 64 24 18                  	fsub	qword ptr [esp + 0x18]
+10001952: d9 5c 24 0c                  	fstp	dword ptr [esp + 0xc]
+10001956: d9 ee                        	fldz
+10001958: d9 44 24 0c                  	fld	dword ptr [esp + 0xc]
+1000195c: d8 d1                        	fcom	st(1)
+1000195e: df e0                        	fnstsw	ax
+10001960: dd d9                        	fstp	st(1)
+10001962: f6 c4 05                     	test	ah, 0x5
+10001965: 7a 13                        	jp	0x1000197a <yf_calc_temp_ex+0x16a>
+10001967: dd d8                        	fstp	st(0)
+10001969: d9 05 38 31 00 10            	fld	dword ptr [0x10003138]
+1000196f: d9 1e                        	fstp	dword ptr [esi]
+10001971: d9 04 37                     	fld	dword ptr [edi + esi]
+10001974: d9 5c 24 0c                  	fstp	dword ptr [esp + 0xc]
+10001978: eb 4b                        	jmp	0x100019c5 <yf_calc_temp_ex+0x1b5>
+1000197a: dc 74 24 20                  	fdiv	qword ptr [esp + 0x20]
+1000197e: dd 05 28 31 00 10            	fld	qword ptr [0x10003128]
+10001984: e8 fd 08 00 00               	call	0x10002286 <yf_calc_temp_ex+0xa76>
+10001989: dc 25 50 31 00 10            	fsub	qword ptr [0x10003150]
+1000198f: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001992: 80 78 14 00                  	cmp	byte ptr [eax + 0x14], 0x0
+10001996: d8 40 10                     	fadd	dword ptr [eax + 0x10]
+10001999: d9 5c 24 0c                  	fstp	dword ptr [esp + 0xc]
+1000199d: d9 44 24 0c                  	fld	dword ptr [esp + 0xc]
+100019a1: 74 12                        	je	0x100019b5 <yf_calc_temp_ex+0x1a5>
+100019a3: dc 35 20 31 00 10            	fdiv	qword ptr [0x10003120]
+100019a9: dc 05 18 31 00 10            	fadd	qword ptr [0x10003118]
+100019af: dc 0d 10 31 00 10            	fmul	qword ptr [0x10003110]
+100019b5: d9 1e                        	fstp	dword ptr [esi]
+100019b7: d9 04 37                     	fld	dword ptr [edi + esi]
+100019ba: d9 5c 24 0c                  	fstp	dword ptr [esp + 0xc]
+100019be: eb 05                        	jmp	0x100019c5 <yf_calc_temp_ex+0x1b5>
+100019c0: d9 46 fc                     	fld	dword ptr [esi - 0x4]
+100019c3: d9 1e                        	fstp	dword ptr [esi]
+100019c5: 83 c6 04                     	add	esi, 0x4
+100019c8: 4b                           	dec	ebx
+100019c9: 0f 85 41 ff ff ff            	jne	0x10001910 <yf_calc_temp_ex+0x100>
+100019cf: b0 01                        	mov	al, 0x1
+100019d1: 5f                           	pop	edi
+100019d2: 5e                           	pop	esi
+100019d3: 5b                           	pop	ebx
+100019d4: 8b e5                        	mov	esp, ebp
+100019d6: 5d                           	pop	ebp
+100019d7: c2 18 00                     	ret	0x18
+100019da: dd d8                        	fstp	st(0)
+100019dc: dd d8                        	fstp	st(0)
+100019de: dd d8                        	fstp	st(0)
+100019e0: 5f                           	pop	edi
+100019e1: 5e                           	pop	esi
+100019e2: 32 c0                        	xor	al, al
+100019e4: 5b                           	pop	ebx
+100019e5: 8b e5                        	mov	esp, ebp
+100019e7: 5d                           	pop	ebp
+100019e8: c2 18 00                     	ret	0x18
+100019eb: 3b 0d 00 40 00 10            	cmp	ecx, dword ptr [0x10004000]
+100019f1: 75 02                        	jne	0x100019f5 <yf_calc_temp_ex+0x1e5>
+100019f3: f3 c3                        	rep		ret
+100019f5: e9 91 03 00 00               	jmp	0x10001d8b <yf_calc_temp_ex+0x57b>
+100019fa: 8b ff                        	mov	edi, edi
+100019fc: 56                           	push	esi
+100019fd: 68 80 00 00 00               	push	0x80
+10001a02: ff 15 7c 30 00 10            	call	dword ptr [0x1000307c]
+10001a08: 59                           	pop	ecx
+10001a09: 8b f0                        	mov	esi, eax
+10001a0b: 56                           	push	esi
+10001a0c: ff 15 40 30 00 10            	call	dword ptr [0x10003040]
+10001a12: a3 54 43 00 10               	mov	dword ptr [0x10004354], eax
+10001a17: a3 50 43 00 10               	mov	dword ptr [0x10004350], eax
+10001a1c: 85 f6                        	test	esi, esi
+10001a1e: 75 05                        	jne	0x10001a25 <yf_calc_temp_ex+0x215>
+10001a20: 33 c0                        	xor	eax, eax
+10001a22: 40                           	inc	eax
+10001a23: 5e                           	pop	esi
+10001a24: c3                           	ret
+10001a25: 83 26 00                     	and	dword ptr [esi], 0x0
+10001a28: e8 28 05 00 00               	call	0x10001f55 <yf_calc_temp_ex+0x745>
+10001a2d: 68 7b 1f 00 10               	push	0x10001f7b
+10001a32: e8 07 05 00 00               	call	0x10001f3e <yf_calc_temp_ex+0x72e>
+10001a37: c7 04 24 91 1e 00 10         	mov	dword ptr [esp], 0x10001e91
+10001a3e: e8 fb 04 00 00               	call	0x10001f3e <yf_calc_temp_ex+0x72e>
+10001a43: 59                           	pop	ecx
+10001a44: 33 c0                        	xor	eax, eax
+10001a46: 5e                           	pop	esi
+10001a47: c3                           	ret
+10001a48: 8b ff                        	mov	edi, edi
+10001a4a: 55                           	push	ebp
+10001a4b: 8b ec                        	mov	ebp, esp
+10001a4d: 51                           	push	ecx
+10001a4e: 51                           	push	ecx
+10001a4f: 53                           	push	ebx
+10001a50: 33 c0                        	xor	eax, eax
+10001a52: 56                           	push	esi
+10001a53: 57                           	push	edi
+10001a54: 39 45 0c                     	cmp	dword ptr [ebp + 0xc], eax
+10001a57: 75 32                        	jne	0x10001a8b <yf_calc_temp_ex+0x27b>
+10001a59: 39 05 10 40 00 10            	cmp	dword ptr [0x10004010], eax
+10001a5f: 7e 23                        	jle	0x10001a84 <yf_calc_temp_ex+0x274>
+10001a61: 64 a1 18 00 00 00            	mov	eax, dword ptr fs:[0x18]
+10001a67: ff 0d 10 40 00 10            	dec	dword ptr [0x10004010]
+10001a6d: 8b 58 04                     	mov	ebx, dword ptr [eax + 0x4]
+10001a70: 83 65 fc 00                  	and	dword ptr [ebp - 0x4], 0x0
+10001a74: 8b 35 30 30 00 10            	mov	esi, dword ptr [0x10003030]
+10001a7a: bf 4c 43 00 10               	mov	edi, 0x1000434c
+10001a7f: e9 ea 00 00 00               	jmp	0x10001b6e <yf_calc_temp_ex+0x35e>
+10001a84: 33 c0                        	xor	eax, eax
+10001a86: e9 c0 01 00 00               	jmp	0x10001c4b <yf_calc_temp_ex+0x43b>
+10001a8b: 83 7d 0c 01                  	cmp	dword ptr [ebp + 0xc], 0x1
+10001a8f: 0f 85 b3 01 00 00            	jne	0x10001c48 <yf_calc_temp_ex+0x438>
+10001a95: 64 8b 0d 18 00 00 00         	mov	ecx, dword ptr fs:[0x18]
+10001a9c: 8b 59 04                     	mov	ebx, dword ptr [ecx + 0x4]
+10001a9f: 8b 35 30 30 00 10            	mov	esi, dword ptr [0x10003030]
+10001aa5: 89 45 0c                     	mov	dword ptr [ebp + 0xc], eax
+10001aa8: 50                           	push	eax
+10001aa9: bf 4c 43 00 10               	mov	edi, 0x1000434c
+10001aae: eb 11                        	jmp	0x10001ac1 <yf_calc_temp_ex+0x2b1>
+10001ab0: 3b c3                        	cmp	eax, ebx
+10001ab2: 74 17                        	je	0x10001acb <yf_calc_temp_ex+0x2bb>
+10001ab4: 68 e8 03 00 00               	push	0x3e8
+10001ab9: ff 15 34 30 00 10            	call	dword ptr [0x10003034]
+10001abf: 6a 00                        	push	0x0
+10001ac1: 53                           	push	ebx
+10001ac2: 57                           	push	edi
+10001ac3: ff d6                        	call	esi
+10001ac5: 85 c0                        	test	eax, eax
+10001ac7: 75 e7                        	jne	0x10001ab0 <yf_calc_temp_ex+0x2a0>
+10001ac9: eb 07                        	jmp	0x10001ad2 <yf_calc_temp_ex+0x2c2>
+10001acb: c7 45 0c 01 00 00 00         	mov	dword ptr [ebp + 0xc], 0x1
+10001ad2: a1 48 43 00 10               	mov	eax, dword ptr [0x10004348]
+10001ad7: 6a 02                        	push	0x2
+10001ad9: 5e                           	pop	esi
+10001ada: 85 c0                        	test	eax, eax
+10001adc: 74 09                        	je	0x10001ae7 <yf_calc_temp_ex+0x2d7>
+10001ade: 6a 1f                        	push	0x1f
+10001ae0: e8 23 06 00 00               	call	0x10002108 <yf_calc_temp_ex+0x8f8>
+10001ae5: eb 39                        	jmp	0x10001b20 <yf_calc_temp_ex+0x310>
+10001ae7: 68 a8 30 00 10               	push	0x100030a8
+10001aec: 68 9c 30 00 10               	push	0x1000309c
+10001af1: c7 05 48 43 00 10 01 00 00 00	mov	dword ptr [0x10004348], 0x1
+10001afb: e8 02 06 00 00               	call	0x10002102 <yf_calc_temp_ex+0x8f2>
+10001b00: 59                           	pop	ecx
+10001b01: 59                           	pop	ecx
+10001b02: 85 c0                        	test	eax, eax
+10001b04: 0f 85 7a ff ff ff            	jne	0x10001a84 <yf_calc_temp_ex+0x274>
+10001b0a: 68 98 30 00 10               	push	0x10003098
+10001b0f: 68 94 30 00 10               	push	0x10003094
+10001b14: e8 e3 05 00 00               	call	0x100020fc <yf_calc_temp_ex+0x8ec>
+10001b19: 59                           	pop	ecx
+10001b1a: 89 35 48 43 00 10            	mov	dword ptr [0x10004348], esi
+10001b20: 33 db                        	xor	ebx, ebx
+10001b22: 59                           	pop	ecx
+10001b23: 39 5d 0c                     	cmp	dword ptr [ebp + 0xc], ebx
+10001b26: 75 08                        	jne	0x10001b30 <yf_calc_temp_ex+0x320>
+10001b28: 53                           	push	ebx
+10001b29: 57                           	push	edi
+10001b2a: ff 15 38 30 00 10            	call	dword ptr [0x10003038]
+10001b30: 39 1d 58 43 00 10            	cmp	dword ptr [0x10004358], ebx
+10001b36: 74 1c                        	je	0x10001b54 <yf_calc_temp_ex+0x344>
+10001b38: 68 58 43 00 10               	push	0x10004358
+10001b3d: e8 fe 04 00 00               	call	0x10002040 <yf_calc_temp_ex+0x830>
+10001b42: 59                           	pop	ecx
+10001b43: 85 c0                        	test	eax, eax
+10001b45: 74 0d                        	je	0x10001b54 <yf_calc_temp_ex+0x344>
+10001b47: ff 75 10                     	push	dword ptr [ebp + 0x10]
+10001b4a: 56                           	push	esi
+10001b4b: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001b4e: ff 15 58 43 00 10            	call	dword ptr [0x10004358]
+10001b54: ff 05 10 40 00 10            	inc	dword ptr [0x10004010]
+10001b5a: e9 e9 00 00 00               	jmp	0x10001c48 <yf_calc_temp_ex+0x438>
+10001b5f: 3b c3                        	cmp	eax, ebx
+10001b61: 74 17                        	je	0x10001b7a <yf_calc_temp_ex+0x36a>
+10001b63: 68 e8 03 00 00               	push	0x3e8
+10001b68: ff 15 34 30 00 10            	call	dword ptr [0x10003034]
+10001b6e: 6a 00                        	push	0x0
+10001b70: 53                           	push	ebx
+10001b71: 57                           	push	edi
+10001b72: ff d6                        	call	esi
+10001b74: 85 c0                        	test	eax, eax
+10001b76: 75 e7                        	jne	0x10001b5f <yf_calc_temp_ex+0x34f>
+10001b78: eb 07                        	jmp	0x10001b81 <yf_calc_temp_ex+0x371>
+10001b7a: c7 45 fc 01 00 00 00         	mov	dword ptr [ebp - 0x4], 0x1
+10001b81: a1 48 43 00 10               	mov	eax, dword ptr [0x10004348]
+10001b86: 83 f8 02                     	cmp	eax, 0x2
+10001b89: 74 0d                        	je	0x10001b98 <yf_calc_temp_ex+0x388>
+10001b8b: 6a 1f                        	push	0x1f
+10001b8d: e8 76 05 00 00               	call	0x10002108 <yf_calc_temp_ex+0x8f8>
+10001b92: 59                           	pop	ecx
+10001b93: e9 b0 00 00 00               	jmp	0x10001c48 <yf_calc_temp_ex+0x438>
+10001b98: ff 35 54 43 00 10            	push	dword ptr [0x10004354]
+10001b9e: 8b 35 00 30 00 10            	mov	esi, dword ptr [0x10003000]
+10001ba4: ff d6                        	call	esi
+10001ba6: 89 45 0c                     	mov	dword ptr [ebp + 0xc], eax
+10001ba9: 85 c0                        	test	eax, eax
+10001bab: 0f 84 83 00 00 00            	je	0x10001c34 <yf_calc_temp_ex+0x424>
+10001bb1: ff 35 50 43 00 10            	push	dword ptr [0x10004350]
+10001bb7: ff d6                        	call	esi
+10001bb9: 8b d8                        	mov	ebx, eax
+10001bbb: 8b 45 0c                     	mov	eax, dword ptr [ebp + 0xc]
+10001bbe: 89 45 10                     	mov	dword ptr [ebp + 0x10], eax
+10001bc1: 89 5d 08                     	mov	dword ptr [ebp + 0x8], ebx
+10001bc4: 83 eb 04                     	sub	ebx, 0x4
+10001bc7: 3b 5d 0c                     	cmp	ebx, dword ptr [ebp + 0xc]
+10001bca: 72 4e                        	jb	0x10001c1a <yf_calc_temp_ex+0x40a>
+10001bcc: 83 3b 00                     	cmp	dword ptr [ebx], 0x0
+10001bcf: 74 f3                        	je	0x10001bc4 <yf_calc_temp_ex+0x3b4>
+10001bd1: ff 15 74 30 00 10            	call	dword ptr [0x10003074]
+10001bd7: 39 03                        	cmp	dword ptr [ebx], eax
+10001bd9: 74 e9                        	je	0x10001bc4 <yf_calc_temp_ex+0x3b4>
+10001bdb: ff 33                        	push	dword ptr [ebx]
+10001bdd: ff d6                        	call	esi
+10001bdf: 89 45 f8                     	mov	dword ptr [ebp - 0x8], eax
+10001be2: ff 15 74 30 00 10            	call	dword ptr [0x10003074]
+10001be8: 89 03                        	mov	dword ptr [ebx], eax
+10001bea: ff 55 f8                     	call	dword ptr [ebp - 0x8]
+10001bed: ff 35 54 43 00 10            	push	dword ptr [0x10004354]
+10001bf3: ff d6                        	call	esi
+10001bf5: ff 35 50 43 00 10            	push	dword ptr [0x10004350]
+10001bfb: 89 45 f8                     	mov	dword ptr [ebp - 0x8], eax
+10001bfe: ff d6                        	call	esi
+10001c00: 8b 4d f8                     	mov	ecx, dword ptr [ebp - 0x8]
+10001c03: 39 4d 10                     	cmp	dword ptr [ebp + 0x10], ecx
+10001c06: 75 05                        	jne	0x10001c0d <yf_calc_temp_ex+0x3fd>
+10001c08: 39 45 08                     	cmp	dword ptr [ebp + 0x8], eax
+10001c0b: 74 b7                        	je	0x10001bc4 <yf_calc_temp_ex+0x3b4>
+10001c0d: 89 4d 10                     	mov	dword ptr [ebp + 0x10], ecx
+10001c10: 89 4d 0c                     	mov	dword ptr [ebp + 0xc], ecx
+10001c13: 89 45 08                     	mov	dword ptr [ebp + 0x8], eax
+10001c16: 8b d8                        	mov	ebx, eax
+10001c18: eb aa                        	jmp	0x10001bc4 <yf_calc_temp_ex+0x3b4>
+10001c1a: ff 75 0c                     	push	dword ptr [ebp + 0xc]
+10001c1d: ff 15 78 30 00 10            	call	dword ptr [0x10003078]
+10001c23: 59                           	pop	ecx
+10001c24: ff 15 74 30 00 10            	call	dword ptr [0x10003074]
+10001c2a: a3 50 43 00 10               	mov	dword ptr [0x10004350], eax
+10001c2f: a3 54 43 00 10               	mov	dword ptr [0x10004354], eax
+10001c34: 33 c0                        	xor	eax, eax
+10001c36: a3 48 43 00 10               	mov	dword ptr [0x10004348], eax
+10001c3b: 39 45 fc                     	cmp	dword ptr [ebp - 0x4], eax
+10001c3e: 75 08                        	jne	0x10001c48 <yf_calc_temp_ex+0x438>
+10001c40: 50                           	push	eax
+10001c41: 57                           	push	edi
+10001c42: ff 15 38 30 00 10            	call	dword ptr [0x10003038]
+10001c48: 33 c0                        	xor	eax, eax
+10001c4a: 40                           	inc	eax
+10001c4b: 5f                           	pop	edi
+10001c4c: 5e                           	pop	esi
+10001c4d: 5b                           	pop	ebx
+10001c4e: c9                           	leave
+10001c4f: c2 0c 00                     	ret	0xc
+10001c52: 6a 10                        	push	0x10
+10001c54: 68 d8 31 00 10               	push	0x100031d8
+10001c59: e8 e2 04 00 00               	call	0x10002140 <yf_calc_temp_ex+0x930>
+10001c5e: 8b f9                        	mov	edi, ecx
+10001c60: 8b f2                        	mov	esi, edx
+10001c62: 8b 5d 08                     	mov	ebx, dword ptr [ebp + 0x8]
+10001c65: 33 c0                        	xor	eax, eax
+10001c67: 40                           	inc	eax
+10001c68: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001c6b: 33 c9                        	xor	ecx, ecx
+10001c6d: 89 4d fc                     	mov	dword ptr [ebp - 0x4], ecx
+10001c70: 89 35 08 40 00 10            	mov	dword ptr [0x10004008], esi
+10001c76: 89 45 fc                     	mov	dword ptr [ebp - 0x4], eax
+10001c79: 3b f1                        	cmp	esi, ecx
+10001c7b: 75 10                        	jne	0x10001c8d <yf_calc_temp_ex+0x47d>
+10001c7d: 39 0d 10 40 00 10            	cmp	dword ptr [0x10004010], ecx
+10001c83: 75 08                        	jne	0x10001c8d <yf_calc_temp_ex+0x47d>
+10001c85: 89 4d e4                     	mov	dword ptr [ebp - 0x1c], ecx
+10001c88: e9 b7 00 00 00               	jmp	0x10001d44 <yf_calc_temp_ex+0x534>
+10001c8d: 3b f0                        	cmp	esi, eax
+10001c8f: 74 05                        	je	0x10001c96 <yf_calc_temp_ex+0x486>
+10001c91: 83 fe 02                     	cmp	esi, 0x2
+10001c94: 75 2e                        	jne	0x10001cc4 <yf_calc_temp_ex+0x4b4>
+10001c96: a1 b0 30 00 10               	mov	eax, dword ptr [0x100030b0]
+10001c9b: 3b c1                        	cmp	eax, ecx
+10001c9d: 74 08                        	je	0x10001ca7 <yf_calc_temp_ex+0x497>
+10001c9f: 57                           	push	edi
+10001ca0: 56                           	push	esi
+10001ca1: 53                           	push	ebx
+10001ca2: ff d0                        	call	eax
+10001ca4: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001ca7: 83 7d e4 00                  	cmp	dword ptr [ebp - 0x1c], 0x0
+10001cab: 0f 84 93 00 00 00            	je	0x10001d44 <yf_calc_temp_ex+0x534>
+10001cb1: 57                           	push	edi
+10001cb2: 56                           	push	esi
+10001cb3: 53                           	push	ebx
+10001cb4: e8 8f fd ff ff               	call	0x10001a48 <yf_calc_temp_ex+0x238>
+10001cb9: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001cbc: 85 c0                        	test	eax, eax
+10001cbe: 0f 84 80 00 00 00            	je	0x10001d44 <yf_calc_temp_ex+0x534>
+10001cc4: 57                           	push	edi
+10001cc5: 56                           	push	esi
+10001cc6: 53                           	push	ebx
+10001cc7: e8 48 04 00 00               	call	0x10002114 <yf_calc_temp_ex+0x904>
+10001ccc: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001ccf: 83 fe 01                     	cmp	esi, 0x1
+10001cd2: 75 24                        	jne	0x10001cf8 <yf_calc_temp_ex+0x4e8>
+10001cd4: 85 c0                        	test	eax, eax
+10001cd6: 75 20                        	jne	0x10001cf8 <yf_calc_temp_ex+0x4e8>
+10001cd8: 57                           	push	edi
+10001cd9: 50                           	push	eax
+10001cda: 53                           	push	ebx
+10001cdb: e8 34 04 00 00               	call	0x10002114 <yf_calc_temp_ex+0x904>
+10001ce0: 57                           	push	edi
+10001ce1: 6a 00                        	push	0x0
+10001ce3: 53                           	push	ebx
+10001ce4: e8 5f fd ff ff               	call	0x10001a48 <yf_calc_temp_ex+0x238>
+10001ce9: a1 b0 30 00 10               	mov	eax, dword ptr [0x100030b0]
+10001cee: 85 c0                        	test	eax, eax
+10001cf0: 74 06                        	je	0x10001cf8 <yf_calc_temp_ex+0x4e8>
+10001cf2: 57                           	push	edi
+10001cf3: 6a 00                        	push	0x0
+10001cf5: 53                           	push	ebx
+10001cf6: ff d0                        	call	eax
+10001cf8: 85 f6                        	test	esi, esi
+10001cfa: 74 05                        	je	0x10001d01 <yf_calc_temp_ex+0x4f1>
+10001cfc: 83 fe 03                     	cmp	esi, 0x3
+10001cff: 75 43                        	jne	0x10001d44 <yf_calc_temp_ex+0x534>
+10001d01: 57                           	push	edi
+10001d02: 56                           	push	esi
+10001d03: 53                           	push	ebx
+10001d04: e8 3f fd ff ff               	call	0x10001a48 <yf_calc_temp_ex+0x238>
+10001d09: 85 c0                        	test	eax, eax
+10001d0b: 75 03                        	jne	0x10001d10 <yf_calc_temp_ex+0x500>
+10001d0d: 21 45 e4                     	and	dword ptr [ebp - 0x1c], eax
+10001d10: 83 7d e4 00                  	cmp	dword ptr [ebp - 0x1c], 0x0
+10001d14: 74 2e                        	je	0x10001d44 <yf_calc_temp_ex+0x534>
+10001d16: a1 b0 30 00 10               	mov	eax, dword ptr [0x100030b0]
+10001d1b: 85 c0                        	test	eax, eax
+10001d1d: 74 25                        	je	0x10001d44 <yf_calc_temp_ex+0x534>
+10001d1f: 57                           	push	edi
+10001d20: 56                           	push	esi
+10001d21: 53                           	push	ebx
+10001d22: ff d0                        	call	eax
+10001d24: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001d27: eb 1b                        	jmp	0x10001d44 <yf_calc_temp_ex+0x534>
+10001d29: 8b 45 ec                     	mov	eax, dword ptr [ebp - 0x14]
+10001d2c: 8b 08                        	mov	ecx, dword ptr [eax]
+10001d2e: 8b 09                        	mov	ecx, dword ptr [ecx]
+10001d30: 89 4d e0                     	mov	dword ptr [ebp - 0x20], ecx
+10001d33: 50                           	push	eax
+10001d34: 51                           	push	ecx
+10001d35: e8 d4 03 00 00               	call	0x1000210e <yf_calc_temp_ex+0x8fe>
+10001d3a: 59                           	pop	ecx
+10001d3b: 59                           	pop	ecx
+10001d3c: c3                           	ret
+10001d3d: 8b 65 e8                     	mov	esp, dword ptr [ebp - 0x18]
+10001d40: 83 65 e4 00                  	and	dword ptr [ebp - 0x1c], 0x0
+10001d44: 83 65 fc 00                  	and	dword ptr [ebp - 0x4], 0x0
+10001d48: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+10001d4f: e8 09 00 00 00               	call	0x10001d5d <yf_calc_temp_ex+0x54d>
+10001d54: 8b 45 e4                     	mov	eax, dword ptr [ebp - 0x1c]
+10001d57: e8 29 04 00 00               	call	0x10002185 <yf_calc_temp_ex+0x975>
+10001d5c: c3                           	ret
+10001d5d: c7 05 08 40 00 10 ff ff ff ff	mov	dword ptr [0x10004008], 0xffffffff
+10001d67: c3                           	ret
+10001d68: 8b ff                        	mov	edi, edi
+10001d6a: 55                           	push	ebp
+10001d6b: 8b ec                        	mov	ebp, esp
+10001d6d: 83 7d 0c 01                  	cmp	dword ptr [ebp + 0xc], 0x1
+10001d71: 75 05                        	jne	0x10001d78 <yf_calc_temp_ex+0x568>
+10001d73: e8 46 04 00 00               	call	0x100021be <yf_calc_temp_ex+0x9ae>
+10001d78: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001d7b: 8b 4d 10                     	mov	ecx, dword ptr [ebp + 0x10]
+10001d7e: 8b 55 0c                     	mov	edx, dword ptr [ebp + 0xc]
+10001d81: e8 cc fe ff ff               	call	0x10001c52 <yf_calc_temp_ex+0x442>
+10001d86: 59                           	pop	ecx
+10001d87: 5d                           	pop	ebp
+10001d88: c2 0c 00                     	ret	0xc
+10001d8b: 8b ff                        	mov	edi, edi
+10001d8d: 55                           	push	ebp
+10001d8e: 8b ec                        	mov	ebp, esp
+10001d90: 81 ec 28 03 00 00            	sub	esp, 0x328
+10001d96: a3 20 41 00 10               	mov	dword ptr [0x10004120], eax
+10001d9b: 89 0d 1c 41 00 10            	mov	dword ptr [0x1000411c], ecx
+10001da1: 89 15 18 41 00 10            	mov	dword ptr [0x10004118], edx
+10001da7: 89 1d 14 41 00 10            	mov	dword ptr [0x10004114], ebx
+10001dad: 89 35 10 41 00 10            	mov	dword ptr [0x10004110], esi
+10001db3: 89 3d 0c 41 00 10            	mov	dword ptr [0x1000410c], edi
+10001db9: 66 8c 15 38 41 00 10         	mov	word ptr [0x10004138], ss
+10001dc0: 66 8c 0d 2c 41 00 10         	mov	word ptr [0x1000412c], cs
+10001dc7: 66 8c 1d 08 41 00 10         	mov	word ptr [0x10004108], ds
+10001dce: 66 8c 05 04 41 00 10         	mov	word ptr [0x10004104], es
+10001dd5: 66 8c 25 00 41 00 10         	mov	word ptr [0x10004100], fs
+10001ddc: 66 8c 2d fc 40 00 10         	mov	word ptr [0x100040fc], gs
+10001de3: 9c                           	pushfd
+10001de4: 8f 05 30 41 00 10            	pop	dword ptr [0x10004130]
+10001dea: 8b 45 00                     	mov	eax, dword ptr [ebp]
+10001ded: a3 24 41 00 10               	mov	dword ptr [0x10004124], eax
+10001df2: 8b 45 04                     	mov	eax, dword ptr [ebp + 0x4]
+10001df5: a3 28 41 00 10               	mov	dword ptr [0x10004128], eax
+10001dfa: 8d 45 08                     	lea	eax, [ebp + 0x8]
+10001dfd: a3 34 41 00 10               	mov	dword ptr [0x10004134], eax
+10001e02: 8b 85 e0 fc ff ff            	mov	eax, dword ptr [ebp - 0x320]
+10001e08: c7 05 70 40 00 10 01 00 01 00	mov	dword ptr [0x10004070], 0x10001
+10001e12: a1 28 41 00 10               	mov	eax, dword ptr [0x10004128]
+10001e17: a3 24 40 00 10               	mov	dword ptr [0x10004024], eax
+10001e1c: c7 05 18 40 00 10 09 04 00 c0	mov	dword ptr [0x10004018], 0xc0000409
+10001e26: c7 05 1c 40 00 10 01 00 00 00	mov	dword ptr [0x1000401c], 0x1
+10001e30: a1 00 40 00 10               	mov	eax, dword ptr [0x10004000]
+10001e35: 89 85 d8 fc ff ff            	mov	dword ptr [ebp - 0x328], eax
+10001e3b: a1 04 40 00 10               	mov	eax, dword ptr [0x10004004]
+10001e40: 89 85 dc fc ff ff            	mov	dword ptr [ebp - 0x324], eax
+10001e46: ff 15 1c 30 00 10            	call	dword ptr [0x1000301c]
+10001e4c: a3 68 40 00 10               	mov	dword ptr [0x10004068], eax
+10001e51: 6a 01                        	push	0x1
+10001e53: e8 02 04 00 00               	call	0x1000225a <yf_calc_temp_ex+0xa4a>
+10001e58: 59                           	pop	ecx
+10001e59: 6a 00                        	push	0x0
+10001e5b: ff 15 20 30 00 10            	call	dword ptr [0x10003020]
+10001e61: 68 b4 30 00 10               	push	0x100030b4
+10001e66: ff 15 24 30 00 10            	call	dword ptr [0x10003024]
+10001e6c: 83 3d 68 40 00 10 00         	cmp	dword ptr [0x10004068], 0x0
+10001e73: 75 08                        	jne	0x10001e7d <yf_calc_temp_ex+0x66d>
+10001e75: 6a 01                        	push	0x1
+10001e77: e8 de 03 00 00               	call	0x1000225a <yf_calc_temp_ex+0xa4a>
+10001e7c: 59                           	pop	ecx
+10001e7d: 68 09 04 00 c0               	push	0xc0000409
+10001e82: ff 15 28 30 00 10            	call	dword ptr [0x10003028]
+10001e88: 50                           	push	eax
+10001e89: ff 15 2c 30 00 10            	call	dword ptr [0x1000302c]
+10001e8f: c9                           	leave
+10001e90: c3                           	ret
+10001e91: 68 3c 43 00 10               	push	0x1000433c
+10001e96: e8 c5 03 00 00               	call	0x10002260 <yf_calc_temp_ex+0xa50>
+10001e9b: 59                           	pop	ecx
+10001e9c: c3                           	ret
+10001e9d: 6a 14                        	push	0x14
+10001e9f: 68 00 32 00 10               	push	0x10003200
+10001ea4: e8 97 02 00 00               	call	0x10002140 <yf_calc_temp_ex+0x930>
+10001ea9: ff 35 54 43 00 10            	push	dword ptr [0x10004354]
+10001eaf: 8b 35 00 30 00 10            	mov	esi, dword ptr [0x10003000]
+10001eb5: ff d6                        	call	esi
+10001eb7: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001eba: 83 f8 ff                     	cmp	eax, -0x1
+10001ebd: 75 0c                        	jne	0x10001ecb <yf_calc_temp_ex+0x6bb>
+10001ebf: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001ec2: ff 15 4c 30 00 10            	call	dword ptr [0x1000304c]
+10001ec8: 59                           	pop	ecx
+10001ec9: eb 64                        	jmp	0x10001f2f <yf_calc_temp_ex+0x71f>
+10001ecb: 6a 08                        	push	0x8
+10001ecd: e8 a0 03 00 00               	call	0x10002272 <yf_calc_temp_ex+0xa62>
+10001ed2: 59                           	pop	ecx
+10001ed3: 83 65 fc 00                  	and	dword ptr [ebp - 0x4], 0x0
+10001ed7: ff 35 54 43 00 10            	push	dword ptr [0x10004354]
+10001edd: ff d6                        	call	esi
+10001edf: 89 45 e4                     	mov	dword ptr [ebp - 0x1c], eax
+10001ee2: ff 35 50 43 00 10            	push	dword ptr [0x10004350]
+10001ee8: ff d6                        	call	esi
+10001eea: 89 45 e0                     	mov	dword ptr [ebp - 0x20], eax
+10001eed: 8d 45 e0                     	lea	eax, [ebp - 0x20]
+10001ef0: 50                           	push	eax
+10001ef1: 8d 45 e4                     	lea	eax, [ebp - 0x1c]
+10001ef4: 50                           	push	eax
+10001ef5: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001ef8: 8b 35 40 30 00 10            	mov	esi, dword ptr [0x10003040]
+10001efe: ff d6                        	call	esi
+10001f00: 50                           	push	eax
+10001f01: e8 66 03 00 00               	call	0x1000226c <yf_calc_temp_ex+0xa5c>
+10001f06: 83 c4 0c                     	add	esp, 0xc
+10001f09: 89 45 dc                     	mov	dword ptr [ebp - 0x24], eax
+10001f0c: ff 75 e4                     	push	dword ptr [ebp - 0x1c]
+10001f0f: ff d6                        	call	esi
+10001f11: a3 54 43 00 10               	mov	dword ptr [0x10004354], eax
+10001f16: ff 75 e0                     	push	dword ptr [ebp - 0x20]
+10001f19: ff d6                        	call	esi
+10001f1b: a3 50 43 00 10               	mov	dword ptr [0x10004350], eax
+10001f20: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+10001f27: e8 09 00 00 00               	call	0x10001f35 <yf_calc_temp_ex+0x725>
+10001f2c: 8b 45 dc                     	mov	eax, dword ptr [ebp - 0x24]
+10001f2f: e8 51 02 00 00               	call	0x10002185 <yf_calc_temp_ex+0x975>
+10001f34: c3                           	ret
+10001f35: 6a 08                        	push	0x8
+10001f37: e8 2a 03 00 00               	call	0x10002266 <yf_calc_temp_ex+0xa56>
+10001f3c: 59                           	pop	ecx
+10001f3d: c3                           	ret
+10001f3e: 8b ff                        	mov	edi, edi
+10001f40: 55                           	push	ebp
+10001f41: 8b ec                        	mov	ebp, esp
+10001f43: ff 75 08                     	push	dword ptr [ebp + 0x8]
+10001f46: e8 52 ff ff ff               	call	0x10001e9d <yf_calc_temp_ex+0x68d>
+10001f4b: f7 d8                        	neg	eax
+10001f4d: 1b c0                        	sbb	eax, eax
+10001f4f: f7 d8                        	neg	eax
+10001f51: 59                           	pop	ecx
+10001f52: 48                           	dec	eax
+10001f53: 5d                           	pop	ebp
+10001f54: c3                           	ret
+10001f55: 8b ff                        	mov	edi, edi
+10001f57: 56                           	push	esi
+10001f58: b8 c8 31 00 10               	mov	eax, 0x100031c8
+10001f5d: be c8 31 00 10               	mov	esi, 0x100031c8
+10001f62: 57                           	push	edi
+10001f63: 8b f8                        	mov	edi, eax
+10001f65: 3b c6                        	cmp	eax, esi
+10001f67: 73 0f                        	jae	0x10001f78 <yf_calc_temp_ex+0x768>
+10001f69: 8b 07                        	mov	eax, dword ptr [edi]
+10001f6b: 85 c0                        	test	eax, eax
+10001f6d: 74 02                        	je	0x10001f71 <yf_calc_temp_ex+0x761>
+10001f6f: ff d0                        	call	eax
+10001f71: 83 c7 04                     	add	edi, 0x4
+10001f74: 3b fe                        	cmp	edi, esi
+10001f76: 72 f1                        	jb	0x10001f69 <yf_calc_temp_ex+0x759>
+10001f78: 5f                           	pop	edi
+10001f79: 5e                           	pop	esi
+10001f7a: c3                           	ret
+10001f7b: 8b ff                        	mov	edi, edi
+10001f7d: 56                           	push	esi
+10001f7e: b8 d0 31 00 10               	mov	eax, 0x100031d0
+10001f83: be d0 31 00 10               	mov	esi, 0x100031d0
+10001f88: 57                           	push	edi
+10001f89: 8b f8                        	mov	edi, eax
+10001f8b: 3b c6                        	cmp	eax, esi
+10001f8d: 73 0f                        	jae	0x10001f9e <yf_calc_temp_ex+0x78e>
+10001f8f: 8b 07                        	mov	eax, dword ptr [edi]
+10001f91: 85 c0                        	test	eax, eax
+10001f93: 74 02                        	je	0x10001f97 <yf_calc_temp_ex+0x787>
+10001f95: ff d0                        	call	eax
+10001f97: 83 c7 04                     	add	edi, 0x4
+10001f9a: 3b fe                        	cmp	edi, esi
+10001f9c: 72 f1                        	jb	0x10001f8f <yf_calc_temp_ex+0x77f>
+10001f9e: 5f                           	pop	edi
+10001f9f: 5e                           	pop	esi
+10001fa0: c3                           	ret
+10001fa1: cc                           	int3
+10001fa2: cc                           	int3
+10001fa3: cc                           	int3
+10001fa4: cc                           	int3
+10001fa5: cc                           	int3
+10001fa6: cc                           	int3
+10001fa7: cc                           	int3
+10001fa8: cc                           	int3
+10001fa9: cc                           	int3
+10001faa: cc                           	int3
+10001fab: cc                           	int3
+10001fac: cc                           	int3
+10001fad: cc                           	int3
+10001fae: cc                           	int3
+10001faf: cc                           	int3
+10001fb0: 8b ff                        	mov	edi, edi
+10001fb2: 55                           	push	ebp
+10001fb3: 8b ec                        	mov	ebp, esp
+10001fb5: 8b 4d 08                     	mov	ecx, dword ptr [ebp + 0x8]
+10001fb8: b8 4d 5a 00 00               	mov	eax, 0x5a4d
+10001fbd: 66 39 01                     	cmp	word ptr [ecx], ax
+10001fc0: 74 04                        	je	0x10001fc6 <yf_calc_temp_ex+0x7b6>
+10001fc2: 33 c0                        	xor	eax, eax
+10001fc4: 5d                           	pop	ebp
+10001fc5: c3                           	ret
+10001fc6: 8b 41 3c                     	mov	eax, dword ptr [ecx + 0x3c]
+10001fc9: 03 c1                        	add	eax, ecx
+10001fcb: 81 38 50 45 00 00            	cmp	dword ptr [eax], 0x4550
+10001fd1: 75 ef                        	jne	0x10001fc2 <yf_calc_temp_ex+0x7b2>
+10001fd3: 33 d2                        	xor	edx, edx
+10001fd5: b9 0b 01 00 00               	mov	ecx, 0x10b
+10001fda: 66 39 48 18                  	cmp	word ptr [eax + 0x18], cx
+10001fde: 0f 94 c2                     	sete	dl
+10001fe1: 8b c2                        	mov	eax, edx
+10001fe3: 5d                           	pop	ebp
+10001fe4: c3                           	ret
+10001fe5: cc                           	int3
+10001fe6: cc                           	int3
+10001fe7: cc                           	int3
+10001fe8: cc                           	int3
+10001fe9: cc                           	int3
+10001fea: cc                           	int3
+10001feb: cc                           	int3
+10001fec: cc                           	int3
+10001fed: cc                           	int3
+10001fee: cc                           	int3
+10001fef: cc                           	int3
+10001ff0: 8b ff                        	mov	edi, edi
+10001ff2: 55                           	push	ebp
+10001ff3: 8b ec                        	mov	ebp, esp
+10001ff5: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10001ff8: 8b 48 3c                     	mov	ecx, dword ptr [eax + 0x3c]
+10001ffb: 03 c8                        	add	ecx, eax
+10001ffd: 0f b7 41 14                  	movzx	eax, word ptr [ecx + 0x14]
+10002001: 53                           	push	ebx
+10002002: 56                           	push	esi
+10002003: 0f b7 71 06                  	movzx	esi, word ptr [ecx + 0x6]
+10002007: 33 d2                        	xor	edx, edx
+10002009: 57                           	push	edi
+1000200a: 8d 44 08 18                  	lea	eax, [eax + ecx + 0x18]
+1000200e: 85 f6                        	test	esi, esi
+10002010: 74 1b                        	je	0x1000202d <yf_calc_temp_ex+0x81d>
+10002012: 8b 7d 0c                     	mov	edi, dword ptr [ebp + 0xc]
+10002015: 8b 48 0c                     	mov	ecx, dword ptr [eax + 0xc]
+10002018: 3b f9                        	cmp	edi, ecx
+1000201a: 72 09                        	jb	0x10002025 <yf_calc_temp_ex+0x815>
+1000201c: 8b 58 08                     	mov	ebx, dword ptr [eax + 0x8]
+1000201f: 03 d9                        	add	ebx, ecx
+10002021: 3b fb                        	cmp	edi, ebx
+10002023: 72 0a                        	jb	0x1000202f <yf_calc_temp_ex+0x81f>
+10002025: 42                           	inc	edx
+10002026: 83 c0 28                     	add	eax, 0x28
+10002029: 3b d6                        	cmp	edx, esi
+1000202b: 72 e8                        	jb	0x10002015 <yf_calc_temp_ex+0x805>
+1000202d: 33 c0                        	xor	eax, eax
+1000202f: 5f                           	pop	edi
+10002030: 5e                           	pop	esi
+10002031: 5b                           	pop	ebx
+10002032: 5d                           	pop	ebp
+10002033: c3                           	ret
+10002034: cc                           	int3
+10002035: cc                           	int3
+10002036: cc                           	int3
+10002037: cc                           	int3
+10002038: cc                           	int3
+10002039: cc                           	int3
+1000203a: cc                           	int3
+1000203b: cc                           	int3
+1000203c: cc                           	int3
+1000203d: cc                           	int3
+1000203e: cc                           	int3
+1000203f: cc                           	int3
+10002040: 8b ff                        	mov	edi, edi
+10002042: 55                           	push	ebp
+10002043: 8b ec                        	mov	ebp, esp
+10002045: 6a fe                        	push	-0x2
+10002047: 68 20 32 00 10               	push	0x10003220
+1000204c: 68 99 21 00 10               	push	0x10002199
+10002051: 64 a1 00 00 00 00            	mov	eax, dword ptr fs:[0x0]
+10002057: 50                           	push	eax
+10002058: 83 ec 08                     	sub	esp, 0x8
+1000205b: 53                           	push	ebx
+1000205c: 56                           	push	esi
+1000205d: 57                           	push	edi
+1000205e: a1 00 40 00 10               	mov	eax, dword ptr [0x10004000]
+10002063: 31 45 f8                     	xor	dword ptr [ebp - 0x8], eax
+10002066: 33 c5                        	xor	eax, ebp
+10002068: 50                           	push	eax
+10002069: 8d 45 f0                     	lea	eax, [ebp - 0x10]
+1000206c: 64 a3 00 00 00 00            	mov	dword ptr fs:[0x0], eax
+10002072: 89 65 e8                     	mov	dword ptr [ebp - 0x18], esp
+10002075: c7 45 fc 00 00 00 00         	mov	dword ptr [ebp - 0x4], 0x0
+1000207c: 68 00 00 00 10               	push	0x10000000
+10002081: e8 2a ff ff ff               	call	0x10001fb0 <yf_calc_temp_ex+0x7a0>
+10002086: 83 c4 04                     	add	esp, 0x4
+10002089: 85 c0                        	test	eax, eax
+1000208b: 74 54                        	je	0x100020e1 <yf_calc_temp_ex+0x8d1>
+1000208d: 8b 45 08                     	mov	eax, dword ptr [ebp + 0x8]
+10002090: 2d 00 00 00 10               	sub	eax, 0x10000000
+10002095: 50                           	push	eax
+10002096: 68 00 00 00 10               	push	0x10000000
+1000209b: e8 50 ff ff ff               	call	0x10001ff0 <yf_calc_temp_ex+0x7e0>
+100020a0: 83 c4 08                     	add	esp, 0x8
+100020a3: 85 c0                        	test	eax, eax
+100020a5: 74 3a                        	je	0x100020e1 <yf_calc_temp_ex+0x8d1>
+100020a7: 8b 40 24                     	mov	eax, dword ptr [eax + 0x24]
+100020aa: c1 e8 1f                     	shr	eax, 0x1f
+100020ad: f7 d0                        	not	eax
+100020af: 83 e0 01                     	and	eax, 0x1
+100020b2: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+100020b9: 8b 4d f0                     	mov	ecx, dword ptr [ebp - 0x10]
+100020bc: 64 89 0d 00 00 00 00         	mov	dword ptr fs:[0x0], ecx
+100020c3: 59                           	pop	ecx
+100020c4: 5f                           	pop	edi
+100020c5: 5e                           	pop	esi
+100020c6: 5b                           	pop	ebx
+100020c7: 8b e5                        	mov	esp, ebp
+100020c9: 5d                           	pop	ebp
+100020ca: c3                           	ret
+100020cb: 8b 45 ec                     	mov	eax, dword ptr [ebp - 0x14]
+100020ce: 8b 08                        	mov	ecx, dword ptr [eax]
+100020d0: 33 d2                        	xor	edx, edx
+100020d2: 81 39 05 00 00 c0            	cmp	dword ptr [ecx], 0xc0000005
+100020d8: 0f 94 c2                     	sete	dl
+100020db: 8b c2                        	mov	eax, edx
+100020dd: c3                           	ret
+100020de: 8b 65 e8                     	mov	esp, dword ptr [ebp - 0x18]
+100020e1: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+100020e8: 33 c0                        	xor	eax, eax
+100020ea: 8b 4d f0                     	mov	ecx, dword ptr [ebp - 0x10]
+100020ed: 64 89 0d 00 00 00 00         	mov	dword ptr fs:[0x0], ecx
+100020f4: 59                           	pop	ecx
+100020f5: 5f                           	pop	edi
+100020f6: 5e                           	pop	esi
+100020f7: 5b                           	pop	ebx
+100020f8: 8b e5                        	mov	esp, ebp
+100020fa: 5d                           	pop	ebp
+100020fb: c3                           	ret
+100020fc: ff 25 70 30 00 10            	jmp	dword ptr [0x10003070]
+10002102: ff 25 6c 30 00 10            	jmp	dword ptr [0x1000306c]
+10002108: ff 25 68 30 00 10            	jmp	dword ptr [0x10003068]
+1000210e: ff 25 64 30 00 10            	jmp	dword ptr [0x10003064]
+10002114: 8b ff                        	mov	edi, edi
+10002116: 55                           	push	ebp
+10002117: 8b ec                        	mov	ebp, esp
+10002119: 83 7d 0c 01                  	cmp	dword ptr [ebp + 0xc], 0x1
+1000211d: 75 12                        	jne	0x10002131 <yf_calc_temp_ex+0x921>
+1000211f: 83 3d b0 30 00 10 00         	cmp	dword ptr [0x100030b0], 0x0
+10002126: 75 09                        	jne	0x10002131 <yf_calc_temp_ex+0x921>
+10002128: ff 75 08                     	push	dword ptr [ebp + 0x8]
+1000212b: ff 15 18 30 00 10            	call	dword ptr [0x10003018]
+10002131: 33 c0                        	xor	eax, eax
+10002133: 40                           	inc	eax
+10002134: 5d                           	pop	ebp
+10002135: c2 0c 00                     	ret	0xc
+10002138: cc                           	int3
+10002139: cc                           	int3
+1000213a: cc                           	int3
+1000213b: cc                           	int3
+1000213c: cc                           	int3
+1000213d: cc                           	int3
+1000213e: cc                           	int3
+1000213f: cc                           	int3
+10002140: 68 99 21 00 10               	push	0x10002199
+10002145: 64 ff 35 00 00 00 00         	push	dword ptr fs:[0x0]
+1000214c: 8b 44 24 10                  	mov	eax, dword ptr [esp + 0x10]
+10002150: 89 6c 24 10                  	mov	dword ptr [esp + 0x10], ebp
+10002154: 8d 6c 24 10                  	lea	ebp, [esp + 0x10]
+10002158: 2b e0                        	sub	esp, eax
+1000215a: 53                           	push	ebx
+1000215b: 56                           	push	esi
+1000215c: 57                           	push	edi
+1000215d: a1 00 40 00 10               	mov	eax, dword ptr [0x10004000]
+10002162: 31 45 fc                     	xor	dword ptr [ebp - 0x4], eax
+10002165: 33 c5                        	xor	eax, ebp
+10002167: 50                           	push	eax
+10002168: 89 65 e8                     	mov	dword ptr [ebp - 0x18], esp
+1000216b: ff 75 f8                     	push	dword ptr [ebp - 0x8]
+1000216e: 8b 45 fc                     	mov	eax, dword ptr [ebp - 0x4]
+10002171: c7 45 fc fe ff ff ff         	mov	dword ptr [ebp - 0x4], 0xfffffffe
+10002178: 89 45 f8                     	mov	dword ptr [ebp - 0x8], eax
+1000217b: 8d 45 f0                     	lea	eax, [ebp - 0x10]
+1000217e: 64 a3 00 00 00 00            	mov	dword ptr fs:[0x0], eax
+10002184: c3                           	ret
+10002185: 8b 4d f0                     	mov	ecx, dword ptr [ebp - 0x10]
+10002188: 64 89 0d 00 00 00 00         	mov	dword ptr fs:[0x0], ecx
+1000218f: 59                           	pop	ecx
+10002190: 5f                           	pop	edi
+10002191: 5f                           	pop	edi
+10002192: 5e                           	pop	esi
+10002193: 5b                           	pop	ebx
+10002194: 8b e5                        	mov	esp, ebp
+10002196: 5d                           	pop	ebp
+10002197: 51                           	push	ecx
+10002198: c3                           	ret
+10002199: 8b ff                        	mov	edi, edi
+1000219b: 55                           	push	ebp
+1000219c: 8b ec                        	mov	ebp, esp
+1000219e: ff 75 14                     	push	dword ptr [ebp + 0x14]
+100021a1: ff 75 10                     	push	dword ptr [ebp + 0x10]
+100021a4: ff 75 0c                     	push	dword ptr [ebp + 0xc]
+100021a7: ff 75 08                     	push	dword ptr [ebp + 0x8]
+100021aa: 68 eb 19 00 10               	push	0x100019eb
+100021af: 68 00 40 00 10               	push	0x10004000
+100021b4: e8 bf 00 00 00               	call	0x10002278 <yf_calc_temp_ex+0xa68>
+100021b9: 83 c4 18                     	add	esp, 0x18
+100021bc: 5d                           	pop	ebp
+100021bd: c3                           	ret
+100021be: 8b ff                        	mov	edi, edi
+100021c0: 55                           	push	ebp
+100021c1: 8b ec                        	mov	ebp, esp
+100021c3: 83 ec 10                     	sub	esp, 0x10
+100021c6: a1 00 40 00 10               	mov	eax, dword ptr [0x10004000]
+100021cb: 83 65 f8 00                  	and	dword ptr [ebp - 0x8], 0x0
+100021cf: 83 65 fc 00                  	and	dword ptr [ebp - 0x4], 0x0
+100021d3: 53                           	push	ebx
+100021d4: 57                           	push	edi
+100021d5: bf 4e e6 40 bb               	mov	edi, 0xbb40e64e
+100021da: bb 00 00 ff ff               	mov	ebx, 0xffff0000
+100021df: 3b c7                        	cmp	eax, edi
+100021e1: 74 0d                        	je	0x100021f0 <yf_calc_temp_ex+0x9e0>
+100021e3: 85 c3                        	test	ebx, eax
+100021e5: 74 09                        	je	0x100021f0 <yf_calc_temp_ex+0x9e0>
+100021e7: f7 d0                        	not	eax
+100021e9: a3 04 40 00 10               	mov	dword ptr [0x10004004], eax
+100021ee: eb 65                        	jmp	0x10002255 <yf_calc_temp_ex+0xa45>
+100021f0: 56                           	push	esi
+100021f1: 8d 45 f8                     	lea	eax, [ebp - 0x8]
+100021f4: 50                           	push	eax
+100021f5: ff 15 04 30 00 10            	call	dword ptr [0x10003004]
+100021fb: 8b 75 fc                     	mov	esi, dword ptr [ebp - 0x4]
+100021fe: 33 75 f8                     	xor	esi, dword ptr [ebp - 0x8]
+10002201: ff 15 08 30 00 10            	call	dword ptr [0x10003008]
+10002207: 33 f0                        	xor	esi, eax
+10002209: ff 15 0c 30 00 10            	call	dword ptr [0x1000300c]
+1000220f: 33 f0                        	xor	esi, eax
+10002211: ff 15 10 30 00 10            	call	dword ptr [0x10003010]
+10002217: 33 f0                        	xor	esi, eax
+10002219: 8d 45 f0                     	lea	eax, [ebp - 0x10]
+1000221c: 50                           	push	eax
+1000221d: ff 15 14 30 00 10            	call	dword ptr [0x10003014]
+10002223: 8b 45 f4                     	mov	eax, dword ptr [ebp - 0xc]
+10002226: 33 45 f0                     	xor	eax, dword ptr [ebp - 0x10]
+10002229: 33 f0                        	xor	esi, eax
+1000222b: 3b f7                        	cmp	esi, edi
+1000222d: 75 07                        	jne	0x10002236 <yf_calc_temp_ex+0xa26>
+1000222f: be 4f e6 40 bb               	mov	esi, 0xbb40e64f
+10002234: eb 10                        	jmp	0x10002246 <yf_calc_temp_ex+0xa36>
+10002236: 85 f3                        	test	ebx, esi
+10002238: 75 0c                        	jne	0x10002246 <yf_calc_temp_ex+0xa36>
+1000223a: 8b c6                        	mov	eax, esi
+1000223c: 0d 11 47 00 00               	or	eax, 0x4711
+10002241: c1 e0 10                     	shl	eax, 0x10
+10002244: 0b f0                        	or	esi, eax
+10002246: 89 35 00 40 00 10            	mov	dword ptr [0x10004000], esi
+1000224c: f7 d6                        	not	esi
+1000224e: 89 35 04 40 00 10            	mov	dword ptr [0x10004004], esi
+10002254: 5e                           	pop	esi
+10002255: 5f                           	pop	edi
+10002256: 5b                           	pop	ebx
+10002257: c9                           	leave
+10002258: c3                           	ret
+10002259: cc                           	int3
+1000225a: ff 25 60 30 00 10            	jmp	dword ptr [0x10003060]
+10002260: ff 25 5c 30 00 10            	jmp	dword ptr [0x1000305c]
+10002266: ff 25 58 30 00 10            	jmp	dword ptr [0x10003058]
+1000226c: ff 25 54 30 00 10            	jmp	dword ptr [0x10003054]
+10002272: ff 25 50 30 00 10            	jmp	dword ptr [0x10003050]
+10002278: ff 25 48 30 00 10            	jmp	dword ptr [0x10003048]
+1000227e: cc                           	int3
+1000227f: cc                           	int3
+10002280: ff 25 84 30 00 10            	jmp	dword ptr [0x10003084]
+10002286: ff 25 88 30 00 10            	jmp	dword ptr [0x10003088]
+1000228c: cc                           	int3
+1000228d: cc                           	int3
+1000228e: cc                           	int3
+1000228f: cc                           	int3
+10002290: 83 3d 44 43 00 10 00         	cmp	dword ptr [0x10004344], 0x0
+10002297: 74 2d                        	je	0x100022c6 <yf_calc_temp_ex+0xab6>
+10002299: 55                           	push	ebp
+1000229a: 8b ec                        	mov	ebp, esp
+1000229c: 83 ec 08                     	sub	esp, 0x8
+1000229f: 83 e4 f8                     	and	esp, -0x8
+100022a2: dd 1c 24                     	fstp	qword ptr [esp]
+100022a5: f2 0f 2c 04 24               	cvttsd2si	eax, qword ptr [esp]
+100022aa: c9                           	leave
+100022ab: c3                           	ret
+100022ac: 83 3d 44 43 00 10 00         	cmp	dword ptr [0x10004344], 0x0
+100022b3: 74 11                        	je	0x100022c6 <yf_calc_temp_ex+0xab6>
+100022b5: 83 ec 04                     	sub	esp, 0x4
+100022b8: d9 3c 24                     	fnstcw	word ptr [esp]
+100022bb: 58                           	pop	eax
+100022bc: 66 83 e0 7f                  	and	ax, 0x7f
+100022c0: 66 83 f8 7f                  	cmp	ax, 0x7f
+100022c4: 74 d3                        	je	0x10002299 <yf_calc_temp_ex+0xa89>
+100022c6: 55                           	push	ebp
+100022c7: 8b ec                        	mov	ebp, esp
+100022c9: 83 ec 20                     	sub	esp, 0x20
+100022cc: 83 e4 f0                     	and	esp, -0x10
+100022cf: d9 c0                        	fld	st(0)
+100022d1: d9 54 24 18                  	fst	dword ptr [esp + 0x18]
+100022d5: df 7c 24 10                  	fistp	qword ptr [esp + 0x10]
+100022d9: df 6c 24 10                  	fild	qword ptr [esp + 0x10]
+100022dd: 8b 54 24 18                  	mov	edx, dword ptr [esp + 0x18]
+100022e1: 8b 44 24 10                  	mov	eax, dword ptr [esp + 0x10]
+100022e5: 85 c0                        	test	eax, eax
+100022e7: 74 3c                        	je	0x10002325 <yf_calc_temp_ex+0xb15>
+100022e9: de e9                        	fsubp	st(1), st
+100022eb: 85 d2                        	test	edx, edx
+100022ed: 79 1e                        	jns	0x1000230d <yf_calc_temp_ex+0xafd>
+100022ef: d9 1c 24                     	fstp	dword ptr [esp]
+100022f2: 8b 0c 24                     	mov	ecx, dword ptr [esp]
+100022f5: 81 f1 00 00 00 80            	xor	ecx, 0x80000000
+100022fb: 81 c1 ff ff ff 7f            	add	ecx, 0x7fffffff
+10002301: 83 d0 00                     	adc	eax, 0x0
+10002304: 8b 54 24 14                  	mov	edx, dword ptr [esp + 0x14]
+10002308: 83 d2 00                     	adc	edx, 0x0
+1000230b: eb 2c                        	jmp	0x10002339 <yf_calc_temp_ex+0xb29>
+1000230d: d9 1c 24                     	fstp	dword ptr [esp]
+10002310: 8b 0c 24                     	mov	ecx, dword ptr [esp]
+10002313: 81 c1 ff ff ff 7f            	add	ecx, 0x7fffffff
+10002319: 83 d8 00                     	sbb	eax, 0x0
+1000231c: 8b 54 24 14                  	mov	edx, dword ptr [esp + 0x14]
+10002320: 83 da 00                     	sbb	edx, 0x0
+10002323: eb 14                        	jmp	0x10002339 <yf_calc_temp_ex+0xb29>
+10002325: 8b 54 24 14                  	mov	edx, dword ptr [esp + 0x14]
+10002329: f7 c2 ff ff ff 7f            	test	edx, 0x7fffffff
+1000232f: 75 b8                        	jne	0x100022e9 <yf_calc_temp_ex+0xad9>
+10002331: d9 5c 24 18                  	fstp	dword ptr [esp + 0x18]
+10002335: d9 5c 24 18                  	fstp	dword ptr [esp + 0x18]
+10002339: c9                           	leave
+1000233a: c3                           	ret
+1000233b: 6a 0a                        	push	0xa
+1000233d: ff 15 3c 30 00 10            	call	dword ptr [0x1000303c]
+10002343: a3 44 43 00 10               	mov	dword ptr [0x10004344], eax
+10002348: 33 c0                        	xor	eax, eax
+1000234a: c3                           	ret

@@ -1,0 +1,251 @@
+
+YFCalibrate.dll:	file format coff-i386
+Characteristics 0x2102
+	executable
+	32 bit words
+	DLL
+
+Time/Date               Thu Apr 14 16:53:05 2016
+Magic                   010b	(PE32)
+MajorLinkerVersion      10
+MinorLinkerVersion      0
+SizeOfCode              0000a600
+SizeOfInitializedData   00005e00
+SizeOfUninitializedData 00000000
+AddressOfEntryPoint     0000a2be
+BaseOfCode              00001000
+BaseOfData              0000c000
+ImageBase               10000000
+SectionAlignment        00001000
+FileAlignment           00000200
+MajorOSystemVersion     5
+MinorOSystemVersion     1
+MajorImageVersion       0
+MinorImageVersion       0
+MajorSubsystemVersion   5
+MinorSubsystemVersion   1
+Win32Version            00000000
+SizeOfImage             00014000
+SizeOfHeaders           00000400
+CheckSum                00017c2a
+Subsystem               00000002	(Windows GUI)
+DllCharacteristics      00000140
+					DYNAMIC_BASE
+					NX_COMPAT
+SizeOfStackReserve      00100000
+SizeOfStackCommit       00001000
+SizeOfHeapReserve       00100000
+SizeOfHeapCommit        00001000
+LoaderFlags             00000000
+NumberOfRvaAndSizes     00000010
+
+The Data Directory
+Entry 0 0000f070 000007e5 Export Directory [.edata (or where ever we found it)]
+Entry 1 0000e704 000000b4 Import Directory [parts of .idata]
+Entry 2 00011000 000004c0 Resource Directory [.rsrc]
+Entry 3 00000000 00000000 Exception Directory [.pdata]
+Entry 4 00000000 00000000 Security Directory
+Entry 5 00012000 00000fd0 Base Relocation Directory [.reloc]
+Entry 6 0000c1b0 0000001c Debug Directory
+Entry 7 00000000 00000000 Description Directory
+Entry 8 00000000 00000000 Special Directory
+Entry 9 00000000 00000000 Thread Storage Directory [.tls]
+Entry a 0000c8f8 00000040 Load Configuration Directory
+Entry b 00000000 00000000 Bound Import Directory
+Entry c 0000c000 00000158 Import Address Table Directory
+Entry d 00000000 00000000 Delay Import Directory
+Entry e 00000000 00000000 CLR Runtime Header
+Entry f 00000000 00000000 Reserved
+
+Load configuration:
+  Timestamp: 0
+  Major Version: 0
+  Minor Version: 0
+  GlobalFlags Clear: 0
+  GlobalFlags Set: 0
+  Critical Section Default Timeout: 0
+  Decommit Free Block Threshold: 0
+  Decommit Total Free Threshold: 0
+  Lock Prefix Table: 0
+  Maximum Allocation Size: 0
+  Virtual Memory Threshold: 0
+  Process Affinity Mask: 0
+  Process Heap Flags: 0
+  CSD Version: 0
+  Security Cookie: 268501016
+  SEH Table: 268490368
+  SEH Count: 45
+
+SEH Table: 0x1000a449 0x1000a960 0x1000a980 0x1000a9a0 0x1000a9c8 0x1000aa14 0x1000aa5c 0x1000aaac 0x1000aaf4 0x1000ab3c 0x1000ab6c 0x1000ab98 0x1000abc0 0x1000abe0 0x1000ac2c 0x1000ac7a 0x1000acca 0x1000ad1c 0x1000ad48 0x1000ad91 0x1000adc8 0x1000adf8 0x1000ae30 0x1000ae6c 0x1000ae98 0x1000aed0 0x1000aef8 0x1000af30 0x1000af68 0x1000afb4 0x1000aff4 0x1000b029 0x1000b073 0x1000b0ab 0x1000b0db 0x1000b108 0x1000b140 0x1000b188 0x1000b20c 0x1000b240 0x1000b278 0x1000b2ac 0x1000b2d8 0x1000b308 0x1000b338
+
+
+The Import Tables:
+  lookup 0000e7b8 time 00000000 fwd 00000000 name 0000e9a6 addr 0000c000
+
+    DLL Name: KERNEL32.dll
+    Hint/Ord  Name
+        1022  ReleaseSemaphore
+          82  CloseHandle
+         171  CreateSemaphoreA
+        1273  WaitForSingleObject
+         633  GetSystemTimeAsFileTime
+         532  GetModuleFileNameW
+        1271  WaitForMultipleObjects
+         449  GetCurrentProcessId
+         453  GetCurrentThreadId
+         659  GetTickCount
+         935  QueryPerformanceCounter
+         222  DisableThreadLibraryCalls
+         768  IsDebuggerPresent
+        1189  SetUnhandledExceptionFilter
+        1235  UnhandledExceptionFilter
+         448  GetCurrentProcess
+        1216  TerminateProcess
+         745  InterlockedCompareExchange
+        1202  Sleep
+         748  InterlockedExchange
+         202  DecodePointer
+         234  EncodePointer
+         772  IsProcessorFeaturePresent
+
+  lookup 0000e818 time 00000000 fwd 00000000 name 0000e9f4 addr 0000c060
+
+    DLL Name: MSVCP100.dll
+    Hint/Ord  Name
+         652  ?_Xlength_error@std@@YAXPBD@Z
+         654  ?_Xout_of_range@std@@YAXPBD@Z
+
+  lookup 0000e8d0 time 00000000 fwd 00000000 name 0000ea2c addr 0000c118
+
+    DLL Name: boost_date_time-vc100-mt-1_52.dll
+    Hint/Ord  Name
+           2  ??0greg_month@gregorian@boost@@QAE@G@Z
+
+  lookup 0000e8d8 time 00000000 fwd 00000000 name 0000eac6 addr 0000c120
+
+    DLL Name: boost_system-vc100-mt-1_52.dll
+    Hint/Ord  Name
+           1  ?system_category@system@boost@@YAABVerror_category@12@XZ
+           0  ?generic_category@system@boost@@YAABVerror_category@12@XZ
+
+  lookup 0000e8c8 time 00000000 fwd 00000000 name 0000eb8a addr 0000c110
+
+    DLL Name: YFCommon.dll
+    Hint/Ord  Name
+           9  ?yf_wstr_to_astr@YFCommon@@YG_NABV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+
+  lookup 0000e8e4 time 00000000 fwd 00000000 name 0000ec30 addr 0000c12c
+
+    DLL Name: lua51.dll
+    Hint/Ord  Name
+          22  luaL_newstate
+         100  lua_settop
+          38  lua_close
+          48  lua_getfield
+          24  luaL_openlibs
+           9  luaL_checknumber
+          36  lua_call
+          19  luaL_loadfile
+          71  lua_pcall
+          79  lua_pushnumber
+
+  lookup 0000e8bc time 00000000 fwd 00000000 name 0000ec64 addr 0000c104
+
+    DLL Name: YFCodec.dll
+    Hint/Ord  Name
+           8  yf_lz77_uncompress
+           7  yf_lz77_compress
+
+  lookup 0000e824 time 00000000 fwd 00000000 name 0000ed98 addr 0000c06c
+
+    DLL Name: MSVCR100.dll
+    Hint/Ord  Name
+        1487  memcpy
+         289  _CxxThrowException
+        1491  memset
+         803  _lock
+         314  __CxxFrameHandler3
+         339  __clean_type_info_names_internal
+         269  ?what@exception@std@@UBEPBDXZ
+          93  ??1exception@std@@UAE@XZ
+          34  ??0exception@std@@QAE@ABQBD@Z
+          35  ??0exception@std@@QAE@ABQBDH@Z
+          36  ??0exception@std@@QAE@ABV01@@Z
+         673  _gmtime64
+        1489  memmove
+         238  ?_type_info_dtor_internal_method@type_info@@QAEXXZ
+         122  ??_V@YAXPAX@Z
+         984  _purecall
+         101  ??3@YAXPAX@Z
+        1398  fclose
+          99  ??2@YAPAXI@Z
+        1401  fflush
+        1417  fread
+        1430  fwrite
+        1425  fseek
+         258  ?terminate@@YAXXZ
+        1165  _unlock
+         347  __dllonexit
+        1409  fopen
+         969  _onexit
+         820  _malloc_crt
+        1419  free
+         537  _encoded_null
+         688  _initterm
+         689  _initterm_e
+         453  _amsg_exit
+         305  __CppXcptFilter
+         507  _crt_debugger_hook
+         545  _except_handler4_common
+
+Export Table:
+ DLL name: YFCalibrate.dll
+ Ordinal base: 1
+ Ordinal      RVA  Name
+       1   0x9ad0  yf_calibrate_format_data
+       2   0x8ef0  yf_calibrate_get_AD_range
+       3   0x8dd0  yf_calibrate_get_auto_compensation_info
+       4   0x8cf0  yf_calibrate_get_base_temp_compensation
+       5   0x9830  yf_calibrate_get_calibrate_temp
+       6   0x98a0  yf_calibrate_get_calibrate_temp_of_ad
+       7   0x96b0  yf_calibrate_get_calibrate_temp_of_ad_ex
+       8   0x8c30  yf_calibrate_get_calibrate_temp_of_meas
+       9   0x9a40  yf_calibrate_get_data_no_compress
+      10   0x8b30  yf_calibrate_get_detector_serial
+      11   0x92a0  yf_calibrate_get_len
+      12   0x8aa0  yf_calibrate_get_machine_serial
+      13   0x8a10  yf_calibrate_get_machine_type
+      14   0x92e0  yf_calibrate_get_measurement_grade
+      15   0x8bd0  yf_calibrate_get_product_date
+      16   0x8980  yf_calibrate_get_productor
+      17   0x9920  yf_calibrate_get_real_AD_range
+      18   0x90d0  yf_calibrate_get_sample_AD_and_temp
+      19   0x8e60  yf_calibrate_get_sample_count
+      20   0x8760  yf_calibrate_get_size
+      21   0x9c00  yf_calibrate_get_temp_lesser_interval_stable
+      22   0x8fb0  yf_calibrate_get_temp_range
+      23   0x86a0  yf_calibrate_init
+      24   0x9210  yf_calibrate_is_support_measurement_grade
+      25   0x9260  yf_calibrate_is_valid_len
+      26   0x9280  yf_calibrate_is_valid_measgrade
+      27   0x8780  yf_calibrate_load_file
+      28   0x9950  yf_calibrate_parse_data
+      29   0x8890  yf_calibrate_save_calibrate
+      30   0x8f60  yf_calibrate_set_AD_range
+      31   0x8e10  yf_calibrate_set_auto_compensation_info
+      32   0x8d50  yf_calibrate_set_base_temp_compensation
+      33   0x8c80  yf_calibrate_set_calibrate_temp_of_meas
+      34   0x9360  yf_calibrate_set_correct_temp
+      35   0x8b60  yf_calibrate_set_detector_serial
+      36   0x92c0  yf_calibrate_set_len
+      37   0x9330  yf_calibrate_set_len_and_measurement_grade
+      38   0x8ad0  yf_calibrate_set_machine_serial
+      39   0x8a40  yf_calibrate_set_machine_type
+      40   0x9300  yf_calibrate_set_measurement_grade
+      41   0x8c00  yf_calibrate_set_product_date
+      42   0x89b0  yf_calibrate_set_productor
+      43   0x9170  yf_calibrate_set_sample_AD_and_temp
+      44   0x8eb0  yf_calibrate_set_sample_count
+      45   0x9b90  yf_calibrate_set_temp_lesser_interval_stable
+      46   0x9040  yf_calibrate_set_temp_range
+      47   0x8720  yf_calibrate_uninit

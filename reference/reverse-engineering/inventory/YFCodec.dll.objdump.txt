@@ -1,0 +1,143 @@
+
+YFCodec.dll:	file format coff-i386
+Characteristics 0x2102
+	executable
+	32 bit words
+	DLL
+
+Time/Date               Thu Apr 14 16:50:49 2016
+Magic                   010b	(PE32)
+MajorLinkerVersion      10
+MinorLinkerVersion      0
+SizeOfCode              00002800
+SizeOfInitializedData   00001200
+SizeOfUninitializedData 00000000
+AddressOfEntryPoint     000030de
+BaseOfCode              00001000
+BaseOfData              00004000
+ImageBase               10000000
+SectionAlignment        00001000
+FileAlignment           00000200
+MajorOSystemVersion     5
+MinorOSystemVersion     1
+MajorImageVersion       0
+MinorImageVersion       0
+MajorSubsystemVersion   5
+MinorSubsystemVersion   1
+Win32Version            00000000
+SizeOfImage             00008000
+SizeOfHeaders           00000400
+CheckSum                000069b8
+Subsystem               00000002	(Windows GUI)
+DllCharacteristics      00000140
+					DYNAMIC_BASE
+					NX_COMPAT
+SizeOfStackReserve      00100000
+SizeOfStackCommit       00001000
+SizeOfHeapReserve       00100000
+SizeOfHeapCommit        00001000
+LoaderFlags             00000000
+NumberOfRvaAndSizes     00000010
+
+The Data Directory
+Entry 0 00004560 00000189 Export Directory [.edata (or where ever we found it)]
+Entry 1 000041ec 0000003c Import Directory [parts of .idata]
+Entry 2 00006000 000004b0 Resource Directory [.rsrc]
+Entry 3 00000000 00000000 Exception Directory [.pdata]
+Entry 4 00000000 00000000 Security Directory
+Entry 5 00007000 00000144 Base Relocation Directory [.reloc]
+Entry 6 000040b0 0000001c Debug Directory
+Entry 7 00000000 00000000 Description Directory
+Entry 8 00000000 00000000 Special Directory
+Entry 9 00000000 00000000 Thread Storage Directory [.tls]
+Entry a 000040d8 00000040 Load Configuration Directory
+Entry b 00000000 00000000 Bound Import Directory
+Entry c 00004000 00000094 Import Address Table Directory
+Entry d 00000000 00000000 Delay Import Directory
+Entry e 00000000 00000000 CLR Runtime Header
+Entry f 00000000 00000000 Reserved
+
+Load configuration:
+  Timestamp: 0
+  Major Version: 0
+  Minor Version: 0
+  GlobalFlags Clear: 0
+  GlobalFlags Set: 0
+  Critical Section Default Timeout: 0
+  Decommit Free Block Threshold: 0
+  Decommit Total Free Threshold: 0
+  Lock Prefix Table: 0
+  Maximum Allocation Size: 0
+  Virtual Memory Threshold: 0
+  Process Affinity Mask: 0
+  Process Heap Flags: 0
+  CSD Version: 0
+  Security Cookie: 268455936
+  SEH Table: 268452208
+  SEH Count: 1
+
+SEH Table: 0x10003509
+
+
+The Import Tables:
+  lookup 0000426c time 00000000 fwd 00000000 name 000042e6 addr 00004044
+
+    DLL Name: MSVCR100.dll
+    Hint/Ord  Name
+         969  _onexit
+        1489  memmove
+         803  _lock
+         347  __dllonexit
+        1165  _unlock
+         339  __clean_type_info_names_internal
+         507  _crt_debugger_hook
+         305  __CppXcptFilter
+         453  _amsg_exit
+         689  _initterm_e
+         688  _initterm
+         537  _encoded_null
+        1419  free
+         820  _malloc_crt
+          99  ??2@YAPAXI@Z
+         122  ??_V@YAXPAX@Z
+         545  _except_handler4_common
+        1491  memset
+        1487  memcpy
+
+  lookup 00004228 time 00000000 fwd 00000000 name 00004530 addr 00004000
+
+    DLL Name: KERNEL32.dll
+    Hint/Ord  Name
+         234  EncodePointer
+         633  GetSystemTimeAsFileTime
+         449  GetCurrentProcessId
+         453  GetCurrentThreadId
+         659  GetTickCount
+         935  QueryPerformanceCounter
+         222  DisableThreadLibraryCalls
+         768  IsDebuggerPresent
+        1189  SetUnhandledExceptionFilter
+        1235  UnhandledExceptionFilter
+         448  GetCurrentProcess
+        1216  TerminateProcess
+         745  InterlockedCompareExchange
+        1202  Sleep
+         748  InterlockedExchange
+         202  DecodePointer
+
+Export Table:
+ DLL name: YFCodec.dll
+ Ordinal base: 1
+ Ordinal      RVA  Name
+       1   0x1e20  yf_dpcm_decode
+       2   0x1d60  yf_dpcm_encode
+       3   0x2040  yf_dpcm_huff_decode
+       4   0x1ee0  yf_dpcm_huff_encode
+       5   0x2320  yf_half_inner_data_zoom
+       6   0x1ca0  yf_huffman_decode
+       7   0x1b60  yf_huffman_encode
+       8   0x1120  yf_lz77_compress
+       9   0x1330  yf_lz77_uncompress
+      10   0x2270  yf_own_decode
+      11   0x2170  yf_own_encode
+      12   0x2630  yf_quarter_inner_data_zoom

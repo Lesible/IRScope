@@ -1,0 +1,162 @@
+
+YFDrawShape.dll:	file format coff-i386
+Characteristics 0x2102
+	executable
+	32 bit words
+	DLL
+
+Time/Date               Thu Apr 14 16:50:56 2016
+Magic                   010b	(PE32)
+MajorLinkerVersion      10
+MinorLinkerVersion      0
+SizeOfCode              00008800
+SizeOfInitializedData   00002600
+SizeOfUninitializedData 00000000
+AddressOfEntryPoint     00007fe6
+BaseOfCode              00001000
+BaseOfData              0000a000
+ImageBase               10000000
+SectionAlignment        00001000
+FileAlignment           00000200
+MajorOSystemVersion     5
+MinorOSystemVersion     1
+MajorImageVersion       0
+MinorImageVersion       0
+MajorSubsystemVersion   5
+MinorSubsystemVersion   1
+Win32Version            00000000
+SizeOfImage             0000f000
+SizeOfHeaders           00000400
+CheckSum                00016e78
+Subsystem               00000002	(Windows GUI)
+DllCharacteristics      00000140
+					DYNAMIC_BASE
+					NX_COMPAT
+SizeOfStackReserve      00100000
+SizeOfStackCommit       00001000
+SizeOfHeapReserve       00100000
+SizeOfHeapCommit        00001000
+LoaderFlags             00000000
+NumberOfRvaAndSizes     00000010
+
+The Data Directory
+Entry 0 0000b1b0 000000fd Export Directory [.edata (or where ever we found it)]
+Entry 1 0000ac1c 00000064 Import Directory [parts of .idata]
+Entry 2 0000d000 000004e8 Resource Directory [.rsrc]
+Entry 3 00000000 00000000 Exception Directory [.pdata]
+Entry 4 00000000 00000000 Security Directory
+Entry 5 0000e000 000006fc Base Relocation Directory [.reloc]
+Entry 6 0000a120 0000001c Debug Directory
+Entry 7 00000000 00000000 Description Directory
+Entry 8 00000000 00000000 Special Directory
+Entry 9 00000000 00000000 Thread Storage Directory [.tls]
+Entry a 0000a1d0 00000040 Load Configuration Directory
+Entry b 00000000 00000000 Bound Import Directory
+Entry c 0000a000 000000d4 Import Address Table Directory
+Entry d 00000000 00000000 Delay Import Directory
+Entry e 00000000 00000000 CLR Runtime Header
+Entry f 00000000 00000000 Reserved
+
+Load configuration:
+  Timestamp: 0
+  Major Version: 0
+  Minor Version: 0
+  GlobalFlags Clear: 0
+  GlobalFlags Set: 0
+  Critical Section Default Timeout: 0
+  Decommit Free Block Threshold: 0
+  Decommit Total Free Threshold: 0
+  Lock Prefix Table: 0
+  Maximum Allocation Size: 0
+  Virtual Memory Threshold: 0
+  Process Affinity Mask: 0
+  Process Heap Flags: 0
+  CSD Version: 0
+  Security Cookie: 268484632
+  SEH Table: 268477232
+  SEH Count: 31
+
+SEH Table: 0x10008189 0x10008608 0x10008630 0x10008650 0x10008670 0x10008690 0x100086b0 0x100086d5 0x100086fd 0x1000872d 0x10008760 0x10008798 0x100087c8 0x100087f8 0x10008828 0x10008880 0x100088e0 0x10008940 0x10008978 0x100089aa 0x100089da 0x10008a0a 0x10008a3a 0x10008a6a 0x10008a95 0x10008aba 0x10008aea 0x10008b1a 0x10008b4a 0x10008b7a 0x10008baa
+
+
+The Import Tables:
+  lookup 0000acc8 time 00000000 fwd 00000000 name 0000ad94 addr 0000a048
+
+    DLL Name: MSVCP100.dll
+    Hint/Ord  Name
+         652  ?_Xlength_error@std@@YAXPBD@Z
+         654  ?_Xout_of_range@std@@YAXPBD@Z
+
+  lookup 0000ad44 time 00000000 fwd 00000000 name 0000adea addr 0000a0c4
+
+    DLL Name: YFFormatAnaStr.dll
+    Hint/Ord  Name
+          11  yf_parse_ana_char_a
+           9  yf_get_anas_from_str
+          10  yf_get_pts_from_ana_str
+
+  lookup 0000acd4 time 00000000 fwd 00000000 name 0000aea6 addr 0000a054
+
+    DLL Name: MSVCR100.dll
+    Hint/Ord  Name
+         688  _initterm
+         689  _initterm_e
+         453  _amsg_exit
+         305  __CppXcptFilter
+         537  _encoded_null
+         545  _except_handler4_common
+         258  ?terminate@@YAXXZ
+         238  ?_type_info_dtor_internal_method@type_info@@QAEXXZ
+         339  __clean_type_info_names_internal
+        1419  free
+         820  _malloc_crt
+         969  _onexit
+         803  _lock
+         347  __dllonexit
+        1165  _unlock
+          99  ??2@YAPAXI@Z
+         101  ??3@YAXPAX@Z
+        1489  memmove
+          36  ??0exception@std@@QAE@ABV01@@Z
+          34  ??0exception@std@@QAE@ABQBD@Z
+          93  ??1exception@std@@UAE@XZ
+         269  ?what@exception@std@@UBEPBDXZ
+         314  __CxxFrameHandler3
+         289  _CxxThrowException
+         283  _CIsqrt
+        1487  memcpy
+         507  _crt_debugger_hook
+
+  lookup 0000ac80 time 00000000 fwd 00000000 name 0000b13a addr 0000a000
+
+    DLL Name: KERNEL32.dll
+    Hint/Ord  Name
+         772  IsProcessorFeaturePresent
+         202  DecodePointer
+         748  InterlockedExchange
+        1202  Sleep
+         745  InterlockedCompareExchange
+         633  GetSystemTimeAsFileTime
+         449  GetCurrentProcessId
+         453  GetCurrentThreadId
+         659  GetTickCount
+         935  QueryPerformanceCounter
+         222  DisableThreadLibraryCalls
+         768  IsDebuggerPresent
+        1189  SetUnhandledExceptionFilter
+        1235  UnhandledExceptionFilter
+         448  GetCurrentProcess
+        1216  TerminateProcess
+         234  EncodePointer
+
+Export Table:
+ DLL name: YFDrawShape.dll
+ Ordinal base: 1
+ Ordinal      RVA  Name
+       1   0x7930  yf_calc_lines_in_ellipse
+       2   0x7950  yf_calc_pts_in_line
+       3   0x7780  yf_draw_max_point
+       4   0x77c0  yf_draw_min_point
+       5   0x7800  yf_draw_shape
+       6   0x7ac0  yf_normalize_rect
+       7   0x7970  yf_pt_in_line

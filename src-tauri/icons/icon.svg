@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="IRScope icon">
+  <defs>
+    <radialGradient id="thermal" cx="64%" cy="38%" r="68%">
+      <stop offset="0" stop-color="#5eead4"/>
+      <stop offset="0.42" stop-color="#2dd4bf"/>
+      <stop offset="0.7" stop-color="#334155"/>
+      <stop offset="1" stop-color="#18181b"/>
+    </radialGradient>
+    <linearGradient id="edge" x1="96" y1="68" x2="430" y2="448">
+      <stop offset="0" stop-color="#f4f4f5" stop-opacity=".9"/>
+      <stop offset=".55" stop-color="#5eead4" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#09090b" stop-opacity=".8"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#000000" flood-opacity=".42"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="#18181b"/>
+  <path d="M96 118c0-12 10-22 22-22h276c12 0 22 10 22 22v276c0 12-10 22-22 22H118c-12 0-22-10-22-22V118Z" fill="url(#thermal)" filter="url(#softShadow)"/>
+  <path d="M126 132h260c8 0 14 6 14 14v220c0 8-6 14-14 14H126c-8 0-14-6-14-14V146c0-8 6-14 14-14Z" fill="#18181b" opacity=".34"/>
+  <path d="M132 118h248c8 0 14 6 14 14v248c0 8-6 14-14 14H132c-8 0-14-6-14-14V132c0-8 6-14 14-14Z" fill="none" stroke="url(#edge)" stroke-width="16"/>
+
+  <path d="M171 178h36v156h-36V178Zm80 0h72c45 0 76 27 76 67 0 28-15 50-39 61l47 28h-58l-39-25h-23v25h-36V178Zm36 34v64h33c24 0 41-12 41-32s-17-32-41-32h-33Z" fill="#f4f4f5"/>
+
+  <circle cx="356" cy="168" r="34" fill="#fb553c"/>
+  <circle cx="356" cy="168" r="14" fill="#18181b"/>
+  <path d="M356 105v34M356 197v34M293 168h34M385 168h34" stroke="#fb553c" stroke-width="12" stroke-linecap="round"/>
+  <path d="M126 386 386 126" stroke="#5eead4" stroke-width="10" stroke-linecap="round" opacity=".72"/>
+</svg>
