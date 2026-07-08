@@ -51,9 +51,11 @@ When adding support for a new image shape or parser variant, add one narrow self
 - Windows x64 target: `x86_64-pc-windows-msvc`; artifacts include `release/irscope.exe` as portable output plus NSIS bundle.
 - Linux x64 target: `x86_64-unknown-linux-gnu`; artifacts include AppImage and deb bundles.
 - macOS arm64 target: `aarch64-apple-darwin`; artifact includes `.app` bundle.
+- Tauri desktop icon resources must be committed under `src-tauri/icons/`, including `icons/icon.ico` for Windows resource generation and `icons/icon.icns` for macOS bundling.
 
 ### 4. Validation & Error Matrix
 - Missing artifact path -> GitHub Actions `upload-artifact` must fail with `if-no-files-found: error`.
+- Missing `src-tauri/icons/icon.ico` -> Windows `tauri-build` fails while generating the Windows Resource file.
 - Linux dependency missing -> install WebKit/GTK/AppIndicator/rsvg/patchelf/fuse packages before Tauri build.
 
 ### 5. Good/Base/Bad Cases
