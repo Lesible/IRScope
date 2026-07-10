@@ -70,7 +70,8 @@ pub fn analyze_region(req: RegionRequest) -> Result<RegionStats, String> {
 pub fn export_csv(path: String, out_path: String) -> Result<String, String> {
     let img = ir::parse_path(Path::new(&path))?;
     let out = csv_path(Path::new(&out_path));
-    let file = File::create(&out).map_err(|e| format!("failed to create {}: {e}", out.display()))?;
+    let file =
+        File::create(&out).map_err(|e| format!("failed to create {}: {e}", out.display()))?;
     let mut writer = BufWriter::new(file);
     writer
         .write_all(b"x,y,temp\n")

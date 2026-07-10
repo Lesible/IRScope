@@ -212,9 +212,14 @@ This is the first file of standard IR
 
 当前可确认：这些字节属于 IR 私有数据结构尾部。字段完整语义仍需继续逆向 `YFIR.dll` 的结构体读写逻辑。
 
-## 6.1 Shifted Header Variant
+## 6.1 Header Prefix Variants
 
-`/Users/robot/Downloads/2020002208535580672_infrared.jpg` uses a closely related payload with a 2-byte prefix before the version field:
+Some files use the same IR header shape, but place a short format prefix before the version field. Observed prefixes:
+
+- `/Users/robot/Downloads/2020002208535580672_infrared.jpg`: 2 bytes, `e3 41`.
+- `/Users/robot/Downloads/2020001989228007424_infrared.jpg`: 3 bytes, `0a de 41`.
+
+The 2-byte sample layout is:
 
 ```text
 offset from payload  size        type                 meaning
@@ -227,7 +232,15 @@ offset from payload  size        type                 meaning
 22 + w*h*4           remaining   bytes                metadata/unknown tail, observed 158 bytes in this sample
 ```
 
-The parser should prefer the old layout when `payload[0..2] == 256` and the 14-byte timestamp is numeric. If that fails, try this shifted layout when `payload[2..4] == 256` and the shifted timestamp is numeric. Do not accept a layout that yields non-finite or physically impossible temperatures.
+Do not hard-code only the currently observed prefix lengths. A compatible parser should scan a small bounded prefix range after the JPEG EOI and accept the first candidate where:
+
+- `uint16_le(payload[prefix..prefix+2]) == 256`
+- width and height are non-zero
+- the 14-byte timestamp is numeric
+- `width * height * 4` temperature bytes fit in the file
+- sampled temperatures are finite and physically plausible
+
+The parser must not require the thermal matrix dimensions to match the JPEG preview dimensions.
 
 ## 7. 完整解析伪代码
 
@@ -243,15 +256,14 @@ function parse_ir_jpg(path):
 
     payload = bytes[payload_offset .. end]
 
-    version = read_u16_le(payload, 0)
-    width   = read_u16_le(payload, 2)
-    height  = read_u16_le(payload, 4)
-    time    = read_ascii(payload, 6, 14)
+    header = find_ir_header(payload)
 
-    require width > 0
-    require height > 0
+    version = header.version
+    width   = header.width
+    height  = header.height
+    time    = header.timestamp
 
-    temp_offset = 20
+    temp_offset = header.temp_offset
     temp_count = width * height
     temp_end = temp_offset + temp_count * 4
 
@@ -273,6 +285,31 @@ function parse_ir_jpg(path):
         temperatures = temps,
         metadata = metadata
     )
+```
+
+```text
+function find_ir_header(payload):
+    for prefix in 0 .. 32:
+        if read_uint16_le(payload, prefix) != 256:
+            continue
+
+        width = read_uint16_le(payload, prefix + 2)
+        height = read_uint16_le(payload, prefix + 4)
+        timestamp = read_ascii(payload, prefix + 6, 14)
+        temp_offset = prefix + 20
+
+        if width == 0 or height == 0:
+            continue
+        if timestamp is not 14 ASCII digits:
+            continue
+        if temp_offset + width * height * 4 > length(payload):
+            continue
+        if sampled float32 temperatures are not finite/plausible:
+            continue
+
+        return { version: 256, width, height, timestamp, temp_offset }
+
+    fail "unsupported IR payload header"
 ```
 
 ## 8. 全图温度统计

@@ -57,11 +57,11 @@ Expected metadata summary for `1.jpg`:
 emiss=0.9, envTemp=32.0, distRaw=2584, relHum=50, mdfOrCorrectionTemp=25.3, productor=MISSION, cameraType=C600, cameraSerial=1001, lon=120.11896012, lat=30.1581147021, unknownInt100=100, desc=This is the first file of standard IR, jpegPayloadOffset=184288, guidOrChecksum=3766071a123a4c9fa95d21d2da7d26bc
 ```
 
-## Shifted header HM-TD sample
+## Prefixed header HM-TD samples
 
-The parser also supports the shifted-header variant documented in `docs/ir-image-format-generic.md`.
+The parser also supports bounded header-prefix scanning documented in `docs/ir-image-format-generic.md`.
 
-Expected key output for the HM-TD sample:
+Expected key output for the 2-byte-prefix HM-TD sample:
 
 ```text
 version=256
@@ -70,4 +70,13 @@ timestamp=20260707095718
 metadataBytes=158
 metadata=emiss=0.95, envTemp=26.68, distRaw=3840, relHum=0, mdfOrCorrectionTemp=26.68, productor=, cameraType=HM-TD5737T-4/W, cameraSerial=20260513AACHEA8074000, lon=0.0, lat=0.0, unknownInt100=0, desc=, jpegPayloadOffset=0, guidOrChecksum=
 full: count=110592 min=17.50@(84,21) max=58.54@(138,21) avg=27.02
+```
+
+Expected key output for `/Users/robot/Downloads/2020001989228007424_infrared.jpg`:
+
+```text
+version=256
+size=384x288
+timestamp=20260710032122
+metadataBytes=158
 ```

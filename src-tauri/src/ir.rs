@@ -196,39 +196,18 @@ pub fn parse_bytes(data: &[u8]) -> Result<IrImage, String> {
         return Err("missing IR payload after JPEG EOI".to_string());
     }
 
-    let mut header = Header {
-        version: u16le(data, payload_offset)?,
-        width: u16le(data, payload_offset + 2)? as usize,
-        height: u16le(data, payload_offset + 4)? as usize,
-        timestamp_offset: payload_offset + 6,
-        temps_offset: payload_offset + 20,
-    };
-    if header.version != 256 || !is_timestamp(data, header.timestamp_offset) {
-        if data.len().saturating_sub(payload_offset) < 22
-            || u16le(data, payload_offset + 2)? != 256
-            || !is_timestamp(data, payload_offset + 8)
-        {
-            return Err(format!(
-                "unsupported IR payload header at offset {payload_offset}: version={}",
-                header.version
-            ));
-        }
-        header = Header {
-            version: u16le(data, payload_offset + 2)?,
-            width: u16le(data, payload_offset + 4)? as usize,
-            height: u16le(data, payload_offset + 6)? as usize,
-            timestamp_offset: payload_offset + 8,
-            temps_offset: payload_offset + 22,
-        };
-    }
-    let timestamp = std::str::from_utf8(&data[header.timestamp_offset..header.timestamp_offset + 14])
-        .map_err(|e| format!("invalid timestamp: {e}"))?
-        .to_string();
+    let header = find_ir_header(data, payload_offset)?;
+    let timestamp =
+        std::str::from_utf8(&data[header.timestamp_offset..header.timestamp_offset + 14])
+            .map_err(|e| format!("invalid timestamp: {e}"))?
+            .to_string();
     let count = header
         .width
         .checked_mul(header.height)
         .ok_or("image dimensions overflow")?;
-    let temps_bytes = count.checked_mul(4).ok_or("temperature byte size overflow")?;
+    let temps_bytes = count
+        .checked_mul(4)
+        .ok_or("temperature byte size overflow")?;
     let temps_end = header
         .temps_offset
         .checked_add(temps_bytes)
@@ -242,8 +221,7 @@ pub fn parse_bytes(data: &[u8]) -> Result<IrImage, String> {
     let mut temperatures = Vec::with_capacity(count);
     for i in 0..count {
         let temp = f32le(data, header.temps_offset + i * 4)?;
-        // ponytail: sanity bound catches payload misalignment; relax if real hardware exceeds it.
-        if !temp.is_finite() || !(-273.15..=10000.0).contains(&temp) {
+        if !reasonable_temp(temp) {
             return Err(format!("unreasonable temperature at index {i}: {temp}"));
         }
         temperatures.push(temp);
@@ -268,6 +246,53 @@ struct Header {
     height: usize,
     timestamp_offset: usize,
     temps_offset: usize,
+}
+
+fn find_ir_header(data: &[u8], payload_offset: usize) -> Result<Header, String> {
+    for shift in 0..=32 {
+        let offset = payload_offset + shift;
+        if data.len().saturating_sub(offset) < 20 || u16le(data, offset)? != 256 {
+            continue;
+        }
+        let header = Header {
+            version: 256,
+            width: u16le(data, offset + 2)? as usize,
+            height: u16le(data, offset + 4)? as usize,
+            timestamp_offset: offset + 6,
+            temps_offset: offset + 20,
+        };
+        if !is_timestamp(data, header.timestamp_offset) || header.width == 0 || header.height == 0 {
+            continue;
+        }
+        let Some(count) = header.width.checked_mul(header.height) else {
+            continue;
+        };
+        let Some(temps_bytes) = count.checked_mul(4) else {
+            continue;
+        };
+        let Some(temps_end) = header.temps_offset.checked_add(temps_bytes) else {
+            continue;
+        };
+        if temps_end > data.len() || !sample_temperatures_look_reasonable(data, &header, count) {
+            continue;
+        }
+        return Ok(header);
+    }
+    let version = u16le(data, payload_offset).unwrap_or(0);
+    Err(format!(
+        "unsupported IR payload header at offset {payload_offset}: version={version}"
+    ))
+}
+
+fn sample_temperatures_look_reasonable(data: &[u8], header: &Header, count: usize) -> bool {
+    [0, count / 2, count - 1]
+        .into_iter()
+        .all(|i| f32le(data, header.temps_offset + i * 4).is_ok_and(reasonable_temp))
+}
+
+fn reasonable_temp(temp: f32) -> bool {
+    // ponytail: sanity bound catches payload misalignment; relax if real hardware exceeds it.
+    temp.is_finite() && (-273.15..=10000.0).contains(&temp)
 }
 
 fn parse_metadata(meta: &[u8]) -> Result<IrMetadata, String> {
@@ -384,7 +409,10 @@ fn read_or<T>(
     f: fn(&[u8], usize) -> Result<T, String>,
     default: T,
 ) -> Result<T, String> {
-    if offset.checked_add(size).is_some_and(|end| end <= data.len()) {
+    if offset
+        .checked_add(size)
+        .is_some_and(|end| end <= data.len())
+    {
         f(data, offset)
     } else {
         Ok(default)
@@ -452,7 +480,10 @@ mod tests {
             (-0.08, 76.02, 34.62),
         ];
         for i in 1..=7 {
-            let img = parse_path(Path::new(&format!("../reference/original-program/samples/{i}.jpg"))).unwrap();
+            let img = parse_path(Path::new(&format!(
+                "../reference/original-program/samples/{i}.jpg"
+            )))
+            .unwrap();
             assert_eq!(img.version, 256);
             assert_eq!((img.width, img.height), (640, 480));
             assert_eq!(img.metadata.len(), 195);
@@ -476,22 +507,49 @@ mod tests {
 
     #[test]
     fn supports_shifted_header() {
+        let img = parse_synthetic_prefixed_header(&[0xe3, 0x41]);
+        assert_eq!(img.version, 256);
+        assert_eq!((img.width, img.height), (384, 288));
+        assert_eq!(img.timestamp, "20260707095718");
+        assert_eq!(img.metadata.len(), 158);
+        assert_eq!(img.parsed_metadata.camera_type, "HM-TD5737T-4/W");
+        assert_eq!(img.parsed_metadata.camera_serial, "20260513AACHEA8074000");
+    }
+
+    #[test]
+    fn supports_three_byte_header_prefix() {
+        let img = parse_synthetic_prefixed_header(&[0x0a, 0xde, 0x41]);
+        assert_eq!(img.version, 256);
+        assert_eq!((img.width, img.height), (384, 288));
+        assert_eq!(img.timestamp, "20260707095718");
+        assert_eq!(img.metadata.len(), 158);
+        assert_eq!(img.parsed_metadata.camera_type, "HM-TD5737T-4/W");
+        assert_eq!(img.parsed_metadata.camera_serial, "20260513AACHEA8074000");
+    }
+
+    fn parse_synthetic_prefixed_header(prefix: &[u8]) -> IrImage {
         let width = 384usize;
         let height = 288usize;
         let count = width * height;
-        let mut data = vec![0u8; 4 + 22 + count * 4 + 158];
+        let payload = 4;
+        let header = payload + prefix.len();
+        let temps = header + 20;
+        let mut data = vec![0u8; temps + count * 4 + 158];
         data[0] = 0xff;
         data[1] = 0xd8;
         data[2] = 0xff;
         data[3] = 0xd9;
-        put16(&mut data, 4, 0x41e3);
-        put16(&mut data, 6, 256);
-        put16(&mut data, 8, width as u16);
-        put16(&mut data, 10, height as u16);
-        data[12..26].copy_from_slice(b"20260707095718");
-        let temps = 26;
+        data[payload..header].copy_from_slice(prefix);
+        put16(&mut data, header, 256);
+        put16(&mut data, header + 2, width as u16);
+        put16(&mut data, header + 4, height as u16);
+        data[header + 6..header + 20].copy_from_slice(b"20260707095718");
         for i in 0..count {
-            put32(&mut data, temps + i * 4, (20.0f32 + (i % 50) as f32 / 10.0).to_bits());
+            put32(
+                &mut data,
+                temps + i * 4,
+                (20.0f32 + (i % 50) as f32 / 10.0).to_bits(),
+            );
         }
         let meta = temps + count * 4;
         put32(&mut data, meta, 0.95f32.to_bits());
@@ -503,16 +561,14 @@ mod tests {
         data[meta + 50..meta + 50 + camera_type.len()].copy_from_slice(camera_type);
         data[meta + 82..meta + 82 + serial.len()].copy_from_slice(serial);
         let mut tmp = std::env::temp_dir();
-        tmp.push("irscope-shifted-header.jpg");
-        std::fs::File::create(&tmp).unwrap().write_all(&data).unwrap();
+        tmp.push(format!("irscope-prefixed-header-{}.jpg", prefix.len()));
+        std::fs::File::create(&tmp)
+            .unwrap()
+            .write_all(&data)
+            .unwrap();
         let img = parse_path(&tmp).unwrap();
         let _ = std::fs::remove_file(tmp);
-        assert_eq!(img.version, 256);
-        assert_eq!((img.width, img.height), (width, height));
-        assert_eq!(img.timestamp, "20260707095718");
-        assert_eq!(img.metadata.len(), 158);
-        assert_eq!(img.parsed_metadata.camera_type, "HM-TD5737T-4/W");
-        assert_eq!(img.parsed_metadata.camera_serial, "20260513AACHEA8074000");
+        img
     }
 
     fn put16(data: &mut [u8], offset: usize, value: u16) {

@@ -6,6 +6,7 @@ IRScope correctness is defined by the documented binary format and the seven ref
 
 - Keep Java source compatible with JDK 8-21. `pom.xml` sets `maven.compiler.release` to `8`.
 - Locate JPEG EOI by marker parsing, not by the first `FF D9` byte pair. See `IrImageParser.findTrueJpegEoi` and `docs/ir-image-format-generic.md`.
+- Detect the IR payload header by validating candidates in a small bounded prefix range after EOI. The header may start at payload offset `0`, `2`, `3`, or another short camera prefix; do not support new camera files by adding one-off fixed-offset branches.
 - Parse payload fields little-endian: `u16` header fields, `float32` temperatures, and metadata numbers.
 - Treat temperature indexing as row-major: `temperatures[y * width + x]`.
 - Preserve raw metadata bytes on `IrImage` when adding or changing structured metadata parsing.
@@ -17,6 +18,7 @@ IRScope correctness is defined by the documented binary format and the seven ref
 - Do not depend on `reference/original-program/bin/*.dll` or the original EXE at runtime.
 - Do not replace true JPEG marker parsing with a naive byte search.
 - Do not hard-code sample-only values like `640x480`, metadata length `195`, or `version=256` as universal truth unless the task explicitly narrows scope.
+- Do not require thermal matrix dimensions to match the JPEG preview dimensions; valid HM-TD files can have a `640x512` JPEG preview and a `384x288` thermal matrix.
 - Do not introduce dependencies for functionality already covered by the JDK or existing Maven plugins.
 - Do not discard unknown metadata bytes after parsing known fields.
 
@@ -76,5 +78,6 @@ When adding support for a new image shape or parser variant, add one narrow self
 - Does the change still follow the language-neutral contract in `docs/ir-image-format-generic.md`?
 - Are binary reads bounds-checked before indexing?
 - Can width/height/count/byte calculations overflow or allocate unreasonable memory?
+- Does header detection validate candidate timestamp, dimensions, matrix length, and sampled temperatures instead of accepting the first matching byte pair?
 - Are CLI and Swing behavior both still valid if parser behavior changed?
 - Are docs updated when expected values, metadata fields, or verification commands change?
