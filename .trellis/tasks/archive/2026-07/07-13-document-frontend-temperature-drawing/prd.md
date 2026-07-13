@@ -6,7 +6,7 @@
 
 ## Background
 
-- 目标文档路径为 `/Users/robot/Downloads/IRScope-frontend-temperature-analysis-drawing.md`，方便直接提供给其他项目引用。
+- 目标文档路径为 `docs/frontend-temperature-analysis-drawing.md`，纳入仓库并供其他项目引用。
 - 当前源码使用 React/Tauri，但目标项目使用 Java 后端和 Vue Web；文档只提取可移植算法和数据契约，不复制 React Hooks 或 Tauri 调用。
 - 推荐目标技术栈为 Java 后端、HTTP JSON、Vue 3 + TypeScript 和浏览器原生 Canvas 2D API，不新增绘图库。
 - Java 后端返回全图统计，并根据 Vue 提交的热图区域坐标返回点、线、框统计。
@@ -44,7 +44,6 @@
 ## Out of Scope
 
 - 修改现有前端、Rust 统计算法或界面样式。
-- 在仓库 `docs/` 下新增同内容副本。
 - 在目标代码中引入 React、Tauri 或第三方 Canvas 绘图库。
 - 复制整个 `App.tsx` 或整理与温度统计绘制无关的文件打开、CSV 导出、窗口尺寸控制代码。
 - 重复完整的红外 JPG 二进制解析说明；该内容继续引用现有格式与移植文档。
