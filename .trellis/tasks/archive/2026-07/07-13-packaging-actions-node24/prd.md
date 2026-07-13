@@ -26,7 +26,7 @@
 - [x] 三项 Action 的目标版本均由官方 `action.yml` 声明使用 `node24`。
 - [x] 工作流使用 Node.js 24 执行项目构建，并可被本机 Node.js 24 环境验证。
 - [x] 工作流 YAML 可被解析，且除 Action 主版本和项目 Node.js 版本外没有行为改动。
-- [ ] GitHub 与 GitLab 的 `rust-version` 指向同一修复提交。
+- [x] GitHub 与 GitLab 的 `rust-version` 指向同一修复提交。
 
 ## Out of Scope
 
