@@ -5,15 +5,17 @@
 1. Read all bytes from a JPG file.
 2. Locate the true JPEG EOI marker using marker parsing, not naive byte search.
 3. Set `payload_offset = eoi_offset + 2`.
-4. Parse IR payload header:
+4. Read the little-endian `data_start` candidate at `file_length - 20`; validate the IR header at that absolute offset.
+5. If that candidate is absent or invalid, scan a small bounded prefix range after `payload_offset` for:
    - `u16le version`
    - `u16le width`
    - `u16le height`
    - `ascii[14] timestamp`
-5. Read `width * height` little-endian `float32` temperatures.
-6. Read remaining bytes as metadata.
-7. Parse known metadata fields from the remaining tail bytes using `docs/metadata-structure.md`; preserve the full raw tail because its length appears camera-dependent.
-8. Implement region stats over selected pixel coordinates.
+6. Accept only candidates with `version=256`, non-zero dimensions, numeric timestamp, fitting matrix bytes, and plausible sampled temperatures.
+7. Read `width * height` little-endian `float32` temperatures.
+8. Read remaining bytes as metadata.
+9. Parse the dynamic `description + data_start + GUID/checksum` footer using `docs/metadata-structure.md`; preserve the full raw tail.
+10. Implement region stats over selected thermal-matrix coordinates.
 
 ## Types
 
@@ -49,7 +51,7 @@ Metadata {
   latitude: f64
   unknown_int_100: u32
   description: string
-  jpeg_payload_offset: u32
+  jpeg_payload_offset: u32  # compatibility name for the format's data_start
   file_guid_or_checksum: [u8; 16]
 }
 ```
@@ -73,6 +75,9 @@ Use these fixed assertions for a first port:
 1.jpg: version=256, width=640, height=480, timestamp=20151008141617
 1.jpg: min=-0.82, max=49.65, center(320,240)=20.63
 metadata: emissivity=0.9, envTemp=32.0, relHum=50, productor=MISSION, cameraType=C600, cameraSerial=1001
+prefixed HM-TD: version=256, width=384, height=288, metadataBytes=158, dataStart=header absolute offset
 ```
+
+When a GUI JPEG preview size differs from the thermal matrix, keep analysis coordinates in the thermal space and map preview coordinates with endpoint-aligned proportional scaling before querying temperatures.
 
 Then validate all seven sample images using `docs/ir-image-format-generic.md` expected values.

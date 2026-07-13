@@ -2,6 +2,18 @@
 
 本文档描述一种与语言无关的解析方法，用于解析本项目样例中的红外 JPG 图片。它不是 Java API 文档，也不依赖任何具体实现。
 
+## 0. 跨项目引用合同
+
+本文件是 IRScope 当前解析逻辑的可移植合同。适用范围是标准 JPEG 的真实 EOI 后追加私有 IR payload，payload 中保存已校准的 little-endian `float32` 温度矩阵。
+
+最小实现顺序：
+
+1. 按 JPEG marker 规则定位真实 EOI。
+2. 尝试文件最后 20 字节中的 `data_start`，完整校验候选 IR header。
+3. footer 候选无效时扫描 EOI 后 `0..32` 字节，复用同一候选校验器。
+4. 读取行优先 `float32` 温度矩阵，并保留矩阵后的全部 raw metadata。
+5. 按动态描述长度解析 metadata footer；所有偏移和尺寸运算必须检查边界。
+
 ## 1. 文件总体结构
 
 样例文件表面是标准 JPEG，但在 JPEG 正常结束标记之后追加了私有红外数据块。
@@ -103,6 +115,17 @@ payload_offset = eoi_offset + 2
 
 原始 7 张样例中，`payload_offset` 后有 `1,229,015` 字节红外私有数据。其他相机/固件可能追加不同长度的尾部字段，因此 payload 总长不应作为固定常量。
 
+### 3.1 文件尾 data_start 索引
+
+当前验证文件都以同一结构结束：
+
+```text
+file_end - 20  4 bytes   uint32 little-endian  data_start
+file_end - 16  16 bytes  GUID/checksum
+```
+
+`data_start` 是 IR header 的绝对文件偏移，不一定等于 `payload_offset`。该字段来自文件输入，不能直接索引；必须先按版本、尺寸、时间戳、矩阵长度和温度合理性完整校验，失败后回退 bounded scan。
+
 ## 4. IR payload 格式
 
 根据 7 张原始样例图交叉验证，旧 payload 结构如下。
@@ -145,9 +168,10 @@ timestamp        = "20151008141617"
 
 ## 5. 温度矩阵解析
 
-温度矩阵从 payload offset `20` 开始。
+温度矩阵从实际 IR header 起点之后 `20` 字节开始。
 
 ```text
+temp_offset = header_offset + 20
 temp_count = width * height
 temp_bytes = temp_count * 4
 temps = read temp_count float32 little-endian values
@@ -164,7 +188,16 @@ temperature_at(x, y) = temps[index]
 
 - `x` 从左到右，范围 `0 .. width-1`
 - `y` 从上到下，范围 `0 .. height-1`
-- 样例范围是 `x=0..639`、`y=0..479`
+- 原始样例范围是 `x=0..639`、`y=0..479`
+
+JPEG 预览尺寸可能与温度矩阵不同。界面应先按 JPEG 实际尺寸展示和接收坐标，再映射到温点矩阵：
+
+```text
+thermal_x = round(jpeg_x * (thermal_width - 1) / (jpeg_width - 1))
+thermal_y = round(jpeg_y * (thermal_height - 1) / (jpeg_height - 1))
+```
+
+绘制分析标记时使用相反方向的同一公式。同尺寸时映射为 1:1；例如 `640x512` JPEG 坐标 `(439,182)` 映射到 `384x288` 温点坐标 `(263,102)`。JPEG 上的色标和文字属于叠加层，不产生独立温点。
 
 ### 5.1 温度矩阵伪代码
 
@@ -212,7 +245,18 @@ This is the first file of standard IR
 
 当前可确认：这些字节属于 IR 私有数据结构尾部。字段完整语义仍需继续逆向 `YFIR.dll` 的结构体读写逻辑。
 
-## 6.1 Header Prefix Variants
+### 6.1 可移植的最小 metadata footer
+
+```text
+134     u32_le   description_length
+138     byte[N]  description
+138+N   u32_le   data_start
+142+N   byte[16] GUID/checksum
+```
+
+只有 `138 + description_length + 20 == metadata_length` 时，才把最后 20 字节解释为 `data_start + GUID/checksum`。不相等时保留 raw bytes，但 footer 字段返回空值或 `0`。
+
+### 6.2 Header Prefix Variants
 
 Some files use the same IR header shape, but place a short format prefix before the version field. Observed prefixes:
 
@@ -232,7 +276,7 @@ offset from payload  size        type                 meaning
 22 + w*h*4           remaining   bytes                metadata/unknown tail, observed 158 bytes in this sample
 ```
 
-Do not hard-code only the currently observed prefix lengths. A compatible parser should scan a small bounded prefix range after the JPEG EOI and accept the first candidate where:
+Do not hard-code only the currently observed prefix lengths. A compatible parser should first try the validated footer `data_start`; if it is absent or invalid, scan a small bounded prefix range after the JPEG EOI. Both paths accept a candidate only when:
 
 - `uint16_le(payload[prefix..prefix+2]) == 256`
 - width and height are non-zero
@@ -254,9 +298,7 @@ function parse_ir_jpg(path):
     if payload_offset >= length(bytes):
         fail "no IR payload"
 
-    payload = bytes[payload_offset .. end]
-
-    header = find_ir_header(payload)
+    header = find_ir_header(bytes, payload_offset)
 
     version = header.version
     width   = header.width
@@ -264,16 +306,16 @@ function parse_ir_jpg(path):
     time    = header.timestamp
 
     temp_offset = header.temp_offset
-    temp_count = width * height
-    temp_end = temp_offset + temp_count * 4
+    temp_count = checked_multiply(width, height)
+    temp_end = checked_add(temp_offset, checked_multiply(temp_count, 4))
 
-    require temp_end <= length(payload)
+    require temp_end <= length(bytes)
 
     temps = []
     for i in 0 .. temp_count-1:
-        temps.append(read_float32_le(payload, temp_offset + i * 4))
+        temps.append(read_float32_le(bytes, temp_offset + i * 4))
 
-    metadata = payload[temp_end .. end]
+    metadata = bytes[temp_end .. end]
 
     return IrImage(
         jpeg_bytes = bytes[0 .. eoi+2],
@@ -288,28 +330,38 @@ function parse_ir_jpg(path):
 ```
 
 ```text
-function find_ir_header(payload):
+function find_ir_header(bytes, payload_offset):
+    if length(bytes) >= 20:
+        data_start = read_uint32_le(bytes, length(bytes) - 20)
+        if data_start >= payload_offset:
+            header = validate_ir_header_candidate(bytes, data_start)
+            if header is valid:
+                return header
+
     for prefix in 0 .. 32:
-        if read_uint16_le(payload, prefix) != 256:
-            continue
-
-        width = read_uint16_le(payload, prefix + 2)
-        height = read_uint16_le(payload, prefix + 4)
-        timestamp = read_ascii(payload, prefix + 6, 14)
-        temp_offset = prefix + 20
-
-        if width == 0 or height == 0:
-            continue
-        if timestamp is not 14 ASCII digits:
-            continue
-        if temp_offset + width * height * 4 > length(payload):
-            continue
-        if sampled float32 temperatures are not finite/plausible:
-            continue
-
-        return { version: 256, width, height, timestamp, temp_offset }
+        offset = checked_add(payload_offset, prefix)
+        header = validate_ir_header_candidate(bytes, offset)
+        if header is valid:
+            return header
 
     fail "unsupported IR payload header"
+
+function validate_ir_header_candidate(bytes, offset):
+        require checked_add(offset, 20) <= length(bytes)
+        require read_uint16_le(bytes, offset) == 256
+
+        width = read_uint16_le(bytes, offset + 2)
+        height = read_uint16_le(bytes, offset + 4)
+        timestamp = read_ascii(bytes, offset + 6, 14)
+        temp_offset = offset + 20
+
+        require width > 0 and height > 0
+        require timestamp is 14 ASCII digits
+        count = checked_multiply(width, height)
+        require checked_add(temp_offset, checked_multiply(count, 4)) <= length(bytes)
+        require sampled float32 temperatures are finite/plausible
+
+        return { offset, version: 256, width, height, timestamp, temp_offset }
 ```
 
 ## 8. 全图温度统计
@@ -473,8 +525,9 @@ rect_stats = stats_for_pixels(image, rect_pixels(x1, y1, x2, y2))
 - 是否能找到真实 EOI。
 - EOI 后是否存在 payload。
 - payload 是否至少有 20 字节头部。
+- 文件尾 `data_start` 是否在 payload 之后且通过完整候选校验；无效时必须回退。
 - width/height 是否合理。
-- `20 + width * height * 4` 是否不超过 payload 长度。
+- `header_offset + 20 + width * height * 4` 是否使用 checked arithmetic 且不超过文件长度。
 - float32 是否能正常解码。
 
 对于未知 metadata 字段，应保留原始 bytes，不要丢弃。

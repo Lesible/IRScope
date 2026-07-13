@@ -4,8 +4,8 @@ import { open, save } from "@tauri-apps/plugin-dialog";
 import { PointerEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Inspector } from "./components/Inspector";
 import { fmt, formatStats, temp, toolLabel } from "./lib/format";
-import { clamp, displayToImage, imageToDisplay } from "./lib/geometry";
-import type { Drag, ImageInfo, Mark, Stats, Tool } from "./types";
+import { clamp, displayToImage, imageToDisplay, scalePoint } from "./lib/geometry";
+import type { Drag, ImageInfo, ImageSize, Mark, Stats, Tool } from "./types";
 
 const TOOLS: Array<{ id: Tool; label: string }> = [
   { id: "point", label: "点分析" },
@@ -26,6 +26,7 @@ export default function App() {
   const [info, setInfo] = useState<ImageInfo | null>(null);
   const [imageUrl, setImageUrl] = useState("");
   const [imagePaintTick, setImagePaintTick] = useState(0);
+  const [previewSize, setPreviewSize] = useState<ImageSize | null>(null);
   const [tool, setTool] = useState<Tool>("point");
   const [rotation, setRotation] = useState(0);
   const [marks, setMarks] = useState<Mark[]>([]);
@@ -34,11 +35,11 @@ export default function App() {
   const [busy, setBusy] = useState(false);
 
   const displaySize = useMemo(() => {
-    if (!info) return { width: 640, height: 480 };
+    if (!previewSize) return { width: 640, height: 480 };
     return rotation % 2 === 0
-      ? { width: info.width, height: info.height }
-      : { width: info.height, height: info.width };
-  }, [info, rotation]);
+      ? previewSize
+      : { width: previewSize.height, height: previewSize.width };
+  }, [previewSize, rotation]);
 
   const openImage = useCallback(async () => {
     const selected = await open({
@@ -56,7 +57,6 @@ export default function App() {
       setDrag(null);
       setRotation(0);
       setStatus(`已打开 ${parsed.fileName}`);
-      void resizeWindowForImage(parsed).catch(() => undefined);
     } catch (error) {
       setStatus(String(error));
     } finally {
@@ -86,10 +86,20 @@ export default function App() {
     setInfo(null);
     setImageUrl("");
     setImagePaintTick(0);
+    setPreviewSize(null);
     setMarks([]);
     setDrag(null);
     setRotation(0);
     setStatus("已清除图像");
+  }, []);
+
+  const onImageLoad = useCallback(() => {
+    const image = imageRef.current;
+    if (!image || image.naturalWidth <= 0 || image.naturalHeight <= 0) return;
+    const size = { width: image.naturalWidth, height: image.naturalHeight };
+    setPreviewSize(size);
+    setImagePaintTick((tick) => tick + 1);
+    void resizeWindowForImage(size).catch(() => undefined);
   }, []);
 
   const finishMark = useCallback(
@@ -114,7 +124,7 @@ export default function App() {
 
   const pointerPoint = useCallback(
     (event: PointerEvent<HTMLCanvasElement>) => {
-      if (!info || !canvasRef.current) return { x: 0, y: 0 };
+      if (!info || !previewSize || !canvasRef.current) return { x: 0, y: 0 };
       const rect = canvasRef.current.getBoundingClientRect();
       const dx = clamp(
         Math.round(((event.clientX - rect.left) * displaySize.width) / Math.max(1, rect.width)),
@@ -126,9 +136,10 @@ export default function App() {
         0,
         displaySize.height - 1
       );
-      return displayToImage(dx, dy, info.width, info.height, rotation);
+      const imagePoint = displayToImage(dx, dy, previewSize.width, previewSize.height, rotation);
+      return scalePoint(imagePoint.x, imagePoint.y, previewSize.width, previewSize.height, info.width, info.height);
     },
-    [displaySize.height, displaySize.width, info, rotation]
+    [displaySize.height, displaySize.width, info, previewSize, rotation]
   );
 
   const onPointerDown = useCallback(
@@ -171,12 +182,12 @@ export default function App() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#111113";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    if (image && image.complete && info) {
-      drawRotatedImage(ctx, image, rotation, displaySize.width, displaySize.height, info.width, info.height);
-      for (const mark of marks) drawMark(ctx, mark, info, rotation, "#fbbf24");
-      if (drag) drawMark(ctx, { ...drag, kind: tool }, info, rotation, "#5eead4");
+    if (image && image.complete && info && previewSize) {
+      drawRotatedImage(ctx, image, rotation, displaySize.width, displaySize.height, previewSize.width, previewSize.height);
+      for (const mark of marks) drawMark(ctx, mark, info, previewSize, rotation, "#fbbf24");
+      if (drag) drawMark(ctx, { ...drag, kind: tool }, info, previewSize, rotation, "#5eead4");
     }
-  }, [displaySize.height, displaySize.width, drag, imagePaintTick, imageUrl, info, marks, rotation, tool]);
+  }, [displaySize.height, displaySize.width, drag, imagePaintTick, imageUrl, info, marks, previewSize, rotation, tool]);
 
   return (
     <main className="app-shell">
@@ -212,7 +223,7 @@ export default function App() {
 
       <section className="workspace">
         <div className="canvas-panel">
-          {imageUrl ? <img ref={imageRef} src={imageUrl} alt="" className="hidden-source" onLoad={() => setImagePaintTick((tick) => tick + 1)} /> : null}
+          {imageUrl ? <img ref={imageRef} src={imageUrl} alt="" className="hidden-source" onLoad={onImageLoad} /> : null}
           <canvas
             ref={canvasRef}
             className="image-canvas"
@@ -227,6 +238,7 @@ export default function App() {
 
         <Inspector
           info={info}
+          previewSize={previewSize}
           marks={marks}
           onDeleteMark={(id) => setMarks((items) => items.filter((item) => item.id !== id))}
           onClearMarks={() => {
@@ -241,13 +253,13 @@ export default function App() {
   );
 }
 
-async function resizeWindowForImage(info: ImageInfo) {
+async function resizeWindowForImage(size: ImageSize) {
   const monitor = await currentMonitor();
   const workArea = monitor?.workArea.size.toLogical(monitor.scaleFactor);
   const maxWidth = (workArea?.width ?? 1600) - WINDOW_MARGIN;
   const maxHeight = (workArea?.height ?? 1000) - WINDOW_MARGIN;
-  const targetWidth = Math.min(Math.max(BASE_WINDOW_WIDTH, info.width + INSPECTOR_WIDTH + WORKSPACE_GAP_AND_PADDING), maxWidth);
-  const targetHeight = Math.min(Math.max(BASE_WINDOW_HEIGHT, info.height + VERTICAL_CHROME), maxHeight);
+  const targetWidth = Math.min(Math.max(BASE_WINDOW_WIDTH, size.width + INSPECTOR_WIDTH + WORKSPACE_GAP_AND_PADDING), maxWidth);
+  const targetHeight = Math.min(Math.max(BASE_WINDOW_HEIGHT, size.height + VERTICAL_CHROME), maxHeight);
   const appWindow = getCurrentWindow();
   await appWindow.setSize(new LogicalSize(Math.round(targetWidth), Math.round(targetHeight)));
   await appWindow.center();
@@ -285,11 +297,12 @@ function drawMark(
   ctx: CanvasRenderingContext2D,
   mark: { kind: Tool; x1: number; y1: number; x2: number; y2: number; stats?: Stats },
   info: ImageInfo,
+  previewSize: ImageSize,
   rotation: number,
   color: string
 ) {
-  const a = imageToDisplay(mark.x1, mark.y1, info.width, info.height, rotation);
-  const b = imageToDisplay(mark.x2, mark.y2, info.width, info.height, rotation);
+  const a = thermalToDisplay(mark.x1, mark.y1, info, previewSize, rotation);
+  const b = thermalToDisplay(mark.x2, mark.y2, info, previewSize, rotation);
   ctx.save();
   ctx.strokeStyle = color;
   ctx.lineWidth = 2;
@@ -315,7 +328,7 @@ function drawMark(
     if (mark.kind === "point") {
       drawLabel(ctx, b.x + 12, b.y - 16, [temp(mark.stats.avg)]);
     } else {
-      drawRegionStats(ctx, mark.stats, a, b, info, rotation);
+      drawRegionStats(ctx, mark.stats, a, b, info, previewSize, rotation);
     }
   }
   ctx.restore();
@@ -327,15 +340,21 @@ function drawRegionStats(
   a: { x: number; y: number },
   b: { x: number; y: number },
   info: ImageInfo,
+  previewSize: ImageSize,
   rotation: number
 ) {
-  const max = imageToDisplay(stats.maxX, stats.maxY, info.width, info.height, rotation);
-  const min = imageToDisplay(stats.minX, stats.minY, info.width, info.height, rotation);
+  const max = thermalToDisplay(stats.maxX, stats.maxY, info, previewSize, rotation);
+  const min = thermalToDisplay(stats.minX, stats.minY, info, previewSize, rotation);
   drawHotspot(ctx, max.x, max.y, "#fb553c", 7, "最高");
   drawHotspot(ctx, min.x, min.y, "#67e8f9", 5, "最低");
   const x = clamp(Math.min(a.x, b.x) + 10, 8, ctx.canvas.width - 210);
   const y = clamp(Math.min(a.y, b.y) - 58, 8, ctx.canvas.height - 70);
   drawLabel(ctx, x, y, [`最高温 ${temp(stats.max)}`, `最低温 ${temp(stats.min)}`, `平均温 ${temp(stats.avg)}`]);
+}
+
+function thermalToDisplay(x: number, y: number, info: ImageInfo, previewSize: ImageSize, rotation: number) {
+  const imagePoint = scalePoint(x, y, info.width, info.height, previewSize.width, previewSize.height);
+  return imageToDisplay(imagePoint.x, imagePoint.y, previewSize.width, previewSize.height, rotation);
 }
 
 function drawHotspot(ctx: CanvasRenderingContext2D, x: number, y: number, color: string, radius: number, label: string) {

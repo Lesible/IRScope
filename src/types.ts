@@ -1,5 +1,10 @@
 export type Tool = "point" | "line" | "rect";
 
+export type ImageSize = {
+  width: number;
+  height: number;
+};
+
 export type Stats = {
   count: number;
   min: number;

@@ -59,7 +59,7 @@ emiss=0.9, envTemp=32.0, distRaw=2584, relHum=50, mdfOrCorrectionTemp=25.3, prod
 
 ## Prefixed header HM-TD samples
 
-The parser also supports bounded header-prefix scanning documented in `docs/ir-image-format-generic.md`.
+The parser first validates the footer `data_start`, then falls back to bounded header-prefix scanning documented in `docs/ir-image-format-generic.md`.
 
 Expected key output for the 2-byte-prefix HM-TD sample:
 
@@ -68,7 +68,7 @@ version=256
 size=384x288
 timestamp=20260707095718
 metadataBytes=158
-metadata=emiss=0.95, envTemp=26.68, distRaw=3840, relHum=0, mdfOrCorrectionTemp=26.68, productor=, cameraType=HM-TD5737T-4/W, cameraSerial=20260513AACHEA8074000, lon=0.0, lat=0.0, unknownInt100=0, desc=, jpegPayloadOffset=0, guidOrChecksum=
+metadata=emiss=0.95, envTemp=26.68, distRaw=3840, relHum=0, mdfOrCorrectionTemp=26.68, productor=, cameraType=HM-TD5737T-4/W, cameraSerial=20260513AACHEA8074000, lon=0.0, lat=0.0, unknownInt100=0, desc=, jpegPayloadOffset=header absolute offset, guidOrChecksum=3766071a123a4c9fa95d21d2da7d26bc
 full: count=110592 min=17.50@(84,21) max=58.54@(138,21) avg=27.02
 ```
 
@@ -79,4 +79,10 @@ version=256
 size=384x288
 timestamp=20260710032122
 metadataBytes=158
+metadata dataStart=21872
+metadata guidOrChecksum=3766071a123a4c9fa95d21d2da7d26bc
 ```
+
+## JPEG/temperature coordinate scaling
+
+`/Users/robot/Downloads/123.jpg` has a `640x512` JPEG preview and a `384x288` temperature matrix. Its full-temperature maximum is `67.28@(263,102)`, which maps back to JPEG coordinate `(439,182)` with endpoint-aligned proportional scaling. The UI displays both dimensions, uses the JPEG size for the canvas/window, and keeps analysis requests in thermal-matrix coordinates.

@@ -6,10 +6,10 @@
 
 已观察到两种长度：
 
-- 原始 7 张样例图尾部均为 `195` 字节，前 195 字节内的字段可按下表解析。
-- HM-TD 图片样例尾部为 `158` 字节，复用开头的发射率、环境温度、距离原始值、相对湿度/MDF、型号和序列号字段，但没有旧样例中的经纬度、说明、payload 偏移和 16 字节 GUID/校验字段完整区域。
+- 原始 7 张样例图尾部均为 `195` 字节，其中说明字符串长度为 `37`。
+- HM-TD 图片样例尾部为 `158` 字节，其中说明字符串长度为 `0`；固定字段后的 `data_start` 和 16 字节 GUID/校验值仍然存在，只是随变长说明前移到偏移 `138/142`。
 
-解析器必须保留原始 tail bytes，并对缺失字段返回空值或 `0`。不能因为 tail 不是 `195` 字节就把已知温度矩阵判为不可用。
+解析器必须保留原始 tail bytes，并按 `descriptionLength` 计算动态 footer。声明长度与实际尾部不吻合时，对 footer 字段返回空值或 `0`，不能猜测最后 20 字节的语义，也不能因此丢弃已确认的温度矩阵。
 
 ## 结构表
 
@@ -28,9 +28,9 @@
 | 122 | 8 | float64_le | `30.1581147021` | `latitude` / 纬度，字段名由数值形态推断 | 中 |
 | 130 | 4 | uint32_le | `100` | `unknownInt100` / 未命名整数，可能是高度、等级或扩展参数 | 低 |
 | 134 | 4 | uint32_le | `37` | `descriptionLength` / 说明字符串长度 | 高 |
-| 138 | 37 | ASCII | `This is the first file of standard IR` | `description` / 文件说明 | 高 |
-| 175 | 4 | uint32_le | varies | `jpegPayloadOffset` / IR payload 在原文件中的偏移，等于真实 EOI 后 2 字节 | 高 |
-| 179 | 16 | bytes | `3766071a123a4c9fa95d21d2da7d26bc` | `fileGuidOrChecksum` / GUID 或校验种子，7 张样例一致 | 中 |
+| 138 | N | ASCII | `This is the first file of standard IR` | `description` / 文件说明，N=`descriptionLength` | 高 |
+| 138+N | 4 | uint32_le | varies | `dataStart`；现有 API 名为 `jpegPayloadOffset`，实际指向 IR header 的绝对文件偏移 | 高 |
+| 142+N | 16 | bytes | `3766071a123a4c9fa95d21d2da7d26bc` | `fileGuidOrChecksum` / GUID 或校验种子 | 中高 |
 
 ## 偏移验证
 
@@ -53,6 +53,16 @@
 175: e0 cf 02 00                 -> uint32 184288, equals payloadOffset
 179: 37 66 07 1a 12 3a 4c 9f a9 5d 21 d2 da 7d 26 bc
 ```
+
+HM-TD 3 字节前缀样本的 `descriptionLength=0`：
+
+```text
+134: 00 00 00 00                 -> descriptionLength=0
+138: 70 55 00 00                 -> data_start=21872
+142: 37 66 07 1a 12 3a 4c 9f a9 5d 21 d2 da 7d 26 bc
+```
+
+该文件的 `payloadOffset=21869`，因此 `data_start=payloadOffset+3`，直接指向格式前缀之后的 IR header。
 
 ## 与 DLL 的对应关系
 
@@ -84,17 +94,22 @@ function parse_metadata(meta):
 
     unknown_int_100 = read_uint32_le(meta, 130) if length(meta) >= 134 else 0
     description_length = read_uint32_le(meta, 134) if length(meta) >= 138 else 0
-    description = read_ascii(meta, 138, description_length) if length(meta) > 138 else ""
+    description_end = checked_add(138, description_length)
+    description = decode_ascii(meta[138 : min(description_end, length(meta))]) if length(meta) > 138 else ""
 
-    jpeg_payload_offset = read_uint32_le(meta, 175) if length(meta) >= 179 else 0
-    file_guid_or_checksum = meta[179:195] if length(meta) >= 195 else empty bytes
+    if description_end + 20 == length(meta):
+        data_start = read_uint32_le(meta, description_end)
+        file_guid_or_checksum = meta[description_end + 4 : description_end + 20]
+    else:
+        data_start = 0
+        file_guid_or_checksum = empty bytes
 
     return Metadata(...)
 ```
 
 ## Rust/Tauri 状态
 
-Rust/Tauri 桌面版已实现 metadata 解析，右侧“设备元数据”面板展示关键字段。长尾部会尽量解析已知字段；短尾部会部分解析并保留原始 bytes。
+Rust/Tauri 桌面版已按动态说明长度解析 195/158 字节 metadata footer，同时保留完整原始 bytes。
 
 示例：
 

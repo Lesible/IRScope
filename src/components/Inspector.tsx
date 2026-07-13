@@ -1,14 +1,16 @@
-import type { ImageInfo, Mark, Stats } from "../types";
+import type { ImageInfo, ImageSize, Mark, Stats } from "../types";
 import { fmt, formatStats, temp, toolLabel } from "../lib/format";
 import { useState } from "react";
 
 export function Inspector({
   info,
+  previewSize,
   marks,
   onDeleteMark,
   onClearMarks
 }: {
   info: ImageInfo | null;
+  previewSize: ImageSize | null;
   marks: Mark[];
   onDeleteMark: (id: number) => void;
   onClearMarks: () => void;
@@ -32,7 +34,8 @@ export function Inspector({
             <Panel title="图像">
               {info ? (
                 <dl className="meta-grid">
-                  <Row label="尺寸" value={`${info.width} x ${info.height}`} />
+                  <Row label="图像尺寸" value={previewSize ? `${previewSize.width} x ${previewSize.height}` : "-"} />
+                  <Row label="热图尺寸" value={`${info.width} x ${info.height}`} />
                   <Row label="时间" value={info.timestamp} />
                   <Row label="版本" value={String(info.version)} />
                   <Row label="元数据大小" value={`${info.metadataBytes} 字节`} />

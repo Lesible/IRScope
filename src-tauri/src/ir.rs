@@ -249,39 +249,51 @@ struct Header {
 }
 
 fn find_ir_header(data: &[u8], payload_offset: usize) -> Result<Header, String> {
+    if let Some(footer_offset) = data.len().checked_sub(20) {
+        if let Ok(data_start) = u32le(data, footer_offset) {
+            if let Ok(offset) = usize::try_from(data_start) {
+                if offset >= payload_offset {
+                    if let Some(header) = try_ir_header(data, offset) {
+                        return Ok(header);
+                    }
+                }
+            }
+        }
+    }
     for shift in 0..=32 {
-        let offset = payload_offset + shift;
-        if data.len().saturating_sub(offset) < 20 || u16le(data, offset)? != 256 {
-            continue;
+        if let Some(offset) = payload_offset.checked_add(shift) {
+            if let Some(header) = try_ir_header(data, offset) {
+                return Ok(header);
+            }
         }
-        let header = Header {
-            version: 256,
-            width: u16le(data, offset + 2)? as usize,
-            height: u16le(data, offset + 4)? as usize,
-            timestamp_offset: offset + 6,
-            temps_offset: offset + 20,
-        };
-        if !is_timestamp(data, header.timestamp_offset) || header.width == 0 || header.height == 0 {
-            continue;
-        }
-        let Some(count) = header.width.checked_mul(header.height) else {
-            continue;
-        };
-        let Some(temps_bytes) = count.checked_mul(4) else {
-            continue;
-        };
-        let Some(temps_end) = header.temps_offset.checked_add(temps_bytes) else {
-            continue;
-        };
-        if temps_end > data.len() || !sample_temperatures_look_reasonable(data, &header, count) {
-            continue;
-        }
-        return Ok(header);
     }
     let version = u16le(data, payload_offset).unwrap_or(0);
     Err(format!(
         "unsupported IR payload header at offset {payload_offset}: version={version}"
     ))
+}
+
+fn try_ir_header(data: &[u8], offset: usize) -> Option<Header> {
+    if data.len().saturating_sub(offset) < 20 || u16le(data, offset).ok()? != 256 {
+        return None;
+    }
+    let header = Header {
+        version: 256,
+        width: u16le(data, offset + 2).ok()? as usize,
+        height: u16le(data, offset + 4).ok()? as usize,
+        timestamp_offset: offset + 6,
+        temps_offset: offset + 20,
+    };
+    if !is_timestamp(data, header.timestamp_offset) || header.width == 0 || header.height == 0 {
+        return None;
+    }
+    let count = header.width.checked_mul(header.height)?;
+    let temps_bytes = count.checked_mul(4)?;
+    let temps_end = header.temps_offset.checked_add(temps_bytes)?;
+    if temps_end > data.len() || !sample_temperatures_look_reasonable(data, &header, count) {
+        return None;
+    }
+    Some(header)
 }
 
 fn sample_temperatures_look_reasonable(data: &[u8], header: &Header, count: usize) -> bool {
@@ -299,6 +311,19 @@ fn parse_metadata(meta: &[u8]) -> Result<IrMetadata, String> {
     if meta.len() < 18 {
         return Err(format!("metadata too short: {} bytes", meta.len()));
     }
+    let description_length = read_or(meta, 134, 4, u32le, 0)? as usize;
+    let description_end = 138usize.checked_add(description_length);
+    let description = description_end
+        .and_then(|end| meta.get(138..end))
+        .map(|bytes| String::from_utf8_lossy(bytes).to_string())
+        .unwrap_or_default();
+    let (jpeg_payload_offset, guid_or_checksum) = match description_end {
+        Some(footer_offset) if footer_offset.checked_add(20) == Some(meta.len()) => (
+            u32le(meta, footer_offset)?,
+            hex(&meta[footer_offset + 4..footer_offset + 20]),
+        ),
+        _ => (0, String::new()),
+    };
     Ok(IrMetadata {
         emissivity: f32le(meta, 0)?,
         environment_temperature: f32le(meta, 4)?,
@@ -311,13 +336,9 @@ fn parse_metadata(meta: &[u8]) -> Result<IrMetadata, String> {
         longitude: read_or(meta, 114, 8, f64le, 0.0)?,
         latitude: read_or(meta, 122, 8, f64le, 0.0)?,
         unknown_int_100: read_or(meta, 130, 4, u32le, 0)?,
-        description: description(meta),
-        jpeg_payload_offset: read_or(meta, 175, 4, u32le, 0)?,
-        guid_or_checksum: if meta.len() >= 195 {
-            hex(&meta[179..195])
-        } else {
-            String::new()
-        },
+        description,
+        jpeg_payload_offset,
+        guid_or_checksum,
     })
 }
 
@@ -391,17 +412,6 @@ fn c_string(data: &[u8], offset: usize, len: usize) -> String {
     String::from_utf8_lossy(&bytes[..end]).trim().to_string()
 }
 
-fn description(meta: &[u8]) -> String {
-    let Ok(len) = read_or(meta, 134, 4, u32le, 0) else {
-        return String::new();
-    };
-    let len = len as usize;
-    let Some(bytes) = meta.get(138..138 + len) else {
-        return String::new();
-    };
-    String::from_utf8_lossy(bytes).to_string()
-}
-
 fn read_or<T>(
     data: &[u8],
     offset: usize,
@@ -466,7 +476,8 @@ fn f64le(data: &[u8], offset: usize) -> Result<f64, String> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use std::io::Write;
+
+    const GUID_HEX: &str = "3766071a123a4c9fa95d21d2da7d26bc";
 
     #[test]
     fn validates_reference_samples() {
@@ -493,6 +504,11 @@ mod tests {
             assert!((img.parsed_metadata.emissivity - 0.9).abs() < 0.001);
             assert!((img.parsed_metadata.environment_temperature - 32.0).abs() < 0.001);
             assert_eq!(img.parsed_metadata.relative_humidity_percent, 50);
+            assert_eq!(
+                img.parsed_metadata.jpeg_payload_offset as usize,
+                img.payload_offset
+            );
+            assert_eq!(img.parsed_metadata.guid_or_checksum, GUID_HEX);
             let full = img.full_stats().unwrap();
             let (min, max, center) = expected[i - 1];
             assert!((full.min - min).abs() < 0.02, "min {i}: {}", full.min);
@@ -507,27 +523,61 @@ mod tests {
 
     #[test]
     fn supports_shifted_header() {
-        let img = parse_synthetic_prefixed_header(&[0xe3, 0x41]);
+        let img = parse_synthetic_prefixed_header(&[0xe3, 0x41], true);
         assert_eq!(img.version, 256);
         assert_eq!((img.width, img.height), (384, 288));
         assert_eq!(img.timestamp, "20260707095718");
         assert_eq!(img.metadata.len(), 158);
         assert_eq!(img.parsed_metadata.camera_type, "HM-TD5737T-4/W");
         assert_eq!(img.parsed_metadata.camera_serial, "20260513AACHEA8074000");
+        assert_eq!(img.parsed_metadata.jpeg_payload_offset, 6);
+        assert_eq!(img.parsed_metadata.guid_or_checksum, GUID_HEX);
     }
 
     #[test]
     fn supports_three_byte_header_prefix() {
-        let img = parse_synthetic_prefixed_header(&[0x0a, 0xde, 0x41]);
+        let img = parse_synthetic_prefixed_header(&[0x0a, 0xde, 0x41], true);
         assert_eq!(img.version, 256);
         assert_eq!((img.width, img.height), (384, 288));
         assert_eq!(img.timestamp, "20260707095718");
         assert_eq!(img.metadata.len(), 158);
         assert_eq!(img.parsed_metadata.camera_type, "HM-TD5737T-4/W");
         assert_eq!(img.parsed_metadata.camera_serial, "20260513AACHEA8074000");
+        assert_eq!(img.parsed_metadata.jpeg_payload_offset, 7);
+        assert_eq!(img.parsed_metadata.guid_or_checksum, GUID_HEX);
     }
 
-    fn parse_synthetic_prefixed_header(prefix: &[u8]) -> IrImage {
+    #[test]
+    fn invalid_footer_falls_back_to_prefix_scan() {
+        let img = parse_synthetic_prefixed_header(&[0xe3, 0x41], false);
+        assert_eq!((img.width, img.height), (384, 288));
+        assert_eq!(img.timestamp, "20260707095718");
+    }
+
+    #[test]
+    fn footer_header_beats_plausible_scan_candidate() {
+        let mut prefix = vec![0u8; 24];
+        put16(&mut prefix, 0, 256);
+        put16(&mut prefix, 2, 1);
+        put16(&mut prefix, 4, 1);
+        prefix[6..20].copy_from_slice(b"20260713091933");
+        put32(&mut prefix, 20, 21.0f32.to_bits());
+        let img = parse_synthetic_prefixed_header(&prefix, true);
+        assert_eq!((img.width, img.height), (384, 288));
+        assert_eq!(img.timestamp, "20260707095718");
+        assert_eq!(img.parsed_metadata.jpeg_payload_offset, 28);
+    }
+
+    #[test]
+    fn malformed_description_length_hides_metadata_footer() {
+        let mut meta = vec![0u8; 158];
+        put32(&mut meta, 134, 1);
+        let parsed = parse_metadata(&meta).unwrap();
+        assert_eq!(parsed.jpeg_payload_offset, 0);
+        assert!(parsed.guid_or_checksum.is_empty());
+    }
+
+    fn parse_synthetic_prefixed_header(prefix: &[u8], with_footer: bool) -> IrImage {
         let width = 384usize;
         let height = 288usize;
         let count = width * height;
@@ -560,15 +610,10 @@ mod tests {
         let serial = b"20260513AACHEA8074000";
         data[meta + 50..meta + 50 + camera_type.len()].copy_from_slice(camera_type);
         data[meta + 82..meta + 82 + serial.len()].copy_from_slice(serial);
-        let mut tmp = std::env::temp_dir();
-        tmp.push(format!("irscope-prefixed-header-{}.jpg", prefix.len()));
-        std::fs::File::create(&tmp)
-            .unwrap()
-            .write_all(&data)
-            .unwrap();
-        let img = parse_path(&tmp).unwrap();
-        let _ = std::fs::remove_file(tmp);
-        img
+        if with_footer {
+            put_footer(&mut data, meta, header);
+        }
+        parse_bytes(&data).unwrap()
     }
 
     fn put16(data: &mut [u8], offset: usize, value: u16) {
@@ -577,5 +622,14 @@ mod tests {
 
     fn put32(data: &mut [u8], offset: usize, value: u32) {
         data[offset..offset + 4].copy_from_slice(&value.to_le_bytes());
+    }
+
+    fn put_footer(data: &mut [u8], metadata_offset: usize, data_start: usize) {
+        put32(data, metadata_offset + 138, data_start as u32);
+        let guid = [
+            0x37, 0x66, 0x07, 0x1a, 0x12, 0x3a, 0x4c, 0x9f, 0xa9, 0x5d, 0x21, 0xd2, 0xda, 0x7d,
+            0x26, 0xbc,
+        ];
+        data[metadata_offset + 142..metadata_offset + 158].copy_from_slice(&guid);
     }
 }
