@@ -70,3 +70,36 @@ Added committed Tauri desktop icon resources including icon.ico, updated bundle 
 ### Next Steps
 
 - None - task complete
+
+
+## Session 3: 升级打包工作流至 Node.js 24
+
+**Date**: 2026-07-13
+**Task**: 升级打包工作流至 Node.js 24
+**Branch**: `rust-version`
+
+### Summary
+
+将 Rust 打包工作流的官方 Actions 与项目构建环境统一升级到 Node.js 24，并验证 YAML、前端构建、Rust 测试和 Tauri debug 打包。
+
+### Main Changes
+
+(Add details)
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `77f7df1` | (see git log) |
+
+### Testing
+
+- [OK] (Add test results)
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- None - task complete
