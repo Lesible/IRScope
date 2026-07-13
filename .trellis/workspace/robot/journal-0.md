@@ -103,3 +103,37 @@ Added committed Tauri desktop icon resources including icon.ico, updated bundle 
 ### Next Steps
 
 - None - task complete
+
+
+## Session 4: 整理 Java 与 Vue 温度统计绘制移植说明
+
+**Date**: 2026-07-13
+**Task**: 整理 Java 与 Vue 温度统计绘制移植说明
+**Branch**: `rust-version`
+
+### Summary
+
+将 IRScope 的温度统计、图片与热图坐标映射、极值点和标签绘制流程整理为 Java 后端伪代码与 Vue/TypeScript Canvas 移植文档。
+
+### Main Changes
+
+- Detailed change bullets were not supplied; see the summary above.
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `1e6273d` | (see git log) |
+| `1fd2c45` | (see git log) |
+
+### Testing
+
+- Validation was not recorded for this session.
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- None - task complete
