@@ -91,11 +91,14 @@ For Rust/Tauri parser and coordinate changes, run `rtk cargo fmt --manifest-path
 - Linux x64 target: `x86_64-unknown-linux-gnu`; artifacts include AppImage and deb bundles.
 - macOS arm64 target: `aarch64-apple-darwin`; artifact includes `.app` bundle.
 - Tauri desktop icon resources must be committed under `src-tauri/icons/`, including `icons/icon.ico` for Windows resource generation and `icons/icon.icns` for macOS bundling.
+- Official JavaScript actions must use a non-deprecated runtime; the Node 24-compatible versions verified for this workflow are `actions/checkout@v5`, `actions/setup-node@v5`, and `actions/upload-artifact@v6`.
+- `actions/setup-node` installs Node.js 24 for the npm and Tauri frontend build steps.
 
 ### 4. Validation & Error Matrix
 - Missing artifact path -> GitHub Actions `upload-artifact` must fail with `if-no-files-found: error`.
 - Missing `src-tauri/icons/icon.ico` -> Windows `tauri-build` fails while generating the Windows Resource file.
 - Linux dependency missing -> install WebKit/GTK/AppIndicator/rsvg/patchelf/fuse packages before Tauri build.
+- An action's official `action.yml` declares `runs.using: node20` -> upgrade to a version that declares `node24` before accepting the workflow change.
 
 ### 5. Good/Base/Bad Cases
 - Good: CI uploads all requested platform artifacts from native runners.
@@ -104,11 +107,14 @@ For Rust/Tauri parser and coordinate changes, run `rtk cargo fmt --manifest-path
 
 ### 6. Tests Required
 - Parse workflow YAML locally.
+- Verify the selected official action versions against their published `action.yml`; do not infer a shared major version across different actions.
 - Run `rtk npm run build`, `rtk cargo test --manifest-path src-tauri/Cargo.toml`, and local Tauri debug build after packaging changes.
 
 ### 7. Wrong vs Correct
 - Wrong: cross-compile every desktop OS from one local machine by default.
 - Correct: use GitHub Actions native runners for Windows, Linux, and macOS packaging.
+- Wrong: upgrade every Node 20-based action to `@v5`; `actions/upload-artifact@v5` still declares `node20`.
+- Correct: verify each action independently and use `actions/upload-artifact@v6`, which declares `node24`.
 
 ## Review Checklist
 
